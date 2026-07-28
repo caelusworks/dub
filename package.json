@@ -21,15 +21,15 @@
   },
   "devDependencies": {
     "@dub/tailwind-config": "workspace:*",
-    "eslint": "^8.48.0",
-    "prettier": "^3.2.5",
-    "prettier-plugin-organize-imports": "^3.2.4",
-    "prettier-plugin-tailwindcss": "^0.6.0",
+    "eslint": "^10.8.0",
+    "prettier": "^3.9.6",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "tsconfig": "workspace:*",
-    "turbo": "^1.12.5"
+    "turbo": "^2.10.7"
   },
   "resolutions": {
     "chrono-node": "2.7.5"
   },
-  "packageManager": "pnpm@9.15.9"
+  "packageManager": "pnpm@11.17.0"
 }
