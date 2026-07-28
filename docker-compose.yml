@@ -1,0 +1,54 @@
+services:
+  dub:
+    build:
+      context: https://github.com/dubinc/dub.git   # repo root — required for workspace packages
+      dockerfile: Dockerfile         # you must add this file to the repo / a fork
+      secrets:
+        - dubenv                                    # .env injected at build for NEXT_PUBLIC_* + prisma
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+  db:
+    image: mysql:8
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: dub
+    volumes:
+      - mysqldata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - redisdata:/data
+
+  serverless-redis-http:
+    image: hiett/serverless-redis-http:latest
+    restart: unless-stopped
+    environment:
+      SRH_MODE: env
+      SRH_TOKEN: ${UPSTASH_TOKEN}
+      SRH_CONNECTION_STRING: "redis://redis:6379"
+    depends_on:
+      - redis
+
+secrets:
+  dubenv:
+    file: ./.env
+
+volumes:
+  mysqldata:
+  redisdata:
