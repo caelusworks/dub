@@ -42,9 +42,16 @@ ENV DATABASE_URL=$DATABASE_URL \
     NEXT_PUBLIC_APP_DOMAIN=$NEXT_PUBLIC_APP_DOMAIN \
     NEXT_PUBLIC_APP_SHORT_DOMAIN=$NEXT_PUBLIC_APP_SHORT_DOMAIN
 
+# next build exceeds node's default heap ceiling (~4.2GB in-container) and aborts
+# with SIGABRT/134; needs headroom on the build host
+ENV NODE_OPTIONS=--max-old-space-size=6144
+
 # workspace packages publish from dist/, which is gitignored — turbo would build
-# them via dependsOn ^build, but --filter bypasses that graph, so do it explicitly
-RUN pnpm build:packages && pnpm --filter web build
+# them via dependsOn ^build, but --filter bypasses that graph, so do it explicitly.
+# Serialised: `pnpm -r` fans out to one process per core by default, and each gets
+# its own heap.
+RUN pnpm -r --workspace-concurrency=1 --filter "./packages/**" build \
+    && pnpm --filter web build
 
 # ---- runner ----
 FROM base AS runner
