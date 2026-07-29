@@ -1,23 +1,50 @@
+# Minimal dub stack: URL shortening only.
+# Analytics (Tinybird), background jobs (QStash) and billing are deliberately absent.
+#
+# Coolify env entries you must set: DB_ROOT_PASSWORD, UPSTASH_TOKEN, NEXTAUTH_URL,
+# NEXTAUTH_SECRET, ENCRYPTION_KEY, NEXT_PUBLIC_NGROK_URL, GOOGLE_CLIENT_ID,
+# GOOGLE_CLIENT_SECRET. Everything else below is derived from those, so there is
+# nothing to keep in sync by hand.
 services:
   dub:
     build:
-      context: https://github.com/dubinc/dub.git   # repo root — required for workspace packages
-      dockerfile: Dockerfile         # you must add this file to the repo / a fork
-      secrets:
-        - dubenv                                    # .env injected at build for NEXT_PUBLIC_* + prisma
+      context: https://github.com/mugane-dj/dub.git   # our fork — holds the Dockerfile + tinybird patches
+      dockerfile: Dockerfile
+      # Coolify resolves ${VAR} from its env entries via --env-file build-time.env.
+      # NEXT_PUBLIC_* are baked into the client bundle here, so they must be right now.
+      args:
+        DATABASE_URL: mysql://root:${DB_ROOT_PASSWORD}@db:3306/dub
+        NEXT_PUBLIC_NGROK_URL: ${NEXT_PUBLIC_NGROK_URL:-}
     restart: unless-stopped
     ports:
       - "3000:3000"
-    env_file: .env
+    environment:
+      NEXTAUTH_URL: ${NEXTAUTH_URL}
+      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
+      ENCRYPTION_KEY: ${ENCRYPTION_KEY}
+      # prisma / server-side queries speak the MySQL wire protocol
+      DATABASE_URL: mysql://root:${DB_ROOT_PASSWORD}@db:3306/dub
+      # edge middleware speaks PlanetScale's HTTP protocol; credentials are passed
+      # through to MySQL as-is by ps-http-sim, so they must be the real ones
+      PLANETSCALE_DATABASE_URL: http://root:${DB_ROOT_PASSWORD}@planetscale-proxy:3900/dub
+      UPSTASH_REDIS_REST_URL: http://serverless-redis-http:80
+      UPSTASH_REDIS_REST_TOKEN: ${UPSTASH_TOKEN}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
     depends_on:
       db:
         condition: service_healthy
+      planetscale-proxy:
+        condition: service_started
       redis:
         condition: service_started
 
   db:
-    image: mysql:8
+    # 8.0, not 8: mysql_native_password is gone in 8.4 and ps-http-sim's client needs it
+    image: mysql:8.0
     restart: unless-stopped
+    command: ["--default-authentication-plugin=mysql_native_password"]
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_DATABASE: dub
@@ -29,12 +56,28 @@ services:
       timeout: 3s
       retries: 10
 
+  # translates PlanetScale's HTTP API into plain MySQL — required by the edge
+  # runtime middleware, which cannot open a TCP socket to the database
+  planetscale-proxy:
+    image: ghcr.io/mattrobenolt/ps-http-sim:v0.0.12
+    restart: unless-stopped
+    command:
+      - "-listen-addr=0.0.0.0"   # default is 127.0.0.1, unreachable from other services
+      - "-listen-port=3900"
+      - "-mysql-addr=db"
+      - "-mysql-port=3306"
+      - "-mysql-dbname=dub"
+    depends_on:
+      db:
+        condition: service_healthy
+
   redis:
     image: redis:7-alpine
     restart: unless-stopped
     volumes:
       - redisdata:/data
 
+  # exposes Redis over the Upstash REST API that dub's client expects
   serverless-redis-http:
     image: hiett/serverless-redis-http:latest
     restart: unless-stopped
@@ -44,10 +87,6 @@ services:
       SRH_CONNECTION_STRING: "redis://redis:6379"
     depends_on:
       - redis
-
-secrets:
-  dubenv:
-    file: ./.env
 
 volumes:
   mysqldata:

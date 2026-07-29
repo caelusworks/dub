@@ -26,7 +26,7 @@ function SignUp() {
           Create your Dub account
         </h3>
         <div className="mt-8">
-          <SignUpForm />
+          <SignUpForm methods={["email", "google"]} />
         </div>
         <p className="mt-6 text-center text-sm font-medium text-neutral-500">
           Already have an account?&nbsp;
