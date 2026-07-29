@@ -1,6 +1,10 @@
-import { Tinybird } from "@chronark/zod-bird";
+import { NoopTinybird, Tinybird } from "@chronark/zod-bird";
 
-export const tb = new Tinybird({
-  token: process.env.TINYBIRD_API_KEY as string,
-  baseUrl: process.env.TINYBIRD_API_URL as string,
-});
+// analytics are optional in this deployment: without a key, NoopTinybird returns
+// empty result sets rather than throwing on every pipe query
+export const tb = process.env.TINYBIRD_API_KEY
+  ? new Tinybird({
+      token: process.env.TINYBIRD_API_KEY,
+      baseUrl: process.env.TINYBIRD_API_URL as string,
+    })
+  : new NoopTinybird();

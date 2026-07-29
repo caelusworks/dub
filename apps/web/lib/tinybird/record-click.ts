@@ -169,16 +169,19 @@ export async function recordClick({
   waitUntil(
     (async () => {
       const response = await Promise.allSettled([
-        fetchWithRetry(
-          `${process.env.TINYBIRD_API_URL}/v0/events?name=dub_click_events&wait=true`,
-          {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${process.env.TINYBIRD_API_KEY}`,
+        // skipped when analytics are not configured — otherwise every click
+        // burns 10 retries against an unreachable endpoint
+        process.env.TINYBIRD_API_KEY &&
+          fetchWithRetry(
+            `${process.env.TINYBIRD_API_URL}/v0/events?name=dub_click_events&wait=true`,
+            {
+              method: "POST",
+              headers: {
+                Authorization: `Bearer ${process.env.TINYBIRD_API_KEY}`,
+              },
+              body: JSON.stringify(clickData),
             },
-            body: JSON.stringify(clickData),
-          },
-        ).then((res) => res.json()),
+          ).then((res) => res.json()),
 
         // cache the recorded click for the corresponding IP address in Redis for 1 hour
         recordClickCache.set({

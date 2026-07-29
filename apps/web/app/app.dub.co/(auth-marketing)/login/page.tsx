@@ -17,7 +17,7 @@ export default function LoginPage() {
           Log in to your Dub account
         </h3>
         <div className="mt-8">
-          <LoginForm />
+          <LoginForm methods={["google", "email"]} />
         </div>
         <p className="mt-6 text-center text-sm font-medium text-neutral-500">
           Don't have an account?&nbsp;

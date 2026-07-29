@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-# ---- Dub web app container (pnpm 9 + Turborepo monorepo) ----
+# ---- Dub web app container (pnpm + Turborepo monorepo) ----
 # Build context must be the repo ROOT (not apps/web) — the app depends on
 # workspace packages under packages/* and the root lockfile.
 
@@ -9,7 +9,8 @@ ENV PATH="$PNPM_HOME:$PATH"
 # openssl is required by Prisma engines on debian-slim
 RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates \
     && rm -rf /var/lib/apt/lists/*
-RUN corepack enable && corepack prepare pnpm@9.15.9 --activate
+# must match "packageManager" in package.json or corepack refuses to run
+RUN corepack enable && corepack prepare pnpm@11.17.0 --activate
 
 # ---- deps: install the full monorepo dependency graph ----
 FROM base AS deps
@@ -26,11 +27,17 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=deps /app/packages ./packages
 COPY . .
-# Prisma client generation + next build. Build reads env via dotenv-flow -e .env,
-# so a .env must exist at apps/web/.env at build time (see notes). Public NEXT_PUBLIC_*
-# vars are inlined at build, so they must be correct here, not just at runtime.
-RUN --mount=type=secret,id=dubenv,target=/app/apps/web/.env \
-    pnpm --filter web build
+
+# Build-time config arrives as build args, not a .env file — Coolify keeps env
+# vars as entries and never writes .env into the build context. dotenv-flow just
+# warns when .env is absent, so the real process env below is what gets used:
+# prisma generate resolves DATABASE_URL, and NEXT_PUBLIC_* are inlined into the
+# client bundle here (setting them at runtime has no effect).
+ARG DATABASE_URL
+ARG NEXT_PUBLIC_NGROK_URL
+ENV DATABASE_URL=$DATABASE_URL \
+    NEXT_PUBLIC_NGROK_URL=$NEXT_PUBLIC_NGROK_URL
+RUN pnpm --filter web build
 
 # ---- runner ----
 FROM base AS runner
@@ -43,5 +50,6 @@ COPY --from=builder /app/apps/web ./apps/web
 COPY --from=builder /app/package.json /app/turbo.json /app/pnpm-workspace.yaml ./
 WORKDIR /app/apps/web
 EXPOSE 3000
-# next start serves the prebuilt .next; runtime env comes from compose env_file
+# next start serves the prebuilt .next; runtime env comes from the compose
+# environment: block, which Coolify populates from its env entries
 CMD ["pnpm", "start", "--", "--port", "3000"]
