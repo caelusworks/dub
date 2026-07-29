@@ -2,20 +2,11 @@
 # Analytics (Tinybird), background jobs (QStash) and billing are deliberately absent.
 services:
   dub:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        DATABASE_URL: mysql://root:${DB_ROOT_PASSWORD}@db:3306/dub
-        NEXT_PUBLIC_APP_DOMAIN: ${NEXT_PUBLIC_APP_DOMAIN}
-        NEXT_PUBLIC_APP_SHORT_DOMAIN: ${NEXT_PUBLIC_APP_SHORT_DOMAIN}
+    image: ${DUB_IMAGE:-ghcr.io/caelusworks/dub:staging-latest}
     restart: unless-stopped
-    # 3000 is taken by the trim-trak frontend on the VPS; 3010 is unused there
     ports:
       - "${DUB_HOST_PORT:-3010}:3000"
     environment:
-      # defaults to the dashboard hostname so the OAuth callback can't drift from it;
-      # override explicitly for local http (e.g. http://localhost:3000)
       NEXTAUTH_URL: ${NEXTAUTH_URL:-https://${NEXT_PUBLIC_APP_DOMAIN}}
       NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
       ENCRYPTION_KEY: ${ENCRYPTION_KEY}
