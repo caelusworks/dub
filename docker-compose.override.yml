@@ -1,0 +1,15 @@
+# Local development only.
+#
+# `docker compose up` merges this automatically, so locally the dub image is built
+# from source instead of pulled from ghcr. Coolify invokes compose with an explicit
+# `-f docker-compose.yml`, which disables override auto-discovery — so the VPS keeps
+# using the prebuilt image and never runs a build.
+services:
+  dub:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        DATABASE_URL: mysql://root:${DB_ROOT_PASSWORD}@db:3306/dub
+        NEXT_PUBLIC_APP_DOMAIN: ${NEXT_PUBLIC_APP_DOMAIN}
+        NEXT_PUBLIC_APP_SHORT_DOMAIN: ${NEXT_PUBLIC_APP_SHORT_DOMAIN}
