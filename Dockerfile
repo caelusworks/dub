@@ -3,7 +3,9 @@
 # Build context must be the repo ROOT (not apps/web) — the app depends on
 # workspace packages under packages/* and the root lockfile.
 
-FROM node:20-slim AS base
+# node 24, not 20: pnpm 11 imports node:sqlite, which only exists from node 22 up
+# (and is still flagged experimental there)
+FROM node:24-slim AS base
 ENV PNPM_HOME=/pnpm
 ENV PATH="$PNPM_HOME:$PATH"
 # openssl is required by Prisma engines on debian-slim
@@ -34,10 +36,15 @@ COPY . .
 # prisma generate resolves DATABASE_URL, and NEXT_PUBLIC_* are inlined into the
 # client bundle here (setting them at runtime has no effect).
 ARG DATABASE_URL
-ARG NEXT_PUBLIC_NGROK_URL
+ARG NEXT_PUBLIC_APP_DOMAIN
+ARG NEXT_PUBLIC_APP_SHORT_DOMAIN
 ENV DATABASE_URL=$DATABASE_URL \
-    NEXT_PUBLIC_NGROK_URL=$NEXT_PUBLIC_NGROK_URL
-RUN pnpm --filter web build
+    NEXT_PUBLIC_APP_DOMAIN=$NEXT_PUBLIC_APP_DOMAIN \
+    NEXT_PUBLIC_APP_SHORT_DOMAIN=$NEXT_PUBLIC_APP_SHORT_DOMAIN
+
+# workspace packages publish from dist/, which is gitignored — turbo would build
+# them via dependsOn ^build, but --filter bypasses that graph, so do it explicitly
+RUN pnpm build:packages && pnpm --filter web build
 
 # ---- runner ----
 FROM base AS runner

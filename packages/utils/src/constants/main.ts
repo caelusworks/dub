@@ -1,21 +1,30 @@
-export const SHORT_DOMAIN = "dub.sh";
+// Set on self-hosted deployments; unset upstream, where the dub.co domains below apply.
+// Bare hostname, no scheme — APP_HOSTNAMES is matched against the Host header.
+const SELF_HOSTED_APP_DOMAIN = process.env.NEXT_PUBLIC_APP_DOMAIN;
 
-export const APP_HOSTNAMES = new Set([
-  "app.dub.co",
-  "preview.dub.co",
-  "localhost:8888",
-  "localhost",
-]);
+export const SHORT_DOMAIN = process.env.NEXT_PUBLIC_APP_SHORT_DOMAIN || "dub.sh";
 
-export const APP_DOMAIN =
-  process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
+export const APP_HOSTNAMES = new Set(
+  [
+    SELF_HOSTED_APP_DOMAIN,
+    "app.dub.co",
+    "preview.dub.co",
+    "localhost:8888",
+    "localhost",
+  ].filter((hostname): hostname is string => Boolean(hostname)),
+);
+
+export const APP_DOMAIN = SELF_HOSTED_APP_DOMAIN
+  ? `https://${SELF_HOSTED_APP_DOMAIN}`
+  : process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
     ? "https://app.dub.co"
     : process.env.NEXT_PUBLIC_VERCEL_ENV === "preview"
       ? "https://preview.dub.co"
       : "http://localhost:8888";
 
-export const APP_DOMAIN_WITH_NGROK =
-  process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
+export const APP_DOMAIN_WITH_NGROK = SELF_HOSTED_APP_DOMAIN
+  ? `https://${SELF_HOSTED_APP_DOMAIN}`
+  : process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
     ? "https://app.dub.co"
     : process.env.NEXT_PUBLIC_VERCEL_ENV === "preview"
       ? process.env.VERCEL_URL
