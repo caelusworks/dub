@@ -1,17 +1,10 @@
 # Minimal dub stack: URL shortening only.
 # Analytics (Tinybird), background jobs (QStash) and billing are deliberately absent.
-#
-# Coolify env entries you must set: NEXT_PUBLIC_APP_DOMAIN, NEXT_PUBLIC_APP_SHORT_DOMAIN,
-# DB_ROOT_PASSWORD, UPSTASH_TOKEN, NEXTAUTH_SECRET, ENCRYPTION_KEY, GOOGLE_CLIENT_ID,
-# GOOGLE_CLIENT_SECRET. Everything else below is derived from those, so there is
-# nothing to keep in sync by hand.
 services:
   dub:
     build:
-      context: https://github.com/mugane-dj/dub.git   # our fork — holds the Dockerfile + tinybird patches
+      context: .
       dockerfile: Dockerfile
-      # Coolify resolves ${VAR} from its env entries via --env-file build-time.env.
-      # NEXT_PUBLIC_* are baked into the client bundle here, so they must be right now.
       args:
         DATABASE_URL: mysql://root:${DB_ROOT_PASSWORD}@db:3306/dub
         NEXT_PUBLIC_APP_DOMAIN: ${NEXT_PUBLIC_APP_DOMAIN}
@@ -20,8 +13,9 @@ services:
     ports:
       - "3000:3000"
     environment:
-      # derived so the OAuth callback can never drift from the dashboard hostname
-      NEXTAUTH_URL: https://${NEXT_PUBLIC_APP_DOMAIN}
+      # defaults to the dashboard hostname so the OAuth callback can't drift from it;
+      # override explicitly for local http (e.g. http://localhost:3000)
+      NEXTAUTH_URL: ${NEXTAUTH_URL:-https://${NEXT_PUBLIC_APP_DOMAIN}}
       NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
       ENCRYPTION_KEY: ${ENCRYPTION_KEY}
       # prisma / server-side queries speak the MySQL wire protocol
@@ -64,7 +58,7 @@ services:
     image: ghcr.io/mattrobenolt/ps-http-sim:v0.0.12
     restart: unless-stopped
     command:
-      - "-listen-addr=0.0.0.0"   # default is 127.0.0.1, unreachable from other services
+      - "-listen-addr=0.0.0.0"
       - "-listen-port=3900"
       - "-mysql-addr=db"
       - "-mysql-port=3306"

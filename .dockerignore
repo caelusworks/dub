@@ -1,0 +1,19 @@
+# Keep the build context small and stop unrelated edits from busting the
+# builder layer on every `COPY . .`
+.git
+.github
+**/node_modules
+**/.next
+**/dist
+**/.turbo
+**/*.log
+.env
+.env.*
+!.env.example
+**/.DS_Store
+**/coverage
+**/playwright-report
+**/test-results
+README.md
+SECURITY.md
+LICENSE.md

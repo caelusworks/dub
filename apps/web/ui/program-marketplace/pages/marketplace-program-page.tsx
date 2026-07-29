@@ -19,16 +19,23 @@ import { getMarketplaceHref } from "../utils/urls";
 export const revalidate = 3600; // 1 hour
 
 export async function generateMarketplaceProgramStaticParams() {
-  const programs = await prisma.program.findMany({
-    where: {
-      addedToMarketplaceAt: {
-        not: null,
+  // runs during `next build`, when no database is reachable — fall back to
+  // prerendering only the static category pages
+  const programs = await prisma.program
+    .findMany({
+      where: {
+        addedToMarketplaceAt: {
+          not: null,
+        },
       },
-    },
-    select: {
-      slug: true,
-    },
-  });
+      select: {
+        slug: true,
+      },
+    })
+    .catch(() => {
+      console.warn("[marketplace] database unreachable, skipping prerender");
+      return [] as { slug: string }[];
+    });
 
   const categoryPages = Object.values(Category).map((category) => ({
     segments: ["c", category.toLowerCase()],
