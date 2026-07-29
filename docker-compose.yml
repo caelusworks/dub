@@ -10,8 +10,9 @@ services:
         NEXT_PUBLIC_APP_DOMAIN: ${NEXT_PUBLIC_APP_DOMAIN}
         NEXT_PUBLIC_APP_SHORT_DOMAIN: ${NEXT_PUBLIC_APP_SHORT_DOMAIN}
     restart: unless-stopped
+    # 3000 is taken by the trim-trak frontend on the VPS; 3010 is unused there
     ports:
-      - "3000:3000"
+      - "${DUB_HOST_PORT:-3010}:3000"
     environment:
       # defaults to the dashboard hostname so the OAuth callback can't drift from it;
       # override explicitly for local http (e.g. http://localhost:3000)
@@ -40,7 +41,14 @@ services:
     # 8.0, not 8: mysql_native_password is gone in 8.4 and ps-http-sim's client needs it
     image: mysql:8.0
     restart: unless-stopped
+    labels:
+      traefik.enable: "false"
     command: ["--default-authentication-plugin=mysql_native_password"]
+    ports:
+      - "127.0.0.1:${DB_HOST_PORT:-3307}:3306"
+    networks:
+      - default
+      - shared-db-network
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_DATABASE: dub
@@ -57,6 +65,8 @@ services:
   planetscale-proxy:
     image: ghcr.io/mattrobenolt/ps-http-sim:v0.0.12
     restart: unless-stopped
+    labels:
+      traefik.enable: "false"
     command:
       - "-listen-addr=0.0.0.0"
       - "-listen-port=3900"
@@ -70,19 +80,27 @@ services:
   redis:
     image: redis:7-alpine
     restart: unless-stopped
+    labels:
+      traefik.enable: "false"
     volumes:
       - redisdata:/data
 
-  # exposes Redis over the Upstash REST API that dub's client expects
+  # exposes Redis over the Upstash REST API that dub's client expects.
   serverless-redis-http:
     image: hiett/serverless-redis-http:latest
     restart: unless-stopped
+    labels:
+      traefik.enable: "false"
     environment:
       SRH_MODE: env
       SRH_TOKEN: ${UPSTASH_TOKEN}
       SRH_CONNECTION_STRING: "redis://redis:6379"
     depends_on:
       - redis
+
+networks:
+  shared-db-network:
+    external: true
 
 volumes:
   mysqldata:

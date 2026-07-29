@@ -1,8 +1,10 @@
 import { Client } from "@upstash/qstash";
 
+// background jobs are unused in this deployment; the placeholder token stops the
+// SDK warning on every import without changing behaviour (calls would fail anyway)
 export const qstash = new Client({
   baseUrl: process.env.QSTASH_URL || "https://qstash-us-east-1.upstash.io",
-  token: process.env.QSTASH_TOKEN || "",
+  token: process.env.QSTASH_TOKEN || "unset",
 });
 
 // Default batch size for cron jobs that process records in batches
