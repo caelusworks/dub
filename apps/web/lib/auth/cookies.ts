@@ -1,5 +1,6 @@
 export const VERCEL_DEPLOYMENT = !!process.env.VERCEL_URL;
 
+// Use secure cookies on Vercel deployments and HTTPS NEXTAUTH_URL
 export const USE_SECURE_COOKIES =
   VERCEL_DEPLOYMENT ||
   (process.env.NEXTAUTH_URL?.startsWith("https://") ?? false);
