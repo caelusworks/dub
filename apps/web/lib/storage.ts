@@ -12,6 +12,13 @@ interface imageOptions {
 
 type BucketType = "public" | "private";
 
+async function describeS3Error(response: Response) {
+  const detail = await response.text().catch(() => "");
+  return [`${response.status} ${response.statusText}`, detail.trim()]
+    .filter(Boolean)
+    .join(" — ");
+}
+
 class StorageClient {
   private client: AwsClient;
 
@@ -20,7 +27,7 @@ class StorageClient {
       accessKeyId: process.env.STORAGE_ACCESS_KEY_ID || "",
       secretAccessKey: process.env.STORAGE_SECRET_ACCESS_KEY || "",
       service: "s3",
-      region: "auto",
+      region: process.env.STORAGE_REGION || "auto",
     });
   }
 
@@ -68,7 +75,7 @@ class StorageClient {
       );
 
       if (!response.ok) {
-        throw new Error(response.statusText);
+        throw new Error(await describeS3Error(response));
       }
 
       return {
@@ -96,7 +103,7 @@ class StorageClient {
       );
 
       if (!response.ok) {
-        throw new Error(response.statusText);
+        throw new Error(await describeS3Error(response));
       }
     } catch (error) {
       console.error("storage.delete failed", error);
