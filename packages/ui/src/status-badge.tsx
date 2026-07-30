@@ -45,8 +45,7 @@ const defaultIcons = {
 };
 
 interface BadgeProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
-    StatusBadgeVariant {
+  extends React.HTMLAttributes<HTMLSpanElement>, StatusBadgeVariant {
   icon?: Icon | null;
   tooltip?: string | React.ReactNode;
 }
@@ -61,7 +60,7 @@ export function StatusBadge({
   ...props
 }: BadgeProps) {
   const Icon =
-    icon !== null ? icon ?? defaultIcons[variant ?? "neutral"] : null;
+    icon !== null ? (icon ?? defaultIcons[variant ?? "neutral"]) : null;
 
   return (
     <DynamicTooltipWrapper

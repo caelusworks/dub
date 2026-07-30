@@ -15,7 +15,7 @@ export function MarketplaceEmptyState({
         isFiltered ? (
           <>
             Press{" "}
-            <span className="text-content-default bg-bg-emphasis rounded-md px-1 py-0.5 text-xs font-semibold">
+            <span className="rounded-md bg-bg-emphasis px-1 py-0.5 text-xs font-semibold text-content-default">
               Esc
             </span>{" "}
             to clear all filters.

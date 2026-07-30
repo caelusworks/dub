@@ -120,12 +120,12 @@ export default function AddEditWebhookForm({
       await Promise.all([
         mutate(
           `/api/webhooks/${result.id}/links?workspaceId=${workspaceId}`,
-          result.linkScope === "links" ? data.linkIds ?? [] : [],
+          result.linkScope === "links" ? (data.linkIds ?? []) : [],
           { revalidate: true },
         ),
         mutate(
           `/api/webhooks/${result.id}/folders?workspaceId=${workspaceId}`,
-          result.linkScope === "folders" ? data.folderIds ?? [] : [],
+          result.linkScope === "folders" ? (data.folderIds ?? []) : [],
           { revalidate: true },
         ),
       ]);
@@ -135,8 +135,8 @@ export default function AddEditWebhookForm({
         url: result.url,
         triggers: result.triggers,
         linkScope: result.linkScope ?? "workspace",
-        linkIds: result.linkScope === "links" ? data.linkIds ?? [] : [],
-        folderIds: result.linkScope === "folders" ? data.folderIds ?? [] : [],
+        linkIds: result.linkScope === "links" ? (data.linkIds ?? []) : [],
+        folderIds: result.linkScope === "folders" ? (data.folderIds ?? []) : [],
       });
     }
 

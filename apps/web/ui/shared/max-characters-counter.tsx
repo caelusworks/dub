@@ -17,7 +17,7 @@ export function MaxCharactersCounter({
   const value = useWatch({ control, name });
 
   return (
-    <span className={cn("text-content-subtle text-xs tabular-nums", className)}>
+    <span className={cn("text-xs tabular-nums text-content-subtle", className)}>
       {nFormatter(value?.toString().length || 0, { full: true })}
       {spaced && " "}/{spaced && " "}
       {nFormatter(maxLength, { full: true })}

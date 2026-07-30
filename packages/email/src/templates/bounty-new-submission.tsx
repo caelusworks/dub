@@ -63,7 +63,7 @@ export default function NewBountySubmission({
               <Img src={DUB_WORDMARK} height="32" alt="Dub" />
             </Section>
 
-            <Heading className="mx-0 mb-5 mt-10 p-0 text-lg font-medium text-black">
+            <Heading className="mx-0 mt-10 mb-5 p-0 text-lg font-medium text-black">
               New bounty submission
             </Heading>
 
@@ -72,7 +72,7 @@ export default function NewBountySubmission({
               requires approval.
             </Text>
 
-            <Section className="mb-8 mt-6 rounded-xl border border-solid border-neutral-200 bg-neutral-50 p-5">
+            <Section className="mt-6 mb-8 rounded-xl border border-solid border-neutral-200 bg-neutral-50 p-5">
               <div className="flex h-10 items-center">
                 <div className="relative w-fit">
                   <Img
@@ -97,7 +97,7 @@ export default function NewBountySubmission({
             <Section className="mt-6 text-center">
               <Link
                 href={`https://app.dub.co/${workspace.slug}/program/bounties/${bounty.id}?submissionId=${submission.id}`}
-                className="box-border block w-full rounded-md bg-black px-2 py-4 text-center text-sm font-medium leading-none text-white no-underline"
+                className="box-border block w-full rounded-md bg-black px-2 py-4 text-center text-sm leading-none font-medium text-white no-underline"
               >
                 Review bounty
               </Link>

@@ -243,7 +243,7 @@ function NetworkPartnerInviteDetails({
 }) {
   const [showLinkSettings, setShowLinkSettings] = useState(false);
   const countryLabel = partner.country
-    ? COUNTRIES[partner.country] ?? partner.country
+    ? (COUNTRIES[partner.country] ?? partner.country)
     : "Planet Earth";
 
   return (

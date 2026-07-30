@@ -51,11 +51,11 @@ export default function IdentityVerificationAnnouncement({
               />
             </Section>
 
-            <Heading className="mx-auto mb-2 mt-10 max-w-[436px] text-center text-2xl font-semibold leading-8 tracking-tight text-neutral-800">
+            <Heading className="mx-auto mt-10 mb-2 max-w-[436px] text-center text-2xl leading-8 font-semibold tracking-tight text-neutral-800">
               Verify your identity on Dub
             </Heading>
 
-            <Text className="mx-auto mb-10 mt-0 max-w-[436px] text-center text-base leading-6 tracking-tight text-neutral-600">
+            <Text className="mx-auto mt-0 mb-10 max-w-[436px] text-center text-base leading-6 tracking-tight text-neutral-600">
               To keep our partner network secure, please verify your identity at
               your earliest convenience.
             </Text>
@@ -73,7 +73,7 @@ export default function IdentityVerificationAnnouncement({
               />
             </Section>
 
-            <Text className="text mx-auto mb-8 mt-0 max-w-[420px] text-center text-base text-neutral-600">
+            <Text className="text mx-auto mt-0 mb-8 max-w-[420px] text-center text-base text-neutral-600">
               Verifying your identity builds trust with programs and improves
               your approval chances.
             </Text>

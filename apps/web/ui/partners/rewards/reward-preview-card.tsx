@@ -47,9 +47,9 @@ export function RewardPreviewCard() {
   });
 
   return (
-    <div className="border-border-subtle bg-bg-muted rounded-xl border shadow-sm">
+    <div className="rounded-xl border border-border-subtle bg-bg-muted shadow-sm">
       <div className="flex items-center justify-between gap-3 px-4 py-2.5">
-        <span className="text-content-emphasis flex items-center gap-2.5 text-sm font-semibold">
+        <span className="flex items-center gap-2.5 text-sm font-semibold text-content-emphasis">
           Reward preview
         </span>
         <div className="flex items-center gap-2">
@@ -66,8 +66,8 @@ export function RewardPreviewCard() {
         </div>
       </div>
 
-      <div className="border-border-subtle bg-bg-default -mx-px rounded-xl border-x border-t p-4">
-        <div className="text-content-default flex items-center gap-2">
+      <div className="-mx-px rounded-xl border-x border-t border-border-subtle bg-bg-default p-4">
+        <div className="flex items-center gap-2 text-content-default">
           <Icon className="size-4 shrink-0" />
           <span className="text-sm font-normal">
             <ProgramRewardDescription reward={reward} />
@@ -152,7 +152,7 @@ function PartnersCompactTable({
           )}
         </>
       ) : (
-        <div className="text-content-muted flex h-24 items-center justify-center text-sm">
+        <div className="flex h-24 items-center justify-center text-sm text-content-muted">
           No partners found.
         </div>
       )}
@@ -199,7 +199,7 @@ function PartnerPreviewOrCount({
           />
         ))}
         {partnersCount > 3 && (
-          <span className="text-content-subtle ml-1 text-xs">
+          <span className="ml-1 text-xs text-content-subtle">
             +{nFormatter(partnersCount - 3, { full: true })}
           </span>
         )}

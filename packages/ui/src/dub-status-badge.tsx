@@ -10,9 +10,7 @@ export function DubStatusBadge({ className }: { className?: string }) {
     ongoing_incidents: {
       name: string;
       current_worst_impact:
-        | "degraded_performance"
-        | "partial_outage"
-        | "full_outage";
+        "degraded_performance" | "partial_outage" | "full_outage";
     }[];
   }>("https://status.dub.co/api/v1/summary", fetcher);
 

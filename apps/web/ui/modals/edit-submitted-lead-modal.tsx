@@ -138,14 +138,14 @@ function EditSubmittedLeadModal({
             <div className="flex flex-col gap-4 px-4 py-6 text-left sm:px-6">
               {/* Name field */}
               <div>
-                <label className="text-content-emphasis text-sm font-normal">
+                <label className="text-sm font-normal text-content-emphasis">
                   Name
                 </label>
                 <input
                   type="text"
                   autoComplete="name"
                   autoFocus={!isMobile}
-                  className="border-border-subtle mt-2 block w-full rounded-lg text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+                  className="mt-2 block w-full rounded-lg border-border-subtle text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
                   placeholder="Jim Stephenson"
                   {...register("name", {
                     setValueAs: (value) => (value === "" ? "" : value),
@@ -155,13 +155,13 @@ function EditSubmittedLeadModal({
 
               {/* Email field */}
               <div>
-                <label className="text-content-emphasis text-sm font-normal">
+                <label className="text-sm font-normal text-content-emphasis">
                   Work email
                 </label>
                 <input
                   type="email"
                   autoComplete="email"
-                  className="border-border-subtle mt-2 block w-full rounded-lg text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+                  className="mt-2 block w-full rounded-lg border-border-subtle text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
                   placeholder="jim@nike.com"
                   {...register("email", {
                     setValueAs: (value) => (value === "" ? "" : value),
@@ -171,13 +171,13 @@ function EditSubmittedLeadModal({
 
               {/* Company field */}
               <div>
-                <label className="text-content-emphasis text-sm font-normal">
+                <label className="text-sm font-normal text-content-emphasis">
                   Company
                 </label>
                 <input
                   type="text"
                   autoComplete="organization"
-                  className="border-border-subtle mt-2 block w-full rounded-lg text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+                  className="mt-2 block w-full rounded-lg border-border-subtle text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
                   placeholder="Nike"
                   {...register("company", {
                     setValueAs: (value) => (value === "" ? "" : value),
@@ -192,11 +192,11 @@ function EditSubmittedLeadModal({
                 if (field.type === "textarea") {
                   return (
                     <div key={field.key}>
-                      <label className="text-content-emphasis text-sm font-normal">
+                      <label className="text-sm font-normal text-content-emphasis">
                         {field.label}
                       </label>
                       <textarea
-                        className="border-border-subtle mt-2 block w-full rounded-lg text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+                        className="mt-2 block w-full rounded-lg border-border-subtle text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
                         placeholder={field.label}
                         rows={3}
                         {...register(keyPath, {
@@ -210,7 +210,7 @@ function EditSubmittedLeadModal({
                 if (field.type === "country") {
                   return (
                     <div key={field.key}>
-                      <label className="text-content-emphasis text-sm font-normal">
+                      <label className="text-sm font-normal text-content-emphasis">
                         {field.label}
                       </label>
                       <Controller
@@ -237,12 +237,12 @@ function EditSubmittedLeadModal({
                 // Default: text, number, phone, date, etc.
                 return (
                   <div key={field.key}>
-                    <label className="text-content-emphasis text-sm font-normal">
+                    <label className="text-sm font-normal text-content-emphasis">
                       {field.label}
                     </label>
                     <input
                       type={getInputTypeForField(field.type)}
-                      className="border-border-subtle mt-2 block w-full rounded-lg text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+                      className="mt-2 block w-full rounded-lg border-border-subtle text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
                       placeholder={field.label}
                       {...register(keyPath, {
                         setValueAs: (value) => {

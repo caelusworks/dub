@@ -41,7 +41,7 @@ export function ApplyHeader({
 
       <Link
         href={`/${programSlug}${partnerGroupSlug}`}
-        className="animate-fade-in my-0.5 block"
+        className="my-0.5 block animate-fade-in"
       >
         {group.wordmark || group.logo ? (
           <img
@@ -60,7 +60,7 @@ export function ApplyHeader({
               type="button"
               variant="secondary"
               text="Log in"
-              className="animate-fade-in h-8 w-fit text-neutral-600"
+              className="h-8 w-fit animate-fade-in text-neutral-600"
             />
           </Link>
         )}
@@ -69,7 +69,7 @@ export function ApplyHeader({
             <Button
               type="button"
               text="Apply"
-              className="animate-fade-in h-8 w-fit border-[var(--brand)] bg-[var(--brand)] hover:bg-[var(--brand)] hover:ring-[var(--brand-ring)]"
+              className="h-8 w-fit animate-fade-in border-[var(--brand)] bg-[var(--brand)] hover:bg-[var(--brand)] hover:ring-[var(--brand-ring)]"
             />
           </Link>
         )}

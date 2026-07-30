@@ -116,7 +116,7 @@ function AdvancedUpsellModal({
       onClose={() => queryParams({ del: "showAdvancedUpsellModal" })}
       className="flex max-h-[calc(100dvh-32px)] flex-col overflow-hidden sm:max-h-[min(95dvh,720px)]"
     >
-      <div className="scrollbar-hide relative min-h-0 flex-1 overflow-y-auto overflow-x-hidden p-4 sm:p-8">
+      <div className="relative min-h-0 flex-1 overflow-y-auto overflow-x-hidden p-4 scrollbar-hide sm:p-8">
         <div className="pointer-events-none absolute inset-0 hidden overflow-hidden [mask-image:linear-gradient(black,transparent_280px)] sm:block">
           <Grid cellSize={35} patternOffset={[-29, -10]} />
         </div>
@@ -125,10 +125,10 @@ function AdvancedUpsellModal({
           <div className="flex h-5 w-fit items-center justify-center rounded-md bg-violet-100 px-2 text-xs font-semibold text-violet-600">
             Upgrade to unlock
           </div>
-          <h2 className="text-content-emphasis text-lg font-semibold">
+          <h2 className="text-lg font-semibold text-content-emphasis">
             Get even more from your partner program
           </h2>
-          <p className="text-content-subtle min-w-0 text-sm">
+          <p className="min-w-0 text-sm text-content-subtle">
             When you upgrade to Advanced, you'll get access to higher payout
             limits, and other advanced features.
           </p>
@@ -136,7 +136,7 @@ function AdvancedUpsellModal({
 
         <div className="border-default relative mt-6 flex min-w-0 flex-col rounded-xl border bg-white p-6">
           <div className="flex min-w-0 items-center justify-between gap-3">
-            <span className="text-content-emphasis text-xl font-semibold">
+            <span className="text-xl font-semibold text-content-emphasis">
               {ADVANCED_PLAN.name}
             </span>
             <label className="flex items-center gap-1.5">
@@ -158,7 +158,7 @@ function AdvancedUpsellModal({
             </label>
           </div>
 
-          <div className="text-content-default mt-0.5 flex flex-wrap items-baseline gap-x-1 text-base font-medium tabular-nums">
+          <div className="mt-0.5 flex flex-wrap items-baseline gap-x-1 text-base font-medium tabular-nums text-content-default">
             <NumberFlow
               value={ADVANCED_PLAN.price[period]!}
               format={{
@@ -168,7 +168,7 @@ function AdvancedUpsellModal({
               }}
               continuous
             />
-            <span className="text-content-muted ml-1 text-sm font-medium">
+            <span className="ml-1 text-sm font-medium text-content-muted">
               per month{period === "yearly" && ", billed yearly"}
             </span>
           </div>

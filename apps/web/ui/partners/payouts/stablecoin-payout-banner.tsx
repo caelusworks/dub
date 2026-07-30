@@ -28,7 +28,7 @@ export function StablecoinPayoutBanner() {
           >
             <div
               className={cn(
-                "border-border-subtle relative mb-4 gap-x-2 overflow-hidden rounded-xl border bg-white sm:h-12 lg:mb-6",
+                "relative mb-4 gap-x-2 overflow-hidden rounded-xl border border-border-subtle bg-white sm:h-12 lg:mb-6",
               )}
             >
               <div className="absolute inset-0">
@@ -62,10 +62,10 @@ export function StablecoinPayoutBanner() {
                   </div>
 
                   <p
-                    className="text-content-subtle flex min-w-0 flex-col px-3 text-base sm:block sm:truncate sm:px-0 sm:text-sm xl:text-base"
+                    className="flex min-w-0 flex-col px-3 text-base text-content-subtle sm:block sm:truncate sm:px-0 sm:text-sm xl:text-base"
                     title="Stablecoin payouts is here. Connect your crypto wallet and get paid in USDC."
                   >
-                    <span className="text-content-emphasis font-semibold">
+                    <span className="font-semibold text-content-emphasis">
                       Stablecoin payouts is here.
                     </span>{" "}
                     <span className="font-medium">

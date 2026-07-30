@@ -201,7 +201,7 @@ export function InviteEmailPreview({
           )}
         </div>
       </div>
-      <div className="border-border-subtle -mx-px -mb-px overflow-hidden rounded-lg border bg-white">
+      <div className="-mx-px -mb-px overflow-hidden rounded-lg border border-border-subtle bg-white">
         {isEditing ? (
           <div className="p-5">
             <div className="grid grid-cols-1 gap-5">
@@ -323,7 +323,7 @@ export function InviteEmailPreview({
                     >
                       <div className="flex h-full min-h-0 flex-col">
                         <RichTextToolbar className="border-b border-neutral-200 px-2 py-1" />
-                        <RichTextArea className="scrollbar-hide min-h-0 flex-1 overflow-auto" />
+                        <RichTextArea className="min-h-0 flex-1 overflow-auto scrollbar-hide" />
                       </div>
                     </div>
                   </RichTextProvider>
@@ -495,7 +495,7 @@ function InviteGenerationProgress({ avatar }: { avatar?: ReactNode }) {
 
         <div
           key={INVITE_GENERATION_STEPS[stepIndex]}
-          className="animate-text-appear mt-6 flex items-center gap-2 text-sm font-semibold text-neutral-900"
+          className="mt-6 flex animate-text-appear items-center gap-2 text-sm font-semibold text-neutral-900"
         >
           <Sparkle3 className="size-3.5 shrink-0 animate-pulse text-neutral-400" />
           <span

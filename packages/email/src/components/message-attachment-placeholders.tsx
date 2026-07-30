@@ -51,13 +51,13 @@ export function MessageAttachmentPlaceholders({
           <Row className="rounded-lg border border-solid border-neutral-200 bg-neutral-50 p-1 pr-3">
             <Column style={{ width: 48 }}>
               <div
-                className="flex size-12 flex-col items-center justify-center rounded-md text-[10px] font-semibold uppercase text-white"
+                className="flex size-12 flex-col items-center justify-center rounded-md text-[10px] font-semibold text-white uppercase"
                 style={{
                   backgroundColor:
                     ATTACHMENT_MIME_TYPE_COLOR[attachment.type] || "#737373",
                 }}
               >
-                <Text className="my-0 text-[10px] font-semibold uppercase text-white">
+                <Text className="my-0 text-[10px] font-semibold text-white uppercase">
                   {getAttachmentTypeLabel(attachment.type)}
                 </Text>
               </div>

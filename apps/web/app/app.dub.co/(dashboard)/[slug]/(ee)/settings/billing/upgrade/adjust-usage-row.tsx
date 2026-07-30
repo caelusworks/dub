@@ -153,7 +153,7 @@ function UsageSlider({
 
   return (
     <div className="flex flex-col">
-      <span className="text-content-default text-sm font-medium">
+      <span className="text-sm font-medium text-content-default">
         {
           {
             events: `Events tracked per ${planPeriod === "yearly" ? "year" : "month"}`,
@@ -161,7 +161,7 @@ function UsageSlider({
           }[type]
         }
       </span>
-      <span className="text-content-emphasis text-lg font-semibold">
+      <span className="text-lg font-semibold text-content-emphasis">
         <NumberFlow
           value={getPlanLimitForPeriod({
             limit: monthlySelectedValue,

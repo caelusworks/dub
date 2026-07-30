@@ -53,7 +53,7 @@ export default function DomainRenewed({
               <Img src={DUB_WORDMARK} height="32" alt="Dub" />
             </Section>
 
-            <Heading className="mx-0 mb-5 mt-10 p-0 text-lg font-semibold text-neutral-800">
+            <Heading className="mx-0 mt-10 mb-5 p-0 text-lg font-semibold text-neutral-800">
               {pluralize("Domain", domains.length)} renewed
             </Heading>
 

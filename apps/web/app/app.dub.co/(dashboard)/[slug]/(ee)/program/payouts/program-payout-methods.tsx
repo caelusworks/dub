@@ -138,10 +138,10 @@ export function ProgramPayoutMethods() {
         {!paymentMethodsLoading && displayPaymentMethods.length === 0 && (
           <div className="flex flex-col items-center justify-center rounded-lg bg-neutral-50 py-6">
             <MoneyBill className="mb-2 size-6 text-neutral-900" />
-            <h3 className="text-content-emphasis text-xs font-semibold leading-4">
+            <h3 className="text-xs font-semibold leading-4 text-content-emphasis">
               No payout methods
             </h3>
-            <p className="text-content-default text-xs font-medium leading-5">
+            <p className="text-xs font-medium leading-5 text-content-default">
               A payout method is required to pay out your partners
             </p>
           </div>
@@ -165,7 +165,7 @@ function PayoutMethodCard({
       </div>
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-1">
-          <span className="text-content-emphasis text-xs font-semibold leading-4">
+          <span className="text-xs font-semibold leading-4 text-content-emphasis">
             {title}
           </span>
           <Badge
@@ -175,7 +175,7 @@ function PayoutMethodCard({
             {badge.label}
           </Badge>
         </div>
-        <p className="text-content-subtle truncate text-xs font-medium leading-4">
+        <p className="truncate text-xs font-medium leading-4 text-content-subtle">
           {description}
         </p>
       </div>

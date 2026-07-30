@@ -90,7 +90,7 @@ function FilterRangeHeader({
       {onClear && (
         <button
           type="button"
-          className="text-content-emphasis hover:border-border-subtle flex h-7 items-center justify-center rounded-lg border border-transparent px-2.5 py-2 text-sm font-medium transition-colors"
+          className="flex h-7 items-center justify-center rounded-lg border border-transparent px-2.5 py-2 text-sm font-medium text-content-emphasis transition-colors hover:border-border-subtle"
           onClick={onClear}
           aria-label="Clear"
         >

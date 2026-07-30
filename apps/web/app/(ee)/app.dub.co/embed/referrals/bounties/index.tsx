@@ -74,8 +74,8 @@ export function ReferralsEmbedBounties() {
               const Icon = [Trophy, Trophy][idx % 2];
               return (
                 <>
-                  <Icon className="text-content-default size-4" />
-                  <div className="bg-bg-emphasis h-2.5 w-24 min-w-0 rounded-sm" />
+                  <Icon className="size-4 text-content-default" />
+                  <div className="h-2.5 w-24 min-w-0 rounded-sm bg-bg-emphasis" />
                 </>
               );
             }}

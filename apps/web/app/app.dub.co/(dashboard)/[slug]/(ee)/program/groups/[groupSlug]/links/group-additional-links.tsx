@@ -38,7 +38,7 @@ export function GroupAdditionalLinks() {
     <div className="flex flex-col divide-y divide-neutral-200 rounded-lg border border-neutral-200">
       <div className="px-6 py-6">
         <div className="flex items-center gap-2">
-          <h3 className="text-content-emphasis text-lg font-semibold leading-7">
+          <h3 className="text-lg font-semibold leading-7 text-content-emphasis">
             Additional partner links
           </h3>
           <InfoTooltip
@@ -47,7 +47,7 @@ export function GroupAdditionalLinks() {
             }
           />
         </div>
-        <p className="text-content-subtle text-sm font-normal leading-5">
+        <p className="text-sm font-normal leading-5 text-content-subtle">
           Allow and configure extra partner links
         </p>
       </div>
@@ -57,7 +57,7 @@ export function GroupAdditionalLinks() {
       ) : loading ? (
         <div className="flex h-[4.5rem] animate-pulse rounded-b-lg border-t border-neutral-200 bg-neutral-100" />
       ) : (
-        <div className="text-content-subtle h-20 text-center">
+        <div className="h-20 text-center text-content-subtle">
           Failed to load additional partner links settings
         </div>
       )}
@@ -149,7 +149,7 @@ export function GroupAdditionalLinksForm({ group }: { group: GroupProps }) {
                     />
                   ))
                 ) : (
-                  <div className="border-border-subtle text-content-subtle flex h-16 items-center gap-3 rounded-xl border bg-white p-4 text-sm">
+                  <div className="flex h-16 items-center gap-3 rounded-xl border border-border-subtle bg-white p-4 text-sm text-content-subtle">
                     No link formats configured – partners won't be able to
                     create additional links.
                   </div>
@@ -249,10 +249,10 @@ function SettingsRow({
   return (
     <div className="grid grid-cols-1 gap-10 px-6 py-8 sm:grid-cols-2">
       <div className="flex flex-col gap-1">
-        <h3 className="text-content-emphasis text-base font-semibold leading-none">
+        <h3 className="text-base font-semibold leading-none text-content-emphasis">
           {heading}
         </h3>
-        <p className="text-content-subtle text-sm">{description}</p>
+        <p className="text-sm text-content-subtle">{description}</p>
       </div>
 
       <div>{children}</div>
@@ -301,7 +301,7 @@ function LinkFormat({
   return (
     <>
       {confirmModal}
-      <div className="border-border-subtle group relative flex h-16 cursor-pointer items-center gap-3 rounded-xl border bg-white p-4 transition-all hover:border-neutral-300 hover:shadow-sm">
+      <div className="group relative flex h-16 cursor-pointer items-center gap-3 rounded-xl border border-border-subtle bg-white p-4 transition-all hover:border-neutral-300 hover:shadow-sm">
         <div
           className="flex min-w-0 flex-1 items-center gap-3"
           onClick={() => setIsOpen(true)}
@@ -320,7 +320,7 @@ function LinkFormat({
               />
             </div>
           </div>
-          <span className="text-content-default min-w-0 truncate text-sm font-semibold">
+          <span className="min-w-0 truncate text-sm font-semibold text-content-default">
             {getPrettyUrl(linkUrl)}
           </span>
         </div>

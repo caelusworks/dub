@@ -136,12 +136,12 @@ export function mergeSiteVisitTrackingSettings(
 
   const siteDomainSlug =
     patch.siteDomainSlug !== undefined
-      ? patch.siteDomainSlug ?? undefined
+      ? (patch.siteDomainSlug ?? undefined)
       : base.siteDomainSlug;
 
   const siteLinksFolderId =
     patch.siteLinksFolderId !== undefined
-      ? patch.siteLinksFolderId ?? undefined
+      ? (patch.siteLinksFolderId ?? undefined)
       : base.siteLinksFolderId;
 
   const out: SiteVisitTrackingSettingsValue = { trackedSitemaps };

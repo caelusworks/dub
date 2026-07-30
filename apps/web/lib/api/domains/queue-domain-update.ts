@@ -9,8 +9,9 @@ export const linkDomainUpdateSchema = z.object({
   startingAfter: z.string().optional(),
 });
 
-interface QueueDomainUpdateProps
-  extends z.infer<typeof linkDomainUpdateSchema> {
+interface QueueDomainUpdateProps extends z.infer<
+  typeof linkDomainUpdateSchema
+> {
   delay?: number;
 }
 

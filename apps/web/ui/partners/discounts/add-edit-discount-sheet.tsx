@@ -278,12 +278,12 @@ function DiscountSheetContent({
               </>
             }
             content={
-              <div className="border-border-subtle -mx-px rounded-xl border-x border-t bg-neutral-100 p-2.5">
+              <div className="-mx-px rounded-xl border-x border-t border-border-subtle bg-neutral-100 p-2.5">
                 <div className="space-y-4">
                   <div className="flex flex-col gap-2">
                     <label
                       htmlFor="provider"
-                      className="text-content-emphasis text-sm font-medium"
+                      className="text-sm font-medium text-content-emphasis"
                     >
                       Discount provider
                     </label>
@@ -384,7 +384,7 @@ function DiscountSheetContent({
                           <input
                             type="text"
                             id="couponId"
-                            className="border-border-subtle block w-full rounded-lg bg-white px-3 py-2 text-neutral-800 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+                            className="block w-full rounded-lg border-border-subtle bg-white px-3 py-2 text-neutral-800 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
                             {...register("couponId")}
                             placeholder="XZuejd0Q"
                             disabled={isEdit} // we don't allow updating the coupon ID for existing discounts
@@ -428,7 +428,7 @@ function DiscountSheetContent({
                             <input
                               type="text"
                               id="couponTestId"
-                              className="border-border-subtle block w-full rounded-lg px-3 py-2 text-neutral-800 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+                              className="block w-full rounded-lg border-border-subtle px-3 py-2 text-neutral-800 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
                               {...register("couponTestId")}
                               placeholder="2NMXz81x"
                             />
@@ -529,7 +529,7 @@ function DiscountSheetContent({
 
           <VerticalLine />
 
-          <div className="border-border-subtle rounded-xl border bg-white p-3 text-sm shadow-sm">
+          <div className="rounded-xl border border-border-subtle bg-white p-3 text-sm shadow-sm">
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-2">
                 <h3 className="text-sm font-medium text-neutral-900">
@@ -605,11 +605,11 @@ function DiscountSheetCard({
   return (
     <div
       className={cn(
-        "border-border-subtle rounded-xl border bg-white text-sm shadow-sm",
+        "rounded-xl border border-border-subtle bg-white text-sm shadow-sm",
         className,
       )}
     >
-      <div className="text-content-emphasis flex items-center gap-2.5 p-2.5 font-medium">
+      <div className="flex items-center gap-2.5 p-2.5 font-medium text-content-emphasis">
         {title}
       </div>
       {content && <>{content}</>}
@@ -618,7 +618,7 @@ function DiscountSheetCard({
 }
 
 const VerticalLine = () => (
-  <div className="bg-border-subtle ml-6 h-4 w-px shrink-0" />
+  <div className="ml-6 h-4 w-px shrink-0 bg-border-subtle" />
 );
 
 function AmountInput({ disabled }: { disabled?: boolean }) {

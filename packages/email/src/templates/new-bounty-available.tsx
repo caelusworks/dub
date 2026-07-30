@@ -147,7 +147,7 @@ export default function NewBountyAvailable({
               <Section className="px-6 pb-6 text-center">
                 <Link
                   href={`https://partners.dub.co/programs/${program.slug}/bounties/${bounty.id}`}
-                  className="box-border block w-full rounded-md bg-black px-2 py-4 text-center text-sm font-medium leading-none text-white no-underline"
+                  className="box-border block w-full rounded-md bg-black px-2 py-4 text-center text-sm leading-none font-medium text-white no-underline"
                 >
                   View bounty
                 </Link>

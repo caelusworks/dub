@@ -132,7 +132,7 @@ export const FolderActions = ({
       {folderPermissionsPanel}
       <Popover
         content={
-          <div className="divide-border-subtle grid w-full divide-y sm:w-52">
+          <div className="grid w-full divide-y divide-border-subtle sm:w-52">
             {!unsortedLinks && (
               <div className="flex flex-col gap-px p-2">
                 <Button

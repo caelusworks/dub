@@ -3,8 +3,8 @@
   <a href="https://dub.co/enterprise">
     <img src="https://github.com/user-attachments/assets/42cf0705-f5a2-4200-bc4a-c5acf0ba9e15" alt="Logo">
   </a>
-  
-  <a href="https://dub.co/enterprise">Get an Enterprise License</a>
+
+<a href="https://dub.co/enterprise">Get an Enterprise License</a>
 </div>
 
 # Enterprise Edition

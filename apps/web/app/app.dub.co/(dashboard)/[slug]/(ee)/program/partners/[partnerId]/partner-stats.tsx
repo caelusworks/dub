@@ -35,7 +35,7 @@ export function PartnerStats({
     <div className="@container/stats">
       <div
         className={cn(
-          "@[695px]/stats:grid-cols-6 @xs/stats:grid-cols-3 grid grid-cols-2 ring-4 ring-black/5",
+          "grid grid-cols-2 ring-4 ring-black/5 @xs/stats:grid-cols-3 @[695px]/stats:grid-cols-6",
           "gap-px overflow-hidden rounded-lg border border-neutral-200 bg-neutral-200",
         )}
       >
@@ -131,12 +131,12 @@ export function PartnerStats({
               target="_blank"
               className="group relative flex flex-col bg-white p-3 transition-colors duration-150 hover:bg-neutral-50"
             >
-              <ArrowUpRight2 className="text-content-subtle absolute right-3 top-3 size-3.5 opacity-50 transition-opacity duration-150 group-hover:opacity-100" />
+              <ArrowUpRight2 className="absolute right-3 top-3 size-3.5 text-content-subtle opacity-50 transition-opacity duration-150 group-hover:opacity-100" />
               <span className="text-xs text-neutral-500">{label}</span>
               {value === undefined ? (
                 <div className="h-5 w-16 animate-pulse rounded-md bg-neutral-200" />
               ) : (
-                <span className="text-content-emphasis text-sm font-medium">
+                <span className="text-sm font-medium text-content-emphasis">
                   {value}
                 </span>
               )}
@@ -147,7 +147,7 @@ export function PartnerStats({
                   side="top"
                   delayDuration={250}
                 >
-                  <span className="text-content-muted absolute bottom-3 right-3 max-w-[calc(100%-1.5rem)] cursor-help text-right text-[0.6875rem] leading-tight underline decoration-neutral-300/70 decoration-dotted underline-offset-2 hover:decoration-neutral-400">
+                  <span className="absolute bottom-3 right-3 max-w-[calc(100%-1.5rem)] cursor-help text-right text-[0.6875rem] leading-tight text-content-muted underline decoration-neutral-300/70 decoration-dotted underline-offset-2 hover:decoration-neutral-400">
                     Last {timeAgo(lastAt, { withAgo: true })}
                   </span>
                 </TimestampTooltip>

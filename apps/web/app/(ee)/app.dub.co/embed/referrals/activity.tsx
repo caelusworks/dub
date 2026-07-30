@@ -40,11 +40,11 @@ export function ReferralsEmbedActivity() {
   );
 
   return (
-    <div className="border-border-subtle bg-bg-default rounded-lg border sm:col-span-2">
+    <div className="rounded-lg border border-border-subtle bg-bg-default sm:col-span-2">
       {isEmpty ? (
         <EmptyState />
       ) : (
-        <div className="divide-border-subtle grid h-full grid-cols-3 divide-x">
+        <div className="grid h-full grid-cols-3 divide-x divide-border-subtle">
           {[
             {
               label: "Clicks",
@@ -72,15 +72,15 @@ export function ReferralsEmbedActivity() {
               className="relative flex flex-col justify-between p-4"
             >
               <div>
-                <span className="text-content-subtle flex items-center gap-1 text-sm">
+                <span className="flex items-center gap-1 text-sm text-content-subtle">
                   {label}
                   <InfoTooltip content={description} />
                 </span>
-                <span className="text-content-default text-base font-medium leading-none">
+                <span className="text-base font-medium leading-none text-content-default">
                   {nFormatter(value, { full: true })}
                 </span>
               </div>
-              <div className="xs:block hidden h-12">
+              <div className="hidden h-12 xs:block">
                 <MiniAreaChart
                   data={
                     analytics?.map((a) => ({
@@ -111,11 +111,11 @@ function EmptyState() {
         <EmptyStateBackground className="w-full opacity-40 dark:opacity-70" />
       </div>
       <div className="relative flex flex-col items-center p-4 text-center">
-        <CursorRays className="text-content-subtle size-5" />
-        <p className="text-content-default mt-3 text-sm font-semibold">
+        <CursorRays className="size-5 text-content-subtle" />
+        <p className="mt-3 text-sm font-semibold text-content-default">
           No activity yet
         </p>
-        <p className="text-content-subtle mt-1 text-sm font-medium">
+        <p className="mt-1 text-sm font-medium text-content-subtle">
           After your first click, your stats will show
         </p>
       </div>

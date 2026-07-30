@@ -265,7 +265,7 @@ export function SubmittedLeadTable() {
           learnMoreHref="https://dub.co/help/article/partner-rewards"
           cardContent={
             <>
-              <div className="bg-bg-emphasis h-2.5 w-24 min-w-0 rounded-sm" />
+              <div className="h-2.5 w-24 min-w-0 rounded-sm bg-bg-emphasis" />
             </>
           }
         />

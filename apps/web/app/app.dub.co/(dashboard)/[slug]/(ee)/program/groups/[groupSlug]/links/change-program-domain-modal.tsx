@@ -58,7 +58,7 @@ function ChangeProgramDomainModalInner({
       </div>
 
       <div className="bg-neutral-50 p-4 sm:p-6">
-        <div className="scrollbar-hide mb-4 flex max-h-[190px] flex-col gap-2 overflow-y-auto rounded-2xl border border-neutral-200 p-2">
+        <div className="mb-4 flex max-h-[190px] flex-col gap-2 overflow-y-auto rounded-2xl border border-neutral-200 p-2 scrollbar-hide">
           <SimpleLinkCard
             link={{
               shortLink: `https://${newDomain}`,

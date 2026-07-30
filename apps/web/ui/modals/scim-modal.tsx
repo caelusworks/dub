@@ -175,7 +175,7 @@ function SCIMModal({
                   />
                 </div>
                 <div className="mt-1 flex w-full items-center justify-between rounded-md border border-neutral-300 bg-white px-3 py-2 shadow-sm">
-                  <div className="scrollbar-hide overflow-auto">
+                  <div className="overflow-auto scrollbar-hide">
                     <p className="whitespace-nowrap text-neutral-600 sm:text-sm">
                       {scim.directories[0].scim.endpoint}
                     </p>

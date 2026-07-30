@@ -127,7 +127,7 @@ export function MessagesPanel({
         <>
           <div
             ref={scrollRef}
-            className="scrollbar-hide flex grow flex-col-reverse overflow-y-auto"
+            className="flex grow flex-col-reverse overflow-y-auto scrollbar-hide"
           >
             <div className="flex flex-col items-stretch gap-2 p-6">
               {messages?.map((message, idx) => {
@@ -171,10 +171,10 @@ export function MessagesPanel({
                     {isNewTime && (
                       <div
                         className={cn(
-                          "text-content-subtle text-center text-xs font-medium",
+                          "text-center text-xs font-medium text-content-subtle",
                           idx > 0 && "pt-5",
                           isNew && "animate-scale-in-fade",
-                          isNewDate && "text-content-default font-semibold",
+                          isNewDate && "font-semibold text-content-default",
                         )}
                       >
                         {formatDateTime(
@@ -272,11 +272,11 @@ export function MessagesPanel({
             </div>
           </div>
           {footerSlot ? (
-            <div className="border-border-subtle shrink-0 border-t">
+            <div className="shrink-0 border-t border-border-subtle">
               {footerSlot}
             </div>
           ) : (
-            <div className="border-border-subtle border-t p-3 sm:p-6">
+            <div className="border-t border-border-subtle p-3 sm:p-6">
               <MessageInput
                 placeholder={personalizedPlaceholder}
                 onSendMessage={sendMessage}
@@ -291,7 +291,7 @@ export function MessagesPanel({
           )}
         </>
       ) : error ? (
-        <div className="text-content-subtle flex size-full items-center justify-center text-sm font-medium">
+        <div className="flex size-full items-center justify-center text-sm font-medium text-content-subtle">
           Failed to load messages
         </div>
       ) : (
@@ -322,7 +322,7 @@ function StatusIndicator({
     >
       <div
         className={cn(
-          "text-content-subtle flex items-center",
+          "flex items-center text-content-subtle",
           message.readInApp
             ? "text-blue-500"
             : message.readInEmail && "text-violet-500",
@@ -407,16 +407,16 @@ function MessageHeader({
       <div className="flex items-center gap-1.5 pt-3">
         {!isMe && (
           <>
-            <span className="text-content-default min-w-0 truncate text-xs font-medium">
+            <span className="min-w-0 truncate text-xs font-medium text-content-default">
               {name}
             </span>
 
             {isCampaign && (
               <>
-                <span className="text-content-default text-xs font-medium">
+                <span className="text-xs font-medium text-content-default">
                   •
                 </span>
-                <span className="text-content-default text-xs font-medium">
+                <span className="text-xs font-medium text-content-default">
                   Email sent
                 </span>
               </>
@@ -486,8 +486,8 @@ function CampaignMessage({
           className={cn(
             "max-w-[min(100%,512px)] rounded-xl text-sm",
             isMySide
-              ? "text-content-inverted rounded-br bg-neutral-700"
-              : "text-content-default rounded-bl bg-neutral-100",
+              ? "rounded-br bg-neutral-700 text-content-inverted"
+              : "rounded-bl bg-neutral-100 text-content-default",
           )}
         >
           <button
@@ -501,13 +501,13 @@ function CampaignMessage({
             <div className="flex min-w-0 items-center gap-2">
               <Envelope
                 className={cn(
-                  "text-content-default size-4 shrink-0",
+                  "size-4 shrink-0 text-content-default",
                   isMySide && "text-content-inverted",
                 )}
               />
               <span
                 className={cn(
-                  "text-content-default truncate text-sm font-medium",
+                  "truncate text-sm font-medium text-content-default",
                   isMySide && "text-content-inverted",
                 )}
               >

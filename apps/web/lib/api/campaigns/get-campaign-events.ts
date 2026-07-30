@@ -5,8 +5,9 @@ import {
 } from "@/lib/zod/schemas/campaigns";
 import * as z from "zod/v4";
 
-interface GetCampaignEventsParams
-  extends z.infer<typeof getCampaignsEventsQuerySchema> {
+interface GetCampaignEventsParams extends z.infer<
+  typeof getCampaignsEventsQuerySchema
+> {
   campaignId: string;
   programId: string;
 }

@@ -158,7 +158,7 @@ function ConfirmSubmittedLeadStatusChangeModal({
   return (
     <Modal showModal={showModal} setShowModal={setShowModal}>
       <div className="space-y-2 border-b border-neutral-200 px-4 py-4 sm:px-6">
-        <h3 className="text-content-emphasis text-lg font-medium">
+        <h3 className="text-lg font-medium text-content-emphasis">
           Confirm stage change
         </h3>
       </div>
@@ -192,14 +192,14 @@ function ConfirmSubmittedLeadStatusChangeModal({
 
             {visibleFields.has("externalId") && (
               <div>
-                <label className="text-content-emphasis text-sm font-medium">
+                <label className="text-sm font-medium text-content-emphasis">
                   External ID (optional)
                 </label>
                 <input
                   type="text"
                   autoComplete="off"
                   className={cn(
-                    "border-border-subtle mt-2 block w-full rounded-lg text-neutral-900 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm",
+                    "mt-2 block w-full rounded-lg border-border-subtle text-neutral-900 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm",
                     errors.externalId &&
                       "border-red-600 focus:border-red-500 focus:ring-red-600",
                   )}
@@ -208,7 +208,7 @@ function ConfirmSubmittedLeadStatusChangeModal({
                     setValueAs: (value) => (value === "" ? undefined : value),
                   })}
                 />
-                <p className="text-content-subtle mt-1 text-xs">
+                <p className="mt-1 text-xs text-content-subtle">
                   The customer's external ID. If not provided, the lead email
                   will be used.
                 </p>
@@ -217,7 +217,7 @@ function ConfirmSubmittedLeadStatusChangeModal({
 
             {visibleFields.has("saleAmount") && (
               <div>
-                <label className="text-content-emphasis text-sm font-medium">
+                <label className="text-sm font-medium text-content-emphasis">
                   Sale Amount
                 </label>
                 <div className="relative mt-2">
@@ -229,7 +229,7 @@ function ConfirmSubmittedLeadStatusChangeModal({
                     step="0.01"
                     min="0"
                     className={cn(
-                      "border-border-subtle block w-full rounded-lg pl-6 pr-12 text-neutral-900 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm",
+                      "block w-full rounded-lg border-border-subtle pl-6 pr-12 text-neutral-900 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm",
                       errors.saleAmount &&
                         "border-red-600 focus:border-red-500 focus:ring-red-600",
                     )}
@@ -254,7 +254,7 @@ function ConfirmSubmittedLeadStatusChangeModal({
                     {errors.saleAmount.message}
                   </p>
                 ) : (
-                  <p className="text-content-subtle mt-1 text-xs">
+                  <p className="mt-1 text-xs text-content-subtle">
                     This will also be recorded as a sale commission (if
                     applicable)
                   </p>
@@ -263,13 +263,13 @@ function ConfirmSubmittedLeadStatusChangeModal({
             )}
 
             <div>
-              <label className="text-content-emphasis text-sm font-medium">
+              <label className="text-sm font-medium text-content-emphasis">
                 Notes for the partner (optional)
               </label>
               <textarea
                 rows={2}
                 className={cn(
-                  "border-border-subtle mt-2 block w-full rounded-lg text-neutral-900 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm",
+                  "mt-2 block w-full rounded-lg border-border-subtle text-neutral-900 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm",
                   errors.notes &&
                     "border-red-600 focus:border-red-500 focus:ring-red-600",
                 )}
@@ -302,14 +302,14 @@ function ConfirmSubmittedLeadStatusChangeModal({
                     visibleFields.has("stripeCustomerId") && (
                       <div className="mt-4 p-px">
                         <div>
-                          <label className="text-content-emphasis text-sm font-medium">
+                          <label className="text-sm font-medium text-content-emphasis">
                             Stripe Customer ID (optional)
                           </label>
                           <input
                             type="text"
                             autoComplete="off"
                             className={cn(
-                              "border-border-subtle mt-2 block w-full rounded-lg text-neutral-900 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm",
+                              "mt-2 block w-full rounded-lg border-border-subtle text-neutral-900 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm",
                               errors.stripeCustomerId &&
                                 "border-red-600 focus:border-red-500 focus:ring-red-600",
                             )}
@@ -318,7 +318,7 @@ function ConfirmSubmittedLeadStatusChangeModal({
                                 value === "" ? undefined : value,
                             })}
                           />
-                          <p className="text-content-subtle mt-1 text-xs">
+                          <p className="mt-1 text-xs text-content-subtle">
                             The customer's Stripe Customer ID
                           </p>
                         </div>

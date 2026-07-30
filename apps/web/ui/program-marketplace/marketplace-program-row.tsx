@@ -89,13 +89,13 @@ export function MarketplaceProgramRow({
     <div className="flex flex-col gap-4">
       <Carousel opts={{ align: "start", dragFree: true }}>
         <div className="flex items-center justify-between gap-4">
-          <h2 className="text-content-emphasis text-[18px] font-semibold">
+          <h2 className="text-[18px] font-semibold text-content-emphasis">
             {title}
           </h2>
           <div className="flex items-center gap-2">
             <Link
               href={viewAllHref}
-              className="text-content-emphasis text-sm font-medium transition-colors hover:text-neutral-500"
+              className="text-sm font-medium text-content-emphasis transition-colors hover:text-neutral-500"
             >
               View all
             </Link>

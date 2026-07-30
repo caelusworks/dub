@@ -176,7 +176,7 @@ export function MessageInput({
   return (
     <div
       className={cn(
-        "border-border-subtle relative overflow-hidden rounded-xl border focus-within:border-neutral-500 focus-within:ring-1 focus-within:ring-neutral-500",
+        "relative overflow-hidden rounded-xl border border-border-subtle focus-within:border-neutral-500 focus-within:ring-1 focus-within:ring-neutral-500",
         className,
       )}
       onDragOver={(e) => {
@@ -263,7 +263,7 @@ export function MessageInput({
 
         {/* Attachment preview strip */}
         {attachments.length > 0 && (
-          <div className="scrollbar-hide flex gap-2 overflow-x-auto px-3 py-2">
+          <div className="flex gap-2 overflow-x-auto px-3 py-2 scrollbar-hide">
             {attachments.map((att) => (
               <AttachmentChip
                 key={att.id}
@@ -535,14 +535,14 @@ function MessageInputEditorOverflowFades() {
       <div
         aria-hidden
         className={cn(
-          "from-bg-default pointer-events-none absolute inset-x-0 top-0 z-[1] h-[20px] bg-gradient-to-b to-transparent transition-opacity duration-150 ease-out",
+          "pointer-events-none absolute inset-x-0 top-0 z-[1] h-[20px] bg-gradient-to-b from-bg-default to-transparent transition-opacity duration-150 ease-out",
           showTopFade ? "opacity-100" : "opacity-0",
         )}
       />
       <div
         aria-hidden
         className={cn(
-          "from-bg-default pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[20px] bg-gradient-to-t to-transparent transition-opacity duration-150 ease-out",
+          "pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[20px] bg-gradient-to-t from-bg-default to-transparent transition-opacity duration-150 ease-out",
           showBottomFade ? "opacity-100" : "opacity-0",
         )}
       />

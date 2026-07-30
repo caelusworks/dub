@@ -70,7 +70,7 @@ export const SignUpEmail = () => {
     <form onSubmit={onSubmit}>
       <div className="flex flex-col gap-y-6">
         <label>
-          <span className="text-content-emphasis mb-2 block text-sm font-medium leading-none">
+          <span className="mb-2 block text-sm font-medium leading-none text-content-emphasis">
             {subdomain === "partners" ? "Email" : "Work email"}
           </span>
           <Input
@@ -86,7 +86,7 @@ export const SignUpEmail = () => {
         </label>
         {showPassword && (
           <label>
-            <span className="text-content-emphasis mb-2 block text-sm font-medium leading-none">
+            <span className="mb-2 block text-sm font-medium leading-none text-content-emphasis">
               Password
             </span>
             <Input

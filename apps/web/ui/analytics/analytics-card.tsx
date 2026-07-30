@@ -40,8 +40,7 @@ export function AnalyticsCard<T extends string>({
   subTabs?: { id: string; label: string }[];
   selectedSubTabId?: string;
   onSelectSubTab?:
-    | Dispatch<SetStateAction<string>>
-    | ((subTabId: string) => void);
+    Dispatch<SetStateAction<string>> | ((subTabId: string) => void);
   expandLimit: number;
   dataLength?: number;
   isFilterActive?: boolean;
@@ -192,7 +191,7 @@ export function AnalyticsCard<T extends string>({
                 className={cn(
                   "h-8 w-fit rounded-lg px-3 text-sm transition-colors",
                   isFilterActive
-                    ? "text-content-inverted hover:bg-inverted hover:ring-border-subtle border-black bg-black hover:ring-4"
+                    ? "hover:bg-inverted border-black bg-black text-content-inverted hover:ring-4 hover:ring-border-subtle"
                     : "border border-neutral-200 bg-white text-neutral-950 hover:bg-neutral-100 active:border-neutral-300",
                 )}
               >

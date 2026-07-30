@@ -28,17 +28,17 @@ export function CommissionsBlock() {
       title="Recent commissions"
       viewAllHref={`/${workspaceSlug}/program/commissions`}
     >
-      <div className="divide-border-subtle @2xl:h-60 flex h-auto flex-col divide-y">
+      <div className="flex h-auto flex-col divide-y divide-border-subtle @2xl:h-60">
         {isLoading ? (
           <div className="flex size-full items-center justify-center py-4">
             <LoadingSpinner />
           </div>
         ) : error ? (
-          <div className="text-content-subtle flex size-full items-center justify-center py-4 text-xs">
+          <div className="flex size-full items-center justify-center py-4 text-xs text-content-subtle">
             Failed to load data
           </div>
         ) : data?.length === 0 ? (
-          <div className="text-content-subtle flex size-full items-center justify-center py-4 text-xs">
+          <div className="flex size-full items-center justify-center py-4 text-xs text-content-subtle">
             No commissions found
           </div>
         ) : (
@@ -49,12 +49,12 @@ export function CommissionsBlock() {
               <Link
                 key={id}
                 href={`/${workspaceSlug}/program/commissions/${id}`}
-                className="text-content-default group flex h-10 items-center justify-between text-xs font-medium"
+                className="group flex h-10 items-center justify-between text-xs font-medium text-content-default"
               >
                 <div className="flex min-w-0 items-center gap-2">
                   <PartnerAvatar partner={partner} className="size-4" />
                   <span className="min-w-0 truncate">{partner.name}</span>
-                  <ArrowRight className="text-content-emphasis size-2.5 -translate-x-0.5 opacity-0 transition-[opacity,transform] group-hover:translate-x-0 group-hover:opacity-100 [&_*]:stroke-2" />
+                  <ArrowRight className="size-2.5 -translate-x-0.5 text-content-emphasis opacity-0 transition-[opacity,transform] group-hover:translate-x-0 group-hover:opacity-100 [&_*]:stroke-2" />
                 </div>
 
                 <div className="flex items-center gap-2">

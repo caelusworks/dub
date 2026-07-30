@@ -63,7 +63,7 @@ export function useCommissionsAnalyticsQuery() {
 
   const { interval, start, end } = searchParamsObj;
   const resolvedInterval =
-    start && end ? undefined : interval ?? DUB_PARTNERS_ANALYTICS_INTERVAL;
+    start && end ? undefined : (interval ?? DUB_PARTNERS_ANALYTICS_INTERVAL);
   const resolvedStart = start ? new Date(start) : undefined;
   const resolvedEnd = end ? new Date(end) : undefined;
 

@@ -99,10 +99,10 @@ export function EmbedBountyPerformanceSection({
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-3">
-        <h2 className="text-content-emphasis text-sm font-semibold">
+        <h2 className="text-sm font-semibold text-content-emphasis">
           Performance
         </h2>
-        <div className="border-border-subtle bg-bg-default rounded-xl border p-5">
+        <div className="rounded-xl border border-border-subtle bg-bg-default p-5">
           <EmbedBountyPerformanceChart
             bounty={bounty}
             programEnrollment={programEnrollment}
@@ -126,8 +126,7 @@ function EmbedBountyPerformanceChart({
 }) {
   const token = useEmbedToken();
   const attribute = bounty.performanceCondition?.attribute as
-    | PerformanceAttribute
-    | undefined;
+    PerformanceAttribute | undefined;
   const isCurrency = attribute ? isCurrencyAttribute(attribute) : false;
   const isCommissions = attribute === "totalCommissions";
 
@@ -241,10 +240,10 @@ function EmbedBountyPerformanceChart({
           ]}
           tooltipContent={(d) => (
             <div className="flex justify-between gap-6 whitespace-nowrap p-2 text-xs leading-none">
-              <span className="text-content-default font-medium">
+              <span className="font-medium text-content-default">
                 {formatDateTooltip(d.date, {})}
               </span>
-              <p className="text-content-subtle text-right">
+              <p className="text-right text-content-subtle">
                 {isCurrency
                   ? currencyFormatter(d.values.main)
                   : nFormatter(d.values.main)}
@@ -258,7 +257,7 @@ function EmbedBountyPerformanceChart({
       ) : (
         <div className="flex size-full items-center justify-center">
           {error ? (
-            <span className="text-content-subtle text-sm">
+            <span className="text-sm text-content-subtle">
               Failed to load data.
             </span>
           ) : (
@@ -278,8 +277,7 @@ function EmbedBountyPerformanceTable({
   programEnrollment: Pick<ProgramEnrollmentProps, "createdAt">;
 }) {
   const attribute = bounty.performanceCondition?.attribute as
-    | PerformanceAttribute
-    | undefined;
+    PerformanceAttribute | undefined;
 
   if (attribute === "totalCommissions") {
     return (
@@ -454,7 +452,7 @@ function EmbedBountyEventsTable({
                 className="truncate"
               >
                 <span
-                  className="text-content-default truncate"
+                  className="truncate text-content-default"
                   title={row.original.link.shortLink}
                 >
                   {getPrettyUrl(row.original.link.shortLink)}
@@ -492,7 +490,7 @@ function EmbedBountyEventsTable({
       cn("border-l-transparent", columnId === "customer" && "p-0"),
     resourceName: () => metricLabel,
     emptyState: (
-      <div className="text-content-subtle text-sm">
+      <div className="text-sm text-content-subtle">
         No {metricLabel} recorded yet
       </div>
     ),
@@ -501,7 +499,7 @@ function EmbedBountyEventsTable({
 
   return (
     <div className="flex flex-col gap-3">
-      <h2 className="text-content-emphasis text-sm font-semibold leading-7 tracking-[-0.36px]">
+      <h2 className="text-sm font-semibold leading-7 tracking-[-0.36px] text-content-emphasis">
         {tableTitle}
       </h2>
       <Table
@@ -665,7 +663,7 @@ function EmbedBountyCommissionsTable({
       cn("border-l-transparent", columnId === "customer" && "p-0"),
     resourceName: () => "commissions",
     emptyState: (
-      <div className="text-content-subtle text-sm">
+      <div className="text-sm text-content-subtle">
         No commissions recorded yet
       </div>
     ),
@@ -674,7 +672,7 @@ function EmbedBountyCommissionsTable({
 
   return (
     <div className="flex flex-col gap-3">
-      <h2 className="text-content-emphasis text-sm font-semibold leading-7 tracking-[-0.36px]">
+      <h2 className="text-sm font-semibold leading-7 tracking-[-0.36px] text-content-emphasis">
         Commissions earned
       </h2>
       <Table

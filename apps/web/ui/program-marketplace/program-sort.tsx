@@ -62,7 +62,7 @@ export default function ProgramSort({
           "focus-visible:border-neutral-500 data-[state=open]:border-neutral-500 data-[state=open]:ring-4 data-[state=open]:ring-neutral-200",
         )}
       >
-        <span className="text-content-emphasis flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-left">
+        <span className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-left text-content-emphasis">
           Sort by{" "}
           <strong className="font-semibold">{selectedSort.label}</strong>
         </span>

@@ -104,12 +104,12 @@ export function PartnerMessagesProgramPageClient() {
       <div className="flex size-full flex-col items-center justify-center px-4">
         <MsgsDotted className="size-10 text-neutral-700" />
         <div className="mt-6 max-w-md text-center">
-          <span className="text-content-emphasis text-base font-semibold">
+          <span className="text-base font-semibold text-content-emphasis">
             {isBannedOrRejected
               ? `This program has ${programEnrollment?.status} you`
               : "This program uses external support"}
           </span>
-          <p className="text-content-subtle text-sm font-medium">
+          <p className="text-sm font-medium text-content-subtle">
             {isBannedOrRejected
               ? "For more information, please contact the program via email."
               : "You can contact them directly via email."}
@@ -236,12 +236,12 @@ export function PartnerMessagesProgramPageClient() {
       }}
     >
       <div className="flex h-full min-h-0 flex-col">
-        <div className="border-border-subtle flex h-12 shrink-0 items-center justify-between gap-4 border-b px-4 sm:h-16 sm:px-6">
+        <div className="flex h-12 shrink-0 items-center justify-between gap-4 border-b border-border-subtle px-4 sm:h-16 sm:px-6">
           <div className="flex min-w-0 items-center gap-2">
             <button
               type="button"
               onClick={() => setCurrentPanel("index")}
-              className="@[800px]/page:hidden shrink-0 rounded-lg p-1.5 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
+              className="shrink-0 rounded-lg p-1.5 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900 @[800px]/page:hidden"
             >
               <ChevronLeft className="size-3.5" />
             </button>
@@ -264,7 +264,7 @@ export function PartnerMessagesProgramPageClient() {
                       alt={`${program?.name} logo`}
                       className="size-7 shrink-0 rounded-full"
                     />
-                    <h2 className="text-content-emphasis text-lg font-semibold leading-7">
+                    <h2 className="text-lg font-semibold leading-7 text-content-emphasis">
                       {program?.name ?? "Program"}
                     </h2>
                   </>
@@ -393,13 +393,13 @@ export function PartnerMessagesProgramPageClient() {
       <div
         className={cn(
           "absolute right-0 top-0 h-full min-h-0 w-0 overflow-hidden bg-white shadow-lg transition-[width]",
-          "@[1082px]/page:shadow-none @[1082px]/page:relative",
+          "@[1082px]/page:relative @[1082px]/page:shadow-none",
           isRightPanelOpen && "w-full sm:w-[400px]",
         )}
       >
-        <div className="border-border-subtle flex size-full min-h-0 w-full flex-col border-l sm:w-[400px]">
-          <div className="border-border-subtle flex h-12 shrink-0 items-center justify-between gap-4 border-b px-4 sm:h-16 sm:px-6">
-            <h2 className="text-content-emphasis text-lg font-semibold leading-7">
+        <div className="flex size-full min-h-0 w-full flex-col border-l border-border-subtle sm:w-[400px]">
+          <div className="flex h-12 shrink-0 items-center justify-between gap-4 border-b border-border-subtle px-4 sm:h-16 sm:px-6">
+            <h2 className="text-lg font-semibold leading-7 text-content-emphasis">
               Program
             </h2>
             <div className="flex items-center gap-2">
@@ -407,13 +407,13 @@ export function PartnerMessagesProgramPageClient() {
               <button
                 type="button"
                 onClick={() => setIsRightPanelOpen(false)}
-                className="@[1082px]/page:hidden rounded-lg p-2 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
+                className="rounded-lg p-2 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900 @[1082px]/page:hidden"
               >
                 <X className="size-4" />
               </button>
             </div>
           </div>
-          <div className="bg-bg-muted scrollbar-hide flex grow flex-col overflow-y-scroll">
+          <div className="flex grow flex-col overflow-y-scroll bg-bg-muted scrollbar-hide">
             {programEnrollmentLoading ? (
               <ProgramInfoPanelSkeleton />
             ) : programEnrollment ? (
@@ -447,7 +447,7 @@ function ProgramInfoPanel({
   return (
     <>
       {/* Program info */}
-      <div className="border-border-subtle relative shrink-0 overflow-hidden border-b">
+      <div className="relative shrink-0 overflow-hidden border-b border-border-subtle">
         <div className="absolute inset-y-0 right-0 w-96 [mask-image:radial-gradient(100%_100%_at_100%_0%,black_30%,transparent)]">
           <Grid cellSize={20} className="text-neutral-200" />
         </div>
@@ -458,10 +458,10 @@ function ProgramInfoPanel({
             className="size-10 rounded-full"
           />
           <div className="flex flex-col">
-            <span className="text-content-emphasis block truncate text-lg font-semibold">
+            <span className="block truncate text-lg font-semibold text-content-emphasis">
               {program.name}
             </span>
-            <span className="text-content-subtle text-sm font-medium">
+            <span className="text-sm font-medium text-content-subtle">
               {INACTIVE_ENROLLMENT_STATUSES.includes(programEnrollment.status)
                 ? `You are ${programEnrollment.status} from this program`
                 : `Partner since ${formatDate(programEnrollment.createdAt)}`}
@@ -476,7 +476,7 @@ function ProgramInfoPanel({
         !INACTIVE_ENROLLMENT_STATUSES.includes(programEnrollment.status) && (
           <div className="pl-6 pr-6 pt-7">
             <div className="flex items-end justify-between">
-              <h3 className="text-content-emphasis text-sm font-semibold">
+              <h3 className="text-sm font-semibold text-content-emphasis">
                 Referral link
               </h3>
               <Link
@@ -493,7 +493,7 @@ function ProgramInfoPanel({
                 type="text"
                 readOnly
                 value={getPrettyUrl(partnerLink)}
-                className="text-content-default focus:border-border-emphasis bg-bg-default block h-11 w-full rounded-xl border border-neutral-200 pl-3 pr-12 text-sm focus:outline-none focus:ring-neutral-500"
+                className="block h-11 w-full rounded-xl border border-neutral-200 bg-bg-default pl-3 pr-12 text-sm text-content-default focus:border-border-emphasis focus:outline-none focus:ring-neutral-500"
               />
               {/* Gradient fade overlay */}
               <div className="pointer-events-none absolute right-12 top-1 h-8 w-10 bg-gradient-to-r from-transparent to-white" />
@@ -530,18 +530,18 @@ function ProgramInfoPanel({
 
       {/* Stats */}
       <div className="pl-6 pr-6 pt-7">
-        <h3 className="text-content-emphasis text-sm font-semibold">
+        <h3 className="text-sm font-semibold text-content-emphasis">
           Performance
         </h3>
-        <div className="divide-border-subtle border-border-subtle mt-2 divide-y rounded-xl border">
-          <div className="divide-border-subtle grid grid-cols-3 divide-x">
+        <div className="mt-2 divide-y divide-border-subtle rounded-xl border border-border-subtle">
+          <div className="grid grid-cols-3 divide-x divide-border-subtle">
             {["clicks", "leads", "sales"].map((event) => (
               <div key={event} className="flex flex-col px-3 py-2.5">
-                <span className="text-content-subtle text-xs font-medium">
+                <span className="text-xs font-medium text-content-subtle">
                   {capitalize(event)}
                 </span>
                 {statsTotals ? (
-                  <span className="text-content-emphasis text-sm font-medium">
+                  <span className="text-sm font-medium text-content-emphasis">
                     {nFormatter(statsTotals?.[event], { full: true })}
                   </span>
                 ) : (
@@ -550,17 +550,17 @@ function ProgramInfoPanel({
               </div>
             ))}
           </div>
-          <div className="divide-border-subtle grid grid-cols-2 divide-x">
+          <div className="grid grid-cols-2 divide-x divide-border-subtle">
             {[
               { label: "Revenue", value: statsTotals?.saleAmount },
               { label: "Earnings", value: programEnrollment.totalCommissions },
             ].map(({ label, value }) => (
               <div key={label} className="flex flex-col px-3 py-2.5">
-                <span className="text-content-subtle text-xs font-medium">
+                <span className="text-xs font-medium text-content-subtle">
                   {label}
                 </span>
                 {value !== undefined ? (
-                  <span className="text-content-emphasis text-sm font-medium">
+                  <span className="text-sm font-medium text-content-emphasis">
                     {currencyFormatter(value)}
                   </span>
                 ) : (
@@ -575,7 +575,7 @@ function ProgramInfoPanel({
       {/* Rewards */}
       {!INACTIVE_ENROLLMENT_STATUSES.includes(programEnrollment.status) && (
         <div className="pl-6 pr-6 pt-7">
-          <h3 className="text-content-emphasis text-sm font-semibold">
+          <h3 className="text-sm font-semibold text-content-emphasis">
             Rewards
           </h3>
           <div className="mt-1">
@@ -589,7 +589,7 @@ function ProgramInfoPanel({
 
       {/* Help & support */}
       <div className="border-border-subtle pl-6 pr-6 pt-7">
-        <h3 className="text-content-emphasis text-sm font-semibold">
+        <h3 className="text-sm font-semibold text-content-emphasis">
           Help and support
         </h3>
         <div className="-ml-2 mt-1">
@@ -604,7 +604,7 @@ function ProgramInfoPanelSkeleton() {
   return (
     <>
       {/* Program info skeleton */}
-      <div className="border-border-subtle relative shrink-0 overflow-hidden border-b">
+      <div className="relative shrink-0 overflow-hidden border-b border-border-subtle">
         <div className="absolute inset-y-0 right-0 w-96 [mask-image:radial-gradient(100%_100%_at_100%_0%,black_30%,transparent)]">
           <Grid cellSize={20} className="text-neutral-200" />
         </div>
@@ -631,8 +631,8 @@ function ProgramInfoPanelSkeleton() {
       {/* Stats skeleton */}
       <div className="pl-6 pr-6 pt-7">
         <div className="h-5 w-24 animate-pulse rounded-md bg-neutral-200" />
-        <div className="divide-border-subtle border-border-subtle mt-2 divide-y rounded-xl border">
-          <div className="divide-border-subtle grid grid-cols-3 divide-x">
+        <div className="mt-2 divide-y divide-border-subtle rounded-xl border border-border-subtle">
+          <div className="grid grid-cols-3 divide-x divide-border-subtle">
             {[...Array(3)].map((_, idx) => (
               <div key={idx} className="flex flex-col px-3 py-2.5">
                 <div className="h-3 w-12 animate-pulse rounded-md bg-neutral-200" />
@@ -640,7 +640,7 @@ function ProgramInfoPanelSkeleton() {
               </div>
             ))}
           </div>
-          <div className="divide-border-subtle grid grid-cols-2 divide-x">
+          <div className="grid grid-cols-2 divide-x divide-border-subtle">
             {[...Array(2)].map((_, idx) => (
               <div key={idx} className="flex flex-col px-3 py-2.5">
                 <div className="h-3 w-16 animate-pulse rounded-md bg-neutral-200" />

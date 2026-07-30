@@ -113,7 +113,9 @@ export function TopLinks() {
 
   const activeFilterValues = useMemo(
     () =>
-      filterParamKey ? searchParams.get(filterParamKey)?.split(",") ?? [] : [],
+      filterParamKey
+        ? (searchParams.get(filterParamKey)?.split(",") ?? [])
+        : [],
     [filterParamKey, searchParams],
   );
 

@@ -96,7 +96,7 @@ export default function ClicksSummary({
               created <strong>{createdLinks} new links</strong> during that
               time.
             </Text>
-            <Section className="rounded-lg border border-solid border-neutral-200 pb-2 pt-6">
+            <Section className="rounded-lg border border-solid border-neutral-200 pt-6 pb-2">
               <Row>
                 <Column align="center">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-200">

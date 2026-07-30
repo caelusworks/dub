@@ -96,7 +96,7 @@ function TransferDomainModalInner({
           links and is irreversible – please proceed with caution.
         </p>
 
-        <div className="scrollbar-hide mt-4 flex max-h-[190px] flex-col gap-2 overflow-y-auto rounded-2xl border border-neutral-200 p-2">
+        <div className="mt-4 flex max-h-[190px] flex-col gap-2 overflow-y-auto rounded-2xl border border-neutral-200 p-2 scrollbar-hide">
           <div className="flex items-center space-x-2 rounded-lg bg-white p-3">
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-100">
               <Globe className="size-4 rounded-full" />

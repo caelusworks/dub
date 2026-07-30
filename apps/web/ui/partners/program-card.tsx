@@ -174,7 +174,7 @@ export function ProgramCard({
   return (
     <Link
       href={`/programs/${program.slug}`}
-      className="hover:drop-shadow-card-hover flex h-full flex-col justify-between rounded-xl border border-neutral-200 bg-white p-5 transition-[filter]"
+      className="flex h-full flex-col justify-between rounded-xl border border-neutral-200 bg-white p-5 transition-[filter] hover:drop-shadow-card-hover"
     >
       <div>
         <BlurImage

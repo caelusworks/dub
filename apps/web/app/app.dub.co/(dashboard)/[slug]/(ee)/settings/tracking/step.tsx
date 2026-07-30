@@ -46,11 +46,11 @@ const Step = ({
           }}
         >
           <div>
-            <div className="text-content-emphasis text-base font-semibold">
+            <div className="text-base font-semibold text-content-emphasis">
               {title}
             </div>
             {subtitle && (
-              <div className="text-content-subtle text-sm font-medium">
+              <div className="text-sm font-medium text-content-subtle">
                 {subtitle}
               </div>
             )}
@@ -58,10 +58,10 @@ const Step = ({
 
           <Button
             variant="plain"
-            className="hover:bg-bg-subtle group-hover/step-header:bg-bg-subtle group size-8 w-fit rounded-full border-none px-2"
+            className="group size-8 w-fit rounded-full border-none px-2 hover:bg-bg-subtle group-hover/step-header:bg-bg-subtle"
             data-state={expanded ? "open" : "closed"}
             text={
-              <ChevronRight className="text-content-emphasis size-4 transition-transform duration-75 group-data-[state=open]:rotate-90" />
+              <ChevronRight className="size-4 text-content-emphasis transition-transform duration-75 group-data-[state=open]:rotate-90" />
             }
             onClick={() => toggleExpanded()}
           />
@@ -109,7 +109,7 @@ const StepNumber = ({
       {complete ? (
         <Check2 className="size-4 text-green-800" />
       ) : (
-        <span className="text-content-default text-base font-semibold">
+        <span className="text-base font-semibold text-content-default">
           {number}
         </span>
       )}

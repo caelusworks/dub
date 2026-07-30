@@ -118,7 +118,7 @@ export function PartnerComments({ partnerId }: { partnerId: string }) {
         ) : loading ? (
           <CommentCard partnerId={partnerId} className="opacity-50" />
         ) : (
-          <div className="text-content-muted py-4 text-center text-xs">
+          <div className="py-4 text-center text-xs text-content-muted">
             Failed to load comments
           </div>
         )}
@@ -173,7 +173,7 @@ function CommentCard({
   return (
     <div
       className={cn(
-        "border-border-subtle rounded-xl border pb-4 pl-4 pr-3.5 pt-2.5 shadow-sm",
+        "rounded-xl border border-border-subtle pb-4 pl-4 pr-3.5 pt-2.5 shadow-sm",
         className,
       )}
     >
@@ -190,11 +190,11 @@ function CommentCard({
           )}
           {comment ? (
             <>
-              <span className="text-content-emphasis text-xs font-semibold">
+              <span className="text-xs font-semibold text-content-emphasis">
                 {comment.user.name}
               </span>
-              <div className="bg-content-muted size-0.5 shrink-0 rounded-full" />
-              <span className="text-content-subtle text-xs">
+              <div className="size-0.5 shrink-0 rounded-full bg-content-muted" />
+              <span className="text-xs text-content-subtle">
                 {new Date().getTime() - timestamp!.getTime() <
                 1000 * 60 * 60 * 24
                   ? timestamp!.toLocaleTimeString("en-US", {
@@ -264,7 +264,7 @@ function CommentCard({
               variant="secondary"
               className={cn(
                 "size-7 p-0",
-                "data-[state=open]:border-border-emphasis sm:group-hover/card:data-[state=closed]:border-border-subtle border-transparent",
+                "border-transparent data-[state=open]:border-border-emphasis sm:group-hover/card:data-[state=closed]:border-border-subtle",
               )}
               icon={
                 isDeleting ? (
@@ -356,7 +356,7 @@ function CommentCard({
               ) : (
                 <ReactMarkdown
                   className={cn(
-                    "prose prose-sm text-content-default break-words font-normal",
+                    "prose prose-sm break-words font-normal text-content-default",
                     PROSE_STYLES.condensed,
                     "prose-a:font-medium prose-a:underline-offset-4",
                   )}
@@ -410,7 +410,7 @@ export function CommentCardDisplay({
   return (
     <div
       className={cn(
-        "border-border-subtle rounded-lg border pl-4 pr-3.5",
+        "rounded-lg border border-border-subtle pl-4 pr-3.5",
         user ? "pb-4 pt-2.5" : "px-3 py-2",
         className,
       )}
@@ -422,11 +422,11 @@ export function CommentCardDisplay({
             alt={`${user.name} avatar`}
             className="size-4 shrink-0 rounded-full"
           />
-          <span className="text-content-emphasis text-xs font-semibold">
+          <span className="text-xs font-semibold text-content-emphasis">
             {user.name}
           </span>
-          <div className="bg-content-muted size-0.5 shrink-0 rounded-full" />
-          <span className="text-content-subtle text-xs">
+          <div className="size-0.5 shrink-0 rounded-full bg-content-muted" />
+          <span className="text-xs text-content-subtle">
             {new Date().getTime() - ts.getTime() < 1000 * 60 * 60 * 24
               ? ts.toLocaleTimeString("en-US", {
                   hour: "numeric",
@@ -442,7 +442,7 @@ export function CommentCardDisplay({
           </span>
         </div>
       )}
-      <p className="prose prose-sm text-content-default break-words font-normal">
+      <p className="prose prose-sm break-words font-normal text-content-default">
         {text}
       </p>
     </div>

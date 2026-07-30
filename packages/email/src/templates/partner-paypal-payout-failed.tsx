@@ -74,7 +74,7 @@ export default function PartnerPaypalPayoutFailed({
             {payout.failureReason && (
               <Text className="text-sm leading-6 text-neutral-600">
                 Reason:{" "}
-                <span className="font-semibold italic text-neutral-800">
+                <span className="font-semibold text-neutral-800 italic">
                   {payout.failureReason}
                 </span>
               </Text>

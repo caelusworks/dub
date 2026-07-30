@@ -82,10 +82,10 @@ function DisableRiskRulesModal({
   return (
     <Modal showModal={showModal} setShowModal={setShowModal}>
       <div className="p-5 text-left">
-        <h3 className="text-content-emphasis text-base font-semibold">
+        <h3 className="text-base font-semibold text-content-emphasis">
           Confirm disabling rules
         </h3>
-        <div className="text-content-subtle mt-1 text-sm">
+        <div className="mt-1 text-sm text-content-subtle">
           Are you sure you want to disable these rules?
         </div>
       </div>
@@ -104,7 +104,7 @@ function DisableRiskRulesModal({
                   <h4 className="text-sm font-semibold text-neutral-900">
                     {ruleInfo.name}
                   </h4>
-                  <p className="text-content-subtle mt-0.5 text-xs font-normal tracking-normal">
+                  <p className="mt-0.5 text-xs font-normal tracking-normal text-content-subtle">
                     {ruleInfo.description}
                   </p>
                 </div>
@@ -147,7 +147,7 @@ function DisableRiskRulesModal({
         </div>
       </div>
 
-      <div className="border-border-subtle flex items-center justify-end gap-2 border-t px-5 py-4">
+      <div className="flex items-center justify-end gap-2 border-t border-border-subtle px-5 py-4">
         <Button
           variant="secondary"
           className="h-8 w-fit px-3"

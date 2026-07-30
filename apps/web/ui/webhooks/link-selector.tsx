@@ -104,7 +104,7 @@ export function LinksSelector({
           {selectedOptions.slice(0, MAX_DISPLAYED_LINKS).map((option) => (
             <span
               key={option.value}
-              className="animate-fade-in flex min-w-0 items-center gap-1 rounded-md bg-neutral-100 px-1.5 py-1 text-xs text-neutral-600"
+              className="flex min-w-0 animate-fade-in items-center gap-1 rounded-md bg-neutral-100 px-1.5 py-1 text-xs text-neutral-600"
             >
               <LinkLogo
                 apexDomain={getApexDomain(option.meta.url)}
@@ -116,7 +116,7 @@ export function LinksSelector({
             </span>
           ))}
           {plusCount > 0 && (
-            <span className="animate-fade-in flex rounded-md bg-neutral-100 px-1.5 py-1 text-xs font-medium text-neutral-600">
+            <span className="flex animate-fade-in rounded-md bg-neutral-100 px-1.5 py-1 text-xs font-medium text-neutral-600">
               + {plusCount} more
             </span>
           )}

@@ -58,7 +58,7 @@ function ExampleRiskEvent({ event }: { event: ExampleRiskEventProps }) {
               partner={{ name: event.partnerName }}
               className="size-5 bg-white"
             />
-            <span className="text-content-default whitespace-nowrap text-sm font-medium">
+            <span className="whitespace-nowrap text-sm font-medium text-content-default">
               {event.partnerName}
             </span>
             <span className="font-inter whitespace-nowrap text-sm text-neutral-400">
@@ -77,7 +77,7 @@ function ExampleRiskEvent({ event }: { event: ExampleRiskEventProps }) {
           type="button"
           text="Review"
           variant="primary"
-          className="bg-bg-inverted text-content-inverted h-7 cursor-default rounded-lg px-2.5 py-2"
+          className="h-7 cursor-default rounded-lg bg-bg-inverted px-2.5 py-2 text-content-inverted"
         />
       </div>
     </div>

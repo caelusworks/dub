@@ -50,7 +50,7 @@ export function SubmittedLeadContactDetails({
     <>
       {isInteractive && <EditSubmittedLeadModal />}
       {isInteractive && !isControlled && ConfirmSubmittedLeadStatusChangeModal}
-      <div className="border-border-subtle overflow-hidden rounded-xl border bg-white">
+      <div className="overflow-hidden rounded-xl border border-border-subtle bg-white">
         <div className="flex items-start justify-between px-4 pt-4">
           <div className="relative w-fit shrink-0">
             <img
@@ -77,7 +77,7 @@ export function SubmittedLeadContactDetails({
         </div>
 
         <div className="mt-2 px-4">
-          <div className="text-content-emphasis text-base font-semibold">
+          <div className="text-base font-semibold text-content-emphasis">
             {lead.name}
           </div>
         </div>
@@ -89,7 +89,7 @@ export function SubmittedLeadContactDetails({
           ].map(({ icon: Icon, value }, index) => (
             <div
               key={index}
-              className="text-content-subtle flex items-center gap-1.5"
+              className="flex items-center gap-1.5 text-content-subtle"
             >
               <Icon className="size-3.5 shrink-0" />
               <span className="text-xs font-medium text-neutral-700">
@@ -100,7 +100,7 @@ export function SubmittedLeadContactDetails({
         </div>
 
         <div className="mt-4 border-t border-neutral-200 p-4">
-          <div className="text-content-emphasis mb-2 text-base font-semibold">
+          <div className="mb-2 text-base font-semibold text-content-emphasis">
             Lead stage
           </div>
           {isInteractive ? (

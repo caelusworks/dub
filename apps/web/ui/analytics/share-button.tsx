@@ -50,7 +50,7 @@ const ShareButtonInner = memo(
           onClick={() => setShowShareDashboardModal(true)}
           icon={<ReferredVia className="size-4" />}
           text={isMobile ? undefined : "Share"}
-          className="animate-fade-in w-fit"
+          className="w-fit animate-fade-in"
         />
       </>
     );

@@ -75,12 +75,12 @@ export default function PayoutDetailsPage() {
               href={`/${slug}/program/payouts?status=pending`}
               aria-label="Back to payouts"
               title="Back to payouts"
-              className="bg-bg-subtle hover:bg-bg-emphasis flex size-8 shrink-0 items-center justify-center rounded-lg transition-[transform,background-color] duration-150 active:scale-95"
+              className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle transition-[transform,background-color] duration-150 hover:bg-bg-emphasis active:scale-95"
             >
               <MoneyBills2 className="size-4" />
             </Link>
             <div className="flex items-center gap-1.5">
-              <ChevronRight className="text-content-subtle size-2.5 shrink-0 [&_*]:stroke-2" />
+              <ChevronRight className="size-2.5 shrink-0 text-content-subtle [&_*]:stroke-2" />
               <div className="flex items-center gap-2">
                 {payout?.partner && (
                   <PartnerAvatar
@@ -193,7 +193,7 @@ function PayoutDetailsContent({
           side="left"
           rows={["local", "utc"]}
         >
-          <span className="hover:text-content-emphasis underline decoration-dotted underline-offset-2">
+          <span className="underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
             {formatDateTimeSmart(payout.initiatedAt)}
           </span>
         </TimestampTooltip>
@@ -207,7 +207,7 @@ function PayoutDetailsContent({
           side="left"
           rows={["local", "utc"]}
         >
-          <span className="hover:text-content-emphasis underline decoration-dotted underline-offset-2">
+          <span className="underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
             {formatDateTimeSmart(payout.paidAt)}
           </span>
         </TimestampTooltip>
@@ -431,7 +431,7 @@ function PayoutDetailsContent({
 
       <div className="order-first w-full shrink-0 lg:order-last lg:w-[360px]">
         <div className="rounded-xl border border-neutral-200 bg-white p-4">
-          <h3 className="text-content-emphasis mb-2 text-base font-semibold">
+          <h3 className="mb-2 text-base font-semibold text-content-emphasis">
             Invoice details
           </h3>
           <div className="flex flex-col gap-1">

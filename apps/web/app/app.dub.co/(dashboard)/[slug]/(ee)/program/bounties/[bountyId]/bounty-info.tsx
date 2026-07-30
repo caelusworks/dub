@@ -78,7 +78,7 @@ export function BountyInfo() {
           </div>
         </div>
 
-        <div className="text-content-subtle font-regular flex items-center gap-2 text-sm">
+        <div className="font-regular flex items-center gap-2 text-sm text-content-subtle">
           <Calendar6 className="size-4 shrink-0" />
           <span>
             {formatDate(bounty.startsAt, { month: "short" })}
@@ -91,7 +91,7 @@ export function BountyInfo() {
 
         <BountyRewardDescription bounty={bounty} className="font-regular" />
 
-        <div className="text-content-subtle font-regular flex items-center gap-2 text-sm">
+        <div className="font-regular flex items-center gap-2 text-sm text-content-subtle">
           <Users className="size-4 shrink-0" />
           <div>
             {totalPartnersForBountyLoading ? (
@@ -140,7 +140,7 @@ export function BountyInfo() {
         </div>
 
         {isOwner && (
-          <div className="text-content-subtle font-regular flex items-center gap-2 text-sm">
+          <div className="font-regular flex items-center gap-2 text-sm text-content-subtle">
             <Users6 className="size-4 shrink-0" />
             {bounty.groups.length === 0 ? (
               <span>All groups</span>

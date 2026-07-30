@@ -159,7 +159,7 @@ export default function DubWrapped({
             <Section className="mt-8">
               <Img src={DUB_WORDMARK} height="32" alt="Dub" className="my-0" />
             </Section>
-            <Heading className="mx-0 mb-4 mt-8 p-0 text-xl font-semibold text-black">
+            <Heading className="mx-0 mt-8 mb-4 p-0 text-xl font-semibold text-black">
               Dub Year in Review 🎊
             </Heading>
             <Text className="text-sm leading-6 text-black">
@@ -207,7 +207,7 @@ export default function DubWrapped({
               </div>
             </Section>
 
-            <Heading className="mx-0 mb-4 mt-8 p-0 text-xl font-semibold text-black">
+            <Heading className="mx-0 mt-8 mb-4 p-0 text-xl font-semibold text-black">
               Your contribution 📈
             </Heading>
             <Text className="text-sm leading-6 text-black">
@@ -217,7 +217,7 @@ export default function DubWrapped({
             {dubStats.map((stat) => (
               <Text
                 key={stat.item}
-                className="ml-1 text-sm font-medium leading-4 text-black"
+                className="ml-1 text-sm leading-4 font-medium text-black"
               >
                 ◆ {stat.item}{" "}
                 <span className="font-semibold text-green-700">
@@ -233,7 +233,7 @@ export default function DubWrapped({
 
             <Hr className="mx-0 my-6 w-full border border-neutral-200" />
 
-            <Heading className="mx-0 mb-4 mt-8 p-0 text-xl font-semibold text-black">
+            <Heading className="mx-0 mt-8 mb-4 p-0 text-xl font-semibold text-black">
               What we shipped 🚢
             </Heading>
             <Text className="text-sm leading-6 text-black">

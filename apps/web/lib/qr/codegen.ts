@@ -265,13 +265,11 @@ namespace qrcodegen {
       for (let i = 0; i < numAlign; i++) {
         for (let j = 0; j < numAlign; j++) {
           // Don't draw on the three finder corners
-          if (
-            !(
-              (i == 0 && j == 0) ||
-              (i == 0 && j == numAlign - 1) ||
-              (i == numAlign - 1 && j == 0)
-            )
-          )
+          if (!(
+            (i == 0 && j == 0) ||
+            (i == 0 && j == numAlign - 1) ||
+            (i == numAlign - 1 && j == 0)
+          ))
             this.drawAlignmentPattern(alignPatPos[i], alignPatPos[j]);
         }
       }
@@ -826,7 +824,7 @@ namespace qrcodegen {
       if (!QrSegment.isNumeric(digits))
         throw new RangeError("String contains non-numeric characters");
       let bb: Array<bit> = [];
-      for (let i = 0; i < digits.length; ) {
+      for (let i = 0; i < digits.length;) {
         // Consume up to 3 digits per iteration
         const n: int = Math.min(digits.length - i, 3);
         appendBits(parseInt(digits.substr(i, n), 10), n * 3 + 1, bb);

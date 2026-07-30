@@ -427,7 +427,7 @@ export default function PartnersPage() {
                                     href={href ?? "#"}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="border-border-subtle hover:bg-bg-muted relative flex size-6 shrink-0 items-center justify-center rounded-full border"
+                                    className="relative flex size-6 shrink-0 items-center justify-center rounded-full border border-border-subtle hover:bg-bg-muted"
                                     onClick={(e) => e.stopPropagation()}
                                   >
                                     <Icon className="size-3" />

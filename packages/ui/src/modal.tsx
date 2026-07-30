@@ -75,7 +75,7 @@ export function Modal({
               className,
             )}
           >
-            <div className="scrollbar-hide flex-1 overflow-y-auto rounded-t-[10px] bg-inherit">
+            <div className="flex-1 overflow-y-auto rounded-t-[10px] bg-inherit scrollbar-hide">
               <VisuallyHidden.Root>
                 <Drawer.Title>Modal</Drawer.Title>
                 <Drawer.Description>This is a modal</Drawer.Description>
@@ -103,7 +103,7 @@ export function Modal({
         <Dialog.Overlay
           // for detecting when there's an active opened modal
           id="modal-backdrop"
-          className="animate-fade-in fixed inset-0 z-40 bg-neutral-100 bg-opacity-50 backdrop-blur-md"
+          className="fixed inset-0 z-40 animate-fade-in bg-neutral-100 bg-opacity-50 backdrop-blur-md"
         />
         <Dialog.Content
           onOpenAutoFocus={(e) => e.preventDefault()}
@@ -120,7 +120,7 @@ export function Modal({
           className={cn(
             "fixed inset-0 z-40 m-auto h-fit w-full max-w-md",
             "border border-neutral-200 bg-white p-0 shadow-xl sm:rounded-2xl",
-            "scrollbar-hide animate-scale-in overflow-y-auto",
+            "animate-scale-in overflow-y-auto scrollbar-hide",
             className,
           )}
         >

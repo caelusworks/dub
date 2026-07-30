@@ -273,8 +273,8 @@ export function NetworkPartnerApplicationSheet({
           </div>
         </div>
 
-        <div className="@3xl/sheet:grid-cols-[minmax(440px,1fr)_minmax(0,360px)] @3xl/sheet:grid-rows-[minmax(0,1fr)] @3xl/sheet:overflow-hidden scrollbar-hide grid min-h-0 grow grid-cols-1 gap-x-6 gap-y-4 overflow-y-auto p-4 sm:p-6">
-          <div className="@3xl/sheet:order-2 @3xl/sheet:min-h-0 @3xl/sheet:overflow-y-auto scrollbar-hide space-y-4">
+        <div className="grid min-h-0 grow grid-cols-1 gap-x-6 gap-y-4 overflow-y-auto p-4 scrollbar-hide @3xl/sheet:grid-cols-[minmax(440px,1fr)_minmax(0,360px)] @3xl/sheet:grid-rows-[minmax(0,1fr)] @3xl/sheet:overflow-hidden sm:p-6">
+          <div className="space-y-4 scrollbar-hide @3xl/sheet:order-2 @3xl/sheet:min-h-0 @3xl/sheet:overflow-y-auto">
             <PartnerInfoCards
               type="admin"
               partner={partner}
@@ -312,15 +312,15 @@ export function NetworkPartnerApplicationSheet({
               />
             </div>
           </div>
-          <div className="@3xl/sheet:order-1 @3xl/sheet:min-h-0 @3xl/sheet:overflow-y-auto scrollbar-hide">
-            <div className="border-border-subtle overflow-hidden rounded-xl border bg-neutral-100">
+          <div className="scrollbar-hide @3xl/sheet:order-1 @3xl/sheet:min-h-0 @3xl/sheet:overflow-y-auto">
+            <div className="overflow-hidden rounded-xl border border-border-subtle bg-neutral-100">
               <NetworkPartnerSheetTabs
                 currentTabId={currentTabId}
                 setCurrentTabId={setCurrentTabId}
                 programsCount={partner.programs.length}
                 duplicatesCount={partner.duplicatePartnerAccounts.length}
               />
-              <div className="border-border-subtle -mx-px -mb-px rounded-xl border bg-white p-4">
+              <div className="-mx-px -mb-px rounded-xl border border-border-subtle bg-white p-4">
                 {currentTabId === "about" && (
                   <div className="grid grid-cols-1 gap-5 text-sm text-neutral-600">
                     <PartnerAbout partner={partner} />
@@ -442,7 +442,7 @@ function NetworkPartnerSheetTabs({
   ];
 
   return (
-    <div className="scrollbar-hide relative z-0 flex items-center gap-1 overflow-x-auto p-2">
+    <div className="relative z-0 flex items-center gap-1 overflow-x-auto p-2 scrollbar-hide">
       <LayoutGroup id={layoutGroupId}>
         <div className="relative z-0 inline-flex items-center gap-1">
           {tabs.map(({ id, label, icon: Icon, badge, badgeClassName }) => {
@@ -454,9 +454,9 @@ function NetworkPartnerSheetTabs({
                 onClick={() => setCurrentTabId(id)}
                 data-selected={isSelected}
                 className={cn(
-                  "text-content-emphasis relative z-10 flex items-center gap-2 px-2.5 py-1 text-sm font-medium",
+                  "relative z-10 flex items-center gap-2 px-2.5 py-1 text-sm font-medium text-content-emphasis",
                   !isSelected &&
-                    "hover:text-content-subtle z-[11] transition-colors",
+                    "z-[11] transition-colors hover:text-content-subtle",
                 )}
               >
                 <Icon className="size-4" />
@@ -474,7 +474,7 @@ function NetworkPartnerSheetTabs({
                 {isSelected && (
                   <motion.div
                     layoutId={layoutGroupId}
-                    className="border-border-subtle bg-bg-default absolute left-0 top-0 -z-[1] size-full rounded-lg border shadow-sm"
+                    className="absolute left-0 top-0 -z-[1] size-full rounded-lg border border-border-subtle bg-bg-default shadow-sm"
                     transition={{ duration: 0.25 }}
                   />
                 )}
@@ -494,7 +494,7 @@ function NetworkPartnerDuplicateAccounts({
 }) {
   return (
     <div>
-      <h3 className="text-content-emphasis text-sm font-semibold">
+      <h3 className="text-sm font-semibold text-content-emphasis">
         Duplicate partner accounts
       </h3>
       <p className="mt-1 text-sm text-neutral-500">
@@ -589,7 +589,7 @@ function NetworkPartnerProgramPerformance({
             : "flex-row items-center",
         )}
       >
-        <h3 className="text-content-emphasis text-sm font-semibold">
+        <h3 className="text-sm font-semibold text-content-emphasis">
           Program performance
         </h3>
         {statusSummary.length > 0 && (

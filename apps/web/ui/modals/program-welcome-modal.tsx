@@ -66,7 +66,7 @@ function ProgramWelcomeModal({
             <div
               ref={scrollRef}
               onScroll={updateScrollProgress}
-              className="scrollbar-hide grid max-h-[calc(100vh-350px)] gap-4 overflow-y-auto pb-4"
+              className="grid max-h-[calc(100vh-350px)] gap-4 overflow-y-auto pb-4 scrollbar-hide"
             >
               <h1 className="text-lg font-medium text-neutral-950">
                 Welcome to your partner program

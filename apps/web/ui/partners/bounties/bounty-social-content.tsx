@@ -199,8 +199,8 @@ export function SocialAccountNotVerifiedWarning({
   }
 
   return (
-    <div className="bg-bg-attention flex flex-col items-center justify-between gap-2 rounded-lg p-2 text-center sm:flex-row">
-      <div className="text-content-attention px-2 text-sm font-medium">
+    <div className="flex flex-col items-center justify-between gap-2 rounded-lg bg-bg-attention p-2 text-center sm:flex-row">
+      <div className="px-2 text-sm font-medium text-content-attention">
         {`A verified ${bountyInfo.socialPlatform.label} account must be connected to your Dub partner profile to claim this bounty.`}
 
         <a

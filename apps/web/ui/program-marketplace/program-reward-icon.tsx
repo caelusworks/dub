@@ -19,7 +19,7 @@ export const ProgramRewardIcon = ({
     <span
       className={cn(
         "inline-flex items-center justify-center rounded-md p-1",
-        onClick && "hover:bg-bg-subtle active:bg-bg-emphasis transition-colors",
+        onClick && "transition-colors hover:bg-bg-subtle active:bg-bg-emphasis",
       )}
     >
       <Icon className={cn("size-4", iconClassName)} />
@@ -32,9 +32,9 @@ export const ProgramRewardIcon = ({
         <HoverCard.Content
           side="bottom"
           sideOffset={8}
-          className="animate-slide-up-fade z-[99] flex items-center gap-2 overflow-hidden rounded-xl border border-neutral-200 bg-white p-2 text-xs text-neutral-700 shadow-sm"
+          className="z-[99] flex animate-slide-up-fade items-center gap-2 overflow-hidden rounded-xl border border-neutral-200 bg-white p-2 text-xs text-neutral-700 shadow-sm"
         >
-          <Icon className="text-content-default size-4" />
+          <Icon className="size-4 text-content-default" />
           <span>{description}</span>
         </HoverCard.Content>
       </HoverCard.Portal>

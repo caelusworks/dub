@@ -86,10 +86,10 @@ export function News({ articles }: { articles: NewsArticle[] }) {
         </div>
         {showCompleted && !cardCount && (
           <div
-            className="animate-slide-up-fade absolute inset-0 flex size-full flex-col items-center justify-center gap-3 [animation-duration:1s]"
+            className="absolute inset-0 flex size-full animate-slide-up-fade flex-col items-center justify-center gap-3 [animation-duration:1s]"
             style={{ "--offset": "10px" } as CSSProperties}
           >
-            <div className="animate-fade-in absolute inset-0 rounded-lg border border-neutral-300 [animation-delay:2.3s] [animation-direction:reverse] [animation-duration:0.2s]" />
+            <div className="absolute inset-0 animate-fade-in rounded-lg border border-neutral-300 [animation-delay:2.3s] [animation-direction:reverse] [animation-duration:0.2s]" />
             <AnimatedLogo className="w-1/3 text-neutral-500" />
             <span className="animate-fade-in text-xs font-medium text-neutral-500 [animation-delay:2.3s] [animation-direction:reverse] [animation-duration:0.2s]">
               You're all caught up!

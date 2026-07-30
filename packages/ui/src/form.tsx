@@ -65,7 +65,7 @@ export function Form({
       <div className="flex flex-col items-start justify-between gap-4 rounded-b-xl border-t border-neutral-200 bg-neutral-50 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0 sm:py-3">
         {typeof helpText === "string" ? (
           <p
-            className="prose-sm prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-neutral-700 text-neutral-500 transition-colors"
+            className="prose-sm text-neutral-500 transition-colors prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-neutral-700"
             dangerouslySetInnerHTML={{ __html: helpText || "" }}
           />
         ) : (

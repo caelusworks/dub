@@ -5,8 +5,9 @@ import { getLinksQuerySchemaExtended } from "@/lib/zod/schemas/links";
 import * as z from "zod/v4";
 import { getDomainOrThrow } from "../domains/get-domain-or-throw";
 
-interface LinksQueryFilters
-  extends Partial<z.infer<typeof getLinksQuerySchemaExtended>> {
+interface LinksQueryFilters extends Partial<
+  z.infer<typeof getLinksQuerySchemaExtended>
+> {
   userId: string;
   workspace: Pick<WorkspaceProps, "id" | "plan" | "foldersUsage" | "users">;
 }

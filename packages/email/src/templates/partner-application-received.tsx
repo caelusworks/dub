@@ -73,7 +73,7 @@ export default function PartnerApplicationReceived({
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[600px] rounded border border-solid border-neutral-200 px-10 py-5">
-            <Section className="mb-8 mt-6">
+            <Section className="mt-6 mb-8">
               <Img src={DUB_WORDMARK} width="61" height="32" alt="dub" />
             </Section>
 
@@ -102,7 +102,7 @@ export default function PartnerApplicationReceived({
               </Text>
             )}
 
-            <Container className="mb-8 mt-10 rounded-lg border border-solid border-neutral-200">
+            <Container className="mt-10 mb-8 rounded-lg border border-solid border-neutral-200">
               <Section className="p-2">
                 <Container className="mb-4 w-full rounded-lg border border-solid border-neutral-100 bg-neutral-50 p-6">
                   <div>
@@ -116,7 +116,7 @@ export default function PartnerApplicationReceived({
                       />
 
                       {partner.country && (
-                        <div className="absolute -right-1 top-0 overflow-hidden rounded-full bg-neutral-50 p-0.5">
+                        <div className="absolute top-0 -right-1 overflow-hidden rounded-full bg-neutral-50 p-0.5">
                           <Img
                             src={`https://flag.vercel.app/m/${partner.country}.svg`}
                             width="12"
@@ -153,7 +153,7 @@ export default function PartnerApplicationReceived({
                   <Section className="mt-8 text-center">
                     <Link
                       href={applicationUrl}
-                      className="box-border block w-full rounded-lg bg-black px-0 py-4 text-center text-sm font-semibold leading-none text-white no-underline"
+                      className="box-border block w-full rounded-lg bg-black px-0 py-4 text-center text-sm leading-none font-semibold text-white no-underline"
                     >
                       Review application on Dub
                     </Link>

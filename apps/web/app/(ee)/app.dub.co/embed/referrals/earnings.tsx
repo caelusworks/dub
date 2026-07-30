@@ -95,8 +95,8 @@ export function ReferralsEmbedEarnings() {
     rowCount: earningsCount,
     emptyState: (
       <div className="flex w-full flex-col items-center justify-center gap-2">
-        <Gift className="text-content-muted size-6" />
-        <p className="text-content-muted max-w-sm text-balance text-center text-xs">
+        <Gift className="size-6 text-content-muted" />
+        <p className="max-w-sm text-balance text-center text-xs text-content-muted">
           No earnings yet. When you refer a friend and they make a purchase,
           they'll show up here.
         </p>

@@ -43,7 +43,7 @@ export function BountyList() {
         </div>
       ) : error ? (
         <div className="flex items-center justify-center px-4 py-8">
-          <p className="text-content-subtle text-sm">
+          <p className="text-sm text-content-subtle">
             Failed to load bounties.
           </p>
         </div>
@@ -57,7 +57,7 @@ export function BountyList() {
                 href="https://dub.co/help/article/program-bounties"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-content-default underline sm:whitespace-nowrap"
+                className="underline hover:text-content-default sm:whitespace-nowrap"
               >
                 Learn more about bounties
               </a>

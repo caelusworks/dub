@@ -44,7 +44,7 @@ export function CustomerStats({
             side="right"
             rows={["local", "utc"]}
           >
-            <span className="hover:text-content-emphasis underline decoration-dotted underline-offset-2">
+            <span className="underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
               {formatDateTimeSmart(customer.firstSaleAt)}
             </span>
           </TimestampTooltip>
@@ -81,7 +81,7 @@ export function CustomerStats({
             side="right"
             rows={["local", "utc"]}
           >
-            <span className="hover:text-content-emphasis underline decoration-dotted underline-offset-2">
+            <span className="underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
               {formatDateTimeSmart(customer.subscriptionCanceledAt)}
             </span>
           </TimestampTooltip>
@@ -97,7 +97,7 @@ export function CustomerStats({
     <div className="@container/stats">
       <div
         className={cn(
-          "@xs/stats:grid-cols-[repeat(var(--cols),1fr)] grid grid-cols-1 ring-4 ring-black/5",
+          "grid grid-cols-1 ring-4 ring-black/5 @xs/stats:grid-cols-[repeat(var(--cols),1fr)]",
           "gap-px overflow-hidden rounded-xl border border-neutral-200 bg-neutral-200",
         )}
         style={
@@ -119,13 +119,13 @@ export function CustomerStats({
               )}
             >
               {href && (
-                <ArrowUpRight2 className="text-content-subtle absolute right-3 top-3 size-3.5 opacity-50 transition-opacity duration-150 group-hover:opacity-100" />
+                <ArrowUpRight2 className="absolute right-3 top-3 size-3.5 text-content-subtle opacity-50 transition-opacity duration-150 group-hover:opacity-100" />
               )}
               <span className="text-xs text-neutral-500">{label}</span>
               {value === undefined ? (
                 <div className="h-5 w-16 animate-pulse rounded-md bg-neutral-200" />
               ) : (
-                <span className="text-content-emphasis text-sm font-medium">
+                <span className="text-sm font-medium text-content-emphasis">
                   {value}
                 </span>
               )}

@@ -30,7 +30,7 @@ export function BountyCard({ bounty }: { bounty: BountyListProps }) {
   }, [groups, bounty.groups]);
 
   return (
-    <div className="border-border-subtle hover:border-border-default relative cursor-pointer rounded-xl border bg-white p-2 transition-all hover:shadow-lg">
+    <div className="relative cursor-pointer rounded-xl border border-border-subtle bg-white p-2 transition-all hover:border-border-default hover:shadow-lg">
       <Link
         href={`/${workspaceSlug}/program/bounties/${bounty.id}`}
         className="flex flex-col gap-3.5"
@@ -54,11 +54,11 @@ export function BountyCard({ bounty }: { bounty: BountyListProps }) {
         </div>
 
         <div className="flex flex-col gap-1.5 px-2 pb-1.5">
-          <h3 className="text-content-emphasis text-sm font-semibold md:truncate">
+          <h3 className="text-sm font-semibold text-content-emphasis md:truncate">
             {bounty.name}
           </h3>
 
-          <div className="text-content-subtle font-regular flex items-center gap-2 text-sm">
+          <div className="font-regular flex items-center gap-2 text-sm text-content-subtle">
             <Calendar6 className="size-3.5" />
             <span>
               {formatDate(bounty.startsAt, { month: "short" })}
@@ -77,7 +77,7 @@ export function BountyCard({ bounty }: { bounty: BountyListProps }) {
             onTooltipClick={(e) => e.preventDefault()}
           />
 
-          <div className="text-content-subtle font-regular flex items-center gap-2 text-sm">
+          <div className="font-regular flex items-center gap-2 text-sm text-content-subtle">
             <Users className="size-3.5" />
             <div className="h-5">
               {loading ? (
@@ -115,7 +115,7 @@ export function BountyCard({ bounty }: { bounty: BountyListProps }) {
             </div>
           </div>
 
-          <div className="text-content-subtle font-regular flex items-center gap-2 text-sm">
+          <div className="font-regular flex items-center gap-2 text-sm text-content-subtle">
             <Users6 className="size-3.5" />
             {bounty.groups.length === 0 ? (
               <span>All groups</span>
@@ -181,7 +181,7 @@ function BountyEndedBadge({ endsAt }: { endsAt: Date }) {
 
 export function BountyCardSkeleton() {
   return (
-    <div className="border-border-subtle rounded-xl border bg-white p-2">
+    <div className="rounded-xl border border-border-subtle bg-white p-2">
       <div className="flex flex-col gap-3.5">
         <div className="relative flex h-[124px] animate-pulse items-center justify-center rounded-lg bg-neutral-200" />
         <div className="flex flex-col gap-1.5 px-2 pb-1.5">

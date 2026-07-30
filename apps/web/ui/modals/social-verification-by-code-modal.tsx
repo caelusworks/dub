@@ -44,7 +44,7 @@ const PLATFORM_INFO: Record<
           href="https://dub.co/help/article/partner-profile#youtube"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-content-emphasis underline transition-colors"
+          className="underline transition-colors hover:text-content-emphasis"
         >
           Learn more
         </a>
@@ -166,7 +166,7 @@ function SocialVerificationByCodeModalInner({
           description="You'll use this to verify ownership of your account."
         >
           <div className="flex items-center justify-between gap-2 rounded-lg border border-neutral-200 bg-neutral-100 px-4 py-2.5">
-            <span className="text-content-default font-mono text-base font-medium tracking-wide">
+            <span className="font-mono text-base font-medium tracking-wide text-content-default">
               {verificationCode}
             </span>
             <CopyButton value={verificationCode} />
@@ -231,12 +231,12 @@ function Step({
 }) {
   return (
     <div className="flex flex-col gap-4 rounded-lg border border-neutral-200 p-4">
-      <div className="text-content-default flex size-6 items-center justify-center rounded-md border border-neutral-200 bg-white p-2 text-sm font-semibold">
+      <div className="flex size-6 items-center justify-center rounded-md border border-neutral-200 bg-white p-2 text-sm font-semibold text-content-default">
         {stepNumber}
       </div>
       <div className="space-y-1">
         <h4 className="text-sm font-medium text-black">{title}</h4>
-        <p className="text-content-default whitespace-pre-line text-sm font-normal">
+        <p className="whitespace-pre-line text-sm font-normal text-content-default">
           {description}
         </p>
       </div>

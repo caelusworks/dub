@@ -141,7 +141,7 @@ function ManageUsageModalContent({ type }: ManageUsageModalProps) {
       </div>
 
       <div className="px-5 py-6">
-        <p className="text-content-default text-sm font-medium">
+        <p className="text-sm font-medium text-content-default">
           {
             {
               events: `Events tracked per ${period === "yearly" ? "year" : "month"}`,
@@ -154,7 +154,7 @@ function ManageUsageModalContent({ type }: ManageUsageModalProps) {
             limit: monthlySelectedValue,
             planPeriod: period,
           })}
-          className="text-content-emphasis mb-4 text-lg font-semibold"
+          className="mb-4 text-lg font-semibold text-content-emphasis"
         />
 
         <Slider
@@ -186,9 +186,9 @@ function ManageUsageModalContent({ type }: ManageUsageModalProps) {
             selectAction={(period) => setPeriod(period as "monthly" | "yearly")}
           />
 
-          <div className="border-border-subtle bg-bg-default mt-3 flex flex-col gap-5 rounded-xl border p-4 shadow-sm">
+          <div className="mt-3 flex flex-col gap-5 rounded-xl border border-border-subtle bg-bg-default p-4 shadow-sm">
             <div>
-              <span className="text-content-emphasis block text-xl font-semibold">
+              <span className="block text-xl font-semibold text-content-emphasis">
                 {suggestedPlan.name}
               </span>
               <div className="relative flex items-center gap-1">
@@ -223,7 +223,7 @@ function ManageUsageModalContent({ type }: ManageUsageModalProps) {
                 target="_blank"
                 className={cn(
                   "flex h-8 w-full items-center justify-center rounded-lg text-center text-sm transition-all duration-200 ease-in-out",
-                  "hover:ring-border-subtle border border-black bg-black text-white shadow-sm hover:ring-4",
+                  "border border-black bg-black text-white shadow-sm hover:ring-4 hover:ring-border-subtle",
                 )}
               >
                 Contact us
@@ -292,7 +292,7 @@ function ManageUsageModalContent({ type }: ManageUsageModalProps) {
               ].map(({ icon: Icon, value, label, difference }) => (
                 <div
                   key={label}
-                  className="text-content-default flex items-center gap-2 text-sm"
+                  className="flex items-center gap-2 text-sm text-content-default"
                 >
                   <Icon
                     className={cn("size-4", difference > 0 && "text-blue-600")}
@@ -314,7 +314,7 @@ function ManageUsageModalContent({ type }: ManageUsageModalProps) {
                         "flex h-[18px] items-center rounded-full px-1.5 text-[0.5rem] font-semibold uppercase leading-none",
                         difference > 0
                           ? "bg-blue-100 text-blue-600"
-                          : "text-content-default bg-bg-subtle",
+                          : "bg-bg-subtle text-content-default",
                       )}
                     >
                       {difference > 0 ? "Increases" : "Decreases"}
@@ -328,7 +328,7 @@ function ManageUsageModalContent({ type }: ManageUsageModalProps) {
           <div className="mt-4 flex justify-center">
             <Link
               href={`/${slug}/settings/billing/upgrade`}
-              className="text-content-subtle hover:text-content-default block text-xs font-medium underline underline-offset-2"
+              className="block text-xs font-medium text-content-subtle underline underline-offset-2 hover:text-content-default"
             >
               View all plans
             </Link>

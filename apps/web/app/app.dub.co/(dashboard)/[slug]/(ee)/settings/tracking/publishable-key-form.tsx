@@ -92,7 +92,7 @@ export const PublishableKeyForm = ({ className }: { className?: string }) => {
     <div className={cn("flex flex-col gap-2 p-3", className)}>
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-1">
-          <h2 className="text-content-emphasis flex-1 text-sm font-semibold">
+          <h2 className="flex-1 text-sm font-semibold text-content-emphasis">
             Publishable key
           </h2>
           <InfoTooltip content="For authenticating requests when tracking conversion events on the client-side. [Learn more.](https://dub.co/docs/api-reference/publishable-keys)" />
@@ -139,7 +139,7 @@ export const PublishableKeyForm = ({ className }: { className?: string }) => {
         </div>
       ) : (
         <div className="flex items-center justify-center rounded-xl border border-neutral-200 bg-neutral-100 p-3">
-          <p className="text-content-subtle text-sm font-medium">
+          <p className="text-sm font-medium text-content-subtle">
             No publishable key created
           </p>
         </div>

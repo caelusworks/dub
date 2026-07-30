@@ -43,13 +43,13 @@ export function AnimatedEmptyState({
     >
       <div
         className={cn(
-          "animate-fade-in h-36 w-full max-w-64 overflow-hidden px-4 [mask-image:linear-gradient(transparent,black_10%,black_90%,transparent)]",
+          "h-36 w-full max-w-64 animate-fade-in overflow-hidden px-4 [mask-image:linear-gradient(transparent,black_10%,black_90%,transparent)]",
           cardContainerClassName,
         )}
       >
         <div
           style={{ "--scroll": "-50%" } as CSSProperties}
-          className="animate-infinite-scroll-y flex flex-col [animation-duration:40s]"
+          className="flex animate-infinite-scroll-y flex-col [animation-duration:40s]"
         >
           {[...Array(cardCount * 2)].map((_, idx) => (
             <Card key={idx} className={cardClassName}>

@@ -323,7 +323,7 @@ export function FilterSelect({
                           </Fragment>
                         ))
                     : // Filter options
-                      selectedFilter.options
+                      (selectedFilter.options
                         ?.filter(
                           (option) => !search || !option.hideDuringSearch,
                         )
@@ -367,7 +367,7 @@ export function FilterSelect({
                             <LoadingSpinner />
                           </div>
                         </Command.Loading>
-                      )}
+                      ))}
 
                   {/* Only render CommandEmpty if not loading */}
                   {(!selectedFilter || selectedFilter.options) && (
@@ -379,8 +379,8 @@ export function FilterSelect({
                     >
                       {emptyState
                         ? isEmptyStateObject(emptyState)
-                          ? emptyState?.[selectedFilterKey ?? "default"] ??
-                            "No matching options"
+                          ? (emptyState?.[selectedFilterKey ?? "default"] ??
+                            "No matching options")
                           : emptyState
                         : "No matching options"}
                     </CommandEmpty>
@@ -471,14 +471,14 @@ function FilterButton({
   onSelect: () => void;
 }) {
   const Icon = option
-    ? option.icon ??
+    ? (option.icon ??
       filter.getOptionIcon?.(option.value, { key: filter.key, option }) ??
-      filter.icon
+      filter.icon)
     : filter.icon;
 
   const label = option
-    ? option.label ??
-      filter.getOptionLabel?.(option.value, { key: filter.key, option })
+    ? (option.label ??
+      filter.getOptionLabel?.(option.value, { key: filter.key, option }))
     : filter.label;
 
   return (

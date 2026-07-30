@@ -69,7 +69,7 @@ export function EmailDomainCard({ domain }: EmailDomainCardProps) {
       <DeleteEmailDomainModal />
       <div
         ref={domainRef}
-        className="hover:drop-shadow-card-hover group rounded-xl border border-neutral-200 bg-white transition-[filter]"
+        className="group rounded-xl border border-neutral-200 bg-white transition-[filter] hover:drop-shadow-card-hover"
       >
         <div className="p-4 sm:p-5">
           <div className="flex w-full items-center justify-between gap-2">
@@ -93,7 +93,7 @@ export function EmailDomainCard({ domain }: EmailDomainCardProps) {
 
               <Button
                 variant="secondary"
-                className="border-border-subtle h-8 rounded-lg p-2"
+                className="h-8 rounded-lg border-border-subtle p-2"
                 icon={<Plug2 className="size-3.5 shrink-0" />}
                 onClick={() => setShowDetails((s) => !s)}
               />

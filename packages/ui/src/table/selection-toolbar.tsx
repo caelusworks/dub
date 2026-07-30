@@ -29,7 +29,7 @@ export function SelectionToolbar<T>({
   return (
     <div
       className={cn(
-        "border-border-subtle w-full border-b bg-white",
+        "w-full border-b border-border-subtle bg-white",
         "transition-opacity duration-100",
         selectedCount > 0
           ? "pointer-events-auto opacity-100"
@@ -50,7 +50,7 @@ export function SelectionToolbar<T>({
             title="Select all"
           >
             <Checkbox
-              className="border-border-default pointer-events-none size-4 rounded data-[state=checked]:bg-black data-[state=indeterminate]:bg-black"
+              className="pointer-events-none size-4 rounded border-border-default data-[state=checked]:bg-black data-[state=indeterminate]:bg-black"
               checked={
                 table.getIsAllRowsSelected()
                   ? true
@@ -64,7 +64,7 @@ export function SelectionToolbar<T>({
         <div className="flex min-w-0 items-center gap-2.5 pl-1">
           <span
             className={cn(
-              "text-content-emphasis mr-2 text-sm font-medium tabular-nums transition-transform duration-150",
+              "mr-2 text-sm font-medium tabular-nums text-content-emphasis transition-transform duration-150",
               selectedCount > 0 ? "translate-x-0" : "-translate-x-1",
             )}
           >

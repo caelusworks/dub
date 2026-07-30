@@ -62,8 +62,10 @@ const TooltipMarkdown = ({
     </ReactMarkdown>
   );
 };
-export interface TooltipProps
-  extends Omit<TooltipPrimitive.TooltipContentProps, "content"> {
+export interface TooltipProps extends Omit<
+  TooltipPrimitive.TooltipContentProps,
+  "content"
+> {
   content:
     | ReactNode
     | string
@@ -108,7 +110,7 @@ export function Tooltip({
         <TooltipPrimitive.Content
           sideOffset={8}
           side={side}
-          className="animate-slide-up-fade border-border-default bg-bg-default pointer-events-auto z-[99] items-center overflow-hidden rounded-xl border shadow-sm"
+          className="pointer-events-auto z-[99] animate-slide-up-fade items-center overflow-hidden rounded-xl border border-border-default bg-bg-default shadow-sm"
           collisionPadding={0}
           {...rest}
         >

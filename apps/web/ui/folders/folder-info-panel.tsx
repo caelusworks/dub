@@ -39,7 +39,7 @@ export function FolderInfoPanel() {
       {folder.description && (
         <div className="flex flex-col gap-2">
           <SectionHeader>Description</SectionHeader>
-          <p className="text-content-subtle whitespace-pre-wrap text-sm">
+          <p className="whitespace-pre-wrap text-sm text-content-subtle">
             {folder.description}
           </p>
         </div>
@@ -58,10 +58,10 @@ export function FolderInfoPanel() {
             draggable={false}
           />
           <div>
-            <span className="text-content-emphasis min-w-0 truncate text-sm font-semibold">
+            <span className="min-w-0 truncate text-sm font-semibold text-content-emphasis">
               {workspaceName}
             </span>
-            <div className="text-content-default bg-bg-emphasis w-fit rounded-md px-1 text-xs font-semibold">
+            <div className="w-fit rounded-md bg-bg-emphasis px-1 text-xs font-semibold text-content-default">
               {folder.accessLevel
                 ? FOLDER_WORKSPACE_ACCESS[folder.accessLevel]
                 : "No access"}
@@ -95,7 +95,7 @@ export function FolderInfoPanel() {
 }
 
 const SectionHeader = ({ children }: PropsWithChildren) => (
-  <h3 className="text-content-default text-sm font-semibold">{children}</h3>
+  <h3 className="text-sm font-semibold text-content-default">{children}</h3>
 );
 
 const UserList = ({

@@ -59,7 +59,7 @@ export default function WorkspaceInvoices() {
           >
             Billing
           </Link>
-          <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
+          <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
           <h1>Invoices</h1>
         </div>
       }
@@ -213,7 +213,7 @@ const InvoiceCard = ({
               <div className="font-medium">Method</div>
               {invoicePaymentMethod ? (
                 <div className="flex items-center gap-1.5 text-neutral-500">
-                  <div className="text-content-subtle text-sm font-medium">
+                  <div className="text-sm font-medium text-content-subtle">
                     {invoicePaymentMethod.label}
                   </div>
                   <StatusBadge
@@ -254,7 +254,7 @@ const InvoiceCard = ({
             <div className="font-medium">Method</div>
             {invoicePaymentMethod ? (
               <div className="flex items-center gap-1.5 text-neutral-500">
-                <div className="text-content-subtle text-sm font-medium">
+                <div className="text-sm font-medium text-content-subtle">
                   {invoicePaymentMethod.label}
                 </div>
                 <StatusBadge

@@ -136,7 +136,7 @@ function AttributeReferringPartnerModal({
               </p>
 
               {createCommissionsForPastEvents && (
-                <p className="text-content-subtle text-sm">
+                <p className="text-sm text-content-subtle">
                   This will generate partner referral commissions for{" "}
                   <span className="font-semibold text-neutral-900">
                     {referredByPartner?.name}
@@ -158,7 +158,7 @@ function AttributeReferringPartnerModal({
         </div>
       </div>
 
-      <div className="border-border-subtle flex items-center justify-end gap-2 border-t px-4 py-4">
+      <div className="flex items-center justify-end gap-2 border-t border-border-subtle px-4 py-4">
         <Button
           onClick={() => setShowModal(false)}
           variant="secondary"

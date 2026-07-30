@@ -85,14 +85,14 @@ function ConfirmCreateBountyModal({
       setShowModal={setShowConfirmCreateBountyModal}
     >
       <div className="px-5 py-4 text-left">
-        <h3 className="text-content-emphasis text-base font-semibold">
+        <h3 className="text-base font-semibold text-content-emphasis">
           Confirm bounty creation
         </h3>
-        <p className="text-content-subtle mt-1 text-sm">
+        <p className="mt-1 text-sm text-content-subtle">
           You are about to create this bounty for the selected partner groups.
         </p>
 
-        <div className="border-border-subtle mt-4 rounded-xl border bg-white p-2">
+        <div className="mt-4 rounded-xl border border-border-subtle bg-white p-2">
           <div className="flex flex-col gap-3.5">
             <div className="relative flex h-[124px] items-center justify-center rounded-lg bg-neutral-100 py-5">
               <div className="relative size-full">
@@ -101,11 +101,11 @@ function ConfirmCreateBountyModal({
             </div>
 
             <div className="flex flex-col gap-1.5 px-2 pb-1.5">
-              <h3 className="text-content-emphasis truncate text-sm font-semibold">
+              <h3 className="truncate text-sm font-semibold text-content-emphasis">
                 {bounty.name}
               </h3>
 
-              <div className="text-content-subtle font-regular flex items-center gap-2 text-sm">
+              <div className="font-regular flex items-center gap-2 text-sm text-content-subtle">
                 <Calendar6 className="size-3.5" />
                 <span>
                   {formatDate(bounty.startsAt, { month: "short" })}
@@ -119,7 +119,7 @@ function ConfirmCreateBountyModal({
               </div>
 
               {!isOwner && (
-                <div className="text-content-subtle font-regular flex items-center gap-2 text-sm">
+                <div className="font-regular flex items-center gap-2 text-sm text-content-subtle">
                   <Gift className="size-3.5 shrink-0" />
                   <span className="truncate">
                     {getBountyRewardDescription(bounty)}
@@ -128,7 +128,7 @@ function ConfirmCreateBountyModal({
               )}
 
               {isOwner && (
-                <div className="text-content-subtle font-regular flex items-center gap-2 text-sm">
+                <div className="font-regular flex items-center gap-2 text-sm text-content-subtle">
                   <Users6 className="size-3.5" />
                   {bounty.groups.length === 0 ? (
                     <span>All groups</span>
@@ -202,12 +202,12 @@ function ConfirmCreateBountyModal({
             />
             <span
               className={cn(
-                "text-content-default select-none text-sm font-medium",
+                "select-none text-sm font-medium text-content-default",
                 !canSendEmailCampaigns && "opacity-50",
               )}
             >
               Send notification to{" "}
-              <strong className="text-content-emphasis font-semibold">
+              <strong className="font-semibold text-content-emphasis">
                 {loading ? (
                   <span className="inline-block h-4 w-6 animate-pulse rounded bg-neutral-200 align-text-bottom" />
                 ) : (
@@ -220,7 +220,7 @@ function ConfirmCreateBountyModal({
         </DynamicTooltipWrapper>
       </div>
 
-      <div className="border-border-subtle flex items-center justify-end gap-2 border-t px-5 py-4">
+      <div className="flex items-center justify-end gap-2 border-t border-border-subtle px-5 py-4">
         <Button
           variant="secondary"
           className="h-8 w-fit px-3"

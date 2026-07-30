@@ -49,11 +49,11 @@ export default function ProgramMarketplaceAnnouncement({
               />
             </Section>
 
-            <Heading className="mx-0 mb-2 mt-8 p-0 text-center text-2xl font-semibold text-black">
+            <Heading className="mx-0 mt-8 mb-2 p-0 text-center text-2xl font-semibold text-black">
               Dub Program Marketplace is here
             </Heading>
 
-            <Text className="mb-8 mt-0 text-center text-base leading-6 text-neutral-600">
+            <Text className="mt-0 mb-8 text-center text-base leading-6 text-neutral-600">
               A new way to discover, join, and partner with
               <br />
               more programs on Dub.
@@ -79,11 +79,11 @@ export default function ProgramMarketplaceAnnouncement({
               </Link>
             </Section>
 
-            <Heading className="mx-0 mb-3 mt-0 p-0 text-center text-lg font-semibold text-black">
+            <Heading className="mx-0 mt-0 mb-3 p-0 text-center text-lg font-semibold text-black">
               Over 40+ programs to join
             </Heading>
 
-            <Text className="mx-auto mb-8 mt-0 max-w-[420px] text-center text-sm leading-6 text-neutral-600">
+            <Text className="mx-auto mt-0 mb-8 max-w-[420px] text-center text-sm leading-6 text-neutral-600">
               Find programs that fit your audience, compare rewards, and submit
               your application. It is the easiest way to expand your reach and
               unlock new earning possibilities.
@@ -130,11 +130,11 @@ export default function ProgramMarketplaceAnnouncement({
               </Link>
             </Section>
 
-            <Heading className="mx-0 mb-3 mt-0 p-0 text-center text-lg font-semibold text-black">
+            <Heading className="mx-0 mt-0 mb-3 p-0 text-center text-lg font-semibold text-black">
               Celebrating $10M in partner payouts
             </Heading>
 
-            <Text className="mx-auto mb-8 mt-0 max-w-[420px] text-center text-sm leading-6 text-neutral-600">
+            <Text className="mx-auto mt-0 mb-8 max-w-[420px] text-center text-sm leading-6 text-neutral-600">
               We're also excited to share that we've crossed $10M in payouts
               sent via Dub Partners to creators worldwide.
               <br />

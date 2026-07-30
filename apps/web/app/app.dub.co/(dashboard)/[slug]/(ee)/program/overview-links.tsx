@@ -54,7 +54,7 @@ export function OverviewLinks() {
   return (
     <ProgramOverviewCard className="py-4">
       <div className="flex justify-between px-4">
-        <h2 className="text-content-emphasis text-sm font-medium">
+        <h2 className="text-sm font-medium text-content-emphasis">
           Program links
         </h2>
         <ButtonLink
@@ -88,7 +88,7 @@ export function OverviewLinks() {
                 {...(link.disabled && { "aria-disabled": true, tabIndex: -1 })}
               >
                 <div className="flex min-w-0 items-center gap-3">
-                  <div className="border-border-default rounded-md border p-2">
+                  <div className="rounded-md border border-border-default p-2">
                     <link.icon className="size-4 shrink-0" />
                   </div>
                   <div className="flex flex-col gap-0.5">
@@ -96,7 +96,7 @@ export function OverviewLinks() {
                       <span className="min-w-0 truncate">{link.label}</span>
                       <ArrowUpRight className="size-3 shrink-0 -translate-x-0.5 opacity-0 transition-[transform,opacity] group-hover:translate-x-0 group-hover:opacity-100 [&_*]:stroke-2" />
                     </div>
-                    <span className="text-content-subtle text-xs font-normal">
+                    <span className="text-xs font-normal text-content-subtle">
                       {getPrettyUrl(link.href)}
                     </span>
                   </div>
@@ -112,7 +112,7 @@ export function OverviewLinks() {
                   })
                 }
                 className={cn(
-                  "text-content-default bg-bg-inverted/5 absolute right-2 top-1/2 flex size-8 -translate-y-1/2 items-center justify-center rounded-lg transition-[opacity,background-color]",
+                  "absolute right-2 top-1/2 flex size-8 -translate-y-1/2 items-center justify-center rounded-lg bg-bg-inverted/5 text-content-default transition-[opacity,background-color]",
                   "opacity-0 focus-visible:opacity-100 group-hover:opacity-100",
                   "hover:bg-bg-inverted/10 active:bg-bg-inverted/15",
                 )}

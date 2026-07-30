@@ -70,7 +70,7 @@ export function ProgramCategoriesList({
       aria-label="Add category"
       className={cn(
         categoryPillClassName,
-        "group/add-category active:bg-bg-inverted/15 w-fit px-1.5 font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400/50",
+        "group/add-category w-fit px-1.5 font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400/50 active:bg-bg-inverted/15",
       )}
     >
       <Tag className="size-3.5" />

@@ -58,13 +58,13 @@ export function ProgramCustomerPageClient() {
             aria-label="Back to customers"
             title="Back to customers"
             className={cn(
-              "bg-bg-subtle flex size-8 shrink-0 items-center justify-center rounded-lg",
-              "hover:bg-bg-emphasis transition-[transform,background-color] duration-150 active:scale-95",
+              "flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle",
+              "transition-[transform,background-color] duration-150 hover:bg-bg-emphasis active:scale-95",
             )}
           >
             <User className="size-4" />
           </Link>
-          <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
+          <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
           <div>
             {customer ? (
               customer.name || customer.email
@@ -76,7 +76,7 @@ export function ProgramCustomerPageClient() {
       }
     >
       <PageWidthWrapper className="flex flex-col gap-6 pb-10">
-        <div className="@3xl/page:grid-cols-[minmax(440px,1fr)_minmax(0,360px)] grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 gap-6 @3xl/page:grid-cols-[minmax(440px,1fr)_minmax(0,360px)]">
           <div className="@3xl/page:order-2">
             <CustomerDetailsColumn
               customer={
@@ -93,7 +93,7 @@ export function ProgramCustomerPageClient() {
             />
           </div>
           <div className="@3xl/page:order-1">
-            <div className="border-border-subtle overflow-hidden rounded-xl border p-4">
+            <div className="overflow-hidden rounded-xl border border-border-subtle p-4">
               <section className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
                   <h2 className="text-lg font-semibold text-neutral-900">
@@ -109,7 +109,7 @@ export function ProgramCustomerPageClient() {
                         />
                       }
                     >
-                      <div className="border-border-subtle flex cursor-default items-center justify-center gap-1.5 rounded-md border px-2 py-1 transition-all hover:bg-neutral-50">
+                      <div className="flex cursor-default items-center justify-center gap-1.5 rounded-md border border-border-subtle px-2 py-1 transition-all hover:bg-neutral-50">
                         <MoneyBill2 className="size-4" />
                         <span className="text-sm">Eligible rewards</span>
                       </div>
@@ -128,7 +128,7 @@ export function ProgramCustomerPageClient() {
                     </div>
                   )}
 
-                <div className="border-border-subtle overflow-hidden rounded-lg border">
+                <div className="overflow-hidden rounded-lg border border-border-subtle">
                   <EarningsTable customerId={customerId} />
                 </div>
               </section>
@@ -183,7 +183,7 @@ const EarningsTable = memo(({ customerId }: { customerId: string }) => {
       totalSales={
         isTotalEarningsLoading
           ? undefined
-          : totalEarnings?.count ?? earningsData?.length
+          : (totalEarnings?.count ?? earningsData?.length)
       }
       viewAllHref={`/programs/${programSlug}/earnings?interval=all&customerId=${customerId}`}
       isLoading={isEarningsLoading}

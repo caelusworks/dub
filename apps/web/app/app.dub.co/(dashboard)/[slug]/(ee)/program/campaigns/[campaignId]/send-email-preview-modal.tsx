@@ -85,7 +85,7 @@ function SendEmailPreviewModal({
             <div>
               <label
                 htmlFor="emailAddresses"
-                className="text-content-emphasis mb-2 block text-sm font-medium"
+                className="mb-2 block text-sm font-medium text-content-emphasis"
               >
                 Email addresses
               </label>
@@ -99,7 +99,7 @@ function SendEmailPreviewModal({
                 onChange={(e) => setEmailAddresses(e.target.value)}
                 onKeyDown={handleKeyDown}
                 rows={3}
-                className="border-border-subtle focus:border-border-emphasis focus:ring-border-emphasis block w-full resize-none rounded-md shadow-sm sm:text-sm"
+                className="block w-full resize-none rounded-md border-border-subtle shadow-sm focus:border-border-emphasis focus:ring-border-emphasis sm:text-sm"
               />
             </div>
           </div>

@@ -206,7 +206,7 @@ export function Combobox({
   const createOptionItem = (
     <Command.Item
       className={cn(
-        "text-content-default flex cursor-pointer items-center gap-3 whitespace-nowrap rounded-md px-3 py-2 text-left text-sm",
+        "flex cursor-pointer items-center gap-3 whitespace-nowrap rounded-md px-3 py-2 text-left text-sm text-content-default",
         "data-[selected=true]:bg-bg-subtle",
         optionClassName,
       )}
@@ -257,13 +257,13 @@ export function Combobox({
         >
           <Command loop shouldFilter={shouldFilter}>
             {!hideSearch && (
-              <div className="border-border-subtle flex items-center overflow-hidden rounded-t-lg border-b">
+              <div className="flex items-center overflow-hidden rounded-t-lg border-b border-border-subtle">
                 <Command.Input
                   placeholder={searchPlaceholder}
                   value={search}
                   onValueChange={setSearch}
                   className={cn(
-                    "text-content-emphasis placeholder:text-content-muted grow border-0 bg-transparent py-3 pl-4 pr-2 outline-none focus:ring-0 sm:text-sm",
+                    "grow border-0 bg-transparent py-3 pl-4 pr-2 text-content-emphasis outline-none placeholder:text-content-muted focus:ring-0 sm:text-sm",
                     inputClassName,
                   )}
                   onKeyDown={(e) => {
@@ -279,7 +279,7 @@ export function Combobox({
                 />
                 {inputRight && <div className="mr-2">{inputRight}</div>}
                 {shortcutHint && (
-                  <kbd className="border-border-subtle bg-bg-subtle text-content-subtle mr-2 hidden shrink-0 rounded border px-2 py-0.5 text-xs font-light md:block">
+                  <kbd className="mr-2 hidden shrink-0 rounded border border-border-subtle bg-bg-subtle px-2 py-0.5 text-xs font-light text-content-subtle md:block">
                     {shortcutHint}
                   </kbd>
                 )}
@@ -309,8 +309,8 @@ export function Combobox({
                           onSelect={() => handleSelect(option)}
                           disabled={Boolean(
                             !isSelected &&
-                              maxSelected &&
-                              selected.length >= maxSelected,
+                            maxSelected &&
+                            selected.length >= maxSelected,
                           )}
                           right={optionRight?.(option)}
                           description={optionDescription?.(option)}
@@ -324,11 +324,11 @@ export function Combobox({
                       search.length > 0 &&
                       createOptionItem}
                     {shouldFilter ? (
-                      <Empty className="text-content-subtle flex min-h-12 items-center justify-center text-sm">
+                      <Empty className="flex min-h-12 items-center justify-center text-sm text-content-subtle">
                         {emptyState ? emptyState : "No matches"}
                       </Empty>
                     ) : sortedOptions.length === 0 ? (
-                      <div className="text-content-subtle flex min-h-12 items-center justify-center text-sm">
+                      <div className="flex min-h-12 items-center justify-center text-sm text-content-subtle">
                         {emptyState ? emptyState : "No matches"}
                       </div>
                     ) : null}
@@ -345,7 +345,7 @@ export function Combobox({
             </ScrollContainer>
             {/* for single selection, the create option item is shown as a sticky item outside of the scroll container */}
             {onCreate && !multiple && (
-              <div className="border-border-subtle bg-bg-default rounded-b-lg border-t p-1">
+              <div className="rounded-b-lg border-t border-border-subtle bg-bg-default p-1">
                 {createOptionItem}
               </div>
             )}
@@ -377,7 +377,7 @@ export function Combobox({
               {caret &&
                 (caret === true ? (
                   <ChevronDown
-                    className={`text-content-muted ml-1 size-4 shrink-0 transition-transform duration-75 group-data-[state=open]:rotate-180`}
+                    className={`ml-1 size-4 shrink-0 text-content-muted transition-transform duration-75 group-data-[state=open]:rotate-180`}
                   />
                 ) : (
                   caret
@@ -436,14 +436,14 @@ function Option({
           value={option.label + option?.value}
         >
           {multiple && (
-            <div className="text-content-default shrink-0">
+            <div className="shrink-0 text-content-default">
               {selected ? (
                 <CheckboxIcon
                   variant="fill"
-                  className="text-content-default size-4"
+                  className="size-4 text-content-default"
                 />
               ) : (
-                <CheckboxIcon className="text-content-muted size-4" />
+                <CheckboxIcon className="size-4 text-content-muted" />
               )}
             </div>
           )}
@@ -454,7 +454,7 @@ function Option({
             )}
           >
             {option.icon && (
-              <span className="text-content-default shrink-0">
+              <span className="shrink-0 text-content-default">
                 {isReactNode(option.icon) ? (
                   option.icon
                 ) : (
@@ -467,23 +467,23 @@ function Option({
                 "grow",
                 hasDescription
                   ? "text-content-emphasis"
-                  : "text-content-default truncate",
+                  : "truncate text-content-default",
               )}
             >
               {option.label}
             </span>
             {hasDescription && (
-              <span className="text-content-subtle text-sm">{description}</span>
+              <span className="text-sm text-content-subtle">{description}</span>
             )}
           </div>
           {right}
           {!multiple && selected && (
-            <Check2 className="text-content-default size-4 shrink-0" />
+            <Check2 className="size-4 shrink-0 text-content-default" />
           )}
         </Command.Item>
       </DisabledTooltip>
       {option.separatorAfter && (
-        <Command.Separator className="bg-border-subtle -mx-1 my-1 h-px" />
+        <Command.Separator className="-mx-1 my-1 h-px bg-border-subtle" />
       )}
     </>
   );

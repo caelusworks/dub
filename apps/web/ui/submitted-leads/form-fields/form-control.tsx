@@ -29,7 +29,7 @@ export const FormControl = ({
   return (
     <label {...rest}>
       <div className="flex items-center gap-1" dir={labelDir}>
-        <span className="text-content-emphasis text-sm font-medium">
+        <span className="text-sm font-medium text-content-emphasis">
           {label}
         </span>
         {required && <FormControlRequiredBadge />}

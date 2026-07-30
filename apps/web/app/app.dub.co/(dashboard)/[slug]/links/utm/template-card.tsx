@@ -101,7 +101,7 @@ export function TemplateCard({
             </div>
           }
         >
-          <div className="xs:flex hidden shrink-0 items-center gap-1 px-2 text-neutral-500">
+          <div className="hidden shrink-0 items-center gap-1 px-2 text-neutral-500 xs:flex">
             {includedParams.map(({ icon: Icon }) => (
               <Icon className="size-3.5" />
             ))}

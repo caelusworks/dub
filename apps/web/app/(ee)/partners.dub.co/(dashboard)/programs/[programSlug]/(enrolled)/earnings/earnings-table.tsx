@@ -198,7 +198,9 @@ export function EarningsTablePartner({ limit }: { limit?: number }) {
                 return (
                   <div
                     className="flex items-center gap-3"
-                    title={country ? COUNTRIES[country] ?? country : undefined}
+                    title={
+                      country ? (COUNTRIES[country] ?? country) : undefined
+                    }
                   >
                     {country ? (
                       <CountryFlag countryCode={country} />

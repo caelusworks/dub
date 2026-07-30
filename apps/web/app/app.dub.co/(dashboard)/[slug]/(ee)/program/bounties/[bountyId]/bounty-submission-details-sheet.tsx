@@ -327,7 +327,7 @@ function BountySubmissionDetailsSheetContent({
                           ) {
                             return (
                               <Tooltip content="Estimated earnings based on reached reward tiers">
-                                <div className="hover:text-content-emphasis text-content-muted flex w-fit cursor-help items-center gap-1 underline decoration-dotted underline-offset-2">
+                                <div className="flex w-fit cursor-help items-center gap-1 text-content-muted underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
                                   <CircleHalfDottedClock className="size-3.5 shrink-0" />{" "}
                                   {currencyFormatter(estimatedEarnings)}
                                 </div>
@@ -448,14 +448,14 @@ function BountySubmissionDetailsSheetContent({
 
                 {Boolean(submission.files?.length) && (
                   <div>
-                    <h2 className="text-content-emphasis text-sm font-medium">
+                    <h2 className="text-sm font-medium text-content-emphasis">
                       Files
                     </h2>
                     <div className="mt-2 flex flex-wrap gap-4">
                       {submission.files!.map((file, idx) => (
                         <a
                           key={idx}
-                          className="border-border-subtle hover:border-border-default group relative flex size-14 items-center justify-center rounded-md border bg-white"
+                          className="group relative flex size-14 items-center justify-center rounded-md border border-border-subtle bg-white hover:border-border-default"
                           target="_blank"
                           href={file.url}
                           rel="noopener noreferrer"
@@ -474,7 +474,7 @@ function BountySubmissionDetailsSheetContent({
 
                 {Boolean(submission.urls?.length) && !hasSocialContent && (
                   <div>
-                    <h2 className="text-content-emphasis text-sm font-medium">
+                    <h2 className="text-sm font-medium text-content-emphasis">
                       URLs
                     </h2>
                     <div className="mt-2 flex flex-col gap-2">
@@ -483,7 +483,7 @@ function BountySubmissionDetailsSheetContent({
                           className="relative"
                           key={`${submission.id}-${idx}-${url}`}
                         >
-                          <div className="border-border-subtle block w-full rounded-lg border px-3 py-2 pl-10 pr-12">
+                          <div className="block w-full rounded-lg border border-border-subtle px-3 py-2 pl-10 pr-12">
                             <a
                               href={url}
                               target="_blank"
@@ -514,7 +514,7 @@ function BountySubmissionDetailsSheetContent({
 
                 {submission.description && (
                   <div>
-                    <h2 className="text-content-emphasis text-sm font-medium">
+                    <h2 className="text-sm font-medium text-content-emphasis">
                       How did you complete this bounty?
                     </h2>
                     <span className="mt-2 whitespace-pre-wrap text-sm font-normal text-neutral-600">

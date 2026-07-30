@@ -54,7 +54,7 @@ export default function ReferralInvite({
                 You have been invited to start using Dub!
               </Text>
             )}
-            <Section className="mb-8 mt-8">
+            <Section className="mt-8 mb-8">
               <Link
                 className="rounded-lg bg-black px-6 py-3 text-center text-[12px] font-semibold text-white no-underline"
                 href={url}
@@ -65,7 +65,7 @@ export default function ReferralInvite({
             <Text className="text-sm leading-6 text-black">
               or copy and paste this URL into your browser:
             </Text>
-            <Text className="max-w-sm flex-wrap break-words font-medium text-purple-600 no-underline">
+            <Text className="max-w-sm flex-wrap font-medium break-words text-purple-600 no-underline">
               {url.replace(/^https?:\/\//, "")}
             </Text>
             <Footer email={email} />

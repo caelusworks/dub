@@ -75,10 +75,10 @@ function ConfirmApproveBountySubmissionModal({
   return (
     <Modal showModal={showModal} setShowModal={setShowModal}>
       <div className="space-y-2 border-b border-neutral-200 px-4 py-4 sm:px-6">
-        <h3 className="text-content-emphasis text-lg font-medium">
+        <h3 className="text-lg font-medium text-content-emphasis">
           Approve bounty submission
         </h3>
-        <p className="text-content-subtle text-sm">
+        <p className="text-sm text-content-subtle">
           This will create a{" "}
           <span className="font-semibold text-neutral-900">
             {currencyFormatter(commissionAmountCents ?? 0, {
@@ -120,7 +120,7 @@ function ConfirmApproveBountySubmissionModal({
                 </div>
               </div>
               <div className="shrink-0 text-right">
-                <span className="text-content-emphasis text-xl font-semibold">
+                <span className="text-xl font-semibold text-content-emphasis">
                   {currencyFormatter(commissionAmountCents ?? 0)}
                 </span>
               </div>

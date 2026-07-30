@@ -53,7 +53,7 @@ export function SlackSupportSettingsCard() {
           exit={{ opacity: 0, y: 10 }}
           transition={{ duration: 0.2 }}
           className={cn(
-            "border-border-subtle relative overflow-hidden rounded-xl border bg-gradient-to-r from-[#F5F3FF] via-white to-[#FDF2FA]",
+            "relative overflow-hidden rounded-xl border border-border-subtle bg-gradient-to-r from-[#F5F3FF] via-white to-[#FDF2FA]",
             "sm:h-12 sm:max-h-12",
           )}
         >
@@ -97,13 +97,13 @@ export function SlackSupportSettingsCard() {
               </div>
 
               <p
-                className="text-content-default flex min-w-0 flex-col text-sm sm:block sm:flex-1 sm:truncate sm:text-base"
+                className="flex min-w-0 flex-col text-sm text-content-default sm:block sm:flex-1 sm:truncate sm:text-base"
                 title="Priority Slack support. Request an invite and get direct access to our team."
               >
                 <span className="font-semibold text-neutral-900">
                   Priority Slack support.
                 </span>{" "}
-                <span className="text-content-subtle font-normal">
+                <span className="font-normal text-content-subtle">
                   Request an invite and get direct access to our team.
                 </span>
               </p>

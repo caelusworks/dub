@@ -7,9 +7,7 @@ interface SubmittedLeadDetailsProps {
 
 export function SubmittedLeadDetails({ lead }: SubmittedLeadDetailsProps) {
   const formData = lead.formData as
-    | SubmittedLeadFormDataField[]
-    | null
-    | undefined;
+    SubmittedLeadFormDataField[] | null | undefined;
 
   // Don't show fields with null/undefined/empty/NaN values (avoid displaying "null")
   const displayFormData = formData?.filter((field) => {
@@ -21,14 +19,14 @@ export function SubmittedLeadDetails({ lead }: SubmittedLeadDetailsProps) {
 
   return (
     <div className="@3xl/sheet:order-1">
-      <div className="border-border-subtle overflow-hidden rounded-xl border bg-white p-4">
+      <div className="overflow-hidden rounded-xl border border-border-subtle bg-white p-4">
         <div className="grid grid-cols-1 gap-4 text-sm text-neutral-600">
           {displayFormData?.map((field) => (
             <div key={field.key}>
-              <div className="text-content-default text-sm font-semibold">
+              <div className="text-sm font-semibold text-content-default">
                 {field.label}
               </div>
-              <div className="text-content-default whitespace-pre-line text-wrap text-sm">
+              <div className="whitespace-pre-line text-wrap text-sm text-content-default">
                 {formatFormDataValue(field.value)}
               </div>
             </div>

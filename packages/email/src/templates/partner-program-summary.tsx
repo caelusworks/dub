@@ -215,7 +215,7 @@ export default function PartnerProgramSummary({
                   />
 
                   <div>
-                    <div className="text-base font-semibold leading-tight text-neutral-800">
+                    <div className="text-base leading-tight font-semibold text-neutral-800">
                       {program.name}
                     </div>
                     <div className="text-xs font-medium text-neutral-500">
@@ -228,7 +228,7 @@ export default function PartnerProgramSummary({
 
               <Section className="space-y-6 rounded-xl border-t border-solid border-neutral-200 bg-white p-6">
                 <Section>
-                  <Heading className="mb-4 mt-0 text-base font-semibold leading-6 text-neutral-800">
+                  <Heading className="mt-0 mb-4 text-base leading-6 font-semibold text-neutral-800">
                     Stats for {reportingPeriod.month} (vs previous month)
                   </Heading>
 
@@ -238,7 +238,7 @@ export default function PartnerProgramSummary({
                 <Hr className="mx-0 my-8 w-full border border-neutral-200" />
 
                 <Section>
-                  <Heading className="mb-4 mt-0 text-base font-semibold leading-6 text-neutral-800">
+                  <Heading className="mt-0 mb-4 text-base leading-6 font-semibold text-neutral-800">
                     All-time Performance
                   </Heading>
 
@@ -248,7 +248,7 @@ export default function PartnerProgramSummary({
                 <Section className="mt-8 text-center">
                   <Link
                     href={`https://partners.dub.co/programs/${program.slug}?start=${reportingPeriod.start}&end=${reportingPeriod.end}`}
-                    className="box-border block w-full rounded-lg bg-black px-0 py-4 text-center text-sm font-semibold leading-none text-white no-underline"
+                    className="box-border block w-full rounded-lg bg-black px-0 py-4 text-center text-sm leading-none font-semibold text-white no-underline"
                   >
                     View dashboard
                   </Link>
@@ -313,7 +313,7 @@ const Stats = ({
         <Img src={icon} alt={title} className="h-4 w-4" draggable={false} />
       </div>
       <div className="ml-3">
-        <p className="mb-0 mt-0 text-left text-xs font-medium text-neutral-500">
+        <p className="mt-0 mb-0 text-left text-xs font-medium text-neutral-500">
           {title}
         </p>
         <div className="flex items-center">

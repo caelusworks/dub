@@ -41,8 +41,8 @@ export const constructRewardAmount = (
           amount,
           ...modifiers.map((modifier) =>
             reward.type === "flat"
-              ? modifier.amountInCents ?? Infinity
-              : modifier.amountInPercentage ?? Infinity,
+              ? (modifier.amountInCents ?? Infinity)
+              : (modifier.amountInPercentage ?? Infinity),
           ),
         );
 
@@ -50,8 +50,8 @@ export const constructRewardAmount = (
           amount,
           ...modifiers.map((modifier) =>
             reward.type === "flat"
-              ? modifier.amountInCents ?? 0
-              : modifier.amountInPercentage ?? 0,
+              ? (modifier.amountInCents ?? 0)
+              : (modifier.amountInPercentage ?? 0),
           ),
         );
 

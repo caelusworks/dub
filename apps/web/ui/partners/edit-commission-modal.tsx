@@ -151,7 +151,7 @@ function EditCommissionModal({
             </div>
 
             <div>
-              <label className="text-content-emphasis text-sm font-normal">
+              <label className="text-sm font-normal text-content-emphasis">
                 Earnings
               </label>
               <div className="relative mt-2 rounded-md shadow-sm">
@@ -205,7 +205,7 @@ function EditCommissionModal({
             </div>
 
             <div>
-              <label className="text-content-emphasis text-sm font-normal">
+              <label className="text-sm font-normal text-content-emphasis">
                 New status
               </label>
               <Controller

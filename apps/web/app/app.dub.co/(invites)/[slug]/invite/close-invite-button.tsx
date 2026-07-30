@@ -15,7 +15,7 @@ export function CloseInviteButton({
         variant={variant === "x" ? "outline" : "primary"}
         icon={
           variant === "x" ? (
-            <X className="text-content-subtle size-5" />
+            <X className="size-5 text-content-subtle" />
           ) : undefined
         }
         className={

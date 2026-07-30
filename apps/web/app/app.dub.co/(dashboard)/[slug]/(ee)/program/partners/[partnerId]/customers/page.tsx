@@ -26,7 +26,7 @@ export default function ProgramPartnerCustomersPage() {
   ) : (
     <div className="flex justify-center py-16">
       {error ? (
-        <span className="text-content-subtle text-sm">
+        <span className="text-sm text-content-subtle">
           Failed to load partner customers
         </span>
       ) : (
@@ -138,7 +138,7 @@ function PartnerCustomers({ partner }: { partner: EnrolledPartnerProps }) {
   return (
     <>
       <div className="flex items-end justify-between gap-4">
-        <h2 className="text-content-emphasis text-lg font-semibold">
+        <h2 className="text-lg font-semibold text-content-emphasis">
           Customers
         </h2>
         {Boolean(customers?.length) && (

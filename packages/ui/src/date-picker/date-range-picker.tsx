@@ -161,7 +161,7 @@ const DateRangePickerInner = ({
         popoverContentClassName="rounded-xl"
         content={
           <div className="flex w-full">
-            <div className="scrollbar-hide relative flex w-full flex-col overflow-x-scroll sm:flex-row-reverse sm:items-start">
+            <div className="relative flex w-full flex-col overflow-x-scroll scrollbar-hide sm:flex-row-reverse sm:items-start">
               {presets && presets.length > 0 && (
                 <PresetScrollContainer>
                   <div className="absolute px-3 sm:inset-0 sm:left-0">
@@ -176,7 +176,7 @@ const DateRangePickerInner = ({
                   </div>
                 </PresetScrollContainer>
               )}
-              <div className="scrollbar-hide overflow-x-scroll">
+              <div className="overflow-x-scroll scrollbar-hide">
                 <CalendarPrimitive
                   mode="range"
                   selected={range}
@@ -188,7 +188,7 @@ const DateRangePickerInner = ({
                   disableNavigation={disableNavigation}
                   showYearNavigation={showYearNavigation}
                   locale={locale}
-                  className="scrollbar-hide overflow-x-scroll"
+                  className="overflow-x-scroll scrollbar-hide"
                   classNames={{
                     months:
                       "flex flex-row divide-x divide-neutral-200 overflow-x-scroll scrollbar-hide",
@@ -234,7 +234,7 @@ function PresetScrollContainer({ children }: PropsWithChildren) {
         className={cn(
           "relative flex h-16 w-full items-center sm:h-full sm:w-48",
           "border-b border-neutral-200 sm:border-b-0 sm:border-l",
-          "scrollbar-hide overflow-auto",
+          "overflow-auto scrollbar-hide",
         )}
       >
         {children}

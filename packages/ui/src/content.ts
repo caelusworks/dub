@@ -36,8 +36,7 @@ export type NavItemChild = {
 };
 
 export type NavItemChildren = (
-  | NavItemChild
-  | { label: string; items: NavItemChild[] }
+  NavItemChild | { label: string; items: NavItemChild[] }
 )[];
 
 export const FEATURES_LIST = [

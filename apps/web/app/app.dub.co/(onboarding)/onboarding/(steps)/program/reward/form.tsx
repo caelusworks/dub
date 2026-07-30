@@ -140,7 +140,7 @@ export function Form() {
       className="flex flex-col gap-6 px-2"
     >
       <div className="grid grid-cols-1 gap-2">
-        <h2 className="text-content-emphasis text-sm font-semibold">
+        <h2 className="text-sm font-semibold text-content-emphasis">
           Reward type
         </h2>
 
@@ -234,7 +234,7 @@ export function Form() {
           <div className="flex flex-col gap-6 p-1">
             {defaultRewardType === "sale" && (
               <div className="space-y-2">
-                <h2 className="text-content-emphasis text-sm font-semibold">
+                <h2 className="text-sm font-semibold text-content-emphasis">
                   Commission structure
                 </h2>
 
@@ -344,7 +344,7 @@ export function Form() {
 
             {defaultRewardType === "sale" && (
               <div className="space-y-2">
-                <h2 className="text-content-emphasis text-sm font-semibold">
+                <h2 className="text-sm font-semibold text-content-emphasis">
                   Payout model
                 </h2>
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -412,7 +412,7 @@ export function Form() {
               <div className="flex items-center justify-between gap-3">
                 <label
                   htmlFor={rewardAmountInputId}
-                  className="text-content-emphasis block text-sm font-semibold"
+                  className="block text-sm font-semibold text-content-emphasis"
                 >
                   {type === "percentage" ? "Percentage" : "Amount"} per{" "}
                   {defaultRewardType}

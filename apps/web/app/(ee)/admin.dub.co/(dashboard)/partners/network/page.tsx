@@ -192,9 +192,9 @@ export default function NetworkApplicationsPage() {
     }
 
     return [
-      currentIndex > 0 ? partners[currentIndex - 1]?.id ?? null : null,
+      currentIndex > 0 ? (partners[currentIndex - 1]?.id ?? null) : null,
       currentIndex < partners.length - 1
-        ? partners[currentIndex + 1]?.id ?? null
+        ? (partners[currentIndex + 1]?.id ?? null)
         : null,
     ] as const;
   }, [detailsSheetState.partnerId, partners]);

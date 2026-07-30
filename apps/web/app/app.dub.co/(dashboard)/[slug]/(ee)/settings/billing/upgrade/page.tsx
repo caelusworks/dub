@@ -146,7 +146,7 @@ export default function WorkspaceBillingUpgradePage() {
           >
             Billing
           </Link>
-          <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
+          <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
           <h1>Plans</h1>
         </div>
       }
@@ -200,12 +200,12 @@ export default function WorkspaceBillingUpgradePage() {
                 //    it means they're on the legacy business plan – prompt them to upgrade to the new business plan
                 const isCurrentPlan = Boolean(
                   stripeId &&
-                    plan.name.toLowerCase() === currentPlan &&
-                    planTier === currentPlanTier &&
-                    !isLegacyBusinessPlan({
-                      plan: currentPlan,
-                      partnersLimit,
-                    }),
+                  plan.name.toLowerCase() === currentPlan &&
+                  planTier === currentPlanTier &&
+                  !isLegacyBusinessPlan({
+                    plan: currentPlan,
+                    partnersLimit,
+                  }),
                 );
                 const isCurrentPlanAndPeriod =
                   isCurrentPlan && period === currentPlanPeriod;
@@ -213,12 +213,12 @@ export default function WorkspaceBillingUpgradePage() {
                 // show downgrade button if user has a stripe id and is on the current plan
                 const isDowngrade = Boolean(
                   stripeId &&
-                    isDowngradePlan({
-                      currentPlan: currentPlan || "free",
-                      currentTier: currentPlanTier ?? undefined,
-                      newPlan: plan.name,
-                      newTier: planTier,
-                    }),
+                  isDowngradePlan({
+                    currentPlan: currentPlan || "free",
+                    currentTier: currentPlanTier ?? undefined,
+                    newPlan: plan.name,
+                    newTier: planTier,
+                  }),
                 );
 
                 return (
@@ -241,7 +241,7 @@ export default function WorkspaceBillingUpgradePage() {
                           plan.name === recommendedPlan.plan.name &&
                           planTier === recommendedPlan.planTier &&
                           !isCurrentPlan && (
-                            <div className="animate-fade-in flex h-6 min-w-0 items-center rounded-lg border border-blue-100 bg-blue-50 px-1.5 text-xs font-medium text-blue-600">
+                            <div className="flex h-6 min-w-0 animate-fade-in items-center rounded-lg border border-blue-100 bg-blue-50 px-1.5 text-xs font-medium text-blue-600">
                               <span className="truncate">Recommended</span>
                             </div>
                           )}
@@ -347,7 +347,7 @@ export default function WorkspaceBillingUpgradePage() {
           </div>
 
           <div className="relative -z-10 bg-white">
-            <div className="bg-bg-muted border-subtle absolute inset-x-0 -top-2.5 bottom-0 rounded-b-[12px] border" />
+            <div className="border-subtle absolute inset-x-0 -top-2.5 bottom-0 rounded-b-[12px] border bg-bg-muted" />
 
             <AdjustUsageRow
               planPeriod={period}

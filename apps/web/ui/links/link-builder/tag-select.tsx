@@ -243,7 +243,7 @@ export const TagSelect = memo(() => {
         transition={{ ease: "linear", duration: 0.1 }}
       >
         {suggestedTags.length > 0 && (
-          <div className="animate-fade-in flex flex-wrap items-center gap-2 pt-3">
+          <div className="flex animate-fade-in flex-wrap items-center gap-2 pt-3">
             <Tooltip content="AI-suggested tags based on the content of the link. Click a suggested tag to add it.">
               <div className="group">
                 <Magic className="size-4 text-neutral-600 transition-colors group-hover:text-neutral-500" />

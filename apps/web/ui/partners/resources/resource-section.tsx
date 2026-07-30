@@ -21,11 +21,11 @@ export function ResourceSection({
   onAdd?: () => void;
 }>) {
   return (
-    <div className="border-border-subtle grid grid-cols-1 gap-4 rounded-lg border p-4 sm:grid-cols-2 sm:p-6">
+    <div className="grid grid-cols-1 gap-4 rounded-lg border border-border-subtle p-4 sm:grid-cols-2 sm:p-6">
       <div>
-        <h2 className="text-content-emphasis text-lg font-semibold">{title}</h2>
+        <h2 className="text-lg font-semibold text-content-emphasis">{title}</h2>
         {description && (
-          <p className="text-content-subtle text-sm">{description}</p>
+          <p className="text-sm text-content-subtle">{description}</p>
         )}
       </div>
       <div className="-m-1">

@@ -466,10 +466,10 @@ export function AddEditDomainForm({
                       {domainStatus !== "idle" ? (
                         domainStatus === "invalid" ||
                         domainStatus === "error" ? (
-                          domainValidateMessage ??
+                          (domainValidateMessage ??
                           (domainStatus === "error"
                             ? "Could not check domain availability. Please try again."
-                            : "This domain is not valid.")
+                            : "This domain is not valid."))
                         ) : (
                           <>
                             {currentStatusProps.prefix || "The domain"}{" "}

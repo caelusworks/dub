@@ -98,11 +98,11 @@ export default function ProgramPartnerLayout({
             href={`/${workspaceSlug}/program/partners`}
             aria-label="Back to groups"
             title="Back to groups"
-            className="bg-bg-subtle hover:bg-bg-emphasis flex size-8 shrink-0 items-center justify-center rounded-lg transition-[transform,background-color] duration-150 active:scale-95"
+            className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle transition-[transform,background-color] duration-150 hover:bg-bg-emphasis active:scale-95"
           >
             <Users className="size-4" />
           </Link>
-          <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
+          <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
           <PartnerSelector
             variant="header"
             selectedPartnerId={partner?.id ?? null}
@@ -114,7 +114,7 @@ export default function ProgramPartnerLayout({
     >
       <PageWidthWrapper className="pb-10">
         <PartnerStats partner={partner} error={Boolean(partnerError)} />
-        <div className="@3xl/page:grid-cols-[minmax(440px,1fr)_minmax(0,360px)] mt-6 grid grid-cols-1 gap-x-6 gap-y-4">
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-4 @3xl/page:grid-cols-[minmax(440px,1fr)_minmax(0,360px)]">
           <div className="@3xl/page:order-2">
             <PartnerInfoCards
               partner={partner}
@@ -125,9 +125,9 @@ export default function ProgramPartnerLayout({
             />
           </div>
           <div className="@3xl/page:order-1">
-            <div className="border-border-subtle overflow-hidden rounded-xl border bg-neutral-100">
+            <div className="overflow-hidden rounded-xl border border-border-subtle bg-neutral-100">
               <PartnerNav />
-              <div className="border-border-subtle -mx-px -mb-px rounded-xl border bg-white p-4">
+              <div className="-mx-px -mb-px rounded-xl border border-border-subtle bg-white p-4">
                 {children}
               </div>
             </div>

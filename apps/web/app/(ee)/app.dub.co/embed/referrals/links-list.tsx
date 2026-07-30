@@ -67,7 +67,7 @@ export function ReferralsEmbedLinksList({ onCreateLink, onEditLink }: Props) {
 
           return (
             <div className="flex min-w-0 items-center gap-2">
-              <div className="border-border-subtle has-[:hover]:bg-bg-muted bg-bg-default rounded-md border transition-colors">
+              <div className="rounded-md border border-border-subtle bg-bg-default transition-colors has-[:hover]:bg-bg-muted">
                 <CopyButton
                   value={partnerLink}
                   variant="neutral"
@@ -77,15 +77,15 @@ export function ReferralsEmbedLinksList({ onCreateLink, onEditLink }: Props) {
 
               <div className="flex min-w-0 flex-col">
                 <span
-                  className="text-content-emphasis min-w-0 truncate text-xs font-medium"
+                  className="min-w-0 truncate text-xs font-medium text-content-emphasis"
                   title={partnerLink}
                 >
                   {getPrettyUrl(partnerLink)}
                 </span>
                 <div className="flex min-w-0 max-w-[300px] items-center gap-1">
-                  <ArrowTurnRight2 className="text-content-muted size-3 shrink-0" />
+                  <ArrowTurnRight2 className="size-3 shrink-0 text-content-muted" />
                   <a
-                    className="text-content-subtle min-w-0 cursor-alias truncate text-xs font-normal decoration-dotted underline-offset-2 hover:underline"
+                    className="min-w-0 cursor-alias truncate text-xs font-normal text-content-subtle decoration-dotted underline-offset-2 hover:underline"
                     href={destinationUrl}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -160,8 +160,8 @@ export function ReferralsEmbedLinksList({ onCreateLink, onEditLink }: Props) {
         description="You don't have any referral links yet. Create a link to start earning commissions."
         cardContent={() => (
           <>
-            <Users className="text-content-default size-4" />
-            <div className="bg-bg-emphasis h-2.5 w-40 rounded-sm" />
+            <Users className="size-4 text-content-default" />
+            <div className="h-2.5 w-40 rounded-sm bg-bg-emphasis" />
           </>
         )}
         className="max-w-xs border-none md:min-h-fit"
@@ -170,7 +170,7 @@ export function ReferralsEmbedLinksList({ onCreateLink, onEditLink }: Props) {
             text="Create link"
             variant="primary"
             onClick={onCreateLink}
-            className="bg-bg-inverted text-content-inverted h-9 rounded-md hover:opacity-80"
+            className="h-9 rounded-md bg-bg-inverted text-content-inverted hover:opacity-80"
           />
         }
       />
@@ -183,7 +183,7 @@ export function ReferralsEmbedLinksList({ onCreateLink, onEditLink }: Props) {
 
   return (
     <motion.div
-      className="border-border-subtle relative rounded-md border"
+      className="relative rounded-md border border-border-subtle"
       {...TAB_ITEM_ANIMATION_SETTINGS}
     >
       <Table
@@ -192,7 +192,7 @@ export function ReferralsEmbedLinksList({ onCreateLink, onEditLink }: Props) {
         containerClassName="border-none max-h-[26rem] overflow-auto"
       />
       {links.length > 0 && (
-        <div className="from-bg-default pointer-events-none absolute -bottom-px left-0 h-16 w-full rounded-b-lg bg-gradient-to-t sm:bottom-0" />
+        <div className="pointer-events-none absolute -bottom-px left-0 h-16 w-full rounded-b-lg bg-gradient-to-t from-bg-default sm:bottom-0" />
       )}
     </motion.div>
   );

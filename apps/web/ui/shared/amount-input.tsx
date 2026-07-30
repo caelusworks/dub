@@ -4,8 +4,10 @@ import { forwardRef, InputHTMLAttributes } from "react";
 
 export type AmountType = "flat" | "percentage";
 
-interface AmountInputProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
+interface AmountInputProps extends Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "type"
+> {
   amountType?: AmountType;
   error?: string;
   currency?: string;

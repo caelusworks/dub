@@ -69,7 +69,7 @@ export const GET = withWorkspace(
       const defaultPaymentMethodId =
         typeof defaultPaymentMethod === "string"
           ? defaultPaymentMethod
-          : defaultPaymentMethod?.id ?? null;
+          : (defaultPaymentMethod?.id ?? null);
 
       // reorder to put direct debit first
       const directDebit = paymentMethods.data.find((method) =>

@@ -34,36 +34,36 @@ export function EmbedBountySubmissionDetail({
       : "Submission";
 
   return (
-    <div className="border-border-subtle bg-bg-default overflow-hidden rounded-xl border">
+    <div className="overflow-hidden rounded-xl border border-border-subtle bg-bg-default">
       <div className="flex items-center gap-1.5 px-4 py-2">
         <button
           type="button"
           aria-label="Back to bounties"
           title="Back to bounties"
           onClick={onBackToRoot}
-          className="bg-bg-subtle hover:bg-bg-emphasis flex size-8 shrink-0 items-center justify-center rounded-lg transition-[transform,background-color] duration-150 active:scale-95"
+          className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle transition-[transform,background-color] duration-150 hover:bg-bg-emphasis active:scale-95"
         >
           <Trophy className="size-4" />
         </button>
-        <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
+        <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
         <button
           type="button"
           aria-label="Back to bounty details"
           title="Back to bounty details"
           onClick={onBack}
-          className="text-content-default hover:text-content-emphasis shrink-0 text-sm font-medium transition-colors"
+          className="shrink-0 text-sm font-medium text-content-default transition-colors hover:text-content-emphasis"
         >
           Bounty details
         </button>
-        <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
-        <span className="text-content-emphasis min-w-0 truncate text-sm font-semibold">
+        <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
+        <span className="min-w-0 truncate text-sm font-semibold text-content-emphasis">
           {title}
         </span>
       </div>
 
-      <div className="border-border-subtle border-t" />
+      <div className="border-t border-border-subtle" />
 
-      <div className="divide-border-subtle grid grid-cols-1 divide-y lg:grid-cols-[minmax(0,1fr)_minmax(0,400px)] lg:divide-x lg:divide-y-0">
+      <div className="grid grid-cols-1 divide-y divide-border-subtle lg:grid-cols-[minmax(0,1fr)_minmax(0,400px)] lg:divide-x lg:divide-y-0">
         <SubmissionLeftColumn bounty={bounty} submission={submission} />
         <SubmissionRightColumn bounty={bounty} submission={submission} />
       </div>
@@ -93,21 +93,21 @@ function SubmissionLeftColumn({
         submission.description) && (
         <div className="flex flex-col gap-4">
           {!bountyInfo?.hasSocialMetrics && (
-            <h2 className="text-content-emphasis text-base font-semibold">
+            <h2 className="text-base font-semibold text-content-emphasis">
               Submitted content
             </h2>
           )}
 
           {Boolean(submission.files?.length) && (
             <div>
-              <h3 className="text-content-default text-sm font-medium">
+              <h3 className="text-sm font-medium text-content-default">
                 Images
               </h3>
               <div className="mt-2 flex flex-wrap gap-3">
                 {submission.files!.map((file, idx) => (
                   <a
                     key={idx}
-                    className="border-border-subtle hover:border-border-default bg-bg-default group relative flex size-14 items-center justify-center rounded-md border"
+                    className="group relative flex size-14 items-center justify-center rounded-md border border-border-subtle bg-bg-default hover:border-border-default"
                     target="_blank"
                     href={file.url}
                     rel="noopener noreferrer"
@@ -131,7 +131,7 @@ function SubmissionLeftColumn({
           {Boolean(submission.urls?.length) &&
             !bountyInfo?.hasSocialMetrics && (
               <div>
-                <h3 className="text-content-default text-sm font-medium">
+                <h3 className="text-sm font-medium text-content-default">
                   URLs
                 </h3>
                 <div className="mt-2 flex flex-col gap-2">
@@ -140,18 +140,18 @@ function SubmissionLeftColumn({
                       className="relative"
                       key={`${submission.id}-${idx}-${url}`}
                     >
-                      <div className="border-border-subtle block w-full rounded-lg border px-3 py-2 pl-10 pr-12">
+                      <div className="block w-full rounded-lg border border-border-subtle px-3 py-2 pl-10 pr-12">
                         <a
                           href={url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-content-emphasis block cursor-alias truncate text-sm font-normal decoration-dotted underline-offset-2 hover:underline"
+                          className="block cursor-alias truncate text-sm font-normal text-content-emphasis decoration-dotted underline-offset-2 hover:underline"
                         >
                           {url}
                         </a>
                       </div>
                       <div className="absolute inset-y-0 left-0 flex items-center pl-2.5">
-                        <div className="bg-bg-subtle text-content-subtle flex size-6 items-center justify-center rounded-full text-xs font-medium">
+                        <div className="flex size-6 items-center justify-center rounded-full bg-bg-subtle text-xs font-medium text-content-subtle">
                           {idx + 1}
                         </div>
                       </div>
@@ -171,10 +171,10 @@ function SubmissionLeftColumn({
 
           {submission.description && (
             <div>
-              <h3 className="text-content-default text-sm font-medium">
+              <h3 className="text-sm font-medium text-content-default">
                 Provide any additional details (optional)
               </h3>
-              <p className="text-content-subtle mt-2 whitespace-pre-wrap text-sm">
+              <p className="mt-2 whitespace-pre-wrap text-sm text-content-subtle">
                 {submission.description}
               </p>
             </div>
@@ -197,7 +197,7 @@ function SubmissionRightColumn({
   const submittedDate = submission.completedAt ?? submission.createdAt;
 
   const textValue = (text: string) => (
-    <span className="text-content-emphasis text-sm font-medium">{text}</span>
+    <span className="text-sm font-medium text-content-emphasis">{text}</span>
   );
 
   const details: { label: string; value: React.ReactNode }[] = [];
@@ -258,13 +258,13 @@ function SubmissionRightColumn({
   return (
     <div className="flex flex-col gap-5 p-5">
       <div>
-        <h2 className="text-content-emphasis text-base font-semibold">
+        <h2 className="text-base font-semibold text-content-emphasis">
           Details
         </h2>
         <div className="mt-3 grid grid-cols-2 items-center gap-x-14 gap-y-1">
           {details.map(({ label, value }) => (
             <Fragment key={label}>
-              <span className="text-content-subtle text-sm font-medium">
+              <span className="text-sm font-medium text-content-subtle">
                 {label}
               </span>
               <div>{value}</div>
@@ -274,8 +274,8 @@ function SubmissionRightColumn({
       </div>
 
       {submission.rejectionNote && (
-        <div className="bg-bg-attention rounded-lg p-4">
-          <p className="text-content-attention whitespace-pre-wrap text-sm leading-6">
+        <div className="rounded-lg bg-bg-attention p-4">
+          <p className="whitespace-pre-wrap text-sm leading-6 text-content-attention">
             {submission.rejectionNote}
           </p>
         </div>

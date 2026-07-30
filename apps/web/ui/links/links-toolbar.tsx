@@ -287,7 +287,7 @@ export const LinksToolbar = memo(
                     {/* Large screen controls */}
                     <div
                       className={cn(
-                        "xs:gap-2 flex items-center gap-1.5 transition-[transform,opacity] duration-150",
+                        "flex items-center gap-1.5 transition-[transform,opacity] duration-150 xs:gap-2",
                         selectedLinkIds.length > 0
                           ? "translate-y-0 opacity-100"
                           : "pointer-events-none translate-y-1/2 opacity-0",
@@ -308,7 +308,7 @@ export const LinksToolbar = memo(
                             key={idx}
                             type="button"
                             variant="secondary"
-                            className="xs:px-2.5 h-7 gap-1.5 px-2 text-xs min-[1120px]:pr-1.5"
+                            className="h-7 gap-1.5 px-2 text-xs xs:px-2.5 min-[1120px]:pr-1.5"
                             textWrapperClassName="max-[1120px]:hidden"
                             icon={<Icon className="size-3.5" />}
                             text={label}

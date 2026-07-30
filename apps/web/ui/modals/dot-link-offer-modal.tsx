@@ -55,7 +55,7 @@ function DotLinkOfferModal({
             <div
               ref={scrollRef}
               onScroll={updateScrollProgress}
-              className="scrollbar-hide max-h-[calc(100vh-350px)] overflow-y-auto pb-6 text-left"
+              className="max-h-[calc(100vh-350px)] overflow-y-auto pb-6 text-left scrollbar-hide"
             >
               <h1 className="text-lg font-semibold text-neutral-900">
                 Get more from your short links

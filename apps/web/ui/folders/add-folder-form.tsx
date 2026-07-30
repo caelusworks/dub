@@ -101,7 +101,7 @@ export const AddFolderForm = ({ onSuccess, onCancel }: AddFolderFormProps) => {
             {step === 1 ? (
               <div className="mt-6">
                 <label>
-                  <span className="text-content-emphasis block text-sm font-medium">
+                  <span className="block text-sm font-medium text-content-emphasis">
                     Name
                   </span>
                   <div className="mt-2 flex rounded-md">
@@ -126,7 +126,7 @@ export const AddFolderForm = ({ onSuccess, onCancel }: AddFolderFormProps) => {
                 </label>
 
                 <label className="mt-6 block">
-                  <span className="text-content-emphasis block text-sm font-medium">
+                  <span className="block text-sm font-medium text-content-emphasis">
                     Description{" "}
                     <span className="text-content-subtle">(optional)</span>
                   </span>
@@ -142,14 +142,14 @@ export const AddFolderForm = ({ onSuccess, onCancel }: AddFolderFormProps) => {
                       }
                     }}
                   />
-                  <span className="text-content-subtle text-xs tabular-nums">
+                  <span className="text-xs tabular-nums text-content-subtle">
                     {description?.length || 0}/{FOLDER_MAX_DESCRIPTION_LENGTH}
                   </span>
                 </label>
               </div>
             ) : (
               <div className="mt-6">
-                <label className="text-content-emphasis text-sm font-medium">
+                <label className="text-sm font-medium text-content-emphasis">
                   Workspace access
                 </label>
                 <div className="mt-2 flex h-10 items-center justify-between rounded-md border border-neutral-300 bg-white">

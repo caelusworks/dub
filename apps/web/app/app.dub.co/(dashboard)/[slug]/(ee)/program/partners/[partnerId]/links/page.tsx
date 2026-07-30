@@ -47,7 +47,7 @@ export default function ProgramPartnerLinksPage() {
   ) : (
     <div className="flex justify-center py-16">
       {error ? (
-        <span className="text-content-subtle text-sm">
+        <span className="text-sm text-content-subtle">
           Failed to load partner links
         </span>
       ) : (
@@ -172,7 +172,7 @@ const PartnerLinks = ({ partner }: { partner: EnrolledPartnerProps }) => {
   return (
     <>
       <div className="flex items-end justify-between gap-4">
-        <h2 className="text-content-emphasis text-lg font-semibold">
+        <h2 className="text-lg font-semibold text-content-emphasis">
           Referral links
         </h2>
         <Button
@@ -294,7 +294,7 @@ const PartnerReferralLink = ({
 
   return (
     <>
-      <h2 className="text-content-emphasis text-lg font-semibold">
+      <h2 className="text-lg font-semibold text-content-emphasis">
         Partner referral link
       </h2>
       <Table {...table} />
@@ -459,7 +459,7 @@ const PartnerDiscountCodes = ({
   return (
     <>
       <div className="flex items-end justify-between gap-4">
-        <h2 className="text-content-emphasis text-lg font-semibold">
+        <h2 className="text-lg font-semibold text-content-emphasis">
           Discount codes
         </h2>
         <Button
@@ -480,10 +480,10 @@ const PartnerDiscountCodes = ({
         <div className="flex flex-col items-center justify-center gap-2 rounded-lg border border-neutral-200 bg-neutral-50 py-6">
           <div className="flex max-w-sm flex-col items-center gap-2 text-center">
             <Tag className="mb-2 size-6 text-neutral-900" />
-            <h3 className="text-content-emphasis text-sm font-semibold leading-5">
+            <h3 className="text-sm font-semibold leading-5 text-content-emphasis">
               No discount codes created
             </h3>
-            <p className="text-content-subtle -mt-1 text-sm font-medium leading-5">
+            <p className="-mt-1 text-sm font-medium leading-5 text-content-subtle">
               {discountCodeEmptyState.description}
             </p>
             {discountCodeEmptyState.buttonHref && (
@@ -504,7 +504,7 @@ const PartnerDiscountCodes = ({
         </div>
       ) : error ? (
         <div className="flex justify-center py-16">
-          <span className="text-content-subtle text-sm">
+          <span className="text-sm text-content-subtle">
             Failed to load discount codes
           </span>
         </div>

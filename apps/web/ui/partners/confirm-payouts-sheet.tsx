@@ -190,8 +190,8 @@ function ConfirmPayoutsSheetContent() {
   );
 
   const eligiblePayoutsTableRowCount = isExplicitSelectionMode
-    ? eligiblePayoutsSummaryCount?.count ?? 0
-    : eligiblePayoutsTableTotalCount?.count ?? 0;
+    ? (eligiblePayoutsSummaryCount?.count ?? 0)
+    : (eligiblePayoutsTableTotalCount?.count ?? 0);
 
   const [page, setPage] = useState(1);
   const { pagination, setPagination } = useTablePagination({
@@ -1102,7 +1102,7 @@ function ConfirmPayoutsButton({
       setOpenPopover={() => {}}
       content={
         <div
-          className="text-content-subtle select-none px-2 py-0.5 text-xs"
+          className="select-none px-2 py-0.5 text-xs text-content-subtle"
           onClick={() => setCancelCounter(0)}
         >
           Keep holding the button to confirm

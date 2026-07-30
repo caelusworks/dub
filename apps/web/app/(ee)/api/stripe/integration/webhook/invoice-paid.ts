@@ -294,8 +294,8 @@ export async function invoicePaid({
 
   // for program links
   let result:
-    | Awaited<ReturnType<typeof queuePartnerCommissionCreation>>
-    | undefined = undefined;
+    Awaited<ReturnType<typeof queuePartnerCommissionCreation>> | undefined =
+    undefined;
 
   if (link.programId && link.partnerId) {
     const saleMetadata = {

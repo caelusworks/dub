@@ -71,8 +71,7 @@ export type ChartContext<T extends Datum = any> = Required<
   startDate: Date;
   endDate: Date;
   xScale:
-    | ScaleTypeToD3Scale<number>["utc"]
-    | ScaleTypeToD3Scale<number>["band"];
+    ScaleTypeToD3Scale<number>["utc"] | ScaleTypeToD3Scale<number>["band"];
   yScale: ScaleTypeToD3Scale<number>["linear"];
   minY: number;
   maxY: number;

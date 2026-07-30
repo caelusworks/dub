@@ -72,8 +72,7 @@ export function RewardActivityRenderer({ log }: RewardActivityRendererProps) {
   }
 
   const reward = log.changeSet?.reward?.[config.field] as
-    | RewardProps
-    | undefined;
+    RewardProps | undefined;
 
   if (!reward) {
     return null;

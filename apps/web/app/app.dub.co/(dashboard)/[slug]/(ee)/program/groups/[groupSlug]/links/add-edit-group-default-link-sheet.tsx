@@ -144,7 +144,7 @@ function DefaultPartnerLinkSheetContent({
               <div className="space-y-6">
                 {isEditing && (
                   <div className="space-y-2">
-                    <label className="text-content-emphasis block text-sm font-medium">
+                    <label className="block text-sm font-medium text-content-emphasis">
                       Link domain
                     </label>
                     <DomainSelector
@@ -168,7 +168,7 @@ function DefaultPartnerLinkSheetContent({
                   </div>
                 )}
                 <div className="space-y-2">
-                  <label className="text-content-emphasis block text-sm font-medium">
+                  <label className="block text-sm font-medium text-content-emphasis">
                     Destination URL
                   </label>
                   <Input
@@ -243,12 +243,12 @@ function LinkSettingsCard({
   content,
 }: PropsWithChildren<{ title: ReactNode; content: ReactNode }>) {
   return (
-    <div className="border-border-subtle rounded-xl border bg-white text-sm shadow-sm">
-      <div className="text-content-emphasis flex items-center gap-2.5 p-2.5 font-medium">
+    <div className="rounded-xl border border-border-subtle bg-white text-sm shadow-sm">
+      <div className="flex items-center gap-2.5 p-2.5 font-medium text-content-emphasis">
         {title}
       </div>
       {content && (
-        <div className="border-border-subtle -mx-px rounded-xl border-x border-t bg-neutral-50 p-2.5">
+        <div className="-mx-px rounded-xl border-x border-t border-border-subtle bg-neutral-50 p-2.5">
           {content}
         </div>
       )}

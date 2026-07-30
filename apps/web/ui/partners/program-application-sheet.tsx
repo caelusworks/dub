@@ -84,7 +84,7 @@ function ProgramApplicationSheetContent({
   ) : (
     <div className="flex h-full items-center justify-center">
       {groupError ? (
-        <p className="text-content-subtle text-sm">
+        <p className="text-sm text-content-subtle">
           Failed to load application form
         </p>
       ) : (
@@ -224,7 +224,7 @@ function ProgramApplicationSheetForm({
                 );
               })
             ) : (
-              <p className="text-content-subtle flex items-center gap-1 text-sm">
+              <p className="flex items-center gap-1 text-sm text-content-subtle">
                 <CircleCheck className="inline-block size-4 text-green-500" />
                 No additional information required to apply
               </p>

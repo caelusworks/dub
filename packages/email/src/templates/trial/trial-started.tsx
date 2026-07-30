@@ -66,7 +66,7 @@ export default function TrialStartedEmail({
               Dub!
             </Heading>
 
-            <Text className="mb-6 mt-5 text-sm leading-5 text-neutral-600">
+            <Text className="mt-5 mb-6 text-sm leading-5 text-neutral-600">
               {program
                 ? `Your program ${program.name} is set up and ready for you to share with your partners.`
                 : "Your workspace is set up and ready for you to collaborate with your teammates."}
@@ -84,7 +84,7 @@ export default function TrialStartedEmail({
                 </Column>
 
                 <Column>
-                  <Text className="text-md m-0 text-base font-semibold leading-none text-neutral-800">
+                  <Text className="text-md m-0 text-base leading-none font-semibold text-neutral-800">
                     {program?.name || workspace.name}
                   </Text>
 

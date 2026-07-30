@@ -33,7 +33,7 @@ function SheetRoot({
             contentProps?.onPointerDownOutside?.(e);
           }}
           className={cn(
-            "@container/sheet fixed bottom-2 right-2 top-2 z-40 flex outline-none",
+            "fixed bottom-2 right-2 top-2 z-40 flex outline-none @container/sheet",
             "w-[min(var(--sheet-width),calc(100%-2*var(--sheet-margin)))] [--sheet-margin:8px] [--sheet-width:540px]",
             contentProps?.className,
           )}
@@ -46,7 +46,7 @@ function SheetRoot({
             } as React.CSSProperties
           }
         >
-          <div className="scrollbar-hide flex size-full grow flex-col overflow-y-auto rounded-xl bg-white">
+          <div className="flex size-full grow flex-col overflow-y-auto rounded-xl bg-white scrollbar-hide">
             {children}
           </div>
         </Drawer.Content>

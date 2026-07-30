@@ -31,9 +31,8 @@ export const GET = withWorkspace(
     if (data) {
       defaultDomains = Object.keys(data)
         .filter((key) => data[key])
-        .map(
-          (domain) =>
-            DUB_DOMAINS_ARRAY.find((d) => d.replace(".", "") === domain)!,
+        .map((domain) =>
+          DUB_DOMAINS_ARRAY.find((d) => d.replace(".", "") === domain)!,
         )
         .filter((domain) =>
           search ? domain?.toLowerCase().includes(search.toLowerCase()) : true,

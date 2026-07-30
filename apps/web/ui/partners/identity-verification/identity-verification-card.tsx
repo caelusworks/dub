@@ -26,7 +26,7 @@ export function IdentityVerificationCard() {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 10 }}
         transition={{ duration: 0.2 }}
-        className="border-border-subtle relative m-3 mt-8 select-none gap-2 overflow-hidden rounded-lg border bg-white"
+        className="relative m-3 mt-8 select-none gap-2 overflow-hidden rounded-lg border border-border-subtle bg-white"
       >
         <div className="absolute inset-0 [background-image:radial-gradient(200%_150%_at_100%_0%,#C28E5222,transparent_50%)]">
           <Grid
@@ -55,10 +55,10 @@ export function IdentityVerificationCard() {
           </div>
 
           <div className="flex flex-col gap-1">
-            <span className="text-content-emphasis line-clamp-1 text-sm font-semibold">
+            <span className="line-clamp-1 text-sm font-semibold text-content-emphasis">
               Verify your identity
             </span>
-            <p className="text-content-subtle line-clamp-2 text-xs">
+            <p className="line-clamp-2 text-xs text-content-subtle">
               Build trust with programs and improve your approval chances.
             </p>
           </div>

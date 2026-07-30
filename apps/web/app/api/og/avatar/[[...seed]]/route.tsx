@@ -25,45 +25,43 @@ export async function GET(
   const theme = getAvatarTheme(seed);
 
   return new ImageResponse(
-    (
+    <div
+      tw="flex items-center justify-center w-full h-full relative"
+      style={{
+        background: theme.bg,
+        display: "flex",
+        margin: 0,
+        padding: 0,
+      }}
+    >
+      {/* Head */}
       <div
-        tw="flex items-center justify-center w-full h-full relative"
+        tw="absolute w-[51px] h-[51px] rounded-full"
         style={{
-          background: theme.bg,
+          background: theme.fg,
           display: "flex",
-          margin: 0,
-          padding: 0,
+          top: "28px",
+          backgroundImage:
+            "linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.2) 100%)",
+          boxShadow:
+            "inset 6px -5px 11px rgba(0,0,0,0.13), inset -18px -12px 19px rgba(255,255,255,0.4)",
         }}
-      >
-        {/* Head */}
-        <div
-          tw="absolute w-[51px] h-[51px] rounded-full"
-          style={{
-            background: theme.fg,
-            display: "flex",
-            top: "28px",
-            backgroundImage:
-              "linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.2) 100%)",
-            boxShadow:
-              "inset 6px -5px 11px rgba(0,0,0,0.13), inset -18px -12px 19px rgba(255,255,255,0.4)",
-          }}
-        />
-        {/* Shoulders */}
-        <div
-          tw="absolute w-[102px] h-[102px] rounded-full"
-          style={{
-            background: theme.fg,
-            display: "flex",
-            top: "90px",
-            clipPath: "inset(0 0 50% 0)",
-            backgroundImage:
-              "linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.2) 100%)",
-            boxShadow:
-              "inset 10px -12px 19px rgba(0,0,0,0.4), inset -18px -12px 19px rgba(255,255,255,0.4), inset 2px -1px 11px rgba(0,0,0,0.1)",
-          }}
-        />
-      </div>
-    ),
+      />
+      {/* Shoulders */}
+      <div
+        tw="absolute w-[102px] h-[102px] rounded-full"
+        style={{
+          background: theme.fg,
+          display: "flex",
+          top: "90px",
+          clipPath: "inset(0 0 50% 0)",
+          backgroundImage:
+            "linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.2) 100%)",
+          boxShadow:
+            "inset 10px -12px 19px rgba(0,0,0,0.4), inset -18px -12px 19px rgba(255,255,255,0.4), inset 2px -1px 11px rgba(0,0,0,0.1)",
+        }}
+      />
+    </div>,
     {
       width: 128,
       height: 128,

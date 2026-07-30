@@ -24,7 +24,7 @@ export function BrowserGraphic() {
           <div className="relative flex h-8 w-full max-w-xs grow items-center justify-center truncate rounded-lg bg-[radial-gradient(60%_80%_at_50%_0%,#ddd,#f5f5f5)]">
             <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,#0001,transparent)]" />
             {domain && (
-              <span className="animate-slide-up-fade motion-reduce:animate-fade-in text-sm font-medium">
+              <span className="animate-slide-up-fade text-sm font-medium motion-reduce:animate-fade-in">
                 {domain}
               </span>
             )}

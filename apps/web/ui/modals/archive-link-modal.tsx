@@ -121,7 +121,7 @@ function ArchiveLinkModalInner({
           {pluralize("link", links.length)}?
         </p>
 
-        <div className="scrollbar-hide mt-4 flex max-h-[190px] flex-col gap-2 overflow-y-auto rounded-2xl border border-neutral-200 p-2">
+        <div className="mt-4 flex max-h-[190px] flex-col gap-2 overflow-y-auto rounded-2xl border border-neutral-200 p-2 scrollbar-hide">
           {links.map((link) => (
             <SimpleLinkCard key={link.id} link={link} />
           ))}

@@ -24,13 +24,13 @@ export function BountyHeaderTitle() {
         href={`/${workspaceSlug}/program/bounties`}
         aria-label="Back to bounties"
         title="Back to bounties"
-        className="bg-bg-subtle hover:bg-bg-emphasis flex size-8 shrink-0 items-center justify-center rounded-lg transition-[transform,background-color] duration-150 active:scale-95"
+        className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle transition-[transform,background-color] duration-150 hover:bg-bg-emphasis active:scale-95"
       >
         <Trophy className="size-4" />
       </Link>
 
       <div className="flex items-center gap-1.5">
-        <ChevronRight className="text-content-subtle size-2.5 shrink-0 [&_*]:stroke-2" />
+        <ChevronRight className="size-2.5 shrink-0 text-content-subtle [&_*]:stroke-2" />
         <span className="text-lg font-semibold leading-7 text-neutral-900">
           Bounty details
         </span>

@@ -87,7 +87,7 @@ function PostbackEventDetailsSheetContent({
           </ButtonTooltip>
         </div>
       </div>
-      <div className="scrollbar-hide flex min-h-0 flex-1 flex-col overflow-y-auto">
+      <div className="flex min-h-0 flex-1 flex-col overflow-y-auto scrollbar-hide">
         <div className="grid gap-4 border-t border-neutral-200 bg-white p-6">
           <h4 className="font-semibold">Response</h4>
           <div className="flex items-center gap-8">

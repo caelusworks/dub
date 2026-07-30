@@ -30,11 +30,11 @@ export function OutboundDomainTrackingSection() {
           <div className="overflow-hidden">
             <label
               htmlFor={`${id}-switch`}
-              className="text-content-emphasis block text-sm font-semibold"
+              className="block text-sm font-semibold text-content-emphasis"
             >
               Outbound domain tracking
             </label>
-            <p className="text-content-subtle text-sm font-medium">
+            <p className="text-sm font-medium text-content-subtle">
               Track outbound clicks to your other domains.{" "}
               <a
                 href="https://dub.co/docs/sdks/client-side/features/cross-domain-tracking#cross-domain-tracking"

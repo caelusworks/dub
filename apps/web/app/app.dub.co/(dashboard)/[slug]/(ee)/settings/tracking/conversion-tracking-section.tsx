@@ -38,11 +38,11 @@ export function ConversionTrackingSection() {
           <div className="overflow-hidden">
             <label
               htmlFor={`${id}-switch`}
-              className="text-content-emphasis block text-sm font-semibold"
+              className="block text-sm font-semibold text-content-emphasis"
             >
               Conversion tracking
             </label>
-            <p className="text-content-subtle text-sm font-medium">
+            <p className="text-sm font-medium text-content-subtle">
               For client-side conversion tracking.{" "}
               <a
                 href="https://dub.co/docs/conversions/quickstart"

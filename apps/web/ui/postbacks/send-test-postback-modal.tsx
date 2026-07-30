@@ -52,7 +52,7 @@ export function SendTestPostbackModal({
   const selectedEvent = watch("event");
 
   const selectedOption: ComboboxOption | null = selectedEvent
-    ? options.find((o) => o.value === selectedEvent) ?? null
+    ? (options.find((o) => o.value === selectedEvent) ?? null)
     : null;
 
   useEffect(() => {

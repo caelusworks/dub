@@ -749,7 +749,7 @@ export default function EventsTable({
     enableColumnResizing: true,
     pagination,
     onPaginationChange: setPagination,
-    rowCount: requiresUpgrade ? 0 : totalEvents?.[tab] ?? 0,
+    rowCount: requiresUpgrade ? 0 : (totalEvents?.[tab] ?? 0),
     columnVisibility: columnVisibility[tab],
     onColumnVisibilityChange: (args) => setColumnVisibility(tab, args),
     sortableColumns: ["timestamp"],

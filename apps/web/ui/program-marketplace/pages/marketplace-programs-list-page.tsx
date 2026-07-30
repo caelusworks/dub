@@ -54,7 +54,7 @@ export function MarketplaceProgramsListPage() {
       <MarketplaceListToolbar variant="internal" />
 
       {error || countError ? (
-        <div className="text-content-subtle py-12 text-sm">
+        <div className="py-12 text-sm text-content-subtle">
           Failed to load programs
         </div>
       ) : !programs || programs?.length ? (

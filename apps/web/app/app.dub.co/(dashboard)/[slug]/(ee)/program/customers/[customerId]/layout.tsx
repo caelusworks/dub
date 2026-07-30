@@ -61,11 +61,11 @@ export default function ProgramCustomerLayout({
             href={`/${workspaceSlug}/program/customers`}
             aria-label="Back to customers"
             title="Back to customers"
-            className="bg-bg-subtle hover:bg-bg-emphasis flex size-8 shrink-0 items-center justify-center rounded-lg transition-[transform,background-color] duration-150 active:scale-95"
+            className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle transition-[transform,background-color] duration-150 hover:bg-bg-emphasis active:scale-95"
           >
             <User className="size-4" />
           </Link>
-          <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
+          <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
           <CustomerSelector
             variant="header"
             selectedCustomerId={customer?.id ?? null}
@@ -77,7 +77,7 @@ export default function ProgramCustomerLayout({
       <PageWidthWrapper className="pb-10">
         <CustomerStats customer={customer} />
 
-        <div className="@3xl/page:grid-cols-[minmax(440px,1fr)_minmax(0,360px)] mt-6 grid grid-cols-1 gap-6">
+        <div className="mt-6 grid grid-cols-1 gap-6 @3xl/page:grid-cols-[minmax(440px,1fr)_minmax(0,360px)]">
           <div className="@3xl/page:order-2">
             <CustomerDetailsColumn
               customer={customer}
@@ -87,9 +87,9 @@ export default function ProgramCustomerLayout({
             />
           </div>
           <div className="@3xl/page:order-1">
-            <div className="border-border-subtle overflow-hidden rounded-xl border bg-neutral-100">
+            <div className="overflow-hidden rounded-xl border border-border-subtle bg-neutral-100">
               <CustomerTabs customer={customer} />
-              <div className="border-border-subtle -mx-px -mb-px rounded-xl border bg-white p-4">
+              <div className="-mx-px -mb-px rounded-xl border border-border-subtle bg-white p-4">
                 {children}
               </div>
             </div>

@@ -116,7 +116,7 @@ function NetworkPartnerSheetContent({
         </div>
       </div>
 
-      <div className="@3xl/sheet:grid-cols-[minmax(440px,1fr)_minmax(0,360px)] scrollbar-hide grid min-h-0 grow grid-cols-1 gap-x-6 gap-y-4 overflow-y-auto p-4 sm:p-6">
+      <div className="grid min-h-0 grow grid-cols-1 gap-x-6 gap-y-4 overflow-y-auto p-4 scrollbar-hide @3xl/sheet:grid-cols-[minmax(440px,1fr)_minmax(0,360px)] sm:p-6">
         <div className="@3xl/sheet:order-2">
           <PartnerInfoCards
             type="network"
@@ -128,13 +128,13 @@ function NetworkPartnerSheetContent({
           />
         </div>
         <div className="@3xl/sheet:order-1">
-          <div className="border-border-subtle overflow-hidden rounded-xl border bg-neutral-100">
+          <div className="overflow-hidden rounded-xl border border-border-subtle bg-neutral-100">
             <PartnerSheetTabs
               partnerId={partner.id}
               currentTabId={currentTabId}
               setCurrentTabId={setCurrentTabId}
             />
-            <div className="border-border-subtle -mx-px -mb-px rounded-xl border bg-white p-4">
+            <div className="-mx-px -mb-px rounded-xl border border-border-subtle bg-white p-4">
               {currentTabId === "about" && (
                 <div className="grid grid-cols-1 gap-5 text-sm text-neutral-600">
                   <PartnerAbout partner={partner} />
@@ -142,7 +142,7 @@ function NetworkPartnerSheetContent({
               )}
               {currentTabId === "comments" && (
                 <div>
-                  <h3 className="text-content-emphasis text-lg font-semibold">
+                  <h3 className="text-lg font-semibold text-content-emphasis">
                     Comments
                   </h3>
                   <PartnerComments partnerId={partner.id} />

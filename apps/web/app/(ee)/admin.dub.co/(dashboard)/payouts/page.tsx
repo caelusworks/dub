@@ -436,7 +436,7 @@ function PayoutsPageClient() {
         </div>
       )}
       <div className="flex flex-col divide-y divide-neutral-200 rounded-lg border border-neutral-200 bg-white">
-        <div className="scrollbar-hide grid w-full grid-cols-1 divide-y overflow-y-hidden sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+        <div className="grid w-full grid-cols-1 divide-y overflow-y-hidden scrollbar-hide sm:grid-cols-3 sm:divide-x sm:divide-y-0">
           {tabs.map(({ id, label, colorClassName }) => {
             return (
               <button

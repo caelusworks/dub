@@ -65,7 +65,7 @@ function PartnerApplicationRiskSummaryModal({
                   <span className="-mt-0.5 text-xs font-medium leading-none text-neutral-700">
                     {rule.name}
                   </span>
-                  <p className="text-content-subtle text-xs font-normal leading-4">
+                  <p className="text-xs font-normal leading-4 text-content-subtle">
                     {rule.description}
                   </p>
                 </div>

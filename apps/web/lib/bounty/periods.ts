@@ -2,12 +2,7 @@ import { BountySubmissionFrequency } from "@prisma/client";
 import { addDays, addMonths, addWeeks } from "date-fns";
 
 export type SubmissionPeriodStatus =
-  | "notSubmitted"
-  | "notOpen"
-  | "draft"
-  | "submitted"
-  | "approved"
-  | "rejected";
+  "notSubmitted" | "notOpen" | "draft" | "submitted" | "approved" | "rejected";
 
 export interface SubmissionPeriod<TSubmission = unknown> {
   periodNumber: number;

@@ -88,7 +88,7 @@ export const ProgramRewardsPanel = memo(
         {rewardItems.map(({ icon: Icon, label }, index) => (
           <div
             key={index}
-            className="text-content-default flex items-start gap-2 rounded-md py-1.5 text-sm"
+            className="flex items-start gap-2 rounded-md py-1.5 text-sm text-content-default"
           >
             <Icon className="size-4 shrink-0 translate-y-px" />
             <div>{label}</div>

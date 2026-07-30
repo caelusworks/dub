@@ -27,9 +27,7 @@ export const updateWorkspacePreferences = authActionClient
 
     const workspacePreferences =
       (workspace.users[0].workspacePreferences as
-        | Record<string, any>
-        | undefined
-        | null) ?? {};
+        Record<string, any> | undefined | null) ?? {};
 
     await prisma.projectUsers.update({
       where: {

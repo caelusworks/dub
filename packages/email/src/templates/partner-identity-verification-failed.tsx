@@ -50,7 +50,7 @@ export default function PartnerIdentityVerificationFailed({
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[600px] rounded border border-solid border-neutral-200 px-10 py-5">
-            <Section className="mb-8 mt-6">
+            <Section className="mt-6 mb-8">
               <Img src={DUB_WORDMARK} width="61" height="32" alt="dub" />
             </Section>
 
@@ -120,7 +120,7 @@ export default function PartnerIdentityVerificationFailed({
             )}
 
             {failureReasonText !== DUPLICATE_IDENTITY_DECLINE_REASON && (
-              <Section className="mb-10 mt-6">
+              <Section className="mt-6 mb-10">
                 <Link
                   className="rounded-lg bg-neutral-900 px-6 py-3 text-[13px] font-medium text-white no-underline"
                   href="https://partners.dub.co/profile"

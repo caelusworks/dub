@@ -157,7 +157,7 @@ export function ProgramHelpAndSupportContent({
                       />
                     )}
                   />
-                  <span className="text-content-default text-sm font-medium">
+                  <span className="text-sm font-medium text-content-default">
                     Enable partner messaging
                   </span>
                 </label>

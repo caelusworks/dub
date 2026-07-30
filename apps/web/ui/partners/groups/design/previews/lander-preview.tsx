@@ -148,14 +148,14 @@ export function LanderPreview({ group }: { group: GroupWithProgramProps }) {
                 !isGeneratingLander && "translate-y-1",
               )}
             >
-              <div className="text-content-default flex items-center">
+              <div className="flex items-center text-content-default">
                 <LoadingSpinner className="mr-2 size-3.5 shrink-0" />
                 <span className="text-sm font-medium">Generating content</span>
                 <span className="ml-px shrink-0">
                   {[...Array(3)].map((_, i) => (
                     <span
                       key={i}
-                      className="animate-ellipsis-wave inline-block"
+                      className="inline-block animate-ellipsis-wave"
                       style={{
                         animationDelay: `${3 - i * -0.15}s`,
                       }}
@@ -166,7 +166,7 @@ export function LanderPreview({ group }: { group: GroupWithProgramProps }) {
                 </span>
               </div>
 
-              <div className="text-content-subtle flex flex-col items-center gap-1 sm:flex-row">
+              <div className="flex flex-col items-center gap-1 text-content-subtle sm:flex-row">
                 <CircleInfo className="size-3 shrink-0" />
                 <span className="text-xs font-medium">
                   Review all generated content for accuracy and style
@@ -197,7 +197,7 @@ export function LanderPreview({ group }: { group: GroupWithProgramProps }) {
                   )}
                 />
 
-                <div className="animate-fade-in my-0.5 block">
+                <div className="my-0.5 block animate-fade-in">
                   {wordmark || logo ? (
                     <img
                       className="max-h-7 max-w-32"
@@ -213,12 +213,12 @@ export function LanderPreview({ group }: { group: GroupWithProgramProps }) {
                     type="button"
                     variant="secondary"
                     text="Log in"
-                    className="animate-fade-in h-8 w-fit text-neutral-600"
+                    className="h-8 w-fit animate-fade-in text-neutral-600"
                   />
                   <Button
                     type="button"
                     text="Apply"
-                    className="animate-fade-in h-8 w-fit border-[var(--brand)] bg-[var(--brand)] hover:bg-[var(--brand)] hover:ring-[var(--brand-ring)]"
+                    className="h-8 w-fit animate-fade-in border-[var(--brand)] bg-[var(--brand)] hover:bg-[var(--brand)] hover:ring-[var(--brand-ring)]"
                   />
                 </div>
               </div>
@@ -254,7 +254,7 @@ export function LanderPreview({ group }: { group: GroupWithProgramProps }) {
             <div className="mx-auto max-w-screen-sm">
               <div className="px-6">
                 <div
-                  className="animate-scale-in-fade mt-6 flex flex-col gap-2 [animation-delay:400ms] [animation-fill-mode:both]"
+                  className="mt-6 flex animate-scale-in-fade flex-col gap-2 [animation-delay:400ms] [animation-fill-mode:both]"
                   inert
                 >
                   <Button
@@ -341,7 +341,7 @@ export function LanderPreview({ group }: { group: GroupWithProgramProps }) {
                   <div className="border-subtle pointer-events-none absolute inset-y-0 left-1/2 w-[1080px] max-w-[calc(100cqw-32px)] -translate-x-1/2 overflow-hidden rounded-xl border opacity-40 transition-opacity duration-300 ease-out group-hover/empty:opacity-100">
                     <Grid
                       cellSize={60}
-                      className="text-border-subtle inset-[unset] left-1/2 top-1/2 h-[max(1200px,100%)] w-[1200px] -translate-x-1/2 -translate-y-1/2"
+                      className="inset-[unset] left-1/2 top-1/2 h-[max(1200px,100%)] w-[1200px] -translate-x-1/2 -translate-y-1/2 text-border-subtle"
                     />
                   </div>
                   <div className="relative flex justify-center">
@@ -380,7 +380,7 @@ function EditIndicatorGrid() {
     >
       <Grid
         cellSize={60}
-        className="text-border-subtle inset-[unset] left-1/2 top-1/2 h-[max(1200px,100%)] w-[1200px] -translate-x-1/2 -translate-y-1/2"
+        className="inset-[unset] left-1/2 top-1/2 h-[max(1200px,100%)] w-[1200px] -translate-x-1/2 -translate-y-1/2 text-border-subtle"
       />
     </div>
   );

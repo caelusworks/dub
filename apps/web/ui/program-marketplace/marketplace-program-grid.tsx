@@ -17,7 +17,7 @@ export function MarketplaceProgramGrid({
   return (
     <div
       className={cn(
-        "@4xl/page:grid-cols-3 @xl/page:grid-cols-2",
+        "@xl/page:grid-cols-2 @4xl/page:grid-cols-3",
         "grid gap-4 lg:gap-6",
         className,
       )}
@@ -43,7 +43,7 @@ export function MarketplaceProgramGridSkeleton({
   return (
     <div
       className={cn(
-        "@4xl/page:grid-cols-3 @xl/page:grid-cols-2",
+        "@xl/page:grid-cols-2 @4xl/page:grid-cols-3",
         "grid gap-4 lg:gap-6",
         className,
       )}
@@ -60,5 +60,5 @@ export function MarketplaceProgramGridEmpty({
 }: {
   message?: string;
 }) {
-  return <div className="text-content-subtle py-12 text-sm">{message}</div>;
+  return <div className="py-12 text-sm text-content-subtle">{message}</div>;
 }

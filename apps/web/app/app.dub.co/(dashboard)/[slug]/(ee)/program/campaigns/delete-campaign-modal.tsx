@@ -73,7 +73,7 @@ const DeleteCampaignModal = ({
             >
               <Icon className="size-3.5" />
             </div>
-            <span className="text-content-emphasis truncate text-sm font-medium">
+            <span className="truncate text-sm font-medium text-content-emphasis">
               {campaign.name}
             </span>
           </div>

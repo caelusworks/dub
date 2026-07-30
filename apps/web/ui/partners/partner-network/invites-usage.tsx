@@ -26,11 +26,11 @@ export function InvitesUsage() {
       }
       align="end"
     >
-      <div className="animate-fade-in flex cursor-default items-center gap-2">
-        <EnvelopeArrowRight className="text-content-default size-4 shrink-0" />
+      <div className="flex animate-fade-in cursor-default items-center gap-2">
+        <EnvelopeArrowRight className="size-4 shrink-0 text-content-default" />
         <span
           className={cn(
-            "text-content-emphasis text-sm font-medium",
+            "text-sm font-medium text-content-emphasis",
             remaining === 0 && "text-content-subtle",
           )}
         >

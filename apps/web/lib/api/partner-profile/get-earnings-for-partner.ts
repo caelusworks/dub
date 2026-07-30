@@ -9,8 +9,9 @@ import { CommissionType, Partner } from "@prisma/client";
 import * as z from "zod/v4";
 import { obfuscateCustomerEmail } from "./obfuscate-customer-email";
 
-interface GetEarningsForPartnerParams
-  extends z.infer<typeof getPartnerEarningsQuerySchema> {
+interface GetEarningsForPartnerParams extends z.infer<
+  typeof getPartnerEarningsQuerySchema
+> {
   programId: string;
   partnerId: string;
   customerDataSharingEnabledAt: Date | null;

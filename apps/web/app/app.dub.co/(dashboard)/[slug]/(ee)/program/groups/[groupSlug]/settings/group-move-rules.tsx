@@ -599,7 +599,7 @@ function GroupMoveTarget() {
           ) : (
             <>
               <GroupColorCircle group={group} />
-              <span className="text-content-default text-sm font-semibold">
+              <span className="text-sm font-semibold text-content-default">
                 {group?.name}
               </span>
             </>

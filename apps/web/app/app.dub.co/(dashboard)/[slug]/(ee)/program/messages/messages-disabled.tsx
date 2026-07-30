@@ -10,7 +10,7 @@ export function MessagesDisabled() {
 
   return (
     <div className="flex h-full flex-col items-center justify-center gap-6 overflow-hidden px-4 py-10">
-      <MsgsDotted className="text-content-subtle size-10" />
+      <MsgsDotted className="size-10 text-content-subtle" />
       <div className="max-w-sm text-pretty text-center">
         <span className="text-base font-medium text-neutral-900">
           Messaging disabled
@@ -19,7 +19,7 @@ export function MessagesDisabled() {
           Enable messaging in{" "}
           <Link
             href={`/${slug}/program/resources`}
-            className="hover:text-content-default underline underline-offset-2"
+            className="underline underline-offset-2 hover:text-content-default"
           >
             Resources
           </Link>{" "}

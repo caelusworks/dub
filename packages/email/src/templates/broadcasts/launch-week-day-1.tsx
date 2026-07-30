@@ -51,18 +51,18 @@ export default function DubLaunchWeekDay1({
               />
             </Section>
 
-            <Heading className="mx-0 mb-2 mt-8 p-0 text-center text-2xl font-semibold text-black">
+            <Heading className="mx-0 mt-8 mb-2 p-0 text-center text-2xl font-semibold text-black">
               Dub Launch Week Day 1
             </Heading>
 
-            <Text className="mx-auto mb-8 mt-0 max-w-sm text-center text-base leading-6 text-neutral-600">
+            <Text className="mx-auto mt-0 mb-8 max-w-sm text-center text-base leading-6 text-neutral-600">
               Introducing Partner Referrals + Application Analytics
             </Text>
 
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               👋 Hey, it's Steven from Dub!
             </Text>
-            <Text className="mx-0 mb-8 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-8 text-sm leading-6 text-neutral-600">
               Today is <strong>Day 1 of our Spring Launch Week</strong>, where
               we'll be launching an exciting new feature for{" "}
               <a
@@ -95,16 +95,16 @@ export default function DubLaunchWeekDay1({
               </Link>
             </Section>
 
-            <Heading className="mx-0 mb-3 mt-0 p-0 text-lg font-semibold text-black">
+            <Heading className="mx-0 mt-0 mb-3 p-0 text-lg font-semibold text-black">
               Introducing Partner Referrals
             </Heading>
 
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               You can now reward partners for referring other{" "}
               <strong>influencers, affiliates, and publishers</strong> to join
               your partner program.
             </Text>
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               There are two ways to reward partners for referrals: via a
               flat-fee or percentage commission.
             </Text>
@@ -149,11 +149,11 @@ export default function DubLaunchWeekDay1({
               </Link>
             </Section>
 
-            <Heading className="mx-0 mb-3 mt-0 p-0 text-lg font-semibold text-black">
+            <Heading className="mx-0 mt-0 mb-3 p-0 text-lg font-semibold text-black">
               Application Analytics
             </Heading>
 
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               On top of this, we're also unveiling a powerful new Application
               Analytics dashboard to give you real-time visibility into which
               channels are driving the most applications to your program.
@@ -181,11 +181,11 @@ export default function DubLaunchWeekDay1({
 
             <Hr className="mx-0 my-6 w-full border border-neutral-200" />
 
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               That's all for today! Stay tuned for the remaining days of our
               Spring Launch Week – see you tomorrow!
             </Text>
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-400">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-400">
               Steven from Dub.co
             </Text>
 

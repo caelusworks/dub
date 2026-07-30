@@ -57,7 +57,7 @@ export function CampaignMetrics() {
     <div>
       {error ? (
         <div className="flex h-full items-center justify-center">
-          <p className="text-content-subtle text-sm">Failed to load metrics</p>
+          <p className="text-sm text-content-subtle">Failed to load metrics</p>
         </div>
       ) : (
         <div className="flex flex-col divide-y divide-neutral-200 rounded-lg border border-neutral-200">
@@ -67,7 +67,7 @@ export function CampaignMetrics() {
             metrics.map((metric) => (
               <div key={metric.label} className="flex flex-col gap-2 p-3">
                 <div className="flex items-center gap-1.5">
-                  <metric.icon className="text-content-subtle size-3.5" />
+                  <metric.icon className="size-3.5 text-content-subtle" />
                   <div className="text-xs font-medium text-neutral-500">
                     {metric.label}
                   </div>
@@ -77,7 +77,7 @@ export function CampaignMetrics() {
                   <span className="text-sm font-medium text-neutral-900">
                     {metric.percentage}
                   </span>
-                  <span className="text-content-subtle text-sm font-medium">
+                  <span className="text-sm font-medium text-content-subtle">
                     {metric.count}
                   </span>
                 </div>

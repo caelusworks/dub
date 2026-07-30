@@ -27,13 +27,13 @@ export function CampaignsUpsell() {
           <span className="text-base font-medium text-neutral-900">
             Email campaigns
           </span>
-          <p className="text-content-subtle mt-2 text-sm">
+          <p className="mt-2 text-sm text-content-subtle">
             Send{" "}
             <a
               href="https://dub.co/help/article/email-campaigns"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-content-default hover:text-content-emphasis cursor-alias underline decoration-dotted underline-offset-2"
+              className="cursor-alias text-content-default underline decoration-dotted underline-offset-2 hover:text-content-emphasis"
             >
               marketing and transactional emails
             </a>{" "}
@@ -84,13 +84,13 @@ function ExampleCampaignCell({
       <div className="flex min-w-0 items-center gap-4">
         <CampaignTypeIcon type={campaign.type} />
         <div className="flex min-w-0 flex-col gap-0.5">
-          <span className="text-content-default truncate text-sm font-semibold">
+          <span className="truncate text-sm font-semibold text-content-default">
             {campaign.name}
           </span>
         </div>
       </div>
 
-      <span className="text-content-subtle hidden whitespace-nowrap text-xs sm:inline-block">
+      <span className="hidden whitespace-nowrap text-xs text-content-subtle sm:inline-block">
         {nFormatter(campaign.partnersCount)} partners
       </span>
     </div>

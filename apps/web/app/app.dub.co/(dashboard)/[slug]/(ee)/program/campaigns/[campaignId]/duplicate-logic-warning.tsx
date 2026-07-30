@@ -67,7 +67,7 @@ export function DuplicateLogicWarning() {
     >
       <div className="overflow-hidden">
         <div className="pt-2">
-          <div className="bg-bg-muted border-border-muted rounded-lg border bg-clip-border">
+          <div className="rounded-lg border border-border-muted bg-bg-muted bg-clip-border">
             <button
               type="button"
               onClick={() => setIsOpen((o) => !o)}
@@ -76,14 +76,14 @@ export function DuplicateLogicWarning() {
               {isLoading ? (
                 <LoadingSpinner className="size-3 shrink-0" />
               ) : (
-                <Copy className="text-content-emphasis size-3 shrink-0" />
+                <Copy className="size-3 shrink-0 text-content-emphasis" />
               )}
-              <span className="text-content-emphasis min-w-0 truncate text-xs font-semibold">
+              <span className="min-w-0 truncate text-xs font-semibold text-content-emphasis">
                 Duplicate campaigns detected
               </span>
               <ChevronUp
                 className={cn(
-                  "text-content-subtle size-2 shrink-0 rotate-180 transition-transform",
+                  "size-2 shrink-0 rotate-180 text-content-subtle transition-transform",
                   isOpen && "rotate-0",
                 )}
               />
@@ -108,7 +108,7 @@ export function DuplicateLogicWarning() {
                         className="size-5"
                         iconClassName="size-3"
                       />
-                      <span className="text-content-emphasis text-xs font-medium">
+                      <span className="text-xs font-medium text-content-emphasis">
                         {duplicate.name}
                       </span>
                     </Link>

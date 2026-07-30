@@ -265,9 +265,9 @@ export function ProgramAnalyticsShell({ children }: { children: ReactNode }) {
           </div>
         </div>
 
-        <div className="border-border-subtle overflow-hidden rounded-xl border bg-neutral-100 sm:rounded-2xl">
+        <div className="overflow-hidden rounded-xl border border-border-subtle bg-neutral-100 sm:rounded-2xl">
           <ProgramAnalyticsNav />
-          <div className="border-border-subtle divide-border-subtle -mx-px -mb-px divide-y overflow-hidden rounded-xl border bg-white">
+          <div className="-mx-px -mb-px divide-y divide-border-subtle overflow-hidden rounded-xl border border-border-subtle bg-white">
             {children}
           </div>
         </div>

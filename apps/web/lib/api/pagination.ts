@@ -15,8 +15,7 @@ interface PaginationQuery {
   skip: number;
   take: number;
   orderBy:
-    | Record<string, Prisma.SortOrder>
-    | Array<Record<string, Prisma.SortOrder>>;
+    Record<string, Prisma.SortOrder> | Array<Record<string, Prisma.SortOrder>>;
 }
 
 export const MAX_OFFSET_PAGE = 1000;

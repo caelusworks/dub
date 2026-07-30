@@ -83,8 +83,8 @@ export function EmbedBountyDetail({
 
   const existingSubmission =
     view.mode === "submission-form"
-      ? bounty.submissions.find((s) => s.periodNumber === view.periodNumber) ??
-        null
+      ? (bounty.submissions.find((s) => s.periodNumber === view.periodNumber) ??
+        null)
       : null;
 
   const viewSubmission =
@@ -125,32 +125,32 @@ export function EmbedBountyDetail({
   }
 
   return (
-    <div className="border-border-subtle bg-bg-default overflow-hidden rounded-xl border">
+    <div className="overflow-hidden rounded-xl border border-border-subtle bg-bg-default">
       <div className="flex items-center gap-1.5 px-4 py-2">
         <button
           type="button"
           aria-label="Back to bounties"
           title="Back to bounties"
           onClick={onBack}
-          className="bg-bg-subtle hover:bg-bg-emphasis flex size-8 shrink-0 items-center justify-center rounded-lg transition-[transform,background-color] duration-150 active:scale-95"
+          className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle transition-[transform,background-color] duration-150 hover:bg-bg-emphasis active:scale-95"
         >
           <Trophy className="size-4" />
         </button>
-        <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
-        <span className="text-content-emphasis text-sm font-semibold">
+        <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
+        <span className="text-sm font-semibold text-content-emphasis">
           Bounty details
         </span>
       </div>
 
-      <div className="border-border-subtle border-t" />
+      <div className="border-t border-border-subtle" />
 
-      <div className="lg:divide-border-subtle grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,400px)] lg:divide-x">
+      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,400px)] lg:divide-x lg:divide-border-subtle">
         <div className="flex flex-col gap-6 p-5">
           <div className="flex flex-col gap-3">
-            <h2 className="text-content-emphasis text-sm font-semibold">
+            <h2 className="text-sm font-semibold text-content-emphasis">
               Progress
             </h2>
-            <div className="border-border-subtle bg-bg-default flex w-full flex-col gap-4 rounded-xl border px-5 pb-4 pt-6">
+            <div className="flex w-full flex-col gap-4 rounded-xl border border-border-subtle bg-bg-default px-5 pb-4 pt-6">
               {bounty.type === "performance" ? (
                 <PerformanceBountyProgress
                   bounty={bounty}
@@ -190,8 +190,8 @@ export function EmbedBountyDetail({
           </div>
         </div>
 
-        <div className="border-border-subtle flex flex-col gap-4 border-t p-5 lg:border-t-0">
-          <div className="bg-bg-subtle relative flex h-[132px] items-center justify-center overflow-hidden rounded-lg">
+        <div className="flex flex-col gap-4 border-t border-border-subtle p-5 lg:border-t-0">
+          <div className="relative flex h-[132px] items-center justify-center overflow-hidden rounded-lg bg-bg-subtle">
             <div className="relative size-full">
               <BountyThumbnailImage bounty={bounty} />
             </div>
@@ -199,7 +199,7 @@ export function EmbedBountyDetail({
           </div>
 
           <div className="flex flex-col gap-1">
-            <h3 className="text-content-emphasis text-sm font-semibold">
+            <h3 className="text-sm font-semibold text-content-emphasis">
               {bounty.name}
             </h3>
 

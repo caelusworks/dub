@@ -104,7 +104,7 @@ function DubPartnersPopupInner({
         style={floatingStyles}
         className="drop-shadow-sm"
       >
-        <div className="animate-slide-up-fade relative flex w-[260px] flex-col rounded-lg border border-neutral-900 bg-neutral-800 p-3 text-left">
+        <div className="relative flex w-[260px] animate-slide-up-fade flex-col rounded-lg border border-neutral-900 bg-neutral-800 p-3 text-left">
           <div className="relative">
             <Link
               href="https://dub.co/partners"
@@ -129,7 +129,7 @@ function DubPartnersPopupInner({
               <X className="size-4 text-white" strokeWidth={2} />
             </button>
           </div>
-          <h2 className="text-content-inverted mt-4 text-sm font-semibold">
+          <h2 className="mt-4 text-sm font-semibold text-content-inverted">
             Dub Partners unlocked
           </h2>
           <p className="mt-1.5 text-xs text-neutral-300">

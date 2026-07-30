@@ -34,11 +34,11 @@ export function ProgramRewardTerms({
   if (items.length === 0) return null;
 
   return (
-    <div className="border-border-subtle text-content-subtle -mt-2 flex items-center gap-1 rounded-b-lg rounded-t-none border border-t-0 p-1.5 pl-2.5 pt-3.5 text-xs">
+    <div className="-mt-2 flex items-center gap-1 rounded-b-lg rounded-t-none border border-t-0 border-border-subtle p-1.5 pl-2.5 pt-3.5 text-xs text-content-subtle">
       {items.map((item, index) => (
         <Fragment key={item.label}>
           <span key={item.label}>
-            <span className="text-content-emphasis font-semibold">
+            <span className="font-semibold text-content-emphasis">
               {item.value}
             </span>{" "}
             <a

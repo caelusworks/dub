@@ -156,7 +156,7 @@ function AddEditPostbackModal({
               <div>
                 <label
                   htmlFor="postback-name"
-                  className="text-content-emphasis block text-sm font-medium"
+                  className="block text-sm font-medium text-content-emphasis"
                 >
                   Name
                 </label>
@@ -164,7 +164,7 @@ function AddEditPostbackModal({
                   id="postback-name"
                   type="text"
                   autoComplete="off"
-                  className="border-border-subtle mt-2 block w-full rounded-lg text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+                  className="mt-2 block w-full rounded-lg border-border-subtle text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
                   placeholder="My postback"
                   autoFocus={!isMobile}
                   disabled={isSubmitting}
@@ -175,7 +175,7 @@ function AddEditPostbackModal({
               <div>
                 <label
                   htmlFor="postback-url"
-                  className="text-content-emphasis block text-sm font-medium"
+                  className="block text-sm font-medium text-content-emphasis"
                 >
                   Destination URL
                 </label>
@@ -183,7 +183,7 @@ function AddEditPostbackModal({
                   id="postback-url"
                   type="url"
                   autoComplete="off"
-                  className="border-border-subtle mt-2 block w-full rounded-lg text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+                  className="mt-2 block w-full rounded-lg border-border-subtle text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
                   placeholder="https://your-server.com/webhook"
                   disabled={isSubmitting}
                   {...register("url")}
@@ -195,7 +195,7 @@ function AddEditPostbackModal({
               </div>
 
               <div>
-                <label className="text-content-emphasis mb-1 block text-sm font-medium">
+                <label className="mb-1 block text-sm font-medium text-content-emphasis">
                   Events
                 </label>
                 <Combobox

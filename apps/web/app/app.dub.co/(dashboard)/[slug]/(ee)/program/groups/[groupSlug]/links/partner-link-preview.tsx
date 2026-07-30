@@ -32,7 +32,7 @@ export function PartnerLinkPreview({
   return (
     <div
       className={cn(
-        "border-border-subtle group relative flex items-center gap-3 rounded-xl border bg-white p-4 transition-all hover:border-neutral-300 hover:shadow-sm",
+        "group relative flex items-center gap-3 rounded-xl border border-border-subtle bg-white p-4 transition-all hover:border-neutral-300 hover:shadow-sm",
         className,
       )}
     >

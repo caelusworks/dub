@@ -43,7 +43,7 @@ export function SidePanel() {
             />
           </div>
 
-          <p className="text-content-default max-w-[370px] text-pretty text-xl font-medium">
+          <p className="max-w-[370px] text-pretty text-xl font-medium text-content-default">
             Learn how Framer manages $900K+ in monthly affiliate payouts with
             Dub
           </p>
@@ -51,7 +51,7 @@ export function SidePanel() {
           <Link
             href="https://dub.co/customers/framer"
             target="_blank"
-            className="text-content-emphasis flex h-8 w-fit items-center rounded-lg bg-black/5 px-3 text-sm font-medium transition-[transform,background-color] duration-75 hover:bg-black/10 active:scale-[0.98]"
+            className="flex h-8 w-fit items-center rounded-lg bg-black/5 px-3 text-sm font-medium text-content-emphasis transition-[transform,background-color] duration-75 hover:bg-black/10 active:scale-[0.98]"
           >
             Read more
           </Link>

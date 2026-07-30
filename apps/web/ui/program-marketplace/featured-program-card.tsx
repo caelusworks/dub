@@ -82,11 +82,11 @@ export function FeaturedProgramCard({
         </div>
 
         <div className="flex flex-col pt-4 sm:mt-auto sm:pt-10">
-          <span className="text-content-emphasis text-2xl font-semibold">
+          <span className="text-2xl font-semibold text-content-emphasis">
             {program.name}
           </span>
 
-          <div className="text-content-default mt-1 line-clamp-2 max-w-sm text-sm">
+          <div className="mt-1 line-clamp-2 max-w-sm text-sm text-content-default">
             {program.description ||
               `${program.name} is a program in the Dub Partner Network. Join the network to start partnering with them.`}
           </div>
@@ -116,18 +116,16 @@ export function FeaturedProgramCard({
                   Category
                 </span>
                 <div className="mt-2 flex min-h-6 items-center gap-1.5">
-                  {program.categories
-                    .slice(0, 1)
-                    ?.map((category) => (
-                      <ProgramCategory
-                        key={category}
-                        category={category}
-                        variant="surface"
-                        onClick={() =>
-                          router.push(getMarketplaceCategoryHref(category))
-                        }
-                      />
-                    ))}
+                  {program.categories.slice(0, 1)?.map((category) => (
+                    <ProgramCategory
+                      key={category}
+                      category={category}
+                      variant="surface"
+                      onClick={() =>
+                        router.push(getMarketplaceCategoryHref(category))
+                      }
+                    />
+                  ))}
                   {program.categories.length > 1 && (
                     <Tooltip
                       content={

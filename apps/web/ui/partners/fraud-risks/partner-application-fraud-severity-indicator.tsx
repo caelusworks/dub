@@ -31,7 +31,7 @@ export function PartnerApplicationFraudSeverityIndicator({
         {entries.map(([key, cfg]) => (
           <div
             key={key}
-            className="text-content-default flex-1 text-start text-xs font-medium"
+            className="flex-1 text-start text-xs font-medium text-content-default"
           >
             {cfg.label}
           </div>

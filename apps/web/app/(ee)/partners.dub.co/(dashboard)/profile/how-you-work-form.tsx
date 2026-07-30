@@ -60,12 +60,12 @@ export function HowYouWorkForm({ partner }: { partner?: PartnerProps }) {
   });
 
   return (
-    <div className="border-border-subtle divide-border-subtle flex flex-col divide-y rounded-lg border">
+    <div className="flex flex-col divide-y divide-border-subtle rounded-lg border border-border-subtle">
       <div className="px-6 py-8">
-        <h3 className="text-content-emphasis text-lg font-semibold leading-7">
+        <h3 className="text-lg font-semibold leading-7 text-content-emphasis">
           How you work
         </h3>
-        <p className="text-content-subtle text-sm font-normal leading-5">
+        <p className="text-sm font-normal leading-5 text-content-subtle">
           Share how you prefer to earn and promote products to help programs
           understand your style of partnership.
         </p>
@@ -82,7 +82,7 @@ export function HowYouWorkForm({ partner }: { partner?: PartnerProps }) {
           description="Choose how you'd like to be rewarded. Select all that apply."
         >
           <div className="@container/panel">
-            <div className="@sm/panel:grid-cols-2 grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 gap-4 @sm/panel:grid-cols-2">
               <Controller
                 control={control}
                 name="preferredEarningStructures"
@@ -92,7 +92,7 @@ export function HowYouWorkForm({ partner }: { partner?: PartnerProps }) {
                       <label
                         key={earningStructure.id}
                         className={cn(
-                          "ring-border-subtle hover:bg-bg-muted flex cursor-pointer select-none items-center gap-2.5 rounded-full bg-white px-4 py-3 ring-1 transition-all duration-100 ease-out",
+                          "flex cursor-pointer select-none items-center gap-2.5 rounded-full bg-white px-4 py-3 ring-1 ring-border-subtle transition-all duration-100 ease-out hover:bg-bg-muted",
                           disabled && "cursor-not-allowed opacity-50",
                         )}
                       >
@@ -117,20 +117,20 @@ export function HowYouWorkForm({ partner }: { partner?: PartnerProps }) {
                         />
                         <div
                           className={cn(
-                            "bg-content-inverted border-border-default flex size-4 items-center justify-center rounded border",
+                            "flex size-4 items-center justify-center rounded border border-border-default bg-content-inverted",
                             field.value.includes(earningStructure.id) &&
-                              "bg-content-emphasis border-content-emphasis",
+                              "border-content-emphasis bg-content-emphasis",
                           )}
                         >
                           <Check2
                             className={cn(
-                              "text-content-inverted size-3",
+                              "size-3 text-content-inverted",
                               !field.value.includes(earningStructure.id) &&
                                 "opacity-0",
                             )}
                           />
                         </div>
-                        <span className="text-content-emphasis text-sm font-medium">
+                        <span className="text-sm font-medium text-content-emphasis">
                           {earningStructure.label}
                         </span>
                       </label>
@@ -148,7 +148,7 @@ export function HowYouWorkForm({ partner }: { partner?: PartnerProps }) {
           description="Where you promote products and links. Select all that apply."
         >
           <div className="@container/panel">
-            <div className="@sm/panel:grid-cols-2 grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 gap-4 @sm/panel:grid-cols-2">
               <Controller
                 control={control}
                 name="salesChannels"
@@ -158,7 +158,7 @@ export function HowYouWorkForm({ partner }: { partner?: PartnerProps }) {
                       <label
                         key={salesChannel.id}
                         className={cn(
-                          "ring-border-subtle hover:bg-bg-muted flex cursor-pointer select-none items-center gap-2.5 rounded-full bg-white px-4 py-3 ring-1 transition-all duration-100 ease-out",
+                          "flex cursor-pointer select-none items-center gap-2.5 rounded-full bg-white px-4 py-3 ring-1 ring-border-subtle transition-all duration-100 ease-out hover:bg-bg-muted",
                           disabled && "cursor-not-allowed opacity-50",
                         )}
                       >
@@ -183,20 +183,20 @@ export function HowYouWorkForm({ partner }: { partner?: PartnerProps }) {
                         />
                         <div
                           className={cn(
-                            "bg-content-inverted border-border-default flex size-4 items-center justify-center rounded border",
+                            "flex size-4 items-center justify-center rounded border border-border-default bg-content-inverted",
                             field.value.includes(salesChannel.id) &&
-                              "bg-content-emphasis border-content-emphasis",
+                              "border-content-emphasis bg-content-emphasis",
                           )}
                         >
                           <Check2
                             className={cn(
-                              "text-content-inverted size-3",
+                              "size-3 text-content-inverted",
                               !field.value.includes(salesChannel.id) &&
                                 "opacity-0",
                             )}
                           />
                         </div>
-                        <span className="text-content-emphasis text-sm font-medium">
+                        <span className="text-sm font-medium text-content-emphasis">
                           {salesChannel.label}
                         </span>
                       </label>

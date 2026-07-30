@@ -83,8 +83,7 @@ export async function getMrrByBucket({
   );
 
   const responseBody = (await response.json().catch(() => ({}))) as
-    | StripeMetricQueryResponse
-    | StripeErrorResponse;
+    StripeMetricQueryResponse | StripeErrorResponse;
 
   if (response.ok) {
     const lookup = new Map<string, number>();

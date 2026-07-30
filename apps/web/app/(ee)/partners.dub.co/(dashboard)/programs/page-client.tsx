@@ -28,16 +28,16 @@ export function PartnersDashboardPageClient() {
           title="No programs"
           description="When you've joined or applied for a program it will appear here."
           graphic={
-            <div className="border-border-subtle flex flex-col gap-4 rounded-xl border p-3 shadow-[0_4px_12px_#0001]">
-              <HexadecagonStar className="text-content-default size-6" />
+            <div className="flex flex-col gap-4 rounded-xl border border-border-subtle p-3 shadow-[0_4px_12px_#0001]">
+              <HexadecagonStar className="size-6 text-content-default" />
               <div className="flex flex-col gap-2">
-                <div className="bg-bg-emphasis h-2.5 w-8 rounded" />
-                <div className="bg-bg-emphasis h-2.5 w-16 rounded" />
+                <div className="h-2.5 w-8 rounded bg-bg-emphasis" />
+                <div className="h-2.5 w-16 rounded bg-bg-emphasis" />
               </div>
-              <div className="bg-bg-subtle border-subtle grid w-40 max-w-full grid-cols-2 items-center gap-5 rounded-lg border p-2">
+              <div className="border-subtle grid w-40 max-w-full grid-cols-2 items-center gap-5 rounded-lg border bg-bg-subtle p-2">
                 <div className="flex flex-col gap-2">
-                  <div className="bg-bg-emphasis h-2.5 w-9 rounded" />
-                  <div className="bg-bg-inverted h-2.5 w-12 rounded" />
+                  <div className="h-2.5 w-9 rounded bg-bg-emphasis" />
+                  <div className="h-2.5 w-12 rounded bg-bg-inverted" />
                 </div>
                 <EmptyStateChart />
               </div>
@@ -45,7 +45,7 @@ export function PartnersDashboardPageClient() {
           }
         />
       ) : (
-        <div className="@md/page:grid-cols-2 @3xl/page:grid-cols-3 grid gap-4">
+        <div className="grid gap-4 @md/page:grid-cols-2 @3xl/page:grid-cols-3">
           {isLoading
             ? Array.from({ length: 3 }).map((_, idx) => (
                 <ProgramCardSkeleton key={idx} />

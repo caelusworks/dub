@@ -43,7 +43,7 @@ export default function SimpleDateRangePicker({
             }
           : undefined
       }
-      presetId={!start || !end ? interval ?? defaultInterval : undefined}
+      presetId={!start || !end ? (interval ?? defaultInterval) : undefined}
       onChange={(range, preset) => {
         if (preset) {
           queryParams({

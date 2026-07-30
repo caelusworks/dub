@@ -74,7 +74,7 @@ export default function PendingApplicationsSummary({
               <Img src={DUB_WORDMARK} height="32" alt="Dub" />
             </Section>
 
-            <Heading className="mx-0 mb-5 mt-10 p-0 text-lg font-medium text-black">
+            <Heading className="mx-0 mt-10 mb-5 p-0 text-lg font-medium text-black">
               {nFormatter(totalCount, { full: true })}{" "}
               {pluralize("partner application", totalCount)} pending review
             </Heading>
@@ -131,7 +131,7 @@ export default function PendingApplicationsSummary({
                       <Column width={90} align="right" valign="middle">
                         <Link
                           href={`${applicationsUrl}?partnerId=${partner.id}`}
-                          className="box-border inline-block rounded-md border border-solid border-neutral-200 bg-white px-4 py-2 text-center text-sm font-medium leading-none text-black no-underline"
+                          className="box-border inline-block rounded-md border border-solid border-neutral-200 bg-white px-4 py-2 text-center text-sm leading-none font-medium text-black no-underline"
                           style={{ whiteSpace: "nowrap" }}
                         >
                           Review
@@ -146,7 +146,7 @@ export default function PendingApplicationsSummary({
             <Section className="mt-6 text-center">
               <Link
                 href={applicationsUrl}
-                className="box-border block w-full rounded-md bg-black px-2 py-3 text-center text-sm font-medium leading-none text-white no-underline"
+                className="box-border block w-full rounded-md bg-black px-2 py-3 text-center text-sm leading-none font-medium text-white no-underline"
               >
                 View all applications
               </Link>

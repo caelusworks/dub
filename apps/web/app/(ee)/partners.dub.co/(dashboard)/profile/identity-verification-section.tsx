@@ -36,9 +36,8 @@ export function IdentityVerificationSection({
         );
       },
       onSuccess: async ({ data }) => {
-        const { createVeriffFrame, MESSAGES } = await import(
-          "@veriff/incontext-sdk"
-        );
+        const { createVeriffFrame, MESSAGES } =
+          await import("@veriff/incontext-sdk");
 
         createVeriffFrame({
           url: data.sessionUrl,
@@ -168,7 +167,7 @@ export function IdentityVerificationSection({
         </div>
       )}
 
-      <div className="border-border-subtle relative overflow-hidden rounded-lg border bg-neutral-50">
+      <div className="relative overflow-hidden rounded-lg border border-border-subtle bg-neutral-50">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.4] [-webkit-mask-image:radial-gradient(ellipse_95%_85%_at_50%_42%,#000_0%,transparent_68%)] [background-image:radial-gradient(rgb(163_163_163)_1px,transparent_1px)] [background-size:4px_4px] [mask-image:radial-gradient(ellipse_95%_85%_at_50%_42%,#000_0%,transparent_68%)]"
           aria-hidden

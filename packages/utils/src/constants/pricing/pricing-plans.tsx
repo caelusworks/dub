@@ -647,7 +647,7 @@ export const getSuggestedPlan = ({
         .filter((tier) => tier >= 2),
     ].find((tier) => {
       const limits =
-        tier === 1 ? p.limits : p.tiers?.[tier]?.limits ?? p.limits;
+        tier === 1 ? p.limits : (p.tiers?.[tier]?.limits ?? p.limits);
       return limits.clicks >= (events ?? 0) && limits.links >= (links ?? 0);
     });
 

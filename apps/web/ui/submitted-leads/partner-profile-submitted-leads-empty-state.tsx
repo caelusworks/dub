@@ -126,10 +126,10 @@ export function PartnerProfileSubmittedLeadsEmptyState() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <div className="text-content-default text-sm font-semibold">
+                  <div className="text-sm font-semibold text-content-default">
                     {card.programName}
                   </div>
-                  <div className="text-content-subtle text-xs font-medium">
+                  <div className="text-xs font-medium text-content-subtle">
                     {card.name}
                   </div>
                 </div>
@@ -137,7 +137,7 @@ export function PartnerProfileSubmittedLeadsEmptyState() {
 
               <div
                 className={cn(
-                  "text-content-subtle flex h-5 items-center rounded-md px-2 text-xs font-medium",
+                  "flex h-5 items-center rounded-md px-2 text-xs font-medium text-content-subtle",
                   card.statusClassName,
                 )}
               >

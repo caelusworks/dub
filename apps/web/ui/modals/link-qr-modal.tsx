@@ -186,7 +186,7 @@ function LinkQRModalInner({
                       />
                     }
                   >
-                    <Crown className="text-content-default mr-1 size-4" />
+                    <Crown className="mr-1 size-4 text-content-default" />
                   </Tooltip>
                 )}
                 <span className="text-sm">Hide</span>

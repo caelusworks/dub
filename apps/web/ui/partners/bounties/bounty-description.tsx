@@ -18,7 +18,7 @@ export function BountyDescription({
 
   return (
     <div>
-      <h3 className="text-content-emphasis text-sm font-semibold">
+      <h3 className="text-sm font-semibold text-content-emphasis">
         Bounty details
       </h3>
 
@@ -26,7 +26,7 @@ export function BountyDescription({
         <Markdown
           className={cn(
             PROSE_STYLES.default,
-            "text-content-subtle text-sm font-normal",
+            "text-sm font-normal text-content-subtle",
             embed && "dark:prose-invert dark:prose-a:text-neutral-100",
           )}
         >

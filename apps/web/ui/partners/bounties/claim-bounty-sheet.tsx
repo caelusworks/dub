@@ -177,7 +177,7 @@ function ImagesField({
         {files.map((file, idx) => (
           <div
             key={file.id}
-            className="border-border-subtle group relative flex aspect-square h-full items-center justify-center rounded-md border bg-white"
+            className="group relative flex aspect-square h-full items-center justify-center rounded-md border border-border-subtle bg-white"
           >
             {file.uploading ? (
               <LoadingSpinner className="size-4" />
@@ -215,7 +215,7 @@ function ImagesField({
         <FileUpload
           accept="images"
           className={cn(
-            "border-border-subtle h-full w-auto rounded-md border",
+            "h-full w-auto rounded-md border border-border-subtle",
             files.length > 0 ? "aspect-square" : "aspect-[unset] w-full",
           )}
           iconClassName="size-5 shrink-0"
@@ -614,7 +614,7 @@ function ClaimBountySheetContent({
               }
             }}
           >
-            <div className="scrollbar-hide min-h-0 flex-1 overflow-y-auto">
+            <div className="min-h-0 flex-1 overflow-y-auto scrollbar-hide">
               {formattedSubmissionsOpenAt && (
                 <div className="p-5 pb-0">
                   <div className="rounded-lg bg-orange-50 p-2 text-center text-sm font-medium text-orange-800">

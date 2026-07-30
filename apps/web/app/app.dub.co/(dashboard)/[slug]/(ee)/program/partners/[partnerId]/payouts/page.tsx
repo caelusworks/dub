@@ -27,7 +27,7 @@ export default function ProgramPartnerPayoutsPage() {
   ) : (
     <div className="flex justify-center py-16">
       {error ? (
-        <span className="text-content-subtle text-sm">
+        <span className="text-sm text-content-subtle">
           Failed to load partner payouts
         </span>
       ) : (
@@ -124,7 +124,7 @@ function PartnerPayouts({ partner }: { partner: EnrolledPartnerProps }) {
   return (
     <>
       <div className="flex items-end justify-between gap-4">
-        <h2 className="text-content-emphasis text-lg font-semibold">Payouts</h2>
+        <h2 className="text-lg font-semibold text-content-emphasis">Payouts</h2>
         {Boolean(payouts?.length) && (
           <Link
             href={`/${slug}/program/payouts?partnerId=${partner.id}`}

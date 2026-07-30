@@ -195,7 +195,7 @@ export default async function DeepLinkPreviewPage(props: {
                 )}
               >
                 {t.poweredBy}{" "}
-                <Wordmark className="text-content-emphasis h-3.5" />
+                <Wordmark className="h-3.5 text-content-emphasis" />
               </Link>
             </div>
           )}
@@ -215,15 +215,15 @@ export default async function DeepLinkPreviewPage(props: {
                   </p>
 
                   <div className="flex items-center justify-center gap-3">
-                    <Copy className="text-content-default size-6" />
-                    <ArrowRight className="text-content-subtle size-3" />
+                    <Copy className="size-6 text-content-default" />
+                    <ArrowRight className="size-3 text-content-subtle" />
                     {platform === "android" ? (
-                      <AndroidLogo className="text-content-default size-6" />
+                      <AndroidLogo className="size-6 text-content-default" />
                     ) : (
-                      <IOSAppStore className="text-content-default size-6" />
+                      <IOSAppStore className="size-6 text-content-default" />
                     )}
-                    <ArrowRight className="text-content-subtle size-3" />
-                    <MobilePhone className="text-content-default size-6" />
+                    <ArrowRight className="size-3 text-content-subtle" />
+                    <MobilePhone className="size-6 text-content-default" />
                   </div>
                 </div>
               )}

@@ -66,8 +66,7 @@ function PlanCard({
 }
 
 export type PlanChangeConfirmationMode =
-  | "program-downgrade"
-  | "advanced-downgrade";
+  "program-downgrade" | "advanced-downgrade";
 
 function PlanChangeConfirmationModal({
   showPlanChangeConfirmationModal,

@@ -34,7 +34,7 @@ export function BountyLogic({ className }: { className?: string }) {
       <div className="flex size-7 shrink-0 items-center justify-center rounded-md bg-neutral-100">
         <Trophy className="size-4 text-neutral-800" />
       </div>
-      <span className="text-content-emphasis text-sm font-medium leading-relaxed">
+      <span className="text-sm font-medium leading-relaxed text-content-emphasis">
         When partner's{" "}
         <div className="inline-flex items-center gap-1">
           <Controller

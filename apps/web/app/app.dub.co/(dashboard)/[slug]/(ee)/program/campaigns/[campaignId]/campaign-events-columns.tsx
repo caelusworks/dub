@@ -18,13 +18,13 @@ export const campaignEventsColumns = [
           />
         </div>
         <div className="flex h-8 min-w-0 flex-1 flex-col">
-          <div className="text-content-emphasis truncate text-xs font-semibold">
+          <div className="truncate text-xs font-semibold text-content-emphasis">
             {row.original.partner.name}
           </div>
           {row.original.group && (
             <div className="flex items-center gap-1">
               <GroupColorCircle group={row.original.group} />
-              <span className="text-content-subtle truncate text-xs font-medium">
+              <span className="truncate text-xs font-medium text-content-subtle">
                 {row.original.group?.name}
               </span>
             </div>
@@ -48,7 +48,7 @@ export const campaignEventsColumns = [
           rows={["local", "utc", "unix"]}
         >
           <div
-            className="text-content-subtle flex h-8 shrink-0 items-center justify-end text-xs font-medium"
+            className="flex h-8 shrink-0 items-center justify-end text-xs font-medium text-content-subtle"
             onClick={(e) => e.preventDefault()}
           >
             {timeAgo(timestamp)}

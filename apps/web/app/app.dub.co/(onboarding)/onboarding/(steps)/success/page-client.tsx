@@ -132,12 +132,12 @@ export function SuccessPageClient({
       <div
         className={cn(
           "mt-8 flex w-full max-w-[400px] flex-col gap-3",
-          "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-delay:250ms] [animation-duration:0.5s] [animation-fill-mode:both]",
+          "animate-slide-up-fade [--offset:10px] [animation-delay:250ms] [animation-duration:0.5s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
         )}
       >
-        <h3 className="text-content-emphasis font-semibold">Complete setup</h3>
+        <h3 className="font-semibold text-content-emphasis">Complete setup</h3>
 
-        <div className="divide-border-subtle border-border-subtle bg-bg-muted flex flex-col divide-y overflow-hidden rounded-lg border">
+        <div className="flex flex-col divide-y divide-border-subtle overflow-hidden rounded-lg border border-border-subtle bg-bg-muted">
           {[
             {
               icon: Globe,
@@ -238,10 +238,10 @@ export function SuccessPageClient({
                       (loading || complete) && "opacity-60",
                     )}
                   >
-                    <div className="text-content-default text-sm font-medium">
+                    <div className="text-sm font-medium text-content-default">
                       {title}
                     </div>
-                    <p className="text-content-subtle truncate text-xs font-medium">
+                    <p className="truncate text-xs font-medium text-content-subtle">
                       {description}
                     </p>
                   </div>
@@ -250,7 +250,7 @@ export function SuccessPageClient({
                 <Link
                   href={href}
                   target="_blank"
-                  className="border-subtle bg-bg-default hover:bg-bg-muted flex h-7 items-center rounded-lg border px-2.5 text-sm font-medium transition-transform active:scale-[0.98]"
+                  className="border-subtle flex h-7 items-center rounded-lg border bg-bg-default px-2.5 text-sm font-medium transition-transform hover:bg-bg-muted active:scale-[0.98]"
                 >
                   {cta}
                 </Link>
@@ -263,14 +263,14 @@ export function SuccessPageClient({
       <div
         className={cn(
           "mt-8 flex w-full max-w-[400px] flex-col gap-3",
-          "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-delay:250ms] [animation-duration:0.5s] [animation-fill-mode:both]",
+          "animate-slide-up-fade [--offset:10px] [animation-delay:250ms] [animation-duration:0.5s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
         )}
       >
-        <h3 className="text-content-emphasis font-semibold">
+        <h3 className="font-semibold text-content-emphasis">
           Additional resources
         </h3>
 
-        <div className="divide-border-subtle border-border-subtle bg-bg-muted flex flex-col divide-y rounded-lg border">
+        <div className="flex flex-col divide-y divide-border-subtle rounded-lg border border-border-subtle bg-bg-muted">
           {showSlackInvite && (
             <div className="flex items-center justify-between gap-2 px-2.5 py-2">
               <div className="flex min-w-0 items-center gap-2">
@@ -278,10 +278,10 @@ export function SuccessPageClient({
                   <Slack className="size-4" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-content-default text-sm font-medium">
+                  <div className="text-sm font-medium text-content-default">
                     Slack invite
                   </div>
-                  <p className="text-content-subtle truncate text-xs font-medium">
+                  <p className="truncate text-xs font-medium text-content-subtle">
                     Get priority support
                   </p>
                 </div>
@@ -292,7 +292,7 @@ export function SuccessPageClient({
                 disabled={slackInviteDone}
                 onClick={() => setSlackInviteModalOpen(true)}
                 className={cn(
-                  "border-subtle bg-bg-default hover:bg-bg-muted flex h-7 items-center rounded-lg border px-2.5 text-sm font-medium transition-transform active:scale-[0.98]",
+                  "border-subtle flex h-7 items-center rounded-lg border bg-bg-default px-2.5 text-sm font-medium transition-transform hover:bg-bg-muted active:scale-[0.98]",
                   "disabled:pointer-events-none disabled:opacity-50",
                 )}
               >
@@ -339,10 +339,10 @@ export function SuccessPageClient({
                   <Icon className="size-4" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-content-default text-sm font-medium">
+                  <div className="text-sm font-medium text-content-default">
                     {title}
                   </div>
-                  <p className="text-content-subtle truncate text-xs font-medium">
+                  <p className="truncate text-xs font-medium text-content-subtle">
                     {description}
                   </p>
                 </div>
@@ -351,7 +351,7 @@ export function SuccessPageClient({
               <Link
                 href={href}
                 target="_blank"
-                className="border-subtle bg-bg-default hover:bg-bg-muted flex h-7 items-center rounded-lg border px-2.5 text-sm font-medium transition-transform active:scale-[0.98]"
+                className="border-subtle flex h-7 items-center rounded-lg border bg-bg-default px-2.5 text-sm font-medium transition-transform hover:bg-bg-muted active:scale-[0.98]"
               >
                 {cta}
               </Link>

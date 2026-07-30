@@ -14,11 +14,11 @@ export function BaseScriptSection() {
           <div className="overflow-hidden">
             <label
               htmlFor={`${id}-switch`}
-              className="text-content-emphasis block text-sm font-semibold"
+              className="block text-sm font-semibold text-content-emphasis"
             >
               Base script
             </label>
-            <p className="text-content-subtle text-sm font-medium">
+            <p className="text-sm font-medium text-content-subtle">
               For basic cookie-management and{" "}
               <a
                 href="https://dub.co/docs/sdks/client-side/features/click-tracking"

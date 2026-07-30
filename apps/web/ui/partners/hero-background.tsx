@@ -19,7 +19,7 @@ export function HeroBackground({
 
   return (
     <div
-      className="bg-bg-muted absolute inset-0 isolate -z-[1] overflow-hidden [container-type:size]"
+      className="absolute inset-0 isolate -z-[1] overflow-hidden bg-bg-muted [container-type:size]"
       style={
         {
           color: color || "#737373",

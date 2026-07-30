@@ -56,17 +56,17 @@ export function AnalyticsGraphic({ className }: { className?: string }) {
       </svg>
       <div className="absolute bottom-0 left-5 flex items-start gap-2">
         {/* Data */}
-        <div className="border-border-default bg-bg-default w-[172px] rounded-lg border p-0">
+        <div className="w-[172px] rounded-lg border border-border-default bg-bg-default p-0">
           <div className="p-1.5">
-            <div className="bg-bg-subtle border-border-subtle text-content-default hidden items-center gap-2 rounded border p-2 text-xs font-medium leading-none sm:flex">
+            <div className="hidden items-center gap-2 rounded border border-border-subtle bg-bg-subtle p-2 text-xs font-medium leading-none text-content-default sm:flex">
               <Link2 className="size-3 rotate-90" />
               d.to/try
             </div>
-            <div className="text-content-default mt-1 px-1.5 pb-0.5 text-[0.8125rem] font-medium sm:mt-2">
+            <div className="mt-1 px-1.5 pb-0.5 text-[0.8125rem] font-medium text-content-default sm:mt-2">
               Apr 2025
             </div>
           </div>
-          <div className="border-border-default flex flex-col gap-2 border-t p-3">
+          <div className="flex flex-col gap-2 border-t border-border-default p-3">
             {(["clicks", "leads", "sales"] as const).map((key) => (
               <div
                 className="flex items-center justify-between gap-2"
@@ -77,11 +77,11 @@ export function AnalyticsGraphic({ className }: { className?: string }) {
                     className="size-2 rounded-sm border border-black/20 bg-current opacity-70"
                     style={{ color: data[key].color }}
                   />
-                  <div className="text-content-subtle text-xs font-medium leading-none">
+                  <div className="text-xs font-medium leading-none text-content-subtle">
                     {capitalize(key)}
                   </div>
                 </div>
-                <span className="text-content-emphasis text-xs leading-none">
+                <span className="text-xs leading-none text-content-emphasis">
                   {key === "sales" ? "$" : ""}
                   {data[key].value}
                 </span>
@@ -92,11 +92,11 @@ export function AnalyticsGraphic({ className }: { className?: string }) {
 
         {/* Customer */}
         <div className="relative">
-          <div className="border-border-default bg-bg-default absolute left-0 top-0 rounded-lg border py-0.5">
+          <div className="absolute left-0 top-0 rounded-lg border border-border-default bg-bg-default py-0.5">
             <div className="px-3 py-2.5">
               <div className="flex justify-between gap-2">
                 <div
-                  className="bg-bg-emphasis size-11 rounded-full"
+                  className="size-11 rounded-full bg-bg-emphasis"
                   style={{
                     backgroundImage:
                       "url(https://assets.dub.co/home/people.png)",
@@ -105,11 +105,11 @@ export function AnalyticsGraphic({ className }: { className?: string }) {
                   }}
                 />
                 <div className="flex flex-col items-end gap-1">
-                  <div className="bg-bg-default border-border-subtle text-content-default flex items-center gap-1.5 rounded-full border px-1.5 py-0.5 text-xs">
-                    <CursorRays className="text-content-default size-3.5" />
+                  <div className="flex items-center gap-1.5 rounded-full border border-border-subtle bg-bg-default px-1.5 py-0.5 text-xs text-content-default">
+                    <CursorRays className="size-3.5 text-content-default" />
                     {CUSTOMER.origin}
                   </div>
-                  <div className="bg-bg-default border-border-subtle text-content-default flex items-center gap-1.5 rounded-full border px-1.5 py-0.5 text-xs">
+                  <div className="flex items-center gap-1.5 rounded-full border border-border-subtle bg-bg-default px-1.5 py-0.5 text-xs text-content-default">
                     <img
                       src={`https://flag.vercel.app/m/${CUSTOMER.country}.svg`}
                       className="relative h-2.5 w-3 rounded-sm"
@@ -118,21 +118,21 @@ export function AnalyticsGraphic({ className }: { className?: string }) {
                   </div>
                 </div>
               </div>
-              <div className="text-content-emphasis mt-4 text-[0.8125rem] font-medium">
+              <div className="mt-4 text-[0.8125rem] font-medium text-content-emphasis">
                 {CUSTOMER.name}
               </div>
-              <div className="text-content-subtle mt-px text-xs">
+              <div className="mt-px text-xs text-content-subtle">
                 {CUSTOMER.email}
               </div>
             </div>
-            <div className="border-border-default flex flex-col gap-2.5 border-t px-3 pb-2.5 pt-3">
+            <div className="flex flex-col gap-2.5 border-t border-border-default px-3 pb-2.5 pt-3">
               {Object.entries(CUSTOMER.details as Record<string, string>).map(
                 ([key, value]) => (
                   <div
                     key={key}
                     className="relative flex items-center justify-between gap-2 text-xs leading-none"
                   >
-                    <span className="text-content-muted truncate font-medium">
+                    <span className="truncate font-medium text-content-muted">
                       {key}
                     </span>
                     <span className="text-content-default">{value}</span>

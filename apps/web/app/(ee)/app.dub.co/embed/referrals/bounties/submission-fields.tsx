@@ -149,7 +149,7 @@ export function EmbedImagesField({
         {files.map((file, idx) => (
           <div
             key={file.id}
-            className="border-border-subtle bg-bg-default group relative flex aspect-square h-full items-center justify-center rounded-md border"
+            className="group relative flex aspect-square h-full items-center justify-center rounded-md border border-border-subtle bg-bg-default"
           >
             {file.uploading ? (
               <LoadingSpinner className="size-4" />
@@ -169,7 +169,7 @@ export function EmbedImagesField({
               aria-label={`Remove ${file.file?.name ?? file.originalFileName ?? "file"}`}
               className={cn(
                 "absolute right-0 top-0 flex size-[1.125rem] -translate-y-1/2 translate-x-1/2 items-center justify-center",
-                "border-border-subtle bg-bg-default hover:bg-bg-muted rounded-full border shadow-sm active:scale-95",
+                "rounded-full border border-border-subtle bg-bg-default shadow-sm hover:bg-bg-muted active:scale-95",
                 "scale-50 opacity-0 transition-[background-color,transform,opacity] group-hover:scale-100 group-hover:opacity-100",
               )}
               onClick={() => {
@@ -180,7 +180,7 @@ export function EmbedImagesField({
                 });
               }}
             >
-              <X className="text-content-muted size-2.5" />
+              <X className="size-2.5 text-content-muted" />
             </button>
           </div>
         ))}
@@ -188,7 +188,7 @@ export function EmbedImagesField({
         <FileUpload
           accept="images"
           className={cn(
-            "border-border-subtle h-full w-auto rounded-md border",
+            "h-full w-auto rounded-md border border-border-subtle",
             files.length > 0 ? "aspect-square" : "aspect-[unset] w-full",
           )}
           iconClassName="size-5 shrink-0"
@@ -266,7 +266,7 @@ export function EmbedSocialUrlField({
   return (
     <div>
       <label htmlFor={inputId} className="block">
-        <span className="text-content-emphasis text-sm font-medium">
+        <span className="text-sm font-medium text-content-emphasis">
           {`${socialPlatform.label} URL`}
         </span>
       </label>
@@ -295,10 +295,10 @@ export function EmbedSocialUrlField({
         {showIcon && (
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
             {isValidating ? (
-              <LoadingSpinner className="text-content-muted size-4 shrink-0" />
+              <LoadingSpinner className="size-4 shrink-0 text-content-muted" />
             ) : error && urlToCheck ? (
               <AlertTriangle
-                className="text-content-error size-4 shrink-0"
+                className="size-4 shrink-0 text-content-error"
                 fill="rgb(var(--content-error))"
               />
             ) : null}
@@ -370,7 +370,7 @@ export function EmbedUrlsField({
     <div>
       <div className="flex items-center justify-between">
         <Label>URL{formatRequirementText(urlMax)}</Label>
-        <span className="text-content-subtle text-xs font-medium">
+        <span className="text-xs font-medium text-content-subtle">
           {urls.filter(Boolean).length} / {maxUrls}
         </span>
       </div>
@@ -397,7 +397,7 @@ export function EmbedUrlsField({
               variant="outline"
               icon={<Trash className="size-4" />}
               aria-label={`Remove URL ${i + 1}`}
-              className="bg-bg-error text-content-error hover:bg-bg-error/80 w-10 shrink-0 p-0"
+              className="w-10 shrink-0 bg-bg-error p-0 text-content-error hover:bg-bg-error/80"
               onClick={() => setUrls((prev) => prev.filter((_, j) => j !== i))}
             />
           </div>
@@ -414,7 +414,7 @@ export function EmbedUrlsField({
 
         {bounty.submissionRequirements?.url?.domains &&
           bounty.submissionRequirements.url.domains.length > 0 && (
-            <p className="text-content-muted text-xs">
+            <p className="text-xs text-content-muted">
               Allowed domains:{" "}
               {bounty.submissionRequirements.url.domains.join(", ")}
             </p>
@@ -455,7 +455,7 @@ export function EmbedDescriptionField({
         }}
       />
       <div className="mt-1 text-left">
-        <span className="text-content-subtle text-xs">
+        <span className="text-xs text-content-subtle">
           {value.length} / {BOUNTY_MAX_SUBMISSION_DESCRIPTION_LENGTH}
         </span>
       </div>

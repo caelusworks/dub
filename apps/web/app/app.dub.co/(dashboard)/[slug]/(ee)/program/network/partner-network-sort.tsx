@@ -95,7 +95,7 @@ export function PartnerNetworkSort({
           className,
         )}
       >
-        <span className="text-content-emphasis flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-left">
+        <span className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap text-left text-content-emphasis">
           Sort by{" "}
           <strong className="font-semibold">{selectedSort.label}</strong>
         </span>

@@ -203,7 +203,7 @@ export function ReferralsEmbedPageClient({
 
   const isTremendousCountrySupported = Boolean(
     !partner.country ||
-      TREMENDOUS_SUPPORTED_COUNTRIES.includes(partner.country),
+    TREMENDOUS_SUPPORTED_COUNTRIES.includes(partner.country),
   );
 
   // Show Tremendous payout settings if the partner already uses Tremendous,
@@ -308,7 +308,7 @@ export function ReferralsEmbedPageClient({
         className={cn("flex flex-col", !dynamicHeight && "min-h-screen")}
       >
         <div className="relative z-0 p-5">
-          <div className="border-border-default relative flex flex-col overflow-hidden rounded-lg border p-4 md:p-6">
+          <div className="relative flex flex-col overflow-hidden rounded-lg border border-border-default p-4 md:p-6">
             <HeroBackground logo={group.logo} color={group.brandColor} embed />
 
             <ReferralLinkDisplay
@@ -325,14 +325,14 @@ export function ReferralsEmbedPageClient({
             >
               {!showPartnerReferralSection && (
                 <div className="flex items-end justify-between">
-                  <span className="text-content-emphasis text-base font-semibold leading-none">
+                  <span className="text-base font-semibold leading-none text-content-emphasis">
                     Rewards
                   </span>
                   {termsHref && (
                     <a
                       href={termsHref}
                       target="_blank"
-                      className="text-content-subtle text-xs font-medium leading-none underline-offset-2 hover:underline"
+                      className="text-xs font-medium leading-none text-content-subtle underline-offset-2 hover:underline"
                     >
                       View terms ↗
                     </a>
@@ -341,7 +341,7 @@ export function ReferralsEmbedPageClient({
               )}
               <div
                 className={cn(
-                  "text-content-emphasis relative text-lg",
+                  "relative text-lg text-content-emphasis",
                   showPartnerReferralSection ? "mt-2" : "mt-4",
                 )}
               >
@@ -358,7 +358,7 @@ export function ReferralsEmbedPageClient({
                   holdingPeriodDays={
                     programEmbedData?.hideEarnings
                       ? 0
-                      : group.holdingPeriodDays ?? 0
+                      : (group.holdingPeriodDays ?? 0)
                   }
                 />
               </div>
@@ -373,12 +373,12 @@ export function ReferralsEmbedPageClient({
                 <a
                   href="https://dub.co/partners"
                   target="_blank"
-                  className="hover:text-content-default text-content-subtle bg-bg-default border-border-subtle flex w-fit items-center gap-1.5 rounded-md border px-2 py-1 transition-colors duration-75"
+                  className="flex w-fit items-center gap-1.5 rounded-md border border-border-subtle bg-bg-default px-2 py-1 text-content-subtle transition-colors duration-75 hover:text-content-default"
                 >
                   <p className="whitespace-nowrap text-xs font-medium leading-none">
                     Powered by
                   </p>
-                  <Wordmark className="text-content-emphasis h-3.5" />
+                  <Wordmark className="h-3.5 text-content-emphasis" />
                 </a>
               </div>
             )}
@@ -400,7 +400,7 @@ export function ReferralsEmbedPageClient({
             )}
           </div>
           <div className="mt-4">
-            <div className="border-border-subtle flex items-center border-b">
+            <div className="flex items-center border-b border-border-subtle">
               <TabSelect
                 options={tabs.map((tab) => ({
                   id: tab,
@@ -425,7 +425,7 @@ export function ReferralsEmbedPageClient({
                 onSelect={(option) => {
                   setSelectedTab(option);
                 }}
-                className="scrollbar-hide min-w-0 grow overflow-x-auto"
+                className="min-w-0 grow overflow-x-auto scrollbar-hide"
               />
 
               <div className="shrink">
@@ -502,10 +502,10 @@ function ReferralsEmbedUnapproved({
       >
         {badge.label}
       </StatusBadge>
-      <h2 className="text-content-default mt-4 text-base font-semibold">
+      <h2 className="mt-4 text-base font-semibold text-content-default">
         {isPending ? "Application in review" : "Program unavailable"}
       </h2>
-      <p className="text-content-subtle [&_strong]:text-content-default mt-2 max-w-sm text-balance text-sm font-medium [&_strong]:font-semibold">
+      <p className="mt-2 max-w-sm text-balance text-sm font-medium text-content-subtle [&_strong]:font-semibold [&_strong]:text-content-default">
         {isPending ? (
           <>
             You&apos;ll be notified when <strong>{programName}</strong> has
@@ -612,7 +612,7 @@ function ReferralLinkDisplay({
   return (
     <>
       <div className="flex items-center justify-between sm:max-w-[50%]">
-        <span className="text-content-emphasis text-base font-semibold">
+        <span className="text-base font-semibold text-content-emphasis">
           {hasPartnerReferralReward
             ? "Customer referral rewards"
             : "Referral link"}
@@ -621,20 +621,20 @@ function ReferralLinkDisplay({
           <a
             href={termsHref}
             target="_blank"
-            className="text-content-subtle text-xs font-medium leading-none underline-offset-2 hover:underline"
+            className="text-xs font-medium leading-none text-content-subtle underline-offset-2 hover:underline"
           >
             View terms ↗
           </a>
         )}
       </div>
 
-      <div className="xs:flex-row xs:items-center relative mt-2 flex flex-col gap-2 sm:max-w-[50%]">
+      <div className="relative mt-2 flex flex-col gap-2 xs:flex-row xs:items-center sm:max-w-[50%]">
         {links.length <= 1 ? (
           <input
             type="text"
             readOnly
             value={partnerLink ? getPrettyUrl(partnerLink) : "No referral link"}
-            className="border-border-default text-content-default focus:border-border-emphasis bg-bg-default h-10 min-w-0 grow rounded-lg border px-3 text-sm focus:outline-none focus:ring-0"
+            className="h-10 min-w-0 grow rounded-lg border border-border-default bg-bg-default px-3 text-sm text-content-default focus:border-border-emphasis focus:outline-none focus:ring-0"
           />
         ) : (
           <div className="min-w-0 grow">
@@ -658,8 +658,8 @@ function ReferralLinkDisplay({
               inputClassName="text-sm h-10"
               optionDescription={(option) => (
                 <span className="flex min-w-0 items-center gap-1">
-                  <ArrowTurnRight2 className="text-content-muted size-3 shrink-0" />
-                  <span className="text-content-subtle min-w-0 truncate text-xs">
+                  <ArrowTurnRight2 className="size-3 shrink-0 text-content-muted" />
+                  <span className="min-w-0 truncate text-xs text-content-subtle">
                     {option.meta.destination}
                   </span>
                 </span>
@@ -670,14 +670,14 @@ function ReferralLinkDisplay({
               trigger={
                 <button
                   type="button"
-                  className="border-border-default text-content-default focus:border-border-emphasis bg-bg-default flex h-10 w-full min-w-0 items-center gap-2 rounded-lg border px-3 text-left text-sm outline-none focus:ring-0"
+                  className="flex h-10 w-full min-w-0 items-center gap-2 rounded-lg border border-border-default bg-bg-default px-3 text-left text-sm text-content-default outline-none focus:border-border-emphasis focus:ring-0"
                 >
                   <span className="min-w-0 shrink grow truncate">
                     {partnerLink
                       ? getPrettyUrl(partnerLink)
                       : "No referral link"}
                   </span>
-                  <ChevronDown className="text-content-muted size-4 shrink-0" />
+                  <ChevronDown className="size-4 shrink-0 text-content-muted" />
                 </button>
               }
             />
@@ -708,16 +708,16 @@ function PartnerReferralLinkDisplay({
 
   return (
     <div className="mt-8 sm:max-w-[50%]">
-      <span className="text-content-emphasis text-base font-semibold leading-none">
+      <span className="text-base font-semibold leading-none text-content-emphasis">
         Partner referral rewards
       </span>
 
-      <div className="xs:flex-row xs:items-center relative mt-2 flex flex-col gap-2">
+      <div className="relative mt-2 flex flex-col gap-2 xs:flex-row xs:items-center">
         <input
           type="text"
           readOnly
           value={getPrettyUrl(partnerReferralApplyLink)}
-          className="border-border-default text-content-default focus:border-border-emphasis bg-bg-default h-10 min-w-0 grow rounded-lg border px-3 text-sm focus:outline-none focus:ring-0"
+          className="h-10 min-w-0 grow rounded-lg border border-border-default bg-bg-default px-3 text-sm text-content-default focus:border-border-emphasis focus:outline-none focus:ring-0"
         />
         <Button
           icon={
@@ -746,7 +746,7 @@ function PartnerReferralLinkDisplay({
         />
       </div>
 
-      <div className="text-content-emphasis relative mt-2 text-lg">
+      <div className="relative mt-2 text-lg text-content-emphasis">
         <ProgramRewardList rewards={referralRewards} className="rounded-lg" />
       </div>
     </div>
@@ -785,8 +785,8 @@ function Menu({
       <Button
         variant="secondary"
         className={cn(
-          "text-content-subtle h-8 px-1.5 outline-none transition-all duration-200",
-          "data-[state=open]:border-border-emphasis sm:group-hover/card:data-[state=closed]:border-border-subtle border-transparent",
+          "h-8 px-1.5 text-content-subtle outline-none transition-all duration-200",
+          "border-transparent data-[state=open]:border-border-emphasis sm:group-hover/card:data-[state=closed]:border-border-subtle",
         )}
         icon={<ThreeDots className="size-4 shrink-0" />}
         onClick={() => {

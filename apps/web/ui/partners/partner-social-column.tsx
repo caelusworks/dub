@@ -15,9 +15,7 @@ export function PartnerSocialColumn({
   platformName,
 }: {
   platform:
-    | Pick<PartnerPlatformProps, "identifier" | "verifiedAt">
-    | null
-    | undefined;
+    Pick<PartnerPlatformProps, "identifier" | "verifiedAt"> | null | undefined;
   platformName: PlatformType;
 }) {
   if (!platform?.identifier) {
@@ -27,7 +25,7 @@ export function PartnerSocialColumn({
   const needsAt = PLATFORMS_WITH_AT.includes(platformName);
   const value =
     platformName === "website"
-      ? getDomainWithoutWWW(platform.identifier) ?? "-"
+      ? (getDomainWithoutWWW(platform.identifier) ?? "-")
       : platform.identifier;
   const verified = !!platform.verifiedAt;
 

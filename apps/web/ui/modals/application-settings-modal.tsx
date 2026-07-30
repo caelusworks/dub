@@ -119,7 +119,7 @@ function ApplicationSettingsModal({
         onSubmit={onSubmit}
         className="flex min-h-0 flex-col overflow-hidden"
       >
-        <div className="scrollbar-hide min-h-0 overflow-y-auto">
+        <div className="min-h-0 overflow-y-auto scrollbar-hide">
           <div
             className={cn(
               "space-y-6 bg-neutral-50 p-4 sm:p-6",

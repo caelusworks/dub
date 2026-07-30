@@ -57,7 +57,7 @@ export default function PayoutAutoWithdrawals({
               account after 90 days.
             </Text>
 
-            <Section className="mb-8 mt-6">
+            <Section className="mt-6 mb-8">
               <Link
                 className="rounded-lg bg-neutral-900 px-4 py-3 text-[12px] font-semibold text-white no-underline"
                 href="https://partners.dub.co/payouts?status=processed"

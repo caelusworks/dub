@@ -68,7 +68,8 @@ export async function importPartners(payload: FirstPromoterImportPayload) {
 
           const group =
             promoterCampaigns.length > 0
-              ? campaignMap[promoterCampaigns[0].campaign.name] ?? defaultGroup
+              ? (campaignMap[promoterCampaigns[0].campaign.name] ??
+                defaultGroup)
               : defaultGroup;
 
           return createPartnerAndLinks({
@@ -218,7 +219,7 @@ async function createPartnerAndLinks({
     trackConversion: true,
     userId,
     partnerGroupDefaultLinkId:
-      idx === 0 ? group.partnerGroupDefaultLinks[0]?.id ?? null : null,
+      idx === 0 ? (group.partnerGroupDefaultLinks[0]?.id ?? null) : null,
   }));
 
   await bulkCreateLinks({

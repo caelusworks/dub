@@ -134,7 +134,7 @@ function ExportPayoutsModal({
                 name="columns"
                 control={control}
                 render={({ field }) => (
-                  <div className="xs:grid-cols-2 grid grid-cols-1 gap-x-4 gap-y-2">
+                  <div className="grid grid-cols-1 gap-x-4 gap-y-2 xs:grid-cols-2">
                     {PAYOUT_EXPORT_COLUMNS.map(({ id, label }) => (
                       <div key={id} className="group flex gap-2">
                         <Checkbox

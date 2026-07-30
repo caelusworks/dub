@@ -24,9 +24,9 @@ export function NetworkEmptyState({
           {idx % 2 === 0 || isStarred ? (
             <Star variant="fill" className="size-3 shrink-0 text-amber-500" />
           ) : (
-            <Star className="text-content-muted size-3 shrink-0" />
+            <Star className="size-3 shrink-0 text-content-muted" />
           )}
-          <DemoAvatar className="text-content-default size-9 shrink-0" />
+          <DemoAvatar className="size-9 shrink-0 text-content-default" />
           <div className="flex grow flex-col gap-2">
             <div className="h-2.5 w-full min-w-0 rounded bg-neutral-200" />
             <div className="h-2.5 w-12 min-w-0 rounded bg-neutral-200" />

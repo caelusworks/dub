@@ -260,7 +260,7 @@ function ShareDashboardModalInner({
                 (dashboard ? (
                   <div className="pt-4 text-sm">
                     <div className="divide-x-200 flex items-center justify-between divide-x overflow-hidden rounded-md border border-neutral-200 bg-neutral-100">
-                      <div className="scrollbar-hide overflow-scroll pl-3">
+                      <div className="overflow-scroll pl-3 scrollbar-hide">
                         <p className="whitespace-nowrap text-neutral-400">
                           {getPrettyUrl(`${APP_DOMAIN}/share/${dashboard.id}`)}
                         </p>

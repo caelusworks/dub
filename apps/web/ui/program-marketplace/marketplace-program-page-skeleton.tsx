@@ -7,7 +7,7 @@ export function MarketplaceProgramPageSkeleton() {
       title={
         <div className="flex items-center gap-1.5">
           <div className="flex items-center gap-1">
-            <div className="bg-bg-subtle flex size-8 shrink-0 items-center justify-center rounded-lg">
+            <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle">
               <div className="size-4 animate-pulse rounded bg-neutral-200" />
             </div>
             <div className="size-2.5 shrink-0 animate-pulse rounded bg-neutral-200" />

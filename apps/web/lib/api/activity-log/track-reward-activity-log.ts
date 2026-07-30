@@ -6,11 +6,10 @@ import { getResourceDiff } from "./get-resource-diff";
 import type { TrackActivityLogInput } from "./track-activity-log";
 import { trackActivityLog } from "./track-activity-log";
 
-interface TrackRewardActivityLogParams
-  extends Omit<
-    TrackActivityLogInput,
-    "action" | "changeSet" | "resourceType" | "batchId"
-  > {
+interface TrackRewardActivityLogParams extends Omit<
+  TrackActivityLogInput,
+  "action" | "changeSet" | "resourceType" | "batchId"
+> {
   old: Reward | RewardProps | null;
   new: Reward | RewardProps | null;
 }

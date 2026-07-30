@@ -25,7 +25,7 @@ export function BountyRewardDescription({
   return (
     <div
       className={cn(
-        "text-content-subtle flex items-center gap-1 text-sm",
+        "flex items-center gap-1 text-sm text-content-subtle",
         className,
       )}
     >

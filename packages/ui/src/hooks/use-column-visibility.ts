@@ -89,7 +89,7 @@ export function useColumnVisibility<T extends string>(
             columnId,
             columnId in visibility
               ? visibility[columnId]
-              : currentTabState[columnId] ?? false,
+              : (currentTabState[columnId] ?? false),
           ]),
         );
 
@@ -123,7 +123,7 @@ export function useColumnVisibility<T extends string>(
             columnId,
             columnId in visibility
               ? visibility[columnId]
-              : currentState[columnId] ?? false,
+              : (currentState[columnId] ?? false),
           ]),
         );
 

@@ -57,7 +57,7 @@ export function BountyRewardCriteria({
 
   return (
     <div>
-      <h3 className="text-content-emphasis text-sm font-semibold">
+      <h3 className="text-sm font-semibold text-content-emphasis">
         Reward criteria
       </h3>
 
@@ -65,7 +65,7 @@ export function BountyRewardCriteria({
         {rewardTexts.map((text) => (
           <div className="flex items-center gap-1.5" key={text}>
             <Check2 className="size-3 shrink-0 text-green-600" />
-            <span className="text-content-subtle text-sm font-normal">
+            <span className="text-sm font-normal text-content-subtle">
               {text}
             </span>
           </div>

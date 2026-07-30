@@ -144,8 +144,7 @@ export default function EventsTabs() {
                     date: new Date(d.start),
                     value:
                       ((event === "sales" ? d?.saleAmount : d?.[event]) as
-                        | number
-                        | undefined) ?? 0,
+                        number | undefined) ?? 0,
                   })) || []
                 }
               />

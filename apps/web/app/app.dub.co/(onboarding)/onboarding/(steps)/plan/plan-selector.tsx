@@ -245,11 +245,11 @@ export function PlanSelector({ product }: { product: OnboardingProduct }) {
 
                 {Boolean(
                   (product === "links" && plan.limits.payouts) ||
-                    product === "partners",
+                  product === "partners",
                 ) && (
                   <div className="flex grow flex-col justify-end">
                     <div className="relative z-0 bg-neutral-100">
-                      <div className="border-border-subtle pointer-events-none relative z-10 -mx-px h-2.5 rounded-b-[0.625rem] border-x border-b bg-white" />
+                      <div className="pointer-events-none relative z-10 -mx-px h-2.5 rounded-b-[0.625rem] border-x border-b border-border-subtle bg-white" />
                       <a
                         href={`https://dub.co/${product === "links" ? "partners" : "links"}`}
                         target="_blank"
@@ -261,7 +261,7 @@ export function PlanSelector({ product }: { product: OnboardingProduct }) {
                             product={product === "links" ? "partners" : "links"}
                             className="size-[1.125rem]"
                           />
-                          <span className="text-content-default block text-sm">
+                          <span className="block text-sm text-content-default">
                             Includes{" "}
                             <strong className="font-semibold">
                               Dub {product === "links" ? "Partners" : "Links"}
@@ -270,7 +270,7 @@ export function PlanSelector({ product }: { product: OnboardingProduct }) {
                         </div>
 
                         <div className="absolute inset-0 flex translate-y-1 items-center justify-center opacity-0 transition-[transform,opacity] group-hover:translate-y-0 group-hover:opacity-100">
-                          <span className="text-content-default block whitespace-nowrap text-sm font-medium">
+                          <span className="block whitespace-nowrap text-sm font-medium text-content-default">
                             Learn more ↗
                           </span>
                         </div>

@@ -54,11 +54,11 @@ export default function DubProductUpdateMar26({
               />
             </Section>
 
-            <Heading className="mx-0 mb-2 mt-8 p-0 text-center text-2xl font-semibold text-black">
+            <Heading className="mx-0 mt-8 mb-2 p-0 text-center text-2xl font-semibold text-black">
               Dub Partners Product Updates
             </Heading>
 
-            <Text className="mx-auto mb-8 mt-0 max-w-sm text-center text-base leading-6 text-neutral-600">
+            <Text className="mx-auto mt-0 mb-8 max-w-sm text-center text-base leading-6 text-neutral-600">
               Here are some of the exciting new features that we've shipped over
               the last few months 👇
             </Text>
@@ -82,15 +82,15 @@ export default function DubProductUpdateMar26({
                   }}
                 />
               </Link>
-              <Heading className="mx-0 mb-2 mt-0 p-0 text-base font-semibold text-black">
+              <Heading className="mx-0 mt-0 mb-2 p-0 text-base font-semibold text-black">
                 1. Social Metrics Bounties
               </Heading>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 You can now reward partners for creating viral content – e.g.
                 "Earn $50 per 1K views on YouTube, up to 100K views".
               </Text>
 
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 Perfect for influencer/UGC campaigns.
               </Text>
               <Section className="mt-4 text-center">
@@ -135,10 +135,10 @@ export default function DubProductUpdateMar26({
                   }}
                 />
               </Link>
-              <Heading className="mx-0 mb-2 mt-0 p-0 text-base font-semibold text-black">
+              <Heading className="mx-0 mt-0 mb-2 p-0 text-base font-semibold text-black">
                 2. Stablecoin payouts
               </Heading>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 Your partners can now connect a crypto wallet and get paid in
                 USDC in minutes instead of waiting up to 15 business days with
                 regular bank payouts.
@@ -185,15 +185,15 @@ export default function DubProductUpdateMar26({
                   }}
                 />
               </Link>
-              <Heading className="mx-0 mb-2 mt-0 p-0 text-base font-semibold text-black">
+              <Heading className="mx-0 mt-0 mb-2 p-0 text-base font-semibold text-black">
                 3. Advanced analytics filters
               </Heading>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 Build stronger reports with multi-filtering ("IS ONE OF"),
                 negative filtering ("IS NOT"), and filters across partners,
                 groups, links, folders, tags, country, device, and more.
               </Text>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 Available for Dub Partners and Dub Links, including via API.
               </Text>
               <Section className="mt-4 text-center">
@@ -238,10 +238,10 @@ export default function DubProductUpdateMar26({
                   }}
                 />
               </Link>
-              <Heading className="mx-0 mb-2 mt-0 p-0 text-base font-semibold text-black">
+              <Heading className="mx-0 mt-0 mb-2 p-0 text-base font-semibold text-black">
                 4. Staggered reward durations
               </Heading>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 Set different commission rates by subscription duration (e.g.
                 25% for first 12 months, 10% after), subscription start date, or
                 partner signup date so you can reward early or high-value
@@ -289,10 +289,10 @@ export default function DubProductUpdateMar26({
                   }}
                 />
               </Link>
-              <Heading className="mx-0 mb-2 mt-0 p-0 text-base font-semibold text-black">
+              <Heading className="mx-0 mt-0 mb-2 p-0 text-base font-semibold text-black">
                 5. Group move rules
               </Heading>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 Automatically move partners to a group when they hit performance
                 milestones (leads, conversions, revenue, or commissions). Dub
                 also shows a history of group moves for transparency and
@@ -340,10 +340,10 @@ export default function DubProductUpdateMar26({
                   }}
                 />
               </Link>
-              <Heading className="mx-0 mb-2 mt-0 p-0 text-base font-semibold text-black">
+              <Heading className="mx-0 mt-0 mb-2 p-0 text-base font-semibold text-black">
                 6. Support for Stripe free trials
               </Heading>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 You can now track Stripe free trials as lead events (and by
                 extension, lead rewards for partners). Optionally, you can also
                 track the provisioned subscription quantity as separate lead
@@ -391,14 +391,14 @@ export default function DubProductUpdateMar26({
                   }}
                 />
               </Link>
-              <Heading className="mx-0 mb-2 mt-0 p-0 text-base font-semibold text-black">
+              <Heading className="mx-0 mt-0 mb-2 p-0 text-base font-semibold text-black">
                 7. Bulk invite partners + more updates
               </Heading>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 You can now invite multiple partners at once and customize the
                 invitation email. A few other updates:
               </Text>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 • Bounties, Commissions, and Payouts APIs
                 <br />
                 • “Paid” and “Canceled” columns on customer tables
@@ -427,11 +427,11 @@ export default function DubProductUpdateMar26({
 
             <Hr className="mx-0 my-5 w-full border border-neutral-200" />
 
-            <Text className="mx-0 mb-2 mt-0 text-sm italic leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600 italic">
               Have any feedback about these new features? Just reply to this
               email – I'd love to hear from you! 💪
             </Text>
-            <Text className="mx-0 mb-2 mt-0 text-sm italic leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600 italic">
               Steven from Dub.co
             </Text>
 

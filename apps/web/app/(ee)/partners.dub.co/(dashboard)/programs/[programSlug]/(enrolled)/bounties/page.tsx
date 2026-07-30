@@ -53,18 +53,18 @@ export default function PartnerProgramBountiesPage() {
                 key={tab.id}
                 type="button"
                 className={cn(
-                  "border-border-subtle flex flex-col gap-1 rounded-lg border p-4 text-left transition-colors duration-100",
+                  "flex flex-col gap-1 rounded-lg border border-border-subtle p-4 text-left transition-colors duration-100",
                   isActive
                     ? "border-black ring-1 ring-black"
                     : "hover:bg-bg-muted",
                 )}
                 onClick={() => setActiveTab(tab.id)}
               >
-                <span className="text-content-default text-xs font-semibold">
+                <span className="text-xs font-semibold text-content-default">
                   {tab.label}
                 </span>
                 {bounties ? (
-                  <span className="text-content-emphasis text-base font-semibold">
+                  <span className="text-base font-semibold text-content-emphasis">
                     {bountiesCount[tab.id].toLocaleString()}
                   </span>
                 ) : (
@@ -99,7 +99,7 @@ export default function PartnerProgramBountiesPage() {
                   href="https://dub.co/help/article/program-bounties"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-content-default underline sm:whitespace-nowrap"
+                  className="underline hover:text-content-default sm:whitespace-nowrap"
                 >
                   Learn more about bounties
                 </a>

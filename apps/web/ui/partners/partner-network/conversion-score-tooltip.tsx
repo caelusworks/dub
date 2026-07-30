@@ -25,9 +25,9 @@ export function ConversionScoreTooltip({
                           score={score}
                           className="size-3.5 shrink-0"
                         />
-                        <span className="text-content-default font-semibold">
+                        <span className="font-semibold text-content-default">
                           {capitalize(score)}{" "}
-                          <span className="text-content-subtle font-medium">
+                          <span className="font-medium text-content-subtle">
                             (
                             {idx < PARTNER_CONVERSION_SCORES.length - 1 ? (
                               <>
@@ -48,7 +48,7 @@ export function ConversionScoreTooltip({
                       </div>
                     ))}
                   </div>
-                  <p className="text-content-subtle mt-4 font-medium">
+                  <p className="mt-4 font-medium text-content-subtle">
                     This score is the average click → sale conversion rate
                     across all programs the partner is enrolled in on Dub.
                   </p>

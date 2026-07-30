@@ -67,7 +67,7 @@ function GenerateLanderModalInner({
             ? "Generate landing page content"
             : "Generate a new landing page"}
         </h3>
-        <p className="text-content-subtle mt-2 text-sm">
+        <p className="mt-2 text-sm text-content-subtle">
           {updating
             ? "We'll use AI to update your program's landing page, based on content from your own website."
             : "We'll use AI to generate a new landing page for your program, based on content from your own website."}

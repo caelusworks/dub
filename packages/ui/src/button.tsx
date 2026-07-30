@@ -28,7 +28,8 @@ export const buttonVariants = cva("transition-all", {
 });
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   text?: ReactNode | string;
   textWrapperClassName?: string;
@@ -107,7 +108,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(
           "group flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded-lg border px-3 text-sm",
           props.disabled || loading
-            ? "border-border-subtle bg-bg-subtle text-content-subtle cursor-not-allowed outline-none"
+            ? "cursor-not-allowed border-border-subtle bg-bg-subtle text-content-subtle outline-none"
             : buttonVariants({ variant }),
           className,
         )}

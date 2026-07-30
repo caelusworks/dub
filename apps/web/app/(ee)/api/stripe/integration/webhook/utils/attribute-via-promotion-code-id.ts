@@ -106,7 +106,7 @@ export async function attributeViaPromotionCodeId({
     link,
     customer: {
       continent: customerCountry
-        ? COUNTRIES_TO_CONTINENTS[customerCountry] ?? "Unknown"
+        ? (COUNTRIES_TO_CONTINENTS[customerCountry] ?? "Unknown")
         : "Unknown",
       country: customerCountry ?? "Unknown",
       region: customerAddress?.state ?? "Unknown",
@@ -198,8 +198,8 @@ export async function attributeViaPromotionCodeId({
       const linkUpdated = await incrementLinkLeads(link.id);
 
       let result:
-        | Awaited<ReturnType<typeof queuePartnerCommissionCreation>>
-        | undefined = undefined;
+        Awaited<ReturnType<typeof queuePartnerCommissionCreation>> | undefined =
+        undefined;
 
       if (link.programId && link.partnerId) {
         result = await queuePartnerCommissionCreation({

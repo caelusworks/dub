@@ -26,7 +26,7 @@ export function ProgramMarketplaceBanner() {
         >
           <div
             className={cn(
-              "border-border-subtle relative mb-4 gap-x-2 overflow-hidden rounded-xl border bg-white sm:h-12 lg:mb-4",
+              "relative mb-4 gap-x-2 overflow-hidden rounded-xl border border-border-subtle bg-white sm:h-12 lg:mb-4",
             )}
           >
             <div className="absolute inset-0">
@@ -55,10 +55,10 @@ export function ProgramMarketplaceBanner() {
                 </div>
 
                 <p
-                  className="text-content-subtle flex min-w-0 flex-col px-3 text-base sm:block sm:truncate sm:px-0 sm:text-sm xl:text-base"
+                  className="flex min-w-0 flex-col px-3 text-base text-content-subtle sm:block sm:truncate sm:px-0 sm:text-sm xl:text-base"
                   title="Program Marketplace is here. Discover and apply to more programs on Dub."
                 >
-                  <span className="text-content-emphasis font-semibold">
+                  <span className="font-semibold text-content-emphasis">
                     Program Marketplace is here.
                   </span>{" "}
                   <span className="font-medium">

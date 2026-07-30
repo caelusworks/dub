@@ -9,10 +9,10 @@ export function CampaignEditorSkeleton() {
     <PageContent
       title={
         <div className="flex items-center gap-1.5">
-          <div className="bg-bg-subtle flex size-8 shrink-0 items-center justify-center rounded-lg">
-            <PaperPlane className="text-content-default size-4" />
+          <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle">
+            <PaperPlane className="size-4 text-content-default" />
           </div>
-          <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
+          <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
           <div className="h-6 w-32 animate-pulse rounded-md bg-neutral-200" />
         </div>
       }

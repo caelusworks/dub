@@ -590,8 +590,8 @@ export function AppSidebarNav({
     ignoreParams: true,
     enabled: Boolean(
       currentArea === "program" &&
-        defaultProgramId &&
-        SUBMITTED_LEADS_ENABLED_PROGRAM_IDS.includes(defaultProgramId),
+      defaultProgramId &&
+      SUBMITTED_LEADS_ENABLED_PROGRAM_IDS.includes(defaultProgramId),
     ),
   });
 

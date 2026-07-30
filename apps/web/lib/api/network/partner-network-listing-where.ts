@@ -15,8 +15,7 @@ export type PartnerNetworkListingParts = {
 function listingPlatformSomeFromParams({
   platform,
 }: Pick<PartnerNetworkListingParams, "platform">):
-  | Prisma.PartnerPlatformWhereInput
-  | undefined {
+  Prisma.PartnerPlatformWhereInput | undefined {
   return platform
     ? {
         verifiedAt: { not: null },

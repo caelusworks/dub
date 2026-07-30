@@ -52,9 +52,9 @@ export function ReferralsEmbedResources({
               key={link.id}
               resourceType="link"
               icon={
-                <div className="bg-bg-subtle flex size-full items-center justify-center">
+                <div className="flex size-full items-center justify-center bg-bg-subtle">
                   {link.url.startsWith("mailto:") ? (
-                    <Envelope className="text-content-emphasis size-4" />
+                    <Envelope className="size-4 text-content-emphasis" />
                   ) : (
                     <img
                       src={`${GOOGLE_FAVICON_URL}${getApexDomain(link.url)}`}
@@ -99,8 +99,8 @@ export function ReferralsEmbedResources({
               key={file.id}
               resourceType="file"
               icon={
-                <div className="bg-bg-subtle flex size-full items-center justify-center">
-                  <FileContent className="text-content-emphasis size-4" />
+                <div className="flex size-full items-center justify-center bg-bg-subtle">
+                  <FileContent className="size-4 text-content-emphasis" />
                 </div>
               }
               title={file.name || "File"}

@@ -40,7 +40,7 @@ export const updateDiscountAction = authActionClient
           couponTestId: couponTestId || null,
           ...(autoProvision !== undefined && {
             autoProvisionEnabledAt: autoProvision
-              ? discount.autoProvisionEnabledAt ?? new Date()
+              ? (discount.autoProvisionEnabledAt ?? new Date())
               : null,
           }),
         },

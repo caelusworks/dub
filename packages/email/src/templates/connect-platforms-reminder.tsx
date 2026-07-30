@@ -49,11 +49,11 @@ export default function ConnectPlatformsReminder({
               />
             </Section>
 
-            <Heading className="mx-auto mb-2 mt-8 max-w-[420px] text-center text-2xl font-semibold text-black">
+            <Heading className="mx-auto mt-8 mb-2 max-w-[420px] text-center text-2xl font-semibold text-black">
               Verify your social platforms and get noticed by more programs
             </Heading>
 
-            <Text className="mx-auto mb-8 mt-0 max-w-[420px] text-center text-base leading-6 text-neutral-600">
+            <Text className="mx-auto mt-0 mb-8 max-w-[420px] text-center text-base leading-6 text-neutral-600">
               Improve your reputation score in the Dub partner network by
               verifying your social platforms.
             </Text>
@@ -78,11 +78,11 @@ export default function ConnectPlatformsReminder({
               </Link>
             </Section>
 
-            <Heading className="mx-0 mb-3 mt-0 p-0 text-center text-lg font-semibold text-black">
+            <Heading className="mx-0 mt-0 mb-3 p-0 text-center text-lg font-semibold text-black">
               Improve approval rates by 47%
             </Heading>
 
-            <Text className="mx-auto mb-8 mt-0 max-w-[420px] text-center text-sm leading-6 text-neutral-600">
+            <Text className="mx-auto mt-0 mb-8 max-w-[420px] text-center text-sm leading-6 text-neutral-600">
               Verified partners are 47% more likely to be approved by programs.
               You will also receive more invitations from some of our top
               programs to join their program and start earning.

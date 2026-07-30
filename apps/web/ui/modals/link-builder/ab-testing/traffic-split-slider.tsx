@@ -74,7 +74,7 @@ export function TrafficSplitSlider({
         {testVariants.map((test, i) => (
           <div
             key={i}
-            className="@container pointer-events-none relative flex h-full"
+            className="pointer-events-none relative flex h-full @container"
             style={{ width: `${test.percentage}%` }}
           >
             {i > 0 && <div className="w-1.5" />}
@@ -82,7 +82,7 @@ export function TrafficSplitSlider({
               <span className="text-xs font-semibold text-neutral-900">
                 {i + 1}
               </span>
-              <span className="@[64px]:block hidden font-medium text-neutral-600">
+              <span className="hidden font-medium text-neutral-600 @[64px]:block">
                 {test.percentage}%
               </span>
             </div>

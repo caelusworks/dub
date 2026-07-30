@@ -39,28 +39,28 @@ export function SubmissionCardHeader({
             aria-label="Back to bounties"
             title="Back to bounties"
             onClick={onBackToRoot}
-            className="bg-bg-subtle hover:bg-bg-emphasis flex size-8 shrink-0 items-center justify-center rounded-lg transition-[transform,background-color] duration-150 active:scale-95"
+            className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle transition-[transform,background-color] duration-150 hover:bg-bg-emphasis active:scale-95"
           >
             <Trophy className="size-4" />
           </button>
-          <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
+          <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
           <button
             type="button"
             aria-label="Back to bounty details"
             title="Back to bounty details"
             onClick={onBack}
-            className="text-content-default hover:text-content-emphasis shrink-0 text-sm font-medium transition-colors"
+            className="shrink-0 text-sm font-medium text-content-default transition-colors hover:text-content-emphasis"
           >
             Bounty details
           </button>
-          <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
-          <span className="text-content-emphasis min-w-0 truncate text-sm font-semibold">
+          <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
+          <span className="min-w-0 truncate text-sm font-semibold text-content-emphasis">
             {title}
           </span>
         </div>
         <div className="flex items-center gap-2">{rightContent}</div>
       </div>
-      <div className="border-border-subtle border-t" />
+      <div className="border-t border-border-subtle" />
     </>
   );
 }
@@ -206,7 +206,7 @@ export function EmbedBountySubmissionForm({
   };
 
   return (
-    <div className="border-border-subtle bg-bg-default overflow-hidden rounded-xl border">
+    <div className="overflow-hidden rounded-xl border border-border-subtle bg-bg-default">
       <SubmissionCardHeader
         title={title}
         onBack={onCancel}
@@ -276,7 +276,7 @@ export function EmbedBountySubmissionForm({
 
       <div className="flex flex-col gap-5 p-5">
         {submissionsNotOpenYet && submissionsOpenAt && (
-          <div className="bg-bg-attention text-content-attention rounded-lg p-2 text-center text-sm font-medium">
+          <div className="rounded-lg bg-bg-attention p-2 text-center text-sm font-medium text-content-attention">
             Submissions open{" "}
             {submissionsOpenAt.toLocaleDateString("en-US", {
               month: "short",

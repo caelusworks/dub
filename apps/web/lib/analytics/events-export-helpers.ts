@@ -22,7 +22,7 @@ export const eventsExportColumnAccessors = {
   url: (r: ClickEvent) => r.click.url,
   link: (r: Row) => r.domain + (r.key === "_root" ? "" : `/${r.key}`),
   country: (r: Row) =>
-    r.country ? COUNTRIES[r.country] ?? r.country : r.country,
+    r.country ? (COUNTRIES[r.country] ?? r.country) : r.country,
   referer: (r: ClickEvent) => r.click.referer,
   refererUrl: (r: ClickEvent) => r.click.refererUrl,
   customer: (r: LeadEvent | SaleEvent) =>

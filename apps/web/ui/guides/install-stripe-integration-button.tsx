@@ -36,7 +36,7 @@ export function InstallStripeIntegrationButton() {
     >
       <div
         className={cn(
-          "bg-bg-subtle rounded-xl p-2 transition-colors",
+          "rounded-xl bg-bg-subtle p-2 transition-colors",
           isEnabled && "bg-green-50",
         )}
       >
@@ -51,7 +51,7 @@ export function InstallStripeIntegrationButton() {
           </div>
         ) : (
           <>
-            <p className="text-content-default text-center text-xs font-medium">
+            <p className="text-center text-xs font-medium text-content-default">
               Required first step
             </p>
             <Link
@@ -60,7 +60,7 @@ export function InstallStripeIntegrationButton() {
               onMouseDown={(e) => {
                 if (e.button === 0 || e.button === 1) setIsClicked(true);
               }}
-              className="text-content-inverted mt-2 flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 text-sm font-medium transition-colors hover:bg-indigo-700"
+              className="mt-2 flex h-10 w-full items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 text-sm font-medium text-content-inverted transition-colors hover:bg-indigo-700"
             >
               {isClicked && (
                 <LoadingCircle className="size-4 opacity-60 mix-blend-screen" />

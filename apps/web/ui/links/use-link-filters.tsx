@@ -240,7 +240,7 @@ function useTagFilterOptions({
             ),
         ))
       ? null
-      : (
+      : ((
           [
             ...(tags ?? []),
             // Add selected tag to list if not already in tags
@@ -258,7 +258,7 @@ function useTagFilterOptions({
           }))
           .sort((a, b) =>
             isMegaWorkspace ? a.name.localeCompare(b.name) : b.count - a.count,
-          ) ?? null;
+          ) ?? null);
   }, [loadingTags, tags, selectedTags, tagLinksCount, tagIds, isMegaWorkspace]);
 
   return { tags: tagsResult, tagsAsync };

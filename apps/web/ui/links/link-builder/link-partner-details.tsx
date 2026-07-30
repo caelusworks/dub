@@ -19,7 +19,7 @@ export function LinkPartnerDetails({
     <div>
       <Link
         href={`/${slug}/program/partners/${link.partnerId}`}
-        className="border-border-subtle group flex items-center justify-between overflow-hidden rounded-t-lg border bg-neutral-100 px-4 py-3"
+        className="group flex items-center justify-between overflow-hidden rounded-t-lg border border-border-subtle bg-neutral-100 px-4 py-3"
         target="_blank"
       >
         <div className="flex min-w-0 items-center gap-3">
@@ -53,7 +53,7 @@ export function LinkPartnerDetails({
         </div>
         <ArrowUpRight className="size-3 shrink-0 -translate-x-0.5 translate-y-0.5 opacity-0 transition-[transform,opacity] group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
       </Link>
-      <div className="border-border-subtle grid grid-cols-1 divide-y divide-neutral-200 rounded-b-lg border-x border-b sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+      <div className="grid grid-cols-1 divide-y divide-neutral-200 rounded-b-lg border-x border-b border-border-subtle sm:grid-cols-3 sm:divide-x sm:divide-y-0">
         {[
           [
             "Revenue",

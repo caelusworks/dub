@@ -21,13 +21,13 @@ export function RiskCenterUpsell() {
               <span className="text-base font-medium text-neutral-900">
                 Risk Center
               </span>
-              <p className="text-content-subtle mt-2 text-sm">
+              <p className="mt-2 text-sm text-content-subtle">
                 Protect your program and partners with{" "}
                 <a
                   href="https://dub.co/help/article/risk-monitoring"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-content-default hover:text-content-emphasis cursor-alias underline decoration-dotted underline-offset-2"
+                  className="cursor-alias text-content-default underline decoration-dotted underline-offset-2 hover:text-content-emphasis"
                 >
                   risk monitoring.
                 </a>{" "}

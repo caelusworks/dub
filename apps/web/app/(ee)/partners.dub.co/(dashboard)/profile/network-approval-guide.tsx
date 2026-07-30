@@ -82,7 +82,7 @@ export function NetworkApprovalGuide() {
         className="overflow-hidden"
       >
         <div
-          className="text-content-inverted cursor-pointer rounded-2xl bg-neutral-900 p-2"
+          className="cursor-pointer rounded-2xl bg-neutral-900 p-2 text-content-inverted"
           onClick={(e) => {
             if (isClickOnInteractiveChild(e)) return;
             setIsExpanded((e) => !e);
@@ -96,7 +96,7 @@ export function NetworkApprovalGuide() {
                 </h2>
 
                 {partner.networkStatus === "draft" || !isComplete ? (
-                  <div className="bg-bg-default/10 flex w-fit items-center gap-1.5 rounded-md px-2 py-1">
+                  <div className="flex w-fit items-center gap-1.5 rounded-md bg-bg-default/10 px-2 py-1">
                     <ProgressCircle
                       progress={completedCount / totalCount}
                       className="text-green-500 [--track-color:#fff3]"
@@ -127,7 +127,7 @@ export function NetworkApprovalGuide() {
                   })()
                 )}
               </div>
-              <p className="text-content-inverted/60 text-sm">
+              <p className="text-sm text-content-inverted/60">
                 Complete the steps to join the Dub Partner Network and start
                 applying to programs in our network.
               </p>
@@ -185,7 +185,7 @@ export function NetworkApprovalGuide() {
                   </div>
                   {!completed && href && (
                     <div className="shrink-0 pr-4">
-                      <ExpandingArrow className="group-hover:text-content-inverted text-neutral-500" />
+                      <ExpandingArrow className="text-neutral-500 group-hover:text-content-inverted" />
                     </div>
                   )}
                 </ConditionalLink>

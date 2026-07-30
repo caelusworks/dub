@@ -79,7 +79,7 @@ export default function PartnerPayoutWithdrawalInitiated({
               and we'd be happy to help.
             </Text>
 
-            <Section className="mb-12 mt-8">
+            <Section className="mt-8 mb-12">
               <Link
                 className="rounded-lg bg-neutral-900 px-4 py-3 text-[12px] font-semibold text-white no-underline"
                 href="https://partners.dub.co/payouts"

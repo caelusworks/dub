@@ -102,13 +102,13 @@ export function SlackSupportInviteModal({
       setShowModal={setShowModal}
       className="max-w-md px-0"
     >
-      <div className="border-border-subtle flex flex-col gap-1 border-b px-5 py-4 sm:px-6">
+      <div className="flex flex-col gap-1 border-b border-border-subtle px-5 py-4 sm:px-6">
         <div className="flex items-center gap-2">
-          <h2 className="text-content-emphasis text-base font-semibold">
+          <h2 className="text-base font-semibold text-content-emphasis">
             Request Slack invite
           </h2>
         </div>
-        <p className="text-content-subtle text-sm font-normal">
+        <p className="text-sm font-normal text-content-subtle">
           If your Slack email isn&apos;t your Dub email, use it below. Add
           teammates if needed.
         </p>
@@ -116,16 +116,16 @@ export function SlackSupportInviteModal({
 
       <div className="space-y-3 px-5 py-4 sm:px-6">
         {sessionStatus === "loading" ? (
-          <p className="text-content-subtle text-sm">Loading your account…</p>
+          <p className="text-sm text-content-subtle">Loading your account…</p>
         ) : sessionEmailMissing ? (
-          <p className="text-content-subtle text-sm">
+          <p className="text-sm text-content-subtle">
             Your Dub account does not have an email address. Add one in your
             profile before requesting a Slack invite.
           </p>
         ) : (
           <>
             <label className="block">
-              <span className="text-content-emphasis text-sm font-medium">
+              <span className="text-sm font-medium text-content-emphasis">
                 Email addresses
               </span>
               <div className="mt-2">
@@ -140,7 +140,7 @@ export function SlackSupportInviteModal({
                   autoFocus
                 />
               </div>
-              <p className="text-content-muted mt-2 text-xs">
+              <p className="mt-2 text-xs text-content-muted">
                 Separate multiple emails with commas, or paste a list (max{" "}
                 {pluralize("email", SLACK_SUPPORT_INVITE_MAX_EMAILS)} per
                 request).

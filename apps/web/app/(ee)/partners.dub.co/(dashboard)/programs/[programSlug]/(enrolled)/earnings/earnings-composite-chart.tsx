@@ -106,9 +106,9 @@ export function EarningsCompositeChart() {
               valueAccessor: (d) => d.values[item] || 0,
               colorClassName:
                 groupBy === "type"
-                  ? EVENT_TYPE_LINE_COLORS[
+                  ? (EVENT_TYPE_LINE_COLORS[
                       item as keyof typeof EVENT_TYPE_LINE_COLORS
-                    ] ?? LINE_COLORS[idx % LINE_COLORS.length]
+                    ] ?? LINE_COLORS[idx % LINE_COLORS.length])
                   : LINE_COLORS[idx % LINE_COLORS.length],
             }));
           })()

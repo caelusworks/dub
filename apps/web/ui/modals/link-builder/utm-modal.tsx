@@ -222,7 +222,7 @@ function UTMModalInner({ setShowUTMModal }: UTMModalProps) {
           <span className="block text-sm font-medium text-neutral-700">
             URL Preview
           </span>
-          <div className="scrollbar-hide mt-2 overflow-scroll break-words rounded-lg border border-neutral-200 bg-neutral-50 px-2.5 py-2 font-mono text-xs text-neutral-500">
+          <div className="mt-2 overflow-scroll break-words rounded-lg border border-neutral-200 bg-neutral-50 px-2.5 py-2 font-mono text-xs text-neutral-500 scrollbar-hide">
             {url}
           </div>
         </div>

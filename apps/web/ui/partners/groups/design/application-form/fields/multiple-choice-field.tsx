@@ -57,7 +57,7 @@ export function MultipleChoiceField({
                   <Checkbox
                     id={option.id}
                     checked={isSelected}
-                    className="border-border-default size-4 rounded focus:border-[var(--brand)] focus:ring-[var(--brand)] focus-visible:border-[var(--brand)] focus-visible:ring-[var(--brand)] data-[state=checked]:bg-black data-[state=indeterminate]:bg-black"
+                    className="size-4 rounded border-border-default focus:border-[var(--brand)] focus:ring-[var(--brand)] focus-visible:border-[var(--brand)] focus-visible:ring-[var(--brand)] data-[state=checked]:bg-black data-[state=indeterminate]:bg-black"
                     onCheckedChange={(checked) => {
                       if (preview) return;
 
@@ -76,7 +76,7 @@ export function MultipleChoiceField({
                     }}
                   />
 
-                  <span className="text-content-emphasis text-sm">
+                  <span className="text-sm text-content-emphasis">
                     {option.value}
                   </span>
                 </label>
@@ -124,7 +124,7 @@ export function MultipleChoiceField({
                   className="focus:border-[var(--brand)] focus:ring-[var(--brand)]"
                 />
 
-                <span className="text-content-emphasis text-sm">
+                <span className="text-sm text-content-emphasis">
                   {option.value}
                 </span>
               </label>

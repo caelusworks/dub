@@ -71,7 +71,7 @@ export function BrandingForm() {
 
   if (!group) {
     return (
-      <div className="text-content-muted text-sm">Failed to load program</div>
+      <div className="text-sm text-content-muted">Failed to load program</div>
     );
   }
 
@@ -296,7 +296,7 @@ function BrandingFormInner({
       className="overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100"
     >
       <FormProvider {...form}>
-        <div className="@container flex items-center justify-between gap-2 border-b border-neutral-200 bg-white px-5 py-3">
+        <div className="flex items-center justify-between gap-2 border-b border-neutral-200 bg-white px-5 py-3 @container">
           <div className="grow basis-0">
             <Button
               type="button"
@@ -308,7 +308,7 @@ function BrandingFormInner({
             />
           </div>
           <div className="">
-            <div className="@[480px]:block hidden">
+            <div className="hidden @[480px]:block">
               <ToggleGroup
                 className="rounded-lg bg-neutral-50 p-0.5"
                 indicatorClassName="rounded-md bg-white"
@@ -375,7 +375,7 @@ function BrandingFormInner({
           <div className="h-full overflow-hidden">
             <div
               className={cn(
-                "scrollbar-hide h-full overflow-y-auto border-neutral-200 p-5 transition-opacity max-lg:border-b lg:w-[240px] lg:border-r",
+                "h-full overflow-y-auto border-neutral-200 p-5 transition-opacity scrollbar-hide max-lg:border-b lg:w-[240px] lg:border-r",
                 !isSidePanelOpen && "opacity-0",
               )}
             >
@@ -455,7 +455,7 @@ function Drafts({
   }, [isDirty]);
 
   return isDirty ? (
-    <span className="text-content-muted text-sm">Unsaved draft</span>
+    <span className="text-sm text-content-muted">Unsaved draft</span>
   ) : null;
 }
 

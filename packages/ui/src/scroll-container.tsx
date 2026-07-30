@@ -15,7 +15,7 @@ export function ScrollContainer({
       <div
         className={cn(
           // clip-path is used to fix a weird bug in WebKit where scrolled-out-of-view content is still interactible
-          "scrollbar-hide h-full w-screen overflow-y-scroll [clip-path:inset(0)] sm:w-auto",
+          "h-full w-screen overflow-y-scroll scrollbar-hide [clip-path:inset(0)] sm:w-auto",
           className,
         )}
         ref={ref}

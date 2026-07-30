@@ -398,7 +398,7 @@ export function PartnersSidebarNav({
       <Link
         href="/referrals"
         className={cn(
-          "text-content-default flex size-11 shrink-0 items-center justify-center rounded-lg",
+          "flex size-11 shrink-0 items-center justify-center rounded-lg text-content-default",
           referralsActive ? "bg-white" : "hover:bg-bg-inverted/5",
         )}
       >

@@ -98,7 +98,7 @@ export function CustomerSalesTable({
         </div>
       ) : (
         <>
-          <table className="[&_tr]:border-border-subtle w-full overflow-hidden text-left text-sm [&_tr]:border-b">
+          <table className="w-full overflow-hidden text-left text-sm [&_tr]:border-b [&_tr]:border-border-subtle">
             <thead>
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr key={headerGroup.id}>

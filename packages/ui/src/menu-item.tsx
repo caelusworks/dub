@@ -86,7 +86,7 @@ export function MenuItem<T extends ElementType>({
           {shortcut && (
             <kbd
               className={cn(
-                "bg-bg-inverted/5 group-hover:bg-bg-inverted/10 hidden rounded px-2 py-0.5 text-xs font-light transition-all duration-75 md:block",
+                "hidden rounded bg-bg-inverted/5 px-2 py-0.5 text-xs font-light transition-all duration-75 group-hover:bg-bg-inverted/10 md:block",
               )}
             >
               {shortcut}

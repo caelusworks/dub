@@ -248,7 +248,9 @@ async function stepCreateCommission(
       });
 
       const subscriptionStartDate =
-        event === "sale" ? firstCommission?.createdAt ?? new Date() : undefined;
+        event === "sale"
+          ? (firstCommission?.createdAt ?? new Date())
+          : undefined;
 
       const subscriptionDurationMonths = subscriptionStartDate
         ? differenceInMonths(

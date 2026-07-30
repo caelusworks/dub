@@ -29,7 +29,7 @@ function IntegrationsBreadcrumb({
       </Link>
       {segments.map((segment, index) => (
         <Fragment key={`${segment.label}-${index}`}>
-          <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
+          <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
           {segment.href ? (
             <Link
               href={segment.href}

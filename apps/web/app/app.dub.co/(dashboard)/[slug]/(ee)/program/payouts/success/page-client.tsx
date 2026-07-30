@@ -101,21 +101,21 @@ export function PayoutsSuccessPageClient() {
             buttonVariants({ variant: "outline" }),
           )}
         >
-          <X className="text-content-default size-4" />
+          <X className="size-4 text-content-default" />
         </Link>
       </div>
       <div className="flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center px-4 py-10">
         <div
           className={cn(
             "flex flex-col items-center text-center",
-            "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-duration:0.5s] [animation-fill-mode:both]",
+            "animate-slide-up-fade [--offset:10px] [animation-duration:0.5s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
           )}
         >
           <CircleCheck variant="fill" className="size-8 text-green-600" />
-          <h2 className="text-content-default mt-4 text-lg font-semibold">
+          <h2 className="mt-4 text-lg font-semibold text-content-default">
             Thank you for your payout!
           </h2>
-          <p className="text-content-subtle text-base font-medium">
+          <p className="text-base font-medium text-content-subtle">
             You've paid out {amountPaid} to your{" "}
             {pluralize("partner", partnerCount)}.
           </p>
@@ -123,8 +123,8 @@ export function PayoutsSuccessPageClient() {
 
         <div
           className={cn(
-            "border-border-subtle relative mt-8 w-full max-w-[400px] rounded-2xl border bg-neutral-50 text-center",
-            "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:20px] [animation-delay:100ms] [animation-duration:0.5s] [animation-fill-mode:both]",
+            "relative mt-8 w-full max-w-[400px] rounded-2xl border border-border-subtle bg-neutral-50 text-center",
+            "animate-slide-up-fade [--offset:20px] [animation-delay:100ms] [animation-duration:0.5s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
           )}
         >
           <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
@@ -143,15 +143,15 @@ export function PayoutsSuccessPageClient() {
               alt={program.name}
               className="size-16 rounded-full"
             />
-            <span className="text-content-emphasis mt-6 text-2xl font-semibold">
+            <span className="mt-6 text-2xl font-semibold text-content-emphasis">
               {program.name}
             </span>
-            <span className="text-content-subtle text-base font-medium">
+            <span className="text-base font-medium text-content-subtle">
               # {invoice.number}
             </span>
 
             {/* Stats */}
-            <div className="divide-border-subtle mt-6 grid w-full grid-cols-2 divide-x rounded-xl bg-white px-2 py-3">
+            <div className="mt-6 grid w-full grid-cols-2 divide-x divide-border-subtle rounded-xl bg-white px-2 py-3">
               {[
                 { value: amountPaid, label: "Paid" },
                 {
@@ -164,14 +164,14 @@ export function PayoutsSuccessPageClient() {
                   key={label}
                   className="flex flex-col items-center px-2 text-center"
                 >
-                  <span className="text-content-default text-xl font-semibold">
+                  <span className="text-xl font-semibold text-content-default">
                     {loading ? (
                       <span className="block h-7 w-8 animate-pulse rounded-md bg-neutral-200" />
                     ) : (
                       value
                     )}
                   </span>
-                  <span className="text-content-subtle text-base font-medium">
+                  <span className="text-base font-medium text-content-subtle">
                     {label}
                   </span>
                 </div>
@@ -180,9 +180,9 @@ export function PayoutsSuccessPageClient() {
           </div>
 
           {/* Divider + inserts */}
-          <div className="bg-border-subtle pointer-events-none relative mt-2 h-px w-full">
-            <div className="border-border-subtle absolute -top-4 left-[-17px] size-8 rounded-full border bg-white [mask-image:linear-gradient(90deg,transparent_50%,black_50%)]" />
-            <div className="border-border-subtle absolute -top-4 right-[-17px] size-8 rounded-full border bg-white [mask-image:linear-gradient(90deg,black_50%,transparent_50%)]" />
+          <div className="pointer-events-none relative mt-2 h-px w-full bg-border-subtle">
+            <div className="absolute -top-4 left-[-17px] size-8 rounded-full border border-border-subtle bg-white [mask-image:linear-gradient(90deg,transparent_50%,black_50%)]" />
+            <div className="absolute -top-4 right-[-17px] size-8 rounded-full border border-border-subtle bg-white [mask-image:linear-gradient(90deg,black_50%,transparent_50%)]" />
           </div>
 
           <div className="relative p-6">
@@ -201,7 +201,7 @@ export function PayoutsSuccessPageClient() {
         <div
           className={cn(
             "mt-8",
-            "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-delay:200ms] [animation-duration:0.5s] [animation-fill-mode:both]",
+            "animate-slide-up-fade [--offset:10px] [animation-delay:200ms] [animation-duration:0.5s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
           )}
         >
           <Link

@@ -174,8 +174,7 @@ export function buildNullableStringListWhere(
 
   if (!exclude) {
     return { [field]: inOrEquals } as
-      | Prisma.ProgramEnrollmentWhereInput
-      | Prisma.PartnerWhereInput;
+      Prisma.ProgramEnrollmentWhereInput | Prisma.PartnerWhereInput;
   }
 
   return {

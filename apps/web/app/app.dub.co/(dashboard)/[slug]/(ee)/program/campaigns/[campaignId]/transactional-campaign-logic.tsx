@@ -45,7 +45,7 @@ export function TransactionalCampaignLogic() {
 
   return (
     <div className="flex h-8 w-full items-center px-2">
-      <span className="text-content-default flex gap-1 text-sm font-medium leading-relaxed">
+      <span className="flex gap-1 text-sm font-medium leading-relaxed text-content-default">
         When partner{config?.inputType !== "none" && "'s"}
         <div className="inline-flex items-center gap-1">
           <Controller

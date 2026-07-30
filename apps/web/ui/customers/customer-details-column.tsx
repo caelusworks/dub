@@ -117,7 +117,7 @@ export function CustomerDetailsColumn({
     <>
       <EditCustomerModal />
       <div className="grid grid-cols-1 gap-6 overflow-hidden whitespace-nowrap text-sm text-neutral-900">
-        <div className="border-border-subtle flex flex-col divide-y divide-neutral-200 rounded-xl border bg-white">
+        <div className="flex flex-col divide-y divide-neutral-200 rounded-xl border border-border-subtle bg-white">
           <div className="p-4">
             <div className="flex items-start justify-between gap-2">
               <div className="relative w-fit">
@@ -145,7 +145,7 @@ export function CustomerDetailsColumn({
             <div className="mt-3">
               {customer ? (
                 <div className="flex items-center gap-2">
-                  <span className="text-content-emphasis text-base font-semibold">
+                  <span className="text-base font-semibold text-content-emphasis">
                     {customer.name || customer.email}
                   </span>
                 </div>
@@ -158,7 +158,7 @@ export function CustomerDetailsColumn({
           <div className="flex flex-col gap-2 p-4">
             {basicFields.map(({ id, icon, text }) => (
               <div key={id}>
-                <div className="text-content-default flex items-center gap-1.5">
+                <div className="flex items-center gap-1.5 text-content-default">
                   {text !== undefined ? (
                     <>
                       {icon}
@@ -174,9 +174,9 @@ export function CustomerDetailsColumn({
             ))}
           </div>
 
-          <div className="@md/page:grid-cols-2 @3xl/page:grid-cols-1 grid grid-cols-1 gap-5 p-4 text-xs">
+          <div className="grid grid-cols-1 gap-5 p-4 text-xs @md/page:grid-cols-2 @3xl/page:grid-cols-1">
             <div>
-              <h2 className="text-content-emphasis text-sm font-semibold">
+              <h2 className="text-sm font-semibold text-content-emphasis">
                 Details
               </h2>
 
@@ -301,8 +301,8 @@ export function CustomerDetailsColumn({
         </div>
 
         {(link || !customer) && (
-          <div className="border-border-subtle rounded-lg border p-4">
-            <h2 className="text-content-emphasis mb-2.5 text-sm font-semibold">
+          <div className="rounded-lg border border-border-subtle p-4">
+            <h2 className="mb-2.5 text-sm font-semibold text-content-emphasis">
               Referral {partner ? "partner" : "link"}
             </h2>
 
@@ -360,7 +360,7 @@ const DetailHeading = ({
   ...rest
 }: HTMLProps<HTMLHeadingElement>) => (
   <h3
-    className={cn("text-content-emphasis text-xs font-semibold", className)}
+    className={cn("text-xs font-semibold text-content-emphasis", className)}
     {...rest}
   />
 );

@@ -60,8 +60,8 @@ export function LanderAIBanner() {
               <div className="relative flex items-center justify-between gap-2">
                 <div className="basis-0" />
                 <div className="flex grow items-center justify-center gap-2">
-                  <Sparkle3 className="text-content-emphasis hidden size-4 shrink-0 sm:block" />
-                  <span className="text-content-emphasis text-left text-sm font-medium">
+                  <Sparkle3 className="hidden size-4 shrink-0 text-content-emphasis sm:block" />
+                  <span className="text-left text-sm font-medium text-content-emphasis">
                     Generate your program landing page based on your website
                   </span>
                   <Button

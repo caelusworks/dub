@@ -160,8 +160,7 @@ export function useTooltip<T extends Datum>({
   const handleTooltip = useCallback(
     (
       event:
-        | React.TouchEvent<SVGRectElement>
-        | React.MouseEvent<SVGRectElement>,
+        React.TouchEvent<SVGRectElement> | React.MouseEvent<SVGRectElement>,
     ) => {
       const lp = localPoint(event) || { x: 0 };
       const x = lp.x - margin.left;
@@ -194,7 +193,7 @@ export function useTooltip<T extends Datum>({
       }
       scheduleTooltipUpdate({
         tooltipData: d,
-        tooltipLeft: snapToX ? xScale(d.date) ?? 0 : x,
+        tooltipLeft: snapToX ? (xScale(d.date) ?? 0) : x,
         tooltipTop: snapToY
           ? yScale(series.find((s) => s.id === seriesId)!.valueAccessor(d))
           : 0,

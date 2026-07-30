@@ -49,20 +49,20 @@ export function ReferralsEmbedFAQ() {
   ];
   return (
     <motion.div
-      className="border-border-muted bg-bg-default rounded-lg border px-4 py-2 sm:px-8 sm:py-4"
+      className="rounded-lg border border-border-muted bg-bg-default px-4 py-2 sm:px-8 sm:py-4"
       {...TAB_ITEM_ANIMATION_SETTINGS}
     >
       <Accordion type="single" collapsible>
         {items.map((item, idx) => (
           <AccordionItem key={idx} value={idx.toString()}>
             <AccordionTrigger
-              className="text-content-default py-2"
+              className="py-2 text-content-default"
               variant="plus"
             >
               <h3 className="text-left text-sm sm:text-base">{item.title}</h3>
             </AccordionTrigger>
             <AccordionContent>
-              <BlockMarkdown className="text-content-subtle dark:prose-invert dark:prose-a:text-neutral-400 dark:hover:prose-a:text-neutral-300 dark:marker:prose-ul:text-neutral-400 py-2 text-left text-sm sm:text-base">
+              <BlockMarkdown className="py-2 text-left text-sm text-content-subtle dark:prose-invert dark:prose-a:text-neutral-400 dark:hover:prose-a:text-neutral-300 dark:marker:prose-ul:text-neutral-400 sm:text-base">
                 {item.content}
               </BlockMarkdown>
             </AccordionContent>

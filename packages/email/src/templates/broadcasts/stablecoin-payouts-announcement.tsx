@@ -54,11 +54,11 @@ export default function StablecoinPayoutsAnnouncement({
               />
             </Section>
 
-            <Heading className="mx-0 mb-2 mt-8 p-0 text-center text-2xl font-semibold text-black">
+            <Heading className="mx-0 mt-8 mb-2 p-0 text-center text-2xl font-semibold text-black">
               Stablecoin payouts are here
             </Heading>
 
-            <Text className="mx-auto mb-8 mt-0 max-w-sm text-center text-base leading-6 text-neutral-600">
+            <Text className="mx-auto mt-0 mb-8 max-w-sm text-center text-base leading-6 text-neutral-600">
               You can now connect a crypto wallet of your choice and receive
               payouts in USDC.
             </Text>
@@ -83,11 +83,11 @@ export default function StablecoinPayoutsAnnouncement({
               </Link>
             </Section>
 
-            <Heading className="mx-0 mb-3 mt-0 p-0 text-center text-lg font-semibold text-black">
+            <Heading className="mx-0 mt-0 mb-3 p-0 text-center text-lg font-semibold text-black">
               Get paid in USDC, in minutes
             </Heading>
 
-            <Text className="mx-auto mb-8 mt-0 max-w-[420px] text-center text-sm leading-6 text-neutral-600">
+            <Text className="mx-auto mt-0 mb-8 max-w-[420px] text-center text-sm leading-6 text-neutral-600">
               With stablecoin payouts, you can receive earnings in minutes –
               instead of waiting up to 15 business days. You also avoid the 1%
               FX fees with international bank payouts.
@@ -158,11 +158,11 @@ export default function StablecoinPayoutsAnnouncement({
               </Link>
             </Section>
 
-            <Heading className="mx-0 mb-3 mt-0 p-0 text-center text-lg font-semibold text-black">
+            <Heading className="mx-0 mt-0 mb-3 p-0 text-center text-lg font-semibold text-black">
               Dub Program Marketplace is now generally available
             </Heading>
 
-            <Text className="mx-auto mb-8 mt-0 max-w-[420px] text-center text-sm leading-6 text-neutral-600">
+            <Text className="mx-auto mt-0 mb-8 max-w-[420px] text-center text-sm leading-6 text-neutral-600">
               Find programs that fit your audience, compare rewards, and submit
               your application. It is the easiest way to expand your reach and
               unlock new earning possibilities.

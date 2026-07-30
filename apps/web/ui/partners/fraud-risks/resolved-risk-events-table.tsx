@@ -124,7 +124,7 @@ export function ResolvedRiskEventsTable({ partnerId }: { partnerId: string }) {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-end justify-between gap-4">
-        <h3 className="text-content-emphasis font-semibold">Resolved events</h3>
+        <h3 className="font-semibold text-content-emphasis">Resolved events</h3>
         {displayViewAll ? (
           <Link
             href={`/${slug}/program/risks/resolved?partnerId=${partnerId}`}
@@ -143,11 +143,11 @@ export function ResolvedRiskEventsTable({ partnerId }: { partnerId: string }) {
         {fraudGroups?.length ? (
           <Table {...table} />
         ) : (
-          <div className="border-border-subtle flex h-24 flex-col items-center justify-center gap-2 rounded-lg border">
+          <div className="flex h-24 flex-col items-center justify-center gap-2 rounded-lg border border-border-subtle">
             {fraudGroupsLoading ? (
               <LoadingSpinner />
             ) : (
-              <p className="text-content-subtle text-sm">
+              <p className="text-sm text-content-subtle">
                 No past resolved risk events found for this partner
               </p>
             )}

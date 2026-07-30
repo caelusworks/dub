@@ -103,10 +103,10 @@ export function BountyPerformanceSection({
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-3">
-        <h2 className="text-content-emphasis text-lg font-semibold leading-7 tracking-[-0.36px]">
+        <h2 className="text-lg font-semibold leading-7 tracking-[-0.36px] text-content-emphasis">
           Performance
         </h2>
-        <div className="border-border-subtle rounded-xl border bg-white p-5">
+        <div className="rounded-xl border border-border-subtle bg-white p-5">
           <BountyPerformanceChart bounty={bounty} />
         </div>
       </div>
@@ -118,8 +118,7 @@ export function BountyPerformanceSection({
 function BountyPerformanceChart({ bounty }: { bounty: PartnerBountyProps }) {
   const { programEnrollment } = useProgramEnrollment();
   const attribute = bounty.performanceCondition?.attribute as
-    | PerformanceAttribute
-    | undefined;
+    PerformanceAttribute | undefined;
   const isCurrency = attribute ? isCurrencyAttribute(attribute) : false;
   const isCommissions = attribute === "totalCommissions";
 
@@ -270,7 +269,7 @@ function PerformanceTableShell({
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-center justify-between">
-        <h2 className="text-content-emphasis text-lg font-semibold leading-7 tracking-[-0.36px]">
+        <h2 className="text-lg font-semibold leading-7 tracking-[-0.36px] text-content-emphasis">
           {title}
         </h2>
         <Link
@@ -290,8 +289,7 @@ function PerformanceTableShell({
 
 function BountyPerformanceTable({ bounty }: { bounty: PartnerBountyProps }) {
   const attribute = bounty.performanceCondition?.attribute as
-    | PerformanceAttribute
-    | undefined;
+    PerformanceAttribute | undefined;
 
   if (attribute === "totalCommissions") {
     return <BountyPerformanceCommissionsTable bounty={bounty} />;

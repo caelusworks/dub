@@ -52,8 +52,7 @@ export const DESIGNER_FIELDS: ({
   description: string;
   modal: React.ComponentType<any>;
 } & (
-  | { icon: Icon; thumbnail?: never }
-  | { thumbnail: ReactNode; icon?: never }
+  { icon: Icon; thumbnail?: never } | { thumbnail: ReactNode; icon?: never }
 ))[] = [
   {
     id: "short-text",

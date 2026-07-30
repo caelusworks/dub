@@ -22,8 +22,7 @@ const triggerStyles = cva(
 );
 
 interface TriggerProps
-  extends ComponentProps<"button">,
-    VariantProps<typeof triggerStyles> {
+  extends ComponentProps<"button">, VariantProps<typeof triggerStyles> {
   placeholder?: string;
 }
 

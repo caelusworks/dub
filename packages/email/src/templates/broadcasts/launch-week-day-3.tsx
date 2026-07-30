@@ -51,19 +51,19 @@ export default function DubLaunchWeekDay3({
               />
             </Section>
 
-            <Heading className="mx-0 mb-2 mt-8 p-0 text-center text-2xl font-semibold text-black">
+            <Heading className="mx-0 mt-8 mb-2 p-0 text-center text-2xl font-semibold text-black">
               Dub Launch Week Day 3
             </Heading>
 
-            <Text className="mx-auto mb-8 mt-0 max-w-sm text-center text-base leading-6 text-neutral-600">
+            <Text className="mx-auto mt-0 mb-8 max-w-sm text-center text-base leading-6 text-neutral-600">
               Introducing Commission Analytics – real-time analytics for your
               partner commissions
             </Text>
 
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               👋 Hey, it's Steven from Dub!
             </Text>
-            <Text className="mx-0 mb-8 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-8 text-sm leading-6 text-neutral-600">
               Today is <strong>Day 3 of our Spring Launch Week</strong>, where
               we'll be launching an exciting new feature for{" "}
               <Link
@@ -96,24 +96,24 @@ export default function DubLaunchWeekDay3({
               </Link>
             </Section>
 
-            <Heading className="mx-0 mb-3 mt-0 p-0 text-lg font-semibold text-black">
+            <Heading className="mx-0 mt-0 mb-3 p-0 text-lg font-semibold text-black">
               Introducing Commission Analytics
             </Heading>
 
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               You can now see a real-time analytics dashboard of your partner
               commissions to measure your return on ad spend (ROAS) on Dub.
             </Text>
-            <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
               You are also able to see your:
             </Text>
-            <Text className="mx-0 mb-1 mt-0 pl-4 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-1 pl-4 text-sm leading-6 text-neutral-600">
               • Top partners by commissions
             </Text>
-            <Text className="mx-0 mb-1 mt-0 pl-4 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-1 pl-4 text-sm leading-6 text-neutral-600">
               • Top partner groups by commissions
             </Text>
-            <Text className="mx-0 mb-4 mt-0 pl-4 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 pl-4 text-sm leading-6 text-neutral-600">
               • Top partner tags by commissions
             </Text>
             <Link
@@ -136,11 +136,11 @@ export default function DubLaunchWeekDay3({
 
             <Hr className="mx-0 my-6 w-full border border-neutral-200" />
 
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               That's all for Day 3! Stay tuned for the remaining days of our
               Spring Launch Week – see you tomorrow!
             </Text>
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-400">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-400">
               Steven from Dub.co
             </Text>
 

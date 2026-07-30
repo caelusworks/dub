@@ -43,7 +43,7 @@ export default function NetworkPartnerApplicationApproved({
               />
             </Section>
 
-            <Section className="mb-8 mt-8 text-center">
+            <Section className="mt-8 mb-8 text-center">
               <Img
                 src="https://assets.dub.co/misc/program-marketplace-email-header.jpg"
                 width="500"
@@ -58,11 +58,11 @@ export default function NetworkPartnerApplicationApproved({
               />
             </Section>
 
-            <Heading className="mx-0 mb-4 mt-0 p-0 text-center text-2xl font-semibold text-black">
+            <Heading className="mx-0 mt-0 mb-4 p-0 text-center text-2xl font-semibold text-black">
               Congratulations{name ? `, ${name}!` : "!"}
             </Heading>
 
-            <Text className="mx-auto mb-4 mt-0 max-w-[420px] text-center text-base leading-7 text-neutral-600">
+            <Text className="mx-auto mt-0 mb-4 max-w-[420px] text-center text-base leading-7 text-neutral-600">
               Your application to join the <strong>Dub Network</strong> has been
               approved. You can now apply to more programs on the marketplace,
               and get discovered by brands.

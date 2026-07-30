@@ -70,7 +70,7 @@ function ChangeGroupModal({
         partnerIds: partners.map((p) => p.id),
         ...(partners.length === 1 && {
           groupMoveDisabledAt: groupMoveDisabled
-            ? partners[0].groupMoveDisabledAt ?? new Date().toISOString()
+            ? (partners[0].groupMoveDisabledAt ?? new Date().toISOString())
             : null,
         }),
       },

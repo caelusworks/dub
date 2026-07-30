@@ -50,7 +50,7 @@ export const ResetPasswordForm = () => {
         <input type="hidden" value={token} {...register("token")} />
 
         <label>
-          <span className="text-content-emphasis mb-2 block text-sm font-medium leading-none">
+          <span className="mb-2 block text-sm font-medium leading-none text-content-emphasis">
             Password
           </span>
           <Input
@@ -65,7 +65,7 @@ export const ResetPasswordForm = () => {
         </label>
 
         <label>
-          <span className="text-content-emphasis mb-2 block text-sm font-medium leading-none">
+          <span className="mb-2 block text-sm font-medium leading-none text-content-emphasis">
             Confirm password
           </span>
           <Input

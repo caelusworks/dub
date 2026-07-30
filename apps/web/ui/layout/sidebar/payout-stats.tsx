@@ -24,21 +24,21 @@ export const PayoutStats = memo(() => {
 
   return (
     <AnimatedSizeContainer height>
-      <div className="border-border-subtle grid gap-3 border-t p-3">
+      <div className="grid gap-3 border-t border-border-subtle p-3">
         <Link
           className="group flex items-center justify-between gap-2"
           href="/payouts"
         >
-          <div className="text-content-default flex items-center gap-2 text-sm font-semibold">
+          <div className="flex items-center gap-2 text-sm font-semibold text-content-default">
             <MoneyBills2 className="size-4" />
             Payouts
           </div>
-          <ChevronRight className="text-content-muted group-hover:text-content-default size-3 transition-[color,transform] group-hover:translate-x-0.5 [&_*]:stroke-2" />
+          <ChevronRight className="size-3 text-content-muted transition-[color,transform] group-hover:translate-x-0.5 group-hover:text-content-default [&_*]:stroke-2" />
         </Link>
 
         <div className="flex flex-col gap-4">
           <div className="grid gap-1 text-xs">
-            <p className="text-content-subtle font-medium">Upcoming payouts</p>
+            <p className="font-medium text-content-subtle">Upcoming payouts</p>
             <div className="flex items-center gap-1">
               {partner && !partner.payoutsEnabledAt && (
                 <Tooltip
@@ -46,12 +46,12 @@ export const PayoutStats = memo(() => {
                   side="right"
                 >
                   <div>
-                    <AlertCircleFill className="text-content-default size-3" />
+                    <AlertCircleFill className="size-3 text-content-default" />
                   </div>
                 </Tooltip>
               )}
               {payoutsCount ? (
-                <p className="text-content-default font-medium">
+                <p className="font-medium text-content-default">
                   {currencyFormatter(
                     payoutsCount
                       ?.filter(
@@ -68,9 +68,9 @@ export const PayoutStats = memo(() => {
             </div>
           </div>
           <div className="grid gap-1 text-xs">
-            <p className="text-content-subtle font-medium">Received payouts</p>
+            <p className="font-medium text-content-subtle">Received payouts</p>
             {payoutsCount ? (
-              <p className="text-content-default font-medium">
+              <p className="font-medium text-content-default">
                 {currencyFormatter(
                   payoutsCount
                     ?.filter(

@@ -62,7 +62,7 @@ export default function Logos({
             key={idx}
             className={cn(
               "flex w-max min-w-max items-center gap-5 pl-5",
-              "motion-safe:animate-infinite-scroll [--scroll:-100%] motion-safe:[animation-duration:40s]",
+              "[--scroll:-100%] motion-safe:animate-infinite-scroll motion-safe:[animation-duration:40s]",
               "transition-[filter,opacity] duration-300 group-hover:opacity-30 group-hover:blur-sm",
             )}
             aria-hidden={idx !== 0}
