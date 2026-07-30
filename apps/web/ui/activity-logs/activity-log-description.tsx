@@ -43,20 +43,20 @@ export function ActivityLogDescription({
               alt={actor.name}
               className="size-4 shrink-0 rounded-full"
             />
-            <span className="text-content-default font-semibold">
+            <span className="font-semibold text-content-default">
               {actor.name}
             </span>
             <span className="text-content-muted">·</span>
           </>
         )}
 
-        <span className="text-content-subtle font-normal">
+        <span className="font-normal text-content-subtle">
           {timeAgo(createdAt, { withAgo: true })}
         </span>
       </div>
 
       {description && (
-        <p className="text-content-subtle mt-2 text-sm">{description}</p>
+        <p className="mt-2 text-sm text-content-subtle">{description}</p>
       )}
     </div>
   );

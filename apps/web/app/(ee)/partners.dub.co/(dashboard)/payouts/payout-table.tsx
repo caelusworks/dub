@@ -112,7 +112,7 @@ export function PayoutTable() {
               side="right"
               rows={["local", "utc"]}
             >
-              <span className="hover:text-content-emphasis underline decoration-dotted underline-offset-2">
+              <span className="underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
                 {formatDateSmart(row.original.initiatedAt, { month: "short" })}
               </span>
             </TimestampTooltip>
@@ -134,7 +134,7 @@ export function PayoutTable() {
               side="right"
               rows={["local", "utc"]}
             >
-              <span className="hover:text-content-emphasis underline decoration-dotted underline-offset-2">
+              <span className="underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
                 {formatDateSmart(row.original.paidAt, { month: "short" })}
               </span>
             </TimestampTooltip>
@@ -142,7 +142,7 @@ export function PayoutTable() {
             <Tooltip
               content={`This payout is estimated to be processed on \`${formatDateTimeSmart(addBusinessDays(row.original.initiatedAt, 5), { month: "short" })}\` (after 5 business days)`}
             >
-              <span className="hover:text-content-emphasis text-content-muted flex items-center gap-1 underline decoration-dotted underline-offset-2">
+              <span className="flex items-center gap-1 text-content-muted underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
                 <CircleHalfDottedClock className="size-3.5 shrink-0" />{" "}
                 {formatDateSmart(addBusinessDays(row.original.initiatedAt, 5), {
                   month: "short",

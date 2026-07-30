@@ -79,18 +79,18 @@ export function SaleTypeBlock() {
       className="pb-0"
       contentClassName="px-0 mt-1"
     >
-      <div className="divide-border-subtle @2xl:h-72 flex h-auto flex-col divide-y">
+      <div className="flex h-auto flex-col divide-y divide-border-subtle @2xl:h-72">
         {isLoading ? (
           <div className="flex size-full items-center justify-center py-4">
             <LoadingSpinner />
           </div>
         ) : error ? (
-          <div className="text-content-subtle flex size-full items-center justify-center py-4 text-xs">
+          <div className="flex size-full items-center justify-center py-4 text-xs text-content-subtle">
             Failed to load data
           </div>
         ) : (
           <div className="flex size-full flex-col gap-6 px-6 pb-6">
-            <span className="text-content-emphasis block text-xl font-medium">
+            <span className="block text-xl font-medium text-content-emphasis">
               {nFormatter(totalEvents, {
                 full: totalEvents < 99999,
               })}
@@ -138,7 +138,7 @@ export function SaleTypeBlock() {
                       },
                     )}`}
                     className={cn(
-                      "text-content-default flex items-center justify-between gap-4 text-xs font-medium tabular-nums transition-[colors,opacity]",
+                      "flex items-center justify-between gap-4 text-xs font-medium tabular-nums text-content-default transition-[colors,opacity]",
                       "rounded-md px-2 hover:bg-neutral-50 active:bg-neutral-100",
                       item.key === hoveredItem && "text-content-emphasis",
                       hoveredItem && item.key !== hoveredItem && "opacity-60",
@@ -159,7 +159,7 @@ export function SaleTypeBlock() {
                     </div>
                     <div className="flex items-center gap-2">
                       <span>{formatPercentage(item.fraction * 100)}%</span>
-                      <span className="text-content-muted min-w-8 text-right">
+                      <span className="min-w-8 text-right text-content-muted">
                         {nFormatter(item.count, { full: item.count < 99999 })}
                       </span>
                     </div>

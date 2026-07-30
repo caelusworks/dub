@@ -41,22 +41,22 @@ export function ProgramPayoutModeSection() {
       <div className="rounded-lg border border-neutral-200 bg-white">
         <div className="flex items-center gap-3 border-b border-neutral-200 p-3">
           <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-neutral-100">
-            <CircleDollarOut className="text-content-emphasis size-4" />
+            <CircleDollarOut className="size-4 text-content-emphasis" />
           </div>
-          <h3 className="text-content-emphasis text-sm font-semibold leading-4">
+          <h3 className="text-sm font-semibold leading-4 text-content-emphasis">
             {selectedOption.label}
           </h3>
           <a
             href="http://dub.co/docs/partners/external-payouts"
             target="_blank"
-            className="text-content-subtle rounded-md bg-neutral-100 px-2 py-1 text-xs font-medium transition-colors hover:bg-neutral-200/75"
+            className="rounded-md bg-neutral-100 px-2 py-1 text-xs font-medium text-content-subtle transition-colors hover:bg-neutral-200/75"
           >
             Learn more ↗
           </a>
         </div>
 
         <div className="space-y-4 p-3">
-          <p className="text-content-subtle text-xs font-medium leading-4">
+          <p className="text-xs font-medium leading-4 text-content-subtle">
             {selectedOption.description}
           </p>
           <WebhookInfo />

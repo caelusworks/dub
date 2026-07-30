@@ -15,7 +15,7 @@ export function CommissionsStats() {
   });
 
   return (
-    <div className="xs:grid-cols-4 xs:divide-x xs:divide-y-0 grid divide-y divide-neutral-200 overflow-hidden rounded-lg border border-neutral-200">
+    <div className="grid divide-y divide-neutral-200 overflow-hidden rounded-lg border border-neutral-200 xs:grid-cols-4 xs:divide-x xs:divide-y-0">
       <ProgramStatsFilter
         label="All"
         href={`/${slug}/program/commissions`}

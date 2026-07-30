@@ -35,7 +35,7 @@ export function TrackLeadsGuidesSection() {
     );
   } else {
     content = (
-      <div className="text-content-subtle flex size-full items-center justify-center text-sm">
+      <div className="flex size-full items-center justify-center text-sm text-content-subtle">
         Failed to load guide
       </div>
     );

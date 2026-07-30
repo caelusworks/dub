@@ -104,7 +104,7 @@ export function AnalyticsToggle({
           : undefined
       }
       presetId={
-        start && end ? undefined : interval ?? DUB_LINKS_ANALYTICS_INTERVAL
+        start && end ? undefined : (interval ?? DUB_LINKS_ANALYTICS_INTERVAL)
       }
       onChange={(range, preset) => {
         if (preset) {

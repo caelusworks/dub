@@ -79,7 +79,7 @@ function ConfirmModal({
       )}
       <div className="divide-y divide-neutral-200">
         <div className="p-4 sm:px-6">
-          <h3 className="text-content-emphasis text-lg font-medium">{title}</h3>
+          <h3 className="text-lg font-medium text-content-emphasis">{title}</h3>
         </div>
         <div className="px-4 py-6 text-sm text-neutral-600 sm:px-6">
           {description}

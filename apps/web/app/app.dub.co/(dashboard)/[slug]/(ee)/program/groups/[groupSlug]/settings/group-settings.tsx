@@ -91,11 +91,11 @@ function GroupSettingsForm({
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="border-border-subtle rounded-lg border"
+      className="rounded-lg border border-border-subtle"
     >
       <div className="flex flex-col divide-y divide-neutral-200">
         <div className="px-6 py-6">
-          <h3 className="text-content-emphasis text-lg font-semibold leading-7">
+          <h3 className="text-lg font-semibold leading-7 text-content-emphasis">
             Group settings
           </h3>
         </div>
@@ -194,7 +194,7 @@ function GroupSettingsForm({
         </GroupSettingsRow>
       </div>
 
-      <div className="border-border-subtle flex items-center justify-end rounded-b-lg border-t bg-neutral-50 px-6 py-4">
+      <div className="flex items-center justify-end rounded-b-lg border-t border-border-subtle bg-neutral-50 px-6 py-4">
         <div>
           <Button
             text="Save changes"

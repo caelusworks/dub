@@ -178,8 +178,8 @@ function FunnelChartInner({
           className={cn(
             "pointer-events-none absolute flex items-center justify-center px-1 pb-4",
             persistentPercentages
-              ? "animate-slide-up-fade top-16 sm:top-12"
-              : "animate-fade-in top-1/2 -translate-y-1/2",
+              ? "top-16 animate-slide-up-fade sm:top-12"
+              : "top-1/2 -translate-y-1/2 animate-fade-in",
           )}
           style={{
             left: xScale(steps.findIndex(({ id }) => id === tooltipStep.id)),

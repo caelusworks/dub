@@ -36,7 +36,7 @@ export function CustomerLogos() {
           src={logo.src}
           alt={logo.name}
           className={cn(
-            "animate-fade-in-blur h-5 w-auto opacity-0 [animation-fill-mode:forwards]",
+            "h-5 w-auto animate-fade-in-blur opacity-0 [animation-fill-mode:forwards]",
             logo.className,
           )}
           style={{ animationDelay: `${500 + index * 120}ms` }}

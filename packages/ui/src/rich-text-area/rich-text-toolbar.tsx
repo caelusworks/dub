@@ -151,9 +151,9 @@ function LinkButton() {
       isImageSelected: Boolean(editor?.isActive("image")),
       isLinkActive: Boolean(
         editor?.isActive("link") ||
-          (imageControlsEnabled &&
-            editor?.isActive("image") &&
-            editor.getAttributes("image").href),
+        (imageControlsEnabled &&
+          editor?.isActive("image") &&
+          editor.getAttributes("image").href),
       ),
     }),
   });

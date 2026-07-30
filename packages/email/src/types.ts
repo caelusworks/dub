@@ -9,10 +9,7 @@ export type WorkspaceProps = {
 };
 
 export type PartnerPayoutMethod =
-  | "connect"
-  | "stablecoin"
-  | "paypal"
-  | "tremendous";
+  "connect" | "stablecoin" | "paypal" | "tremendous";
 
 export type TrialMarketingEmailProps = {
   email: string;

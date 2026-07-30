@@ -105,7 +105,7 @@ export function NetworkPartnerCard({
     <div
       className={cn(
         partner?.id &&
-          "hover:drop-shadow-card-hover cursor-pointer transition-[filter]",
+          "cursor-pointer transition-[filter] hover:drop-shadow-card-hover",
       )}
       onClick={(e) => {
         if (!partner?.id || isClickOnInteractiveChild(e)) return;
@@ -120,21 +120,21 @@ export function NetworkPartnerCard({
       }}
     >
       {(partner?.invitedAt || partner?.recruitedAt) && (
-        <div className="bg-bg-subtle border-border-subtle -mb-3 flex items-center justify-center gap-2 rounded-t-xl border-x border-t p-2 pb-5">
+        <div className="-mb-3 flex items-center justify-center gap-2 rounded-t-xl border-x border-t border-border-subtle bg-bg-subtle p-2 pb-5">
           {partner.recruitedAt ? (
-            <UserPlus className="text-content-default size-4 shrink-0" />
+            <UserPlus className="size-4 shrink-0 text-content-default" />
           ) : (
-            <EnvelopeArrowRight className="text-content-default size-4 shrink-0" />
+            <EnvelopeArrowRight className="size-4 shrink-0 text-content-default" />
           )}
 
-          <span className="text-content-emphasis text-sm font-medium">
+          <span className="text-sm font-medium text-content-emphasis">
             {partner.recruitedAt
               ? `Recruited ${timeAgo(partner.recruitedAt, { withAgo: true })}`
               : `Sent ${timeAgo(partner.invitedAt, { withAgo: true })}`}
           </span>
         </div>
       )}
-      <div className="border-border-subtle rounded-xl border bg-white">
+      <div className="rounded-xl border border-border-subtle bg-white">
         <div className="p-4">
           <div className="flex items-start justify-between gap-4">
             <div className="relative w-fit">
@@ -162,7 +162,7 @@ export function NetworkPartnerCard({
 
           <div className="mt-3.5 flex flex-col gap-3">
             {partner ? (
-              <span className="text-content-emphasis text-base font-semibold">
+              <span className="text-base font-semibold text-content-emphasis">
                 {partner.name}
               </span>
             ) : (
@@ -174,7 +174,7 @@ export function NetworkPartnerCard({
                 .filter(({ text }) => text !== null)
                 .map(({ id, icon, text }) => (
                   <div key={id}>
-                    <div className="text-content-subtle flex cursor-default items-center gap-2">
+                    <div className="flex cursor-default items-center gap-2 text-content-subtle">
                       {text !== undefined ? (
                         <>
                           {icon}
@@ -191,8 +191,8 @@ export function NetworkPartnerCard({
             <ListRow items={categoriesData} />
           </div>
         </div>
-        <div className="border-border-subtle border-t p-4 pt-2">
-          <span className="text-content-emphasis text-sm font-semibold">
+        <div className="border-t border-border-subtle p-4 pt-2">
+          <span className="text-sm font-semibold text-content-emphasis">
             Audience
           </span>
 
@@ -228,7 +228,7 @@ export function NetworkPartnerCard({
                   ),
                 )
               : [...Array(6)].map((_, idx) => (
-                  <div key={idx} className="bg-bg-subtle h-10 rounded-lg" />
+                  <div key={idx} className="h-10 rounded-lg bg-bg-subtle" />
                 ))}
           </div>
         </div>
@@ -342,8 +342,8 @@ function PlatformStatCard({
   const content = (
     <div
       className={cn(
-        "bg-bg-subtle flex flex-col items-center gap-1 rounded-lg p-1 pt-2",
-        href && "hover:bg-bg-muted transition-colors",
+        "flex flex-col items-center gap-1 rounded-lg bg-bg-subtle p-1 pt-2",
+        href && "transition-colors hover:bg-bg-muted",
       )}
     >
       <div className="relative">
@@ -421,21 +421,21 @@ function PlatformStatTooltipContent({
   return (
     <div className="flex flex-col gap-2 text-xs">
       <div className="flex items-center gap-2 p-3 pb-1.5">
-        <div className="border-border-subtle flex size-7 shrink-0 items-center justify-center rounded-full border">
+        <div className="flex size-7 shrink-0 items-center justify-center rounded-full border border-border-subtle">
           <PlatformIcon className="size-3.5" />
         </div>
         <div className="min-w-0">
-          <div className="text-content-emphasis truncate font-semibold">
+          <div className="truncate font-semibold text-content-emphasis">
             {value}
           </div>
           {(info?.[0] ?? stat) && (
-            <div className="text-content-default font-medium">
+            <div className="font-medium text-content-default">
               {info?.[0] ?? stat}
             </div>
           )}
         </div>
       </div>
-      <div className="text-content-subtle border-border-subtle flex items-center gap-1.5 border-t px-3 py-1.5 font-medium">
+      <div className="flex items-center gap-1.5 border-t border-border-subtle px-3 py-1.5 font-medium text-content-subtle">
         {verifiedAt ? (
           <>
             <BadgeCheck2
@@ -528,7 +528,7 @@ function ListRow({
                     </div>
                   }
                 >
-                  <div className="text-content-default flex h-7 select-none items-center rounded-full bg-neutral-100 px-2 text-xs font-medium transition-colors hover:bg-neutral-200">
+                  <div className="flex h-7 select-none items-center rounded-full bg-neutral-100 px-2 text-xs font-medium text-content-default transition-colors hover:bg-neutral-200">
                     +{items.length - (shownItems?.length ?? 0)}
                   </div>
                 </Tooltip>
@@ -536,7 +536,7 @@ function ListRow({
             </>
           ) : (
             <div className="flex h-7 w-fit items-center rounded-full border border-dashed border-neutral-300 bg-neutral-50 px-2">
-              <span className="text-content-subtle text-xs opacity-60">
+              <span className="text-xs text-content-subtle opacity-60">
                 No categories
               </span>
             </div>
@@ -554,8 +554,8 @@ function ListRow({
 function ListPill({ icon: Icon, label }: { icon?: Icon; label: string }) {
   return (
     <div className="flex h-7 items-center gap-1.5 rounded-full bg-neutral-100 px-2">
-      {Icon && <Icon className="text-content-emphasis size-3 shrink-0" />}
-      <span className="text-content-default whitespace-nowrap text-xs font-medium">
+      {Icon && <Icon className="size-3 shrink-0 text-content-emphasis" />}
+      <span className="whitespace-nowrap text-xs font-medium text-content-default">
         {label}
       </span>
     </div>

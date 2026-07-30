@@ -82,7 +82,7 @@ export function PartnerProgramDropdown() {
                   onClick={() => setOpenPopover(false)}
                 >
                   <GridIcon className="size-5 text-neutral-500 sm:size-4" />
-                  <span className="text-content-default block truncate">
+                  <span className="block truncate text-content-default">
                     Your programs
                   </span>
                 </Link>
@@ -95,7 +95,7 @@ export function PartnerProgramDropdown() {
                   onClick={() => setOpenPopover(false)}
                 >
                   <Shop className="size-5 text-neutral-500 sm:size-4" />
-                  <span className="text-content-default block truncate">
+                  <span className="block truncate text-content-default">
                     Marketplace
                   </span>
                 </Link>
@@ -125,7 +125,7 @@ export function PartnerProgramDropdown() {
                 className="size-5 flex-none shrink-0 overflow-hidden rounded-full"
               />
             )}
-            <div className="text-content-emphasis min-w-0 truncate text-lg font-semibold">
+            <div className="min-w-0 truncate text-lg font-semibold text-content-emphasis">
               {selectedProgram?.name || "Your programs"}
             </div>
           </div>
@@ -178,7 +178,7 @@ function ProgramList({
           <span className="sr-only">Search</span>
           <Magnifier className="size-[1.125rem] text-neutral-500" />
           <Command.Input
-            className="placeholder:text-content-subtle h-12 w-full border-0 bg-transparent px-2.5 text-base focus:outline-none focus:ring-0 sm:text-sm"
+            className="h-12 w-full border-0 bg-transparent px-2.5 text-base placeholder:text-content-subtle focus:outline-none focus:ring-0 sm:text-sm"
             placeholder="Find program..."
           />
         </label>

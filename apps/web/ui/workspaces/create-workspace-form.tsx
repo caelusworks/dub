@@ -126,7 +126,7 @@ export function CreateWorkspaceForm({
             })}
           />
         </div>
-        <p className="text-content-subtle mt-1.5 text-xs">
+        <p className="mt-1.5 text-xs text-content-subtle">
           This is the name of your company or product.
         </p>
       </div>
@@ -191,7 +191,7 @@ export function CreateWorkspaceForm({
             {errors.slug.message}
           </p>
         ) : (
-          <p className="text-content-subtle mt-1.5 text-xs">
+          <p className="mt-1.5 text-xs text-content-subtle">
             This is used for both your workspace and your partner program.
           </p>
         )}

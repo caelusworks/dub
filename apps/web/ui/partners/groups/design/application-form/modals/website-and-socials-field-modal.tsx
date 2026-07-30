@@ -250,9 +250,9 @@ function SiteControl({
   const enabled = !!data;
 
   return (
-    <div className="outline-border-subtle overflow-hidden rounded-lg bg-neutral-50 outline outline-1 -outline-offset-1">
+    <div className="overflow-hidden rounded-lg bg-neutral-50 outline outline-1 -outline-offset-1 outline-border-subtle">
       <label
-        className="border-border-subtle flex items-center justify-between gap-1.5 rounded-lg border bg-white px-3 py-2.5"
+        className="flex items-center justify-between gap-1.5 rounded-lg border border-border-subtle bg-white px-3 py-2.5"
         htmlFor={`${id}-${type}`}
       >
         <div className="flex items-center gap-1.5">

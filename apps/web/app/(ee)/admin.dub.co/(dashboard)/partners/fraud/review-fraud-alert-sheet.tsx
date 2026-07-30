@@ -174,7 +174,7 @@ function SheetContent({
       </div>
 
       {/* Scrollable body */}
-      <div className="scrollbar-hide flex min-h-0 flex-1 flex-col overflow-y-auto">
+      <div className="flex min-h-0 flex-1 flex-col overflow-y-auto scrollbar-hide">
         <div className="flex flex-col gap-6 p-6">
           {/* Current alert context */}
           <div>
@@ -194,7 +194,7 @@ function SheetContent({
                 {formatDateTime(fraudAlert.createdAt)}
               </span>
             </div>
-            <Markdown className="prose-headings:text-base prose-headings:font-semibold mt-2 text-sm text-neutral-600">
+            <Markdown className="mt-2 text-sm text-neutral-600 prose-headings:text-base prose-headings:font-semibold">
               {fraudAlert.reason}
             </Markdown>
           </div>
@@ -270,7 +270,7 @@ function SheetContent({
                               href={href ?? "#"}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="border-border-subtle hover:bg-bg-muted relative flex size-6 shrink-0 items-center justify-center rounded-full border"
+                              className="relative flex size-6 shrink-0 items-center justify-center rounded-full border border-border-subtle hover:bg-bg-muted"
                             >
                               <Icon className="size-3" />
                               <span className="sr-only">{label}</span>
@@ -520,10 +520,7 @@ function PayoutsTable({ payouts }: { payouts: PartnerDetail["payouts"] }) {
             <StatusBadge
               variant={
                 (badge?.variant as
-                  | "pending"
-                  | "success"
-                  | "error"
-                  | "neutral") ?? "neutral"
+                  "pending" | "success" | "error" | "neutral") ?? "neutral"
               }
             >
               {badge?.label ?? row.original.status}

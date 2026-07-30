@@ -38,7 +38,7 @@ export function ToggleGroup({
       <motion.div
         layout={layout}
         className={cn(
-          "border-border-subtle bg-bg-default relative z-0 inline-flex items-center gap-1 rounded-xl border p-1",
+          "relative z-0 inline-flex items-center gap-1 rounded-xl border border-border-subtle bg-bg-default p-1",
           className,
         )}
         style={style}
@@ -53,9 +53,9 @@ export function ToggleGroup({
               {...(option.href ? { href: option.href } : { type: "button" })}
               data-selected={isSelected}
               className={cn(
-                "text-content-emphasis relative z-10 flex items-center gap-2 px-3 py-1 text-sm font-medium capitalize",
+                "relative z-10 flex items-center gap-2 px-3 py-1 text-sm font-medium capitalize text-content-emphasis",
                 !isSelected &&
-                  "hover:text-content-subtle z-[11] transition-colors",
+                  "z-[11] transition-colors hover:text-content-subtle",
                 optionClassName,
               )}
               onClick={() => selectAction?.(option.value)}
@@ -70,7 +70,7 @@ export function ToggleGroup({
                 <motion.div
                   layoutId={layoutGroupId}
                   className={cn(
-                    "border-border-subtle bg-bg-muted absolute left-0 top-0 -z-[1] h-full w-full rounded-lg border",
+                    "absolute left-0 top-0 -z-[1] h-full w-full rounded-lg border border-border-subtle bg-bg-muted",
                     indicatorClassName,
                   )}
                   transition={{ duration: 0.25 }}

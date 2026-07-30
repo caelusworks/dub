@@ -700,8 +700,8 @@ function usePartnerTagFilterOptions({
   const { partnerTagsCount } = usePartnerTagsCount({ enabled });
   const useAsync = Boolean(
     enabled &&
-      partnerTagsCount &&
-      partnerTagsCount > PARTNER_TAGS_MAX_PAGE_SIZE,
+    partnerTagsCount &&
+    partnerTagsCount > PARTNER_TAGS_MAX_PAGE_SIZE,
   );
   const { partnerTags, isLoading: isLoadingPartnerTags } = usePartnerTags({
     query: { search: useAsync ? search : "" },
@@ -736,7 +736,7 @@ function usePartnerTagFilterOptions({
             ),
         ))
       ? null
-      : (
+      : ((
           [
             ...(partnerTags ?? []),
             // Add selected tag to list if not already in tags
@@ -751,7 +751,7 @@ function usePartnerTagFilterOptions({
               partnersCount?.find(({ partnerTagId }) => partnerTagId === tag.id)
                 ?._count || 0,
           }))
-          .sort((a, b) => b.count - a.count) ?? null;
+          .sort((a, b) => b.count - a.count) ?? null);
   }, [
     isLoadingPartnerTags,
     partnerTags,

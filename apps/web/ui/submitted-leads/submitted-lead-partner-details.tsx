@@ -13,8 +13,8 @@ export function SubmittedLeadPartnerDetails({
   const { slug } = useParams();
 
   return (
-    <div className="border-border-subtle overflow-hidden rounded-xl border bg-white p-4">
-      <h3 className="text-content-emphasis mb-2.5 text-sm font-semibold">
+    <div className="overflow-hidden rounded-xl border border-border-subtle bg-white p-4">
+      <h3 className="mb-2.5 text-sm font-semibold text-content-emphasis">
         Partner
       </h3>
       <Link
@@ -26,7 +26,7 @@ export function SubmittedLeadPartnerDetails({
           partner={lead.partner}
           className="size-5 border border-neutral-100"
         />
-        <div className="text-content-emphasis cursor-alias text-sm font-semibold decoration-dotted hover:underline">
+        <div className="cursor-alias text-sm font-semibold text-content-emphasis decoration-dotted hover:underline">
           {lead.partner.name}
         </div>
       </Link>

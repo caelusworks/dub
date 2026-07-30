@@ -28,7 +28,7 @@ export function RewardDiscountPartnersCard({ groupId }: { groupId: string }) {
   });
 
   return (
-    <div className="border-border-subtle rounded-xl border bg-white text-sm shadow-sm">
+    <div className="rounded-xl border border-border-subtle bg-white text-sm shadow-sm">
       <button
         type="button"
         onClick={() => setIsExpanded((e) => !e)}
@@ -38,7 +38,7 @@ export function RewardDiscountPartnersCard({ groupId }: { groupId: string }) {
           partnersCount === undefined && "cursor-not-allowed",
         )}
       >
-        <div className="text-content-emphasis flex items-center gap-2.5 font-medium">
+        <div className="flex items-center gap-2.5 font-medium text-content-emphasis">
           <RewardIconSquare icon={Users} />
           {partnersCount === undefined ? (
             <div className="h-5 w-24 animate-pulse rounded-md bg-neutral-200" />
@@ -61,7 +61,7 @@ export function RewardDiscountPartnersCard({ groupId }: { groupId: string }) {
         </div>
         <ChevronRight
           className={cn(
-            "text-content-subtle size-3 transition-transform duration-200",
+            "size-3 text-content-subtle transition-transform duration-200",
             isExpanded && "rotate-90",
           )}
         />
@@ -76,7 +76,7 @@ export function RewardDiscountPartnersCard({ groupId }: { groupId: string }) {
         animate={{ height: isExpanded ? "auto" : 0 }}
         transition={{ duration: 0.2 }}
       >
-        <div className="border-border-subtle -mx-px rounded-xl border-x border-t bg-neutral-50 p-2.5">
+        <div className="-mx-px rounded-xl border-x border-t border-border-subtle bg-neutral-50 p-2.5">
           <PartnersCompactTable
             partners={partners}
             partnersCount={partnersCount || 0}
@@ -162,7 +162,7 @@ function PartnersCompactTable({
           )}
         </>
       ) : (
-        <div className="text-content-muted flex h-24 items-center justify-center text-sm">
+        <div className="flex h-24 items-center justify-center text-sm text-content-muted">
           No partners found.
         </div>
       )}
@@ -209,7 +209,7 @@ function PartnerPreviewOrCount({
           />
         ))}
         {partnersCount > 3 && (
-          <span className="text-content-subtle ml-1 text-xs">
+          <span className="ml-1 text-xs text-content-subtle">
             +{nFormatter(partnersCount - 3, { full: true })}
           </span>
         )}

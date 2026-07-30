@@ -321,7 +321,7 @@ const CopyDefaultRewardButton = ({ event }: { event: EventType }) => {
       <Button
         text="Duplicate default group"
         variant="secondary"
-        className="animate-fade-in h-9 w-full rounded-lg md:w-fit"
+        className="h-9 w-full animate-fade-in rounded-lg md:w-fit"
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();

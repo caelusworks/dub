@@ -41,7 +41,7 @@ function PartnerApplicationReviewOutcome({
       <div className="grid grid-cols-1 gap-5">
         {reasonLabel ? (
           <div>
-            <h4 className="text-content-emphasis font-semibold">
+            <h4 className="font-semibold text-content-emphasis">
               Reason for rejection
             </h4>
             <p className="mt-1.5 text-neutral-600">{reasonLabel}</p>
@@ -49,7 +49,7 @@ function PartnerApplicationReviewOutcome({
         ) : null}
         {note ? (
           <div>
-            <h4 className="text-content-emphasis font-semibold">
+            <h4 className="font-semibold text-content-emphasis">
               Additional notes
             </h4>
             <p className="mt-1.5 whitespace-pre-wrap text-neutral-600">
@@ -179,7 +179,7 @@ export function PartnerApplicationDetails({
     return (
       <div className="grid grid-cols-1 gap-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <h3 className="text-content-emphasis text-lg font-semibold">
+          <h3 className="text-lg font-semibold text-content-emphasis">
             Application
           </h3>
         </div>
@@ -196,7 +196,7 @@ export function PartnerApplicationDetails({
   ) {
     return (
       <div className="grid grid-cols-1 gap-4">
-        <h3 className="text-content-emphasis text-lg font-semibold">
+        <h3 className="text-lg font-semibold text-content-emphasis">
           Application
         </h3>
         <p className="text-sm text-neutral-500">
@@ -209,7 +209,7 @@ export function PartnerApplicationDetails({
   if (!resolvedApplicationId) {
     return (
       <div className="grid grid-cols-1 gap-4">
-        <h3 className="text-content-emphasis text-lg font-semibold">
+        <h3 className="text-lg font-semibold text-content-emphasis">
           Application
         </h3>
         <PartnerApplicationDetailsSkeleton />
@@ -229,7 +229,7 @@ export function PartnerApplicationDetails({
       ) : null}
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <h3 className="text-content-emphasis text-lg font-semibold">
+        <h3 className="text-lg font-semibold text-content-emphasis">
           Application
         </h3>
         {showApplicationPicker ? (
@@ -259,7 +259,7 @@ export function PartnerApplicationDetails({
           <div className="grid grid-cols-1 gap-5">
             {formatApplicationFormData(application).map((field) => (
               <div key={field.title}>
-                <h4 className="text-content-emphasis font-semibold">
+                <h4 className="font-semibold text-content-emphasis">
                   {field.title}
                 </h4>
                 <div className="mt-2">
@@ -279,7 +279,7 @@ export function PartnerApplicationDetails({
                       }}
                     >
                       {field.value || (
-                        <span className="text-content-muted italic">
+                        <span className="italic text-content-muted">
                           No response provided
                         </span>
                       )}
@@ -315,7 +315,7 @@ function ApplicationFormImageGrid({
       {images.map((imageUrl, idx) => (
         <a
           key={idx}
-          className="border-border-subtle hover:border-border-default group relative flex size-14 items-center justify-center rounded-md border bg-white"
+          className="group relative flex size-14 items-center justify-center rounded-md border border-border-subtle bg-white hover:border-border-default"
           target="_blank"
           href={imageUrl}
           rel="noopener noreferrer"

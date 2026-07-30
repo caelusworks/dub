@@ -136,7 +136,7 @@ function PartnerPayoutSettingsSheetInner() {
         <div
           ref={scrollRef}
           onScroll={updateScrollProgress}
-          className="scrollbar-hide h-full space-y-10 overflow-y-auto bg-neutral-50 p-4 sm:p-6"
+          className="h-full space-y-10 overflow-y-auto bg-neutral-50 p-4 scrollbar-hide sm:p-6"
         >
           <div className="space-y-8 divide-y divide-neutral-200">
             <PayoutMethodsSection />
@@ -231,7 +231,7 @@ function PayoutMethodsSection() {
 
   return (
     <div>
-      <h4 className="text-content-emphasis mb-3 text-base font-semibold leading-6">
+      <h4 className="mb-3 text-base font-semibold leading-6 text-content-emphasis">
         Payout account
       </h4>
       {isPayoutMethodsLoading ? (
@@ -353,7 +353,7 @@ function ConnectedExternalAccounts() {
   return (
     <div className="space-y-3 py-6">
       <div>
-        <h4 className="text-content-emphasis text-base font-semibold leading-6">
+        <h4 className="text-base font-semibold leading-6 text-content-emphasis">
           Connected external accounts
         </h4>
       </div>
@@ -375,7 +375,7 @@ function ConnectedExternalAccounts() {
                 alt={enrollment.program.name}
                 className="size-6 shrink-0 rounded-full"
               />
-              <span className="text-content-emphasis truncate text-sm font-semibold">
+              <span className="truncate text-sm font-semibold text-content-emphasis">
                 {enrollment.program.name}
               </span>
             </div>
@@ -388,14 +388,14 @@ function ConnectedExternalAccounts() {
                 type="button"
                 variant="secondary"
                 text="View program"
-                className="border-border-subtle h-6 rounded-md px-2 py-3.5 text-sm"
+                className="h-6 rounded-md border-border-subtle px-2 py-3.5 text-sm"
               />
             </Link>
           </div>
         ))}
       </div>
 
-      <p className="text-content-subtle text-xs font-normal leading-4">
+      <p className="text-xs font-normal leading-4 text-content-subtle">
         These programs manage payouts externally through their own systems.
         <Link
           href="https://dub.co/help/article/receiving-payouts"

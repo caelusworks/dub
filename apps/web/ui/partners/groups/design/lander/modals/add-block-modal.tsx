@@ -40,8 +40,7 @@ export const DESIGNER_BLOCKS: ({
   description: string;
   modal: React.ComponentType<any>;
 } & (
-  | { icon: Icon; thumbnail?: never }
-  | { thumbnail: ReactNode; icon?: never }
+  { icon: Icon; thumbnail?: never } | { thumbnail: ReactNode; icon?: never }
 ))[] = [
   {
     id: "text",

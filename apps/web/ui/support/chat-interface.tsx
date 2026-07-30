@@ -144,8 +144,7 @@ export function ChatInterface({
   const getSlackThreadTs = () => {
     for (let i = messages.length - 1; i >= 0; i--) {
       const meta = (messages[i] as any).metadata as
-        | { slackThreadTs?: string }
-        | undefined;
+        { slackThreadTs?: string } | undefined;
       if (meta?.slackThreadTs) return meta.slackThreadTs;
     }
     return undefined;

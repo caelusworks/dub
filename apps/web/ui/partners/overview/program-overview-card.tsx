@@ -8,7 +8,7 @@ export function ProgramOverviewCard({
   return (
     <div
       className={cn(
-        "border-border-subtle rounded-[0.625rem] border bg-white",
+        "rounded-[0.625rem] border border-border-subtle bg-white",
         className,
       )}
     >

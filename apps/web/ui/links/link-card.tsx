@@ -66,9 +66,9 @@ const LinkCardInner = memo(({ link }: { link: ResponseLink }) => {
   const showFolderIcon = useMemo(() => {
     return Boolean(
       !loading &&
-        link.folderId &&
-        currentFolderId !== link.folderId &&
-        subdomain !== "admin",
+      link.folderId &&
+      currentFolderId !== link.folderId &&
+      subdomain !== "admin",
     );
   }, [loading, link.folderId, currentFolderId, subdomain]);
 

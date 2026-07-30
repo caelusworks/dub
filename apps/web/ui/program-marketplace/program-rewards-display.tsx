@@ -94,9 +94,9 @@ export function ProgramRewardsDisplay({
           <HoverCard.Content
             side="bottom"
             sideOffset={8}
-            className="animate-slide-up-fade z-[99] flex items-center gap-2 overflow-hidden rounded-xl border border-neutral-200 bg-white p-2 text-xs text-neutral-700 shadow-sm"
+            className="z-[99] flex animate-slide-up-fade items-center gap-2 overflow-hidden rounded-xl border border-neutral-200 bg-white p-2 text-xs text-neutral-700 shadow-sm"
           >
-            <item.icon className="text-content-default size-4" />
+            <item.icon className="size-4 text-content-default" />
             <span>{item.description}</span>
           </HoverCard.Content>
         </HoverCard.Portal>
@@ -113,13 +113,13 @@ export function ProgramRewardsDisplay({
             className={cn(
               "-ml-1 flex items-center gap-1 pr-1",
               item.onClick &&
-                "hover:bg-bg-subtle active:bg-bg-emphasis rounded-md transition-colors",
+                "rounded-md transition-colors hover:bg-bg-subtle active:bg-bg-emphasis",
               className,
             )}
           >
             <div
               className={cn(
-                "text-content-default flex size-6 items-center justify-center rounded-md",
+                "flex size-6 items-center justify-center rounded-md text-content-default",
                 isDarkImage && "text-content-inverted",
               )}
             >
@@ -127,7 +127,7 @@ export function ProgramRewardsDisplay({
             </div>
             <span
               className={cn(
-                "text-content-default max-w-[120px] truncate text-sm font-medium sm:max-w-[160px]",
+                "max-w-[120px] truncate text-sm font-medium text-content-default sm:max-w-[160px]",
                 isDarkImage && "text-content-inverted",
                 descriptionClassName,
               )}

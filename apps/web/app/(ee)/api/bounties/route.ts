@@ -252,7 +252,7 @@ export const POST = withWorkspace(
           submissionsOpenAt: type === "submission" ? submissionsOpenAt : null,
           submissionFrequency:
             type === "submission" ? submissionFrequency : null,
-          maxSubmissions: type === "submission" ? maxSubmissions ?? 1 : 1,
+          maxSubmissions: type === "submission" ? (maxSubmissions ?? 1) : 1,
           rewardAmount,
           rewardDescription,
           performanceScope: type === "performance" ? performanceScope : null,

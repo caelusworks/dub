@@ -520,9 +520,9 @@ function ABTestingEdit({
                 !isValid ||
                 Boolean(
                   testCompletedAt &&
-                    // Restrict competion date from -1 days to 6 weeks
-                    (differenceInDays(testCompletedAt, new Date()) > 6 * 7 ||
-                      differenceInDays(testCompletedAt, new Date()) < -1),
+                  // Restrict competion date from -1 days to 6 weeks
+                  (differenceInDays(testCompletedAt, new Date()) > 6 * 7 ||
+                    differenceInDays(testCompletedAt, new Date()) < -1),
                 )
               }
             />

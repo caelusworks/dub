@@ -477,9 +477,9 @@ function ABTestingModal({
                 !isValid ||
                 Boolean(
                   testCompletedAt &&
-                    // Restrict competion date from -1 days to 6 weeks
-                    (differenceInDays(testCompletedAt, new Date()) > 6 * 7 ||
-                      differenceInDays(testCompletedAt, new Date()) < -1),
+                  // Restrict competion date from -1 days to 6 weeks
+                  (differenceInDays(testCompletedAt, new Date()) > 6 * 7 ||
+                    differenceInDays(testCompletedAt, new Date()) < -1),
                 )
               }
             />
@@ -635,7 +635,7 @@ function TrafficSplitSlider({
         {testVariants.map((test, i) => (
           <div
             key={i}
-            className="@container pointer-events-none relative flex h-full"
+            className="pointer-events-none relative flex h-full @container"
             style={{ width: `${test.percentage}%` }}
           >
             {i > 0 && <div className="w-1.5" />}
@@ -643,7 +643,7 @@ function TrafficSplitSlider({
               <span className="text-xs font-semibold text-neutral-900">
                 {i + 1}
               </span>
-              <span className="@[64px]:block hidden font-medium text-neutral-600">
+              <span className="hidden font-medium text-neutral-600 @[64px]:block">
                 {test.percentage}%
               </span>
             </div>

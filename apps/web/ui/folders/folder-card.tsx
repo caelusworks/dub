@@ -32,7 +32,7 @@ export const FolderCard = ({ folder }: { folder: Folder }) => {
   const isDefault = isDefaultFolder({ folder, defaultFolderId });
 
   return (
-    <div className="hover:drop-shadow-card-hover relative flex flex-col justify-between rounded-xl border border-neutral-200 bg-white px-5 py-4 transition-all duration-200 sm:h-36">
+    <div className="relative flex flex-col justify-between rounded-xl border border-neutral-200 bg-white px-5 py-4 transition-all duration-200 hover:drop-shadow-card-hover sm:h-36">
       <Link
         href={`/${workspaceSlug}/links${unsortedLinks ? "" : `?folderId=${folder.id}`}`}
         className="absolute inset-0 h-full w-full"

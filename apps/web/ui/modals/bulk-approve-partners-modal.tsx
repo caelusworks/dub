@@ -89,7 +89,7 @@ function BulkApprovePartnersModal({
             Approve {pluralize("application", partners.length)}
           </h3>
 
-          <p className="text-content-subtle text-base font-medium">
+          <p className="text-base font-medium text-content-subtle">
             Are you sure you want to approve{" "}
             {pluralize("this application", partners.length, {
               plural: "these applications",

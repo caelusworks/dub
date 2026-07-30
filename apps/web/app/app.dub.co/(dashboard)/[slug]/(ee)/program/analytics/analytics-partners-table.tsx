@@ -220,7 +220,7 @@ export function AnalyticsPartnersTable() {
       </Table>
     </div>
   ) : (
-    <div className="text-content-muted flex h-36 items-center justify-center text-sm">
+    <div className="flex h-36 items-center justify-center text-sm text-content-muted">
       {topPartnersError ? "Failed to load partners." : "No partners found."}
     </div>
   );
@@ -229,22 +229,22 @@ export function AnalyticsPartnersTable() {
 function PartnerTableSkeleton() {
   const { selectedTab } = useContext(AnalyticsContext);
   return (
-    <div className="bg-bg-default relative overflow-x-auto rounded-xl">
+    <div className="relative overflow-x-auto rounded-xl bg-bg-default">
       <table className="group/table w-full border-separate border-spacing-0 text-sm transition-[border-spacing,margin-top] [&_tr:last-child>td]:border-b-transparent [&_tr>*:first-child]:border-l-transparent [&_tr>*:last-child]:border-r-transparent [&_tr]:border-b">
         <thead>
           <tr>
-            <th className="border-border-subtle border-b border-l-0 px-4 py-2.5 text-left font-medium text-neutral-900">
+            <th className="border-b border-l-0 border-border-subtle px-4 py-2.5 text-left font-medium text-neutral-900">
               Partner
             </th>
-            <th className="border-border-subtle border-b border-l-0 px-4 py-2.5 text-left font-medium text-neutral-900">
+            <th className="border-b border-l-0 border-border-subtle px-4 py-2.5 text-left font-medium text-neutral-900">
               Location
             </th>
-            <th className="border-border-subtle border-b border-l-0 px-4 py-2.5 text-left font-medium text-neutral-900">
+            <th className="border-b border-l-0 border-border-subtle px-4 py-2.5 text-left font-medium text-neutral-900">
               {capitalize(selectedTab)}
             </th>
             {selectedTab === "sales" && (
               <>
-                <th className="border-border-subtle border-b border-l-0 px-4 py-2.5 text-left font-medium text-neutral-900">
+                <th className="border-b border-l-0 border-border-subtle px-4 py-2.5 text-left font-medium text-neutral-900">
                   Revenue
                 </th>
               </>
@@ -254,20 +254,20 @@ function PartnerTableSkeleton() {
         <tbody>
           {[...Array(10)].map((_, idx) => (
             <tr key={idx} className="group/row">
-              <td className="border-border-subtle border-b border-l-0 px-4 py-2.5">
+              <td className="border-b border-l-0 border-border-subtle px-4 py-2.5">
                 <div className="flex items-center gap-2.5">
                   <div className="size-6 animate-pulse rounded-full bg-neutral-200" />
                   <div className="h-4 w-32 animate-pulse rounded bg-neutral-200" />
                 </div>
               </td>
-              <td className="border-border-subtle border-b border-l-0 px-4 py-2.5">
+              <td className="border-b border-l-0 border-border-subtle px-4 py-2.5">
                 <div className="h-4 w-20 animate-pulse rounded bg-neutral-200" />
               </td>
-              <td className="border-border-subtle border-b border-l-0 px-4 py-2.5">
+              <td className="border-b border-l-0 border-border-subtle px-4 py-2.5">
                 <div className="h-4 w-20 animate-pulse rounded bg-neutral-200" />
               </td>
               {selectedTab === "sales" && (
-                <td className="border-border-subtle border-b border-l-0 px-4 py-2.5">
+                <td className="border-b border-l-0 border-border-subtle px-4 py-2.5">
                   <div className="h-4 w-20 animate-pulse rounded bg-neutral-200" />
                 </td>
               )}

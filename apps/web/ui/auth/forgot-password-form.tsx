@@ -35,7 +35,7 @@ export const ForgotPasswordForm = () => {
       >
         <div className="flex flex-col gap-6">
           <label>
-            <span className="text-content-emphasis mb-2 block text-sm font-medium leading-none">
+            <span className="mb-2 block text-sm font-medium leading-none text-content-emphasis">
               Email
             </span>
             <Input

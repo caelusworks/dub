@@ -51,18 +51,18 @@ export default function DubLaunchWeekDay4({
               />
             </Section>
 
-            <Heading className="mx-0 mb-2 mt-8 p-0 text-center text-2xl font-semibold text-black">
+            <Heading className="mx-0 mt-8 mb-2 p-0 text-center text-2xl font-semibold text-black">
               Dub Launch Week Day 4
             </Heading>
 
-            <Text className="mx-auto mb-8 mt-0 max-w-sm text-center text-base leading-6 text-neutral-600">
+            <Text className="mx-auto mt-0 mb-8 max-w-sm text-center text-base leading-6 text-neutral-600">
               Introducing the Dub MCP Server + Platform Logs
             </Text>
 
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               👋 Hey, it's Steven from Dub!
             </Text>
-            <Text className="mx-0 mb-8 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-8 text-sm leading-6 text-neutral-600">
               Today is <strong>Day 4 of our Spring Launch Week</strong>, where
               we'll be launching an exciting new feature for{" "}
               <Link
@@ -95,26 +95,26 @@ export default function DubLaunchWeekDay4({
               </Link>
             </Section>
 
-            <Heading className="mx-0 mb-3 mt-0 p-0 text-lg font-semibold text-black">
+            <Heading className="mx-0 mt-0 mb-3 p-0 text-lg font-semibold text-black">
               Introducing the Dub MCP Server
             </Heading>
 
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               Leverage our new MCP server to manage your partner program with
               Claude, Perplexity, Codex, or the AI agent of your choice.
             </Text>
-            <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
               Here are some of the supported tools:
             </Text>
-            <Text className="mx-0 mb-1 mt-0 pl-4 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-1 pl-4 text-sm leading-6 text-neutral-600">
               • <strong>Partners</strong> — Create partners, list all partners,
               deactivate, or ban partners from your program
             </Text>
-            <Text className="mx-0 mb-1 mt-0 pl-4 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-1 pl-4 text-sm leading-6 text-neutral-600">
               • <strong>Partner applications</strong> — List, approve, and
               reject pending partner applications
             </Text>
-            <Text className="mx-0 mb-4 mt-0 pl-4 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 pl-4 text-sm leading-6 text-neutral-600">
               • <strong>Commissions</strong> — List and update commissions (e.g.
               for refunds or fraud)
             </Text>
@@ -159,11 +159,11 @@ export default function DubLaunchWeekDay4({
               </Link>
             </Section>
 
-            <Heading className="mx-0 mb-3 mt-0 p-0 text-lg font-semibold text-black">
+            <Heading className="mx-0 mt-0 mb-3 p-0 text-lg font-semibold text-black">
               Dub Platform Logs
             </Heading>
 
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               We're also releasing a new{" "}
               <Link
                 href="https://ship.dub.co/logs"
@@ -197,11 +197,11 @@ export default function DubLaunchWeekDay4({
 
             <Hr className="mx-0 my-6 w-full border border-neutral-200" />
 
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               That's all for Day 4! Stay tuned for the remaining days of our
               Spring Launch Week – see you tomorrow!
             </Text>
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-400">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-400">
               Steven from Dub.co
             </Text>
 

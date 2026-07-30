@@ -144,10 +144,10 @@ function NetworkReferralsEmptyState({
               }}
             />
             <div className="flex min-w-0 flex-1 flex-col gap-0">
-              <span className="text-content-default block truncate text-xs font-semibold leading-tight">
+              <span className="block truncate text-xs font-semibold leading-tight text-content-default">
                 {partner.name}
               </span>
-              <span className="text-content-subtle block truncate text-[11px] font-medium leading-none">
+              <span className="block truncate text-[11px] font-medium leading-none text-content-subtle">
                 Your earnings:{" "}
                 {currencyFormatter(partner.earningsCents, {
                   minimumFractionDigits: 0,
@@ -180,7 +180,7 @@ function NetworkReferralsStatItem({
   return (
     <div className="flex flex-col gap-1 p-4 pr-0">
       <div className="flex items-center gap-1">
-        <span className="text-content-default text-sm font-medium">
+        <span className="text-sm font-medium text-content-default">
           {label}
         </span>
         <Tooltip content={tooltipContent} side="top">
@@ -189,7 +189,7 @@ function NetworkReferralsStatItem({
       </div>
 
       <div className="flex items-end gap-4">
-        <span className="text-content-emphasis whitespace-nowrap text-3xl font-medium tabular-nums">
+        <span className="whitespace-nowrap text-3xl font-medium tabular-nums text-content-emphasis">
           {isLoading ? (
             <span
               aria-hidden="true"
@@ -262,7 +262,7 @@ function NetworkReferralsStats() {
 function ReferralLinkLocked() {
   return (
     <div className="rounded-xl border border-neutral-200 bg-white p-4">
-      <p className="text-content-default mb-2 text-sm font-semibold">
+      <p className="mb-2 text-sm font-semibold text-content-default">
         Network referral link
       </p>
       <div className="rounded-xl border border-neutral-200 p-2">
@@ -274,7 +274,7 @@ function ReferralLinkLocked() {
             >
               <Lock className="size-4 text-neutral-900" strokeWidth={2} />
             </span>
-            <span className="text-content-default min-w-0 text-sm font-medium leading-snug">
+            <span className="min-w-0 text-sm font-medium leading-snug text-content-default">
               Get accepted to the Dub Network to unlock
             </span>
           </div>
@@ -314,7 +314,7 @@ function NetworkReferralLink() {
 
   return (
     <div className="rounded-xl border border-neutral-200 bg-white p-4">
-      <p className="text-content-default mb-2 text-sm font-semibold">
+      <p className="mb-2 text-sm font-semibold text-content-default">
         Network referral link
       </p>
       <div className="relative z-10 flex min-w-0 items-center justify-between gap-2 rounded-xl border border-neutral-200 bg-white p-2">
@@ -330,7 +330,7 @@ function NetworkReferralLink() {
             />
           </div>
           <CopyText
-            className="text-content-default min-w-0 truncate text-sm font-semibold"
+            className="min-w-0 truncate text-sm font-semibold text-content-default"
             value={referralLink}
           >
             {getPrettyUrl(referralLink)}
@@ -382,7 +382,7 @@ function ReferralRewardListItem(props: {
       <span className="flex size-6 shrink-0 items-center justify-center rounded-md bg-neutral-100">
         <Icon className="size-4 text-neutral-800" />
       </span>
-      <span className="text-content-default text-sm font-medium">
+      <span className="text-sm font-medium text-content-default">
         {props.children}
       </span>
     </li>
@@ -392,7 +392,7 @@ function ReferralRewardListItem(props: {
 function NetworkReferralRewards() {
   return (
     <div className="rounded-xl border border-neutral-200 bg-white p-4">
-      <p className="text-content-default mb-2 text-sm font-semibold">
+      <p className="mb-2 text-sm font-semibold text-content-default">
         Network referral rewards
       </p>
       <ul className="flex flex-col gap-2">

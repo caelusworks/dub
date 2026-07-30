@@ -98,9 +98,9 @@ function UpgradedModal({
   }, [searchParams, planId]);
 
   const plan = planId
-    ? PLANS.find(
+    ? (PLANS.find(
         (p) => p.name.toLowerCase() === planId.replace("+", " ").toLowerCase(),
-      ) ?? PRO_PLAN
+      ) ?? PRO_PLAN)
     : undefined;
 
   if (!plan) return null;
@@ -128,7 +128,7 @@ function UpgradedModal({
             <div
               ref={scrollRef}
               onScroll={updateScrollProgress}
-              className="scrollbar-hide max-h-[calc(100vh-400px)] overflow-y-auto pb-6 text-left"
+              className="max-h-[calc(100vh-400px)] overflow-y-auto pb-6 text-left scrollbar-hide"
             >
               <h1 className="text-lg font-semibold text-neutral-900">
                 Dub {plan?.name} looks good on you!

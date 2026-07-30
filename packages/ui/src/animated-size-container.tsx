@@ -58,8 +58,8 @@ const AnimatedSizeContainer: ForwardRefExoticComponent<
         ref={forwardedRef}
         className={cn("overflow-hidden", className)}
         animate={{
-          width: width ? measuredWidth ?? "auto" : "auto",
-          height: height ? measuredHeight ?? "auto" : "auto",
+          width: width ? (measuredWidth ?? "auto") : "auto",
+          height: height ? (measuredHeight ?? "auto") : "auto",
         }}
         transition={effectiveTransition}
         {...rest}

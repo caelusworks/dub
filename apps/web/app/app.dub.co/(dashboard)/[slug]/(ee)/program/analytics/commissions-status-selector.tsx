@@ -8,10 +8,7 @@ import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import useSWR from "swr";
 export type CommissionStatusFilter =
-  | "pending"
-  | "processed"
-  | "paid"
-  | undefined;
+  "pending" | "processed" | "paid" | undefined;
 
 const STATUS_TABS: {
   id: CommissionStatusFilter;

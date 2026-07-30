@@ -52,7 +52,7 @@ export function PartnerApplicationRiskSummary({
     <>
       <div className="flex flex-col gap-4 p-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-content-emphasis text-sm font-semibold">
+          <h3 className="text-sm font-semibold text-content-emphasis">
             Risk analysis
           </h3>
 
@@ -89,7 +89,7 @@ export function PartnerApplicationRiskSummary({
       </div>
 
       <div className="flex flex-col gap-3 p-4">
-        <h3 className="text-content-emphasis text-sm font-semibold">
+        <h3 className="text-sm font-semibold text-content-emphasis">
           Program owner activity
         </h3>
         <PartnerCrossProgramSummary partnerId={partner.id} />
@@ -142,7 +142,7 @@ export function PartnerApplicationRiskSummaryUpsell() {
       <div className="relative flex flex-col gap-4 p-4">
         {/* Blurred dummy risk list */}
         <div className="pointer-events-none flex select-none flex-col gap-4 blur-[3px]">
-          <h3 className="text-content-emphasis text-sm font-semibold">
+          <h3 className="text-sm font-semibold text-content-emphasis">
             Risk analysis
           </h3>
 
@@ -167,7 +167,7 @@ export function PartnerApplicationRiskSummaryUpsell() {
 
         {/* Upsell overlay */}
         <div className="absolute inset-0 flex flex-col rounded-xl bg-white/60 p-4 backdrop-blur-[2px]">
-          <h3 className="text-content-emphasis mb-4 text-sm font-semibold">
+          <h3 className="mb-4 text-sm font-semibold text-content-emphasis">
             Unlock risk analysis
           </h3>
 
@@ -182,7 +182,7 @@ export function PartnerApplicationRiskSummaryUpsell() {
               <Flag className={cn("size-4", severityConfig.icon)} />
             </div>
 
-            <p className="text-content-default max-w-72 text-center text-xs font-medium">
+            <p className="max-w-72 text-center text-xs font-medium text-content-default">
               Application risk review and event detection are available on the
               Advanced plan{" "}
               <Link

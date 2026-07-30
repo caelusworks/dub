@@ -62,7 +62,7 @@ export default async function ApplyPage(props: {
         />
 
         {/* Buttons */}
-        <div className="animate-scale-in-fade mt-10 flex flex-col gap-2 [animation-delay:400ms] [animation-fill-mode:both]">
+        <div className="mt-10 flex animate-scale-in-fade flex-col gap-2 [animation-delay:400ms] [animation-fill-mode:both]">
           <ApplyButton programSlug={programSlug} groupSlug={partnerGroupSlug} />
         </div>
 

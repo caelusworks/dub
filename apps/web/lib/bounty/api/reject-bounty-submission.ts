@@ -12,8 +12,9 @@ import BountyRejected from "@dub/email/templates/bounty-rejected";
 import { waitUntil } from "@vercel/functions";
 import * as z from "zod/v4";
 
-interface RejectBountySubmissionParams
-  extends z.infer<typeof rejectBountySubmissionBodySchema> {
+interface RejectBountySubmissionParams extends z.infer<
+  typeof rejectBountySubmissionBodySchema
+> {
   bountyId?: string;
   programId: string;
   submissionId: string;

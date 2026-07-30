@@ -111,19 +111,19 @@ function ApplyButton({ program }: { program: NetworkProgramProps }) {
       `You were ${programEnrollment.status} from this program`
     ) : !isComplete ? (
       <div className="max-w-xs p-3 text-center">
-        <div className="text-content-default text-pretty text-sm leading-5">
+        <div className="text-pretty text-sm leading-5 text-content-default">
           Complete your profile to join the Dub Partner Network. Once approved,
           you can then apply to this program.
         </div>
         <Link
           href="/profile"
-          className="bg-bg-subtle mt-3 flex items-center justify-center gap-2 rounded-lg px-2.5 py-1.5"
+          className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-bg-subtle px-2.5 py-1.5"
         >
           <ProgressCircle
             progress={completedCount / totalCount}
             className="text-green-500"
           />
-          <span className="text-content-default text-sm font-medium">
+          <span className="text-sm font-medium text-content-default">
             {completedCount} of {totalCount} tasks completed
           </span>
         </Link>
@@ -139,7 +139,7 @@ function ApplyButton({ program }: { program: NetworkProgramProps }) {
 
         return (
           <div className="max-w-xs space-y-2 p-4 text-center">
-            <div className="text-content-default text-pretty text-sm leading-5">
+            <div className="text-pretty text-sm leading-5 text-content-default">
               {content}
             </div>
             {partner.networkStatus === "draft" ? (

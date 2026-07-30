@@ -27,8 +27,8 @@ export const GET = async (req: Request) => {
   }
 
   let workspace:
-    | (Pick<WorkspaceProps, "id" | "slug" | "users"> & { plan: string })
-    | null = null;
+    (Pick<WorkspaceProps, "id" | "slug" | "users"> & { plan: string }) | null =
+    null;
 
   try {
     const session = await getSession();

@@ -70,21 +70,21 @@ export function SocialContentPreview({
   return (
     <div className="flex flex-col gap-2">
       <div className="flex items-center justify-between">
-        <h2 className="text-content-emphasis text-base font-semibold">
+        <h2 className="text-base font-semibold text-content-emphasis">
           Submitted content
         </h2>
         {lastSyncedAt && (
-          <span className="text-content-subtle text-xs font-medium">
+          <span className="text-xs font-medium text-content-subtle">
             Last sync{" "}
             {formatDistanceToNow(new Date(lastSyncedAt), { addSuffix: true })}
           </span>
         )}
       </div>
 
-      <div className="border-border-default bg-bg-subtle rounded-xl border">
+      <div className="rounded-xl border border-border-default bg-bg-subtle">
         {/* Progress section */}
         <div className="flex flex-col gap-3 px-4 pb-3 pt-4">
-          <div className="bg-bg-emphasis h-1 w-full rounded-full">
+          <div className="h-1 w-full rounded-full bg-bg-emphasis">
             <div
               className={cn(
                 "h-full rounded-full",
@@ -96,7 +96,7 @@ export function SocialContentPreview({
 
           <div className="flex items-center gap-2">
             <PlatformIcon className="size-4 shrink-0" />
-            <p className="text-content-subtle text-sm font-medium">
+            <p className="text-sm font-medium text-content-subtle">
               <EmphasisNumber>
                 {nFormatter(socialMetricCount, { full: true })}
               </EmphasisNumber>
@@ -186,7 +186,7 @@ function SubmissionDetailsView({
   }
 
   return (
-    <div className="scrollbar-hide flex min-h-0 flex-1 flex-col overflow-y-auto">
+    <div className="flex min-h-0 flex-1 flex-col overflow-y-auto scrollbar-hide">
       <div className="flex flex-col gap-5 p-5">
         <div>
           <h2 className="text-base font-semibold text-neutral-800">Details</h2>
@@ -229,7 +229,7 @@ function SubmissionDetailsView({
               {submission.files!.map((file, idx) => (
                 <a
                   key={idx}
-                  className="border-border-subtle hover:border-border-default group relative flex size-14 items-center justify-center rounded-md border bg-white"
+                  className="group relative flex size-14 items-center justify-center rounded-md border border-border-subtle bg-white hover:border-border-default"
                   target="_blank"
                   href={file.url}
                   rel="noopener noreferrer"
@@ -259,7 +259,7 @@ function SubmissionDetailsView({
                   className="relative"
                   key={`${submission.id}-${idx}-${url}`}
                 >
-                  <div className="border-border-subtle block w-full rounded-lg border px-3 py-2 pl-10 pr-12">
+                  <div className="block w-full rounded-lg border border-border-subtle px-3 py-2 pl-10 pr-12">
                     <a
                       href={url}
                       target="_blank"
@@ -345,7 +345,7 @@ export function SubmissionRewardTable({
             side="right"
             rows={["local", "utc"]}
           >
-            <span className="hover:text-content-emphasis underline decoration-dotted underline-offset-2">
+            <span className="underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
               {formatDateTimeSmart(row.original.createdAt)}
             </span>
           </TimestampTooltip>
@@ -362,7 +362,7 @@ export function SubmissionRewardTable({
 
   return (
     <div>
-      <h2 className="text-content-emphasis text-base font-semibold">Rewards</h2>
+      <h2 className="text-base font-semibold text-content-emphasis">Rewards</h2>
       <div className="mt-2">
         <Table
           {...tableProps}

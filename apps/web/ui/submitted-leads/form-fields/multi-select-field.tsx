@@ -49,7 +49,7 @@ export function MultiSelectField({
                 >
                   <Checkbox
                     checked={isSelected}
-                    className="border-border-default size-4 rounded focus:border-[var(--brand)] focus:ring-[var(--brand)] focus-visible:border-[var(--brand)] focus-visible:ring-[var(--brand)] data-[state=checked]:bg-black data-[state=indeterminate]:bg-black"
+                    className="size-4 rounded border-border-default focus:border-[var(--brand)] focus:ring-[var(--brand)] focus-visible:border-[var(--brand)] focus-visible:ring-[var(--brand)] data-[state=checked]:bg-black data-[state=indeterminate]:bg-black"
                     onCheckedChange={(checked) => {
                       if (checked) {
                         formField.onChange([
@@ -69,7 +69,7 @@ export function MultiSelectField({
                     }}
                   />
 
-                  <span className="text-content-emphasis text-sm">
+                  <span className="text-sm text-content-emphasis">
                     {option.label}
                   </span>
                 </label>

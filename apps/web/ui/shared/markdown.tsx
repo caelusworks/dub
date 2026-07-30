@@ -18,7 +18,7 @@ export function Markdown({
       className={cn(
         "prose prose-sm prose-neutral max-w-none transition-all",
         "prose-headings:leading-tight",
-        "prose-a:font-medium prose-a:text-neutral-900 prose-a:underline-offset-2 prose-a:decoration-dotted prose-a:cursor-alias",
+        "prose-a:cursor-alias prose-a:font-medium prose-a:text-neutral-900 prose-a:decoration-dotted prose-a:underline-offset-2",
         className,
       )}
       components={{

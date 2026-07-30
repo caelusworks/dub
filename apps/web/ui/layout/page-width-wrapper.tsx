@@ -11,7 +11,7 @@ export function PageWidthWrapper({
   return (
     <div
       className={cn(
-        "@container/page mx-auto w-full max-w-screen-xl px-3 lg:px-6",
+        "mx-auto w-full max-w-screen-xl px-3 @container/page lg:px-6",
         className,
       )}
     >

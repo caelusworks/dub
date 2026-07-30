@@ -70,7 +70,7 @@ export default function WelcomeEmail({
                     </Column>
 
                     <Column>
-                      <Text className="text-md m-0 text-base font-semibold leading-none text-neutral-800">
+                      <Text className="text-md m-0 text-base leading-none font-semibold text-neutral-800">
                         {workspace.name}
                       </Text>
 
@@ -88,11 +88,11 @@ export default function WelcomeEmail({
               <Hr />
             )}
 
-            <Heading className="mx-0 mb-0 mt-6 p-0 text-base font-semibold text-black">
+            <Heading className="mx-0 mt-6 mb-0 p-0 text-base font-semibold text-black">
               Getting started
             </Heading>
 
-            <Text className="mb-6 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mt-0 mb-6 text-sm leading-6 text-neutral-600">
               Get familiar with Dub by exploring the platform and features.
             </Text>
 

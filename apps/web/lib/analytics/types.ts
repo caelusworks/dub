@@ -22,10 +22,7 @@ export type AnalyticsGroupByOptions =
   (typeof VALID_ANALYTICS_ENDPOINTS)[number];
 
 export type AnalyticsResponseOptions =
-  | "clicks"
-  | "leads"
-  | "sales"
-  | "saleAmount";
+  "clicks" | "leads" | "sales" | "saleAmount";
 
 export type AnalyticsResponse = {
   [K in keyof typeof analyticsResponse]: z.infer<(typeof analyticsResponse)[K]>;

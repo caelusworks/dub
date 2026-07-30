@@ -103,7 +103,7 @@ function EarningsCalculatorBlockModalInner({
             <div
               ref={scrollRef}
               onScroll={updateScrollProgress}
-              className="scrollbar-hide relative -m-2 max-h-[calc(100vh-160px)] overflow-y-auto p-2"
+              className="relative -m-2 max-h-[calc(100vh-160px)] overflow-y-auto p-2 scrollbar-hide"
             >
               <div className="flex flex-col gap-5">
                 {/* Product price */}
@@ -288,7 +288,7 @@ function EarningsCalculatorBlockModalInner({
 
                 <div className="flex flex-col gap-2.5">
                   <div>
-                    <span className="text-content-emphasis text-sm font-medium">
+                    <span className="text-sm font-medium text-content-emphasis">
                       Preview
                     </span>
                     <p className="text-xs text-neutral-500">

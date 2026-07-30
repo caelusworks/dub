@@ -88,7 +88,7 @@ export function ConversionTrackingToggle() {
           />
         ) : (
           permissionsError || (
-            <p className="text-content-default max-w-xs p-3 text-xs">
+            <p className="max-w-xs p-3 text-xs text-content-default">
               <strong className="font-semibold">
                 Workspace-level conversion tracking is{" "}
                 {conversionEnabled ? "on" : "off"}
@@ -103,10 +103,10 @@ export function ConversionTrackingToggle() {
     >
       <label
         className={cn(
-          "bg-bg-subtle text-content-default border-border-subtle flex h-9 cursor-pointer items-center gap-2 rounded-lg border px-3",
+          "flex h-9 cursor-pointer items-center gap-2 rounded-lg border border-border-subtle bg-bg-subtle px-3 text-content-default",
           "transition-colors duration-100 ease-out",
           conversionEnabled &&
-            "bg-bg-inverted text-content-inverted border-bg-inverted",
+            "border-bg-inverted bg-bg-inverted text-content-inverted",
           (!canTrackConversions || permissionsError) &&
             "cursor-not-allowed opacity-50",
         )}

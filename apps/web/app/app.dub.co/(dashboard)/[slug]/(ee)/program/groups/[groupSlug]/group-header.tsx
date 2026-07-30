@@ -61,11 +61,11 @@ export function GroupHeaderTitle() {
         href={`/${workspaceSlug}/program/groups`}
         aria-label="Back to groups"
         title="Back to groups"
-        className="bg-bg-subtle hover:bg-bg-emphasis flex size-8 shrink-0 items-center justify-center rounded-lg transition-[transform,background-color] duration-150 active:scale-95"
+        className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle transition-[transform,background-color] duration-150 hover:bg-bg-emphasis active:scale-95"
       >
         <Users className="size-4" />
       </Link>
-      <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
+      <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
 
       <GroupSelector
         selectedGroupId={group.id}
@@ -133,7 +133,7 @@ export function GroupHeaderTabs() {
   ];
 
   return (
-    <div className="scrollbar-hide -mx-3 flex gap-2.5 overflow-x-auto px-3">
+    <div className="-mx-3 flex gap-2.5 overflow-x-auto px-3 scrollbar-hide">
       {GROUP_NAVIGATION_TABS.map((tab) => {
         const Icon = tab.icon;
 
@@ -160,7 +160,7 @@ export function GroupHeaderTabs() {
               text={tab.label}
               right={
                 tab.external ? (
-                  <ArrowUpRight2 className="text-content-subtle size-3.5" />
+                  <ArrowUpRight2 className="size-3.5 text-content-subtle" />
                 ) : undefined
               }
               className={cn("h-7 rounded-lg px-2.5 text-sm font-medium", {

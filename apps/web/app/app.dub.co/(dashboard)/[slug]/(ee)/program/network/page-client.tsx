@@ -193,7 +193,7 @@ export function ProgramPartnerNetworkPageClient({
                 key={tab.id}
                 type="button"
                 className={cn(
-                  "border-border-subtle flex flex-col gap-1 rounded-lg border p-4 text-left transition-colors duration-100",
+                  "flex flex-col gap-1 rounded-lg border border-border-subtle p-4 text-left transition-colors duration-100",
                   isActive
                     ? "border-black ring-1 ring-black"
                     : "hover:bg-bg-muted",
@@ -205,11 +205,11 @@ export function ProgramPartnerNetworkPageClient({
                   });
                 }}
               >
-                <span className="text-content-default text-xs font-semibold">
+                <span className="text-xs font-semibold text-content-default">
                   {tab.label}
                 </span>
                 {partnerCounts ? (
-                  <span className="text-content-emphasis text-base font-semibold">
+                  <span className="text-base font-semibold text-content-emphasis">
                     {(partnerCounts?.[tab.id] || 0).toLocaleString()}
                   </span>
                 ) : (
@@ -270,7 +270,7 @@ export function ProgramPartnerNetworkPageClient({
                     isStarred ? (
                       <Star variant="fill" className="size-4 text-amber-500" />
                     ) : (
-                      <Star className="text-content-subtle size-4" />
+                      <Star className="size-4 text-content-subtle" />
                     )
                   }
                   className="size-10 shrink-0 rounded-lg"
@@ -299,14 +299,14 @@ export function ProgramPartnerNetworkPageClient({
       )}
 
       {error || countError ? (
-        <div className="text-content-subtle py-12 text-sm">
+        <div className="py-12 text-sm text-content-subtle">
           Failed to load partners
         </div>
       ) : !partners || partners?.length ? (
         <div className="mt-4">
           <div
             className={cn(
-              "@5xl/page:grid-cols-4 @3xl/page:grid-cols-3 @xl/page:grid-cols-2 grid grid-cols-1 gap-4 transition-opacity lg:gap-6",
+              "grid grid-cols-1 gap-4 transition-opacity @xl/page:grid-cols-2 @3xl/page:grid-cols-3 @5xl/page:grid-cols-4 lg:gap-6",
               isValidating && "opacity-50",
             )}
           >

@@ -1,8 +1,10 @@
 import type { Partner } from "@prisma/client";
 import { stripeV2Fetch } from "./stripe-v2-client";
 
-interface CreateStripeRecipientAccountParams
-  extends Pick<Partner, "name" | "profileType"> {
+interface CreateStripeRecipientAccountParams extends Pick<
+  Partner,
+  "name" | "profileType"
+> {
   email: NonNullable<Partner["email"]>;
   country: NonNullable<Partner["country"]>;
 }

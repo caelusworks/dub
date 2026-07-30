@@ -187,10 +187,10 @@ function GroupAdditionalSettingsForm({
 
       <FormProvider {...form}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="border-border-subtle rounded-lg border">
+          <div className="rounded-lg border border-border-subtle">
             <div className="flex flex-col divide-y divide-neutral-200">
               <div className="px-6 py-6">
-                <h3 className="text-content-emphasis text-lg font-semibold leading-7">
+                <h3 className="text-lg font-semibold leading-7 text-content-emphasis">
                   Additional settings
                 </h3>
               </div>
@@ -242,7 +242,7 @@ function GroupAdditionalSettingsForm({
                         fn={() => setShowConfirmAutoApproveModal(true)}
                         trackDimensions="radix-state-checked:bg-black focus-visible:ring-black/20"
                       />
-                      <span className="text-content-emphasis text-sm">
+                      <span className="text-sm text-content-emphasis">
                         Enable auto-approve
                       </span>
                     </div>
@@ -263,7 +263,7 @@ function GroupAdditionalSettingsForm({
             </div>
 
             {!isLoading && (
-              <div className="border-border-subtle flex items-center justify-end rounded-b-lg border-t bg-neutral-50 px-6 py-4">
+              <div className="flex items-center justify-end rounded-b-lg border-t border-border-subtle bg-neutral-50 px-6 py-4">
                 <div>
                   <Button
                     text="Save changes"
@@ -305,23 +305,23 @@ function ConfirmAutoApproveModal({
   return (
     <Modal showModal={isOpen} setShowModal={setIsOpen}>
       <div className="p-5 text-left">
-        <h3 className="text-content-emphasis text-base font-semibold">
+        <h3 className="text-base font-semibold text-content-emphasis">
           Confirm {currentValue ? "disable" : "enable"} auto-approve
         </h3>
-        <p className="text-content-subtle mt-1 text-sm">
+        <p className="mt-1 text-sm text-content-subtle">
           New applications will {currentValue ? "not" : ""} be approved
           automatically.
         </p>
       </div>
-      <div className="border-border-subtle flex items-center justify-between gap-2 border-t px-5 py-4">
+      <div className="flex items-center justify-between gap-2 border-t border-border-subtle px-5 py-4">
         <label className="flex w-full items-center gap-2.5 text-sm font-medium leading-none">
           <Checkbox
             checked={applyToAllGroups}
-            className="border-border-default size-4 rounded focus:border-[var(--brand)] focus:ring-[var(--brand)] focus-visible:border-[var(--brand)] focus-visible:ring-[var(--brand)] data-[state=checked]:bg-black data-[state=indeterminate]:bg-black"
+            className="size-4 rounded border-border-default focus:border-[var(--brand)] focus:ring-[var(--brand)] focus-visible:border-[var(--brand)] focus-visible:ring-[var(--brand)] data-[state=checked]:bg-black data-[state=indeterminate]:bg-black"
             onCheckedChange={(checked) => setApplyToAllGroups(Boolean(checked))}
           />
 
-          <span className="text-content-emphasis text-sm">
+          <span className="text-sm text-content-emphasis">
             Apply to all groups
           </span>
         </label>
@@ -376,22 +376,22 @@ function ConfirmHoldingPeriodModal({
   return (
     <Modal showModal={isOpen} setShowModal={setIsOpen}>
       <div className="p-5 text-left">
-        <h3 className="text-content-emphasis text-base font-semibold">
+        <h3 className="text-base font-semibold text-content-emphasis">
           Confirm payout holding period change
         </h3>
-        <p className="text-content-subtle mt-1 text-sm">
+        <p className="mt-1 text-sm text-content-subtle">
           Change holding period from {currentValue} days to {newValue} days.
         </p>
       </div>
-      <div className="border-border-subtle flex items-center justify-between gap-2 border-t px-5 py-4">
+      <div className="flex items-center justify-between gap-2 border-t border-border-subtle px-5 py-4">
         <label className="flex w-full items-center gap-2.5 text-sm font-medium leading-none">
           <Checkbox
             checked={applyToAllGroups}
-            className="border-border-default size-4 rounded focus:border-[var(--brand)] focus:ring-[var(--brand)] focus-visible:border-[var(--brand)] focus-visible:ring-[var(--brand)] data-[state=checked]:bg-black data-[state=indeterminate]:bg-black"
+            className="size-4 rounded border-border-default focus:border-[var(--brand)] focus:ring-[var(--brand)] focus-visible:border-[var(--brand)] focus-visible:ring-[var(--brand)] data-[state=checked]:bg-black data-[state=indeterminate]:bg-black"
             onCheckedChange={(checked) => setApplyToAllGroups(Boolean(checked))}
           />
 
-          <span className="text-content-emphasis text-sm">
+          <span className="text-sm text-content-emphasis">
             Apply to all groups
           </span>
         </label>

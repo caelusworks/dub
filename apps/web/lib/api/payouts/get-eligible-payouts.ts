@@ -10,8 +10,9 @@ import { getEffectivePayoutMode } from "./get-effective-payout-mode";
 import { getPayoutEligibilityFilter } from "./payout-eligibility-filter";
 import { payoutIdSelectionWhere } from "./payout-id-selection-where";
 
-interface GetEligiblePayoutsProps
-  extends z.output<typeof eligiblePayoutsQuerySchema> {
+interface GetEligiblePayoutsProps extends z.output<
+  typeof eligiblePayoutsQuerySchema
+> {
   program: Pick<Program, "id" | "name" | "minPayoutAmount" | "payoutMode">;
 }
 

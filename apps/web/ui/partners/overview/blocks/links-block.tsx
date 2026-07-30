@@ -52,7 +52,7 @@ export function LinksBlock() {
         },
       )}`}
     >
-      <div className="divide-border-subtle @2xl:h-60 flex h-auto flex-col divide-y">
+      <div className="flex h-auto flex-col divide-y divide-border-subtle @2xl:h-60">
         {exceededEvents ? (
           <ExceededEventsLimit />
         ) : isLoading ? (
@@ -60,11 +60,11 @@ export function LinksBlock() {
             <LoadingSpinner />
           </div>
         ) : error ? (
-          <div className="text-content-subtle flex size-full items-center justify-center py-4 text-xs">
+          <div className="flex size-full items-center justify-center py-4 text-xs text-content-subtle">
             Failed to load data
           </div>
         ) : data?.length === 0 ? (
-          <div className="text-content-subtle flex size-full items-center justify-center py-4 text-xs">
+          <div className="flex size-full items-center justify-center py-4 text-xs text-content-subtle">
             No links found
           </div>
         ) : (
@@ -74,7 +74,7 @@ export function LinksBlock() {
               <Link
                 key={shortLink}
                 href={`/${workspaceSlug}/links/${domain}/${key}`}
-                className="text-content-default group flex h-10 items-center justify-between text-xs font-medium"
+                className="group flex h-10 items-center justify-between text-xs font-medium text-content-default"
               >
                 <div className="flex min-w-0 items-center gap-2">
                   <LinkLogo
@@ -84,7 +84,7 @@ export function LinksBlock() {
                   <span className="min-w-0 truncate">
                     {getPrettyUrl(shortLink)}
                   </span>
-                  <ArrowRight className="text-content-emphasis size-2.5 -translate-x-0.5 opacity-0 transition-[opacity,transform] group-hover:translate-x-0 group-hover:opacity-100 [&_*]:stroke-2" />
+                  <ArrowRight className="size-2.5 -translate-x-0.5 text-content-emphasis opacity-0 transition-[opacity,transform] group-hover:translate-x-0 group-hover:opacity-100 [&_*]:stroke-2" />
                 </div>
 
                 <span>

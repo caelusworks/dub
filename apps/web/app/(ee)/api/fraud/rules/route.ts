@@ -90,7 +90,7 @@ export const PATCH = withWorkspace(
       if (!payload) continue;
 
       const config =
-        "config" in payload ? payload.config ?? Prisma.DbNull : Prisma.DbNull;
+        "config" in payload ? (payload.config ?? Prisma.DbNull) : Prisma.DbNull;
 
       await prisma.fraudRule.upsert({
         where: {

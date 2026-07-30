@@ -14,18 +14,17 @@ const ACTIONS_WITHOUT_CHANGE_SET: ActivityLogAction[] = [
   "reward.deleted",
 ];
 
-export interface TrackActivityLogInput
-  extends Pick<
-    Prisma.ActivityLogUncheckedCreateInput,
-    | "workspaceId"
-    | "programId"
-    | "resourceId"
-    | "userId"
-    | "description"
-    | "parentResourceType"
-    | "parentResourceId"
-    | "batchId"
-  > {
+export interface TrackActivityLogInput extends Pick<
+  Prisma.ActivityLogUncheckedCreateInput,
+  | "workspaceId"
+  | "programId"
+  | "resourceId"
+  | "userId"
+  | "description"
+  | "parentResourceType"
+  | "parentResourceId"
+  | "batchId"
+> {
   resourceType: ActivityLogResourceType;
   action: ActivityLogAction;
   changeSet?: ChangeSet;

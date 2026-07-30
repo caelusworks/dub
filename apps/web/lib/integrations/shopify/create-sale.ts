@@ -132,8 +132,8 @@ export async function createShopifySale({
 
   // for program links
   let result:
-    | Awaited<ReturnType<typeof queuePartnerCommissionCreation>>
-    | undefined = undefined;
+    Awaited<ReturnType<typeof queuePartnerCommissionCreation>> | undefined =
+    undefined;
 
   if (link.programId && link.partnerId) {
     result = await queuePartnerCommissionCreation({

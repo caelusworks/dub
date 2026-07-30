@@ -125,15 +125,15 @@ function MessageFileAttachment({
     >
       <FileTypeBadge type={attachment.type} />
       <div className="flex min-w-0 flex-1 flex-col">
-        <span className="text-content-default truncate text-sm font-medium">
+        <span className="truncate text-sm font-medium text-content-default">
           {attachment.name}
         </span>
-        <span className="text-content-subtle text-xs font-medium">
+        <span className="text-xs font-medium text-content-subtle">
           {formatFileSize(attachment.size, 1)}
         </span>
       </div>
-      <div className="border-bg-subtle flex size-8 shrink-0 items-center justify-center rounded-lg border bg-white">
-        <Download className="text-content-emphasis size-4 shrink-0" />
+      <div className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-bg-subtle bg-white">
+        <Download className="size-4 shrink-0 text-content-emphasis" />
       </div>
     </button>
   );

@@ -69,26 +69,26 @@ export function BountyCriteriaSocialMetrics() {
   };
 
   const channelLabel = hasChannel
-    ? BOUNTY_SOCIAL_PLATFORMS.find((c) => c.value === socialMetrics.platform)
-        ?.label ?? socialMetrics.platform
+    ? (BOUNTY_SOCIAL_PLATFORMS.find((c) => c.value === socialMetrics.platform)
+        ?.label ?? socialMetrics.platform)
     : "channel";
 
   const metricLabel = hasMetric
-    ? BOUNTY_SOCIAL_PLATFORM_METRICS_MAP[socialMetrics.platform]?.find(
+    ? (BOUNTY_SOCIAL_PLATFORM_METRICS_MAP[socialMetrics.platform]?.find(
         (m) => m.value === socialMetrics.metric,
-      )?.label ?? socialMetrics.metric
+      )?.label ?? socialMetrics.metric)
     : "metric";
 
   const metricPlatformForMenu = socialMetrics?.platform ?? "youtube";
 
   return (
     <div className="flex flex-col gap-0">
-      <div className="border-border-subtle rounded-xl border bg-white shadow-sm">
+      <div className="rounded-xl border border-border-subtle bg-white shadow-sm">
         <div className="flex items-center gap-2.5 p-2.5">
           <div className="flex size-7 shrink-0 items-center justify-center rounded-md bg-neutral-100">
             <Megaphone className="size-4 text-neutral-800" />
           </div>
-          <span className="text-content-emphasis text-sm font-medium leading-relaxed">
+          <span className="text-sm font-medium leading-relaxed text-content-emphasis">
             If their post on{" "}
             <InlineBadgePopover
               text={channelLabel}
@@ -115,7 +115,7 @@ export function BountyCriteriaSocialMetrics() {
                       (m) => m.value === socialMetrics.metric,
                     )
                       ? socialMetrics.metric
-                      : platformMetrics?.[0]?.value ?? "views";
+                      : (platformMetrics?.[0]?.value ?? "views");
 
                   updateRequirements({
                     socialMetrics: {
@@ -210,12 +210,12 @@ export function BountyCriteriaSocialMetrics() {
         </div>
       </div>
 
-      <div className="bg-border-subtle ml-6 h-4 w-px shrink-0" />
+      <div className="ml-6 h-4 w-px shrink-0 bg-border-subtle" />
 
-      <div className="border-border-subtle rounded-xl border bg-white shadow-sm">
+      <div className="rounded-xl border border-border-subtle bg-white shadow-sm">
         <div className="flex items-center gap-2.5 p-2.5">
           <RewardIconSquare icon={MoneyBills2} />
-          <span className="text-content-emphasis text-sm font-medium leading-relaxed">
+          <span className="text-sm font-medium leading-relaxed text-content-emphasis">
             Then pay{" "}
             <InlineBadgePopover
               text={
@@ -243,7 +243,7 @@ export function BountyCriteriaSocialMetrics() {
       </div>
 
       {socialMetrics && !incrementalBonus && (
-        <div className="border-bg-subtle mt-4 rounded-xl border bg-neutral-100 p-2.5">
+        <div className="mt-4 rounded-xl border border-bg-subtle bg-neutral-100 p-2.5">
           <Button
             text="Add variable bonus"
             onClick={() =>
@@ -297,7 +297,7 @@ function SocialMetricsIncrementalBonus({
   onRemove,
 }: SocialMetricsVariableBonusProps) {
   return (
-    <div className="border-border-subtle mt-4 overflow-hidden rounded-xl border bg-neutral-100 p-2.5 pt-0 shadow-sm">
+    <div className="mt-4 overflow-hidden rounded-xl border border-border-subtle bg-neutral-100 p-2.5 pt-0 shadow-sm">
       <div className="flex items-center justify-between py-2.5">
         <div className="flex items-center gap-2 px-2">
           <ArrowTurnRight2 className="size-4 text-neutral-800" />
@@ -325,12 +325,12 @@ function SocialMetricsIncrementalBonus({
       </div>
 
       <div className="flex flex-col gap-0 rounded-xl border border-neutral-200 bg-white px-2.5 py-3">
-        <div className="border-border-subtle rounded-xl border bg-white shadow-sm">
+        <div className="rounded-xl border border-border-subtle bg-white shadow-sm">
           <div className="flex items-center gap-2.5 p-2.5">
             <div className="flex size-7 shrink-0 items-center justify-center rounded-md bg-neutral-100">
               <Megaphone className="size-4 text-neutral-800" />
             </div>
-            <span className="text-content-emphasis text-sm font-medium leading-relaxed">
+            <span className="text-sm font-medium leading-relaxed text-content-emphasis">
               For each additional{" "}
               <InlineBadgePopover
                 text={
@@ -379,11 +379,11 @@ function SocialMetricsIncrementalBonus({
             </span>
           </div>
         </div>
-        <div className="bg-border-subtle ml-6 h-4 w-px shrink-0" />
-        <div className="border-border-subtle rounded-xl border bg-white shadow-sm">
+        <div className="ml-6 h-4 w-px shrink-0 bg-border-subtle" />
+        <div className="rounded-xl border border-border-subtle bg-white shadow-sm">
           <div className="flex items-center gap-2.5 p-2.5">
             <RewardIconSquare icon={MoneyBills2} />
-            <span className="text-content-emphasis text-sm font-medium leading-relaxed">
+            <span className="text-sm font-medium leading-relaxed text-content-emphasis">
               Pay{" "}
               <InlineBadgePopover
                 text={
@@ -416,13 +416,13 @@ function SocialMetricsIncrementalBonus({
             </span>
           </div>
         </div>
-        <div className="bg-border-subtle ml-6 h-4 w-px shrink-0" />
-        <div className="border-border-subtle rounded-xl border bg-white shadow-sm">
+        <div className="ml-6 h-4 w-px shrink-0 bg-border-subtle" />
+        <div className="rounded-xl border border-border-subtle bg-white shadow-sm">
           <div className="flex items-center gap-2.5 p-2.5">
             <div className="flex size-7 shrink-0 items-center justify-center rounded-md bg-neutral-100">
               <Refresh2 className="size-4 text-neutral-800" />
             </div>
-            <span className="text-content-emphasis text-sm font-medium leading-relaxed">
+            <span className="text-sm font-medium leading-relaxed text-content-emphasis">
               Up to{" "}
               <InlineBadgePopover
                 text={

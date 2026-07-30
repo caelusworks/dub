@@ -69,7 +69,7 @@ export default function NewLeadSubmitted({
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[600px] rounded border border-solid border-neutral-200 px-10 py-5">
-            <Section className="mb-8 mt-6">
+            <Section className="mt-6 mb-8">
               <Img src={DUB_WORDMARK} width="61" height="32" alt="dub" />
             </Section>
 
@@ -265,10 +265,10 @@ export default function NewLeadSubmitted({
               </Section>
             </Container>
 
-            <Section className="mb-8 mt-8 text-center">
+            <Section className="mt-8 mb-8 text-center">
               <Link
                 href={leadUrl}
-                className="box-border block w-full rounded-lg bg-black px-0 py-4 text-center text-sm font-semibold leading-none text-white no-underline"
+                className="box-border block w-full rounded-lg bg-black px-0 py-4 text-center text-sm leading-none font-semibold text-white no-underline"
               >
                 Review on Dub
               </Link>

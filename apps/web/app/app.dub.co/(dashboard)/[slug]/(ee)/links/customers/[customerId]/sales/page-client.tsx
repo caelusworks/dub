@@ -24,7 +24,7 @@ export function CustomerSalesPageClient() {
   return (
     <section className="flex flex-col gap-4">
       <h2 className="text-lg font-semibold text-neutral-900">Sales</h2>
-      <div className="border-border-subtle overflow-hidden rounded-lg border">
+      <div className="overflow-hidden rounded-lg border border-border-subtle">
         <SalesTable customerId={customerId} />
       </div>
     </section>
@@ -58,7 +58,9 @@ const SalesTable = memo(({ customerId }: { customerId: string }) => {
     <CustomerSalesTable
       sales={salesData}
       totalSales={
-        isTotalSalesLoading ? undefined : totalSales?.sales ?? salesData?.length
+        isTotalSalesLoading
+          ? undefined
+          : (totalSales?.sales ?? salesData?.length)
       }
       viewAllHref={`/${slug}/events?event=sales&interval=all&customerId=${customerId}`}
       isLoading={isSalesLoading}

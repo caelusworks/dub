@@ -873,7 +873,7 @@ function RewardListItem({
                   <div className="flex size-7 shrink-0 items-center justify-center rounded-md bg-neutral-100">
                     <RewardIcon className="size-4 text-neutral-800" />
                   </div>
-                  <div className="text-content-default flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-0 text-sm font-semibold leading-5 tracking-tight">
+                  <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-0 text-sm font-semibold leading-5 tracking-tight text-content-default">
                     {reward.text}
                     {reward.badge}
                   </div>
@@ -883,7 +883,7 @@ function RewardListItem({
           </div>
         ) : (
           <div className="flex items-center justify-between rounded-t-xl border-t border-neutral-200 bg-white px-4 py-3">
-            <p className="text-content-subtle text-sm">
+            <p className="text-sm text-content-subtle">
               You are not eligible for any rewards at this time.
             </p>
 

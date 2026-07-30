@@ -128,7 +128,7 @@ export const GET = withWorkspace(
     // getAnalytics with groupBy: "count" returns an object like { clicks: 123 } or { leads: 45 } or { sales: 10, saleAmount: 5000 }
     const eventsCount =
       typeof countResponse === "object" && countResponse !== null
-        ? (countResponse[event as keyof typeof countResponse] as number) ?? 0
+        ? ((countResponse[event as keyof typeof countResponse] as number) ?? 0)
         : typeof countResponse === "number"
           ? countResponse
           : 0;

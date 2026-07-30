@@ -58,7 +58,7 @@ export function EditFolderForm({
       })}
     >
       <label>
-        <span className="text-content-emphasis block text-sm font-medium">
+        <span className="block text-sm font-medium text-content-emphasis">
           Name
         </span>
         <div className="mt-2 flex rounded-md">
@@ -72,7 +72,7 @@ export function EditFolderForm({
       </label>
 
       <label className="mt-6 block">
-        <span className="text-content-emphasis block text-sm font-medium">
+        <span className="block text-sm font-medium text-content-emphasis">
           Description <span className="text-content-subtle">(optional)</span>
         </span>
         <textarea

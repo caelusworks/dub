@@ -340,11 +340,11 @@ export function SiteVisitTrackingSection() {
           <div className="overflow-hidden">
             <label
               htmlFor={`${switchId}-switch`}
-              className="text-content-emphasis block text-sm font-semibold"
+              className="block text-sm font-semibold text-content-emphasis"
             >
               Site visit tracking
             </label>
-            <p className="text-content-subtle text-sm font-medium">
+            <p className="text-sm font-medium text-content-subtle">
               For tracking site visits (organic visits from Google/SEO/AEO).
             </p>
           </div>
@@ -384,10 +384,10 @@ export function SiteVisitTrackingSection() {
         <div className="flex flex-col gap-4 border-t border-neutral-200 p-3">
           <div className="flex flex-col gap-2">
             <div className="flex flex-col">
-              <label className="text-content-emphasis text-sm font-semibold">
+              <label className="text-sm font-semibold text-content-emphasis">
                 Domain for sitemap imports
               </label>
-              <p className="text-content-subtle text-xs font-medium">
+              <p className="text-xs font-medium text-content-subtle">
                 This domain will be used for links we create when importing
                 pages from the sitemaps you add.
               </p>
@@ -404,7 +404,7 @@ export function SiteVisitTrackingSection() {
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-1">
-                <h2 className="text-content-emphasis text-sm font-semibold">
+                <h2 className="text-sm font-semibold text-content-emphasis">
                   Sitemaps
                 </h2>
                 <InfoTooltip content="Required for conversion tracking." />
@@ -452,24 +452,24 @@ export function SiteVisitTrackingSection() {
 
             <div className="flex flex-col gap-2">
               {siteVisitTrackingEnabled && sitemaps.length === 0 ? (
-                <div className="text-content-subtle rounded-xl border border-dashed border-neutral-300 bg-white p-3 text-sm">
+                <div className="rounded-xl border border-dashed border-neutral-300 bg-white p-3 text-sm text-content-subtle">
                   No tracked sitemaps configured yet.
                 </div>
               ) : (
                 sitemaps.map((sitemap) => (
                   <div
                     key={sitemap.url}
-                    className="border-border-subtle flex items-center justify-between gap-4 rounded-xl border bg-white p-3"
+                    className="flex items-center justify-between gap-4 rounded-xl border border-border-subtle bg-white p-3"
                   >
                     <div className="flex min-w-0 items-center gap-2">
                       <div className="flex size-[28px] items-center justify-center rounded-md bg-neutral-100">
                         <Sitemap className="size-4 text-neutral-800" />
                       </div>
                       <div className="flex min-w-0 flex-col">
-                        <span className="text-content-emphasis min-w-0 truncate text-sm font-semibold">
+                        <span className="min-w-0 truncate text-sm font-semibold text-content-emphasis">
                           {sitemap.url}
                         </span>
-                        <span className="text-content-subtle text-xs font-medium">
+                        <span className="text-xs font-medium text-content-subtle">
                           {sitemap.lastCrawledAt
                             ? `Last crawled ${formatDate(sitemap.lastCrawledAt)}`
                             : "Not crawled yet"}

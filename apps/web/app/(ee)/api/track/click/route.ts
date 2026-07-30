@@ -65,9 +65,10 @@ export const POST = withAxiom(async (req) => {
 
     let [redisGlobalResults, cachedAllowedHostnames] = await Promise.all([
       redisGlobalWithTimeout
-        .mget<
-          [string | null, RedisLinkProps | null]
-        >([recordClickCache._createKey({ domain, key, identityHash }), linkCache._createKey({ domain, key })])
+        .mget<[string | null, RedisLinkProps | null]>([
+          recordClickCache._createKey({ domain, key, identityHash }),
+          linkCache._createKey({ domain, key }),
+        ])
         .catch(() => [null, null] as [string | null, RedisLinkProps | null]),
 
       redis.get<string[]>(allowedHostnamesCache._createKey({ domain })),

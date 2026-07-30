@@ -45,7 +45,7 @@ function ConfirmSetDefaultGroupModal({
   return (
     <Modal showModal={showModal} setShowModal={setShowModal}>
       <div className="space-y-2 border-b border-neutral-200 px-4 py-4 sm:px-6">
-        <h3 className="text-content-emphasis text-lg font-medium">
+        <h3 className="text-lg font-medium text-content-emphasis">
           Change default group
         </h3>
       </div>
@@ -64,19 +64,19 @@ function ConfirmSetDefaultGroupModal({
             <div className="relative flex items-center justify-center gap-4">
               <div className="flex items-center gap-2">
                 <GroupColorCircle group={currentDefaultGroup} />
-                <span className="text-content-emphasis text-sm font-medium">
+                <span className="text-sm font-medium text-content-emphasis">
                   {currentDefaultGroup.name}
                 </span>
               </div>
               <ArrowRight className="size-4 text-neutral-400" />
               <div className="flex items-center gap-2">
                 <GroupColorCircle group={newDefaultGroup} />
-                <span className="text-content-emphasis text-sm font-medium">
+                <span className="text-sm font-medium text-content-emphasis">
                   {newDefaultGroup.name}
                 </span>
               </div>
             </div>
-            <MarkdownDescription className="text-content-subtle relative mt-3 text-center text-xs">
+            <MarkdownDescription className="relative mt-3 text-center text-xs text-content-subtle">
               {`This will set **"${newDefaultGroup.name}"** as the new default group and update your [public landing page](https://dub.co/help/article/program-landing-page) and [application form](https://dub.co/help/article/program-application-form).`}
             </MarkdownDescription>
           </div>

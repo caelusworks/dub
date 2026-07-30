@@ -12,9 +12,9 @@ export function BlockMarkdown({
     <div
       className={cn(
         "prose prose-neutral max-w-none",
-        "prose-headings:leading-tight prose-bullet:text-red-500",
+        "prose-bullet:text-red-500 prose-headings:leading-tight",
         "prose-a:font-medium prose-a:text-neutral-500 hover:prose-a:text-neutral-600",
-        "marker:prose-ul:text-neutral-700 prose-ul:pl-[1.5em] [&_ul>li]:pl-0",
+        "prose-ul:pl-[1.5em] marker:prose-ul:text-neutral-700 [&_ul>li]:pl-0",
         className,
       )}
       dir="auto"

@@ -29,7 +29,7 @@ export function MarketplaceProgramCard({
     <Link
       href={getMarketplaceProgramHref(program.slug)}
       className={cn(
-        "border-border-subtle hover:drop-shadow-card-hover flex h-full flex-col rounded-xl border bg-white p-4 transition-[filter] sm:p-6",
+        "flex h-full flex-col rounded-xl border border-border-subtle bg-white p-4 transition-[filter] hover:drop-shadow-card-hover sm:p-6",
         className,
       )}
     >
@@ -44,11 +44,11 @@ export function MarketplaceProgramCard({
       </div>
 
       <div className="mt-6 flex flex-col sm:mt-8">
-        <h3 className="text-content-emphasis text-base font-semibold">
+        <h3 className="text-base font-semibold text-content-emphasis">
           {program.name}
         </h3>
 
-        <div className="text-content-subtle mt-1 line-clamp-2 text-sm">
+        <div className="mt-1 line-clamp-2 text-sm text-content-subtle">
           {program.description ||
             `${program.name} is a program in the Dub Partner Network. Join the network to start partnering with them.`}
         </div>
@@ -56,7 +56,7 @@ export function MarketplaceProgramCard({
         <div className="mt-5 flex gap-4">
           {Boolean(program.rewards?.length) && (
             <div>
-              <span className="text-content-muted block text-xs font-medium">
+              <span className="block text-xs font-medium text-content-muted">
                 Rewards
               </span>
               <ProgramRewardsDisplay
@@ -72,21 +72,19 @@ export function MarketplaceProgramCard({
           )}
           {Boolean(program.categories.length) && (
             <div className="hidden min-w-0 sm:block">
-              <span className="text-content-muted block text-xs font-medium">
+              <span className="block text-xs font-medium text-content-muted">
                 Category
               </span>
               <div className="mt-2 flex items-center gap-1.5">
-                {program.categories
-                  .slice(0, 1)
-                  ?.map((category) => (
-                    <ProgramCategory
-                      key={category}
-                      category={category}
-                      onClick={() =>
-                        router.push(getMarketplaceCategoryHref(category))
-                      }
-                    />
-                  ))}
+                {program.categories.slice(0, 1)?.map((category) => (
+                  <ProgramCategory
+                    key={category}
+                    category={category}
+                    onClick={() =>
+                      router.push(getMarketplaceCategoryHref(category))
+                    }
+                  />
+                ))}
                 {program.categories.length > 1 && (
                   <Tooltip
                     content={
@@ -103,7 +101,7 @@ export function MarketplaceProgramCard({
                       </div>
                     }
                   >
-                    <div className="text-content-subtle -ml-1.5 flex size-6 items-center justify-center rounded-md text-xs font-medium">
+                    <div className="-ml-1.5 flex size-6 items-center justify-center rounded-md text-xs font-medium text-content-subtle">
                       +{program.categories.length - 1}
                     </div>
                   </Tooltip>
@@ -125,7 +123,7 @@ export function MarketplaceProgramCardSkeleton({
   return (
     <div
       className={cn(
-        "border-border-subtle h-full rounded-xl border bg-white p-6",
+        "h-full rounded-xl border border-border-subtle bg-white p-6",
         className,
       )}
     >

@@ -161,7 +161,7 @@ export default function NewSaleAlertProgramOwner({
                     </Text>
                   </Column>
                   <Column align="right">
-                    <Text className="m-0 text-sm font-medium leading-6 text-neutral-600">
+                    <Text className="m-0 text-sm leading-6 font-medium text-neutral-600">
                       {saleAmountInDollars} USD
                     </Text>
                   </Column>
@@ -174,7 +174,7 @@ export default function NewSaleAlertProgramOwner({
                     </Text>
                   </Column>
                   <Column align="right">
-                    <Text className="m-0 text-sm font-medium leading-6 text-neutral-600">
+                    <Text className="m-0 text-sm leading-6 font-medium text-neutral-600">
                       -{earningsInDollars} USD
                     </Text>
                   </Column>
@@ -184,12 +184,12 @@ export default function NewSaleAlertProgramOwner({
 
                 <Row>
                   <Column>
-                    <Text className="m-0 text-sm font-medium leading-6 text-black">
+                    <Text className="m-0 text-sm leading-6 font-medium text-black">
                       Your profit
                     </Text>
                   </Column>
                   <Column align="right">
-                    <Text className="m-0 text-sm font-medium leading-6 text-black">
+                    <Text className="m-0 text-sm leading-6 font-medium text-black">
                       {profitInDollars} USD
                     </Text>
                   </Column>

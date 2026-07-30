@@ -65,7 +65,7 @@ export default function ProgramPayoutThankYou({
       <Tailwind>
         <Body className="mx-auto my-auto bg-neutral-100 font-sans">
           <Container className="mx-auto my-0 max-w-[600px] py-0">
-            <Section className="mb-8 mt-0 text-center">
+            <Section className="mt-0 mb-8 text-center">
               <Img
                 src="https://assets.dub.co/misc/payout-thank-you-header.jpg"
                 width="600"
@@ -99,7 +99,7 @@ export default function ProgramPayoutThankYou({
               </Text>
             </Section>
 
-            <Section className="mb-8 mt-6 text-center">
+            <Section className="mt-6 mb-8 text-center">
               <Link
                 href={`https://app.dub.co/${workspace.slug}/settings/billing/invoices?type=partnerPayout`}
                 className="box-border inline-block rounded-lg bg-black px-6 py-4 text-center text-sm leading-none text-white no-underline"

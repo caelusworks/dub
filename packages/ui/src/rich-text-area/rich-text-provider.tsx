@@ -42,8 +42,7 @@ export const DEFAULT_RICH_TEXT_FEATURES = FEATURES;
 const OPTIONAL_FEATURES = ["imageControls"] as const;
 
 export type RichTextFeature =
-  | (typeof FEATURES)[number]
-  | (typeof OPTIONAL_FEATURES)[number];
+  (typeof FEATURES)[number] | (typeof OPTIONAL_FEATURES)[number];
 
 type RichTextProviderProps = PropsWithChildren<{
   placeholder?: string;

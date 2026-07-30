@@ -15,7 +15,7 @@ export function PartnerInfoStats({
   return (
     <div
       className={cn(
-        "xs:grid-cols-3 grid shrink-0 grid-cols-2 gap-px overflow-hidden rounded-lg border border-neutral-200 bg-neutral-200",
+        "grid shrink-0 grid-cols-2 gap-px overflow-hidden rounded-lg border border-neutral-200 bg-neutral-200 xs:grid-cols-3",
         className,
       )}
     >
@@ -71,7 +71,7 @@ export function PartnerInfoStats({
           target="_blank"
           className="group relative flex flex-col bg-neutral-50 p-3 transition-colors duration-150 hover:bg-neutral-100"
         >
-          <ArrowUpRight2 className="text-content-subtle absolute right-3 top-3 size-3.5 opacity-50 transition-opacity duration-150 group-hover:opacity-100" />
+          <ArrowUpRight2 className="absolute right-3 top-3 size-3.5 text-content-subtle opacity-50 transition-opacity duration-150 group-hover:opacity-100" />
           <span className="text-xs text-neutral-500">{label}</span>
           <span className="text-base text-neutral-900">{value}</span>
         </Link>

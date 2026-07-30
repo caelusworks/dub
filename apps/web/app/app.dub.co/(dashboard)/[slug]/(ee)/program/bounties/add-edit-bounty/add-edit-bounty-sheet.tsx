@@ -143,7 +143,7 @@ function BountySheetContent({ setIsOpen, bounty }: BountySheetProps) {
                   </ProgramSheetAccordionTrigger>
                   <ProgramSheetAccordionContent>
                     <div className="space-y-4">
-                      <p className="text-content-default text-sm">
+                      <p className="text-sm text-content-default">
                         Choose the type of bounty you want to create
                       </p>
                       <CardSelector
@@ -417,7 +417,7 @@ function BountySheetContent({ setIsOpen, bounty }: BountySheetProps) {
                               <div className="rounded-lg border border-neutral-200 bg-neutral-50/50 p-2.5 shadow-sm">
                                 <div className="flex items-center gap-2.5">
                                   <RewardIconSquare icon={CalendarIcon} />
-                                  <span className="text-content-default text-sm leading-relaxed">
+                                  <span className="text-sm leading-relaxed text-content-default">
                                     Partners can only submit{" "}
                                     <SubmissionWindowBadge
                                       value={submissionWindow}

@@ -80,13 +80,13 @@ function EditCustomerModal({
         >
           <div className="flex flex-col gap-4 px-4 py-6 text-left sm:px-6">
             <div>
-              <label className="text-content-emphasis text-sm font-normal">
+              <label className="text-sm font-normal text-content-emphasis">
                 Name
               </label>
               <input
                 type="text"
                 autoComplete="off"
-                className="border-border-subtle mt-2 block w-full rounded-lg text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+                className="mt-2 block w-full rounded-lg border-border-subtle text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
                 placeholder="John Doe"
                 autoFocus={!isMobile}
                 {...register("name", {
@@ -96,13 +96,13 @@ function EditCustomerModal({
             </div>
 
             <div>
-              <label className="text-content-emphasis text-sm font-normal">
+              <label className="text-sm font-normal text-content-emphasis">
                 Email
               </label>
               <input
                 type="email"
                 autoComplete="off"
-                className="border-border-subtle mt-2 block w-full rounded-lg text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+                className="mt-2 block w-full rounded-lg border-border-subtle text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
                 placeholder="marvin@email.com"
                 {...register("email", {
                   setValueAs: (value) => (value === "" ? null : value),
@@ -111,13 +111,13 @@ function EditCustomerModal({
             </div>
 
             <div>
-              <label className="text-content-emphasis text-sm font-normal">
+              <label className="text-sm font-normal text-content-emphasis">
                 External ID
               </label>
               <input
                 type="text"
                 autoComplete="off"
-                className="border-border-subtle mt-2 block w-full rounded-lg text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+                className="mt-2 block w-full rounded-lg border-border-subtle text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
                 placeholder="user_1K92AP652K2R7ANJAAHKENJNF"
                 {...register("externalId", {
                   setValueAs: (value) => (value === "" ? null : value),
@@ -126,13 +126,13 @@ function EditCustomerModal({
             </div>
 
             <div>
-              <label className="text-content-emphasis text-sm font-normal">
+              <label className="text-sm font-normal text-content-emphasis">
                 Stripe Customer ID
               </label>
               <input
                 type="text"
                 autoComplete="off"
-                className="border-border-subtle mt-2 block w-full rounded-lg text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
+                className="mt-2 block w-full rounded-lg border-border-subtle text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm"
                 placeholder="cus_N1YwZ8JxQ2AbC9"
                 {...register("stripeCustomerId", {
                   setValueAs: (value) => (value === "" ? null : value),

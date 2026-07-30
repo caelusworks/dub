@@ -33,7 +33,7 @@ export function OTPInputField({ value, onChange, label }: OTPInputFieldProps) {
                 >
                   {char}
                   {hasFakeCaret && (
-                    <div className="animate-caret-blink pointer-events-none absolute inset-0 flex items-center justify-center">
+                    <div className="pointer-events-none absolute inset-0 flex animate-caret-blink items-center justify-center">
                       <div className="h-5 w-px bg-black" />
                     </div>
                   )}

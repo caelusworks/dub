@@ -15,11 +15,7 @@ import {
 import { Footer } from "../components/footer";
 
 export type EmailDomainStatus =
-  | "pending"
-  | "verified"
-  | "failed"
-  | "temporary_failure"
-  | "not_started";
+  "pending" | "verified" | "failed" | "temporary_failure" | "not_started";
 
 export default function EmailDomainStatusChanged({
   email = "panic@thedis.co",

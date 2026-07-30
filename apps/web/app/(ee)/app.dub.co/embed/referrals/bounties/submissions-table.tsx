@@ -53,7 +53,7 @@ export function EmbedBountySubmissionsTable({
                     : config?.label;
                 return (
                   <div className="flex items-center gap-3">
-                    <span className="text-content-subtle min-w-[52px] text-sm font-medium leading-5 tracking-[-0.28px]">
+                    <span className="min-w-[52px] text-sm font-medium leading-5 tracking-[-0.28px] text-content-subtle">
                       {original.label}
                     </span>
                     {config && (
@@ -166,7 +166,7 @@ export function EmbedBountySubmissionsTable({
 
   return (
     <div className="flex flex-col gap-3">
-      <h2 className="text-content-emphasis text-sm font-semibold">
+      <h2 className="text-sm font-semibold text-content-emphasis">
         Submissions
       </h2>
       <Table {...tableProps} table={table} />

@@ -163,7 +163,7 @@ function MarkAllAsFraudModal({
                 </div>
                 <div className="flex items-center gap-3 p-3">
                   <div className="flex size-7 items-center justify-center rounded-full border border-neutral-200 bg-neutral-100">
-                    <InvoiceDollar className="text-content-default size-4" />
+                    <InvoiceDollar className="size-4 text-content-default" />
                   </div>
                   <span className="text-sm font-semibold text-neutral-900">
                     {commissionIds.length}{" "}
@@ -174,7 +174,7 @@ function MarkAllAsFraudModal({
             </div>
 
             <div>
-              <label className="text-content-emphasis text-sm font-normal">
+              <label className="text-sm font-normal text-content-emphasis">
                 Status
               </label>
               <Controller

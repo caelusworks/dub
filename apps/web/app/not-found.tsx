@@ -10,7 +10,7 @@ export default function NotFound() {
         <Link href="/" className="absolute left-4 top-3">
           <Wordmark className="h-6" />
         </Link>
-        <h1 className="font-display bg-gradient-to-r from-black to-neutral-600 bg-clip-text text-5xl font-semibold text-transparent">
+        <h1 className="bg-gradient-to-r from-black to-neutral-600 bg-clip-text font-display text-5xl font-semibold text-transparent">
           404
         </h1>
         <NotFoundHint />

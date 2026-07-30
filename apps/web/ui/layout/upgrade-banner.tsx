@@ -104,7 +104,7 @@ export function UpgradeBanner() {
                     : "payouts"}{" "}
                 limit
               </Link>
-              <span className="xs:inline hidden">
+              <span className="hidden xs:inline">
                 &nbsp;on your current plan
               </span>
               <span className="hidden md:inline">

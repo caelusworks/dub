@@ -22,9 +22,9 @@ export default function RiskHistoryLayout({
   return (
     <PageContent title={title} titleBackHref={`/${slug}/program/risks`}>
       <PageWidthWrapper>
-        <div className="border-border-subtle overflow-hidden rounded-xl border bg-neutral-100">
+        <div className="overflow-hidden rounded-xl border border-border-subtle bg-neutral-100">
           <RiskHistoryNav />
-          <div className="border-border-subtle -mx-px -mb-px rounded-xl border bg-white p-4">
+          <div className="-mx-px -mb-px rounded-xl border border-border-subtle bg-white p-4">
             {children}
           </div>
         </div>

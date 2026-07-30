@@ -18,7 +18,7 @@ export function Intro({ onStart }: { onStart: () => void }) {
         />
         <h2
           className={cn(
-            "text-content-emphasis text-2xl font-bold",
+            "text-2xl font-bold text-content-emphasis",
             "animate-slide-up-fade [--offset:10px] [animation-delay:0.2s] [animation-duration:1.5s] [animation-fill-mode:both]",
           )}
         >
@@ -27,7 +27,7 @@ export function Intro({ onStart }: { onStart: () => void }) {
       </div>
       <p
         className={cn(
-          "text-content-default max-w-[420px] text-pretty text-xl font-medium",
+          "max-w-[420px] text-pretty text-xl font-medium text-content-default",
           "animate-slide-up-fade [--offset:10px] [animation-delay:1.9s] [animation-duration:1s] [animation-fill-mode:both]",
         )}
       >

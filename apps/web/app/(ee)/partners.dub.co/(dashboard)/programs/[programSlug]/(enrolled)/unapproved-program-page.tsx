@@ -82,10 +82,10 @@ export function UnapprovedProgramPage({
           >
             {badge.label}
           </StatusBadge>
-          <h2 className="text-content-default mt-4 text-base font-semibold">
+          <h2 className="mt-4 text-base font-semibold text-content-default">
             {title}
           </h2>
-          <p className="text-content-subtle [&_strong]:text-content-default mt-2 max-w-sm text-balance text-sm font-medium [&_strong]:font-semibold">
+          <p className="mt-2 max-w-sm text-balance text-sm font-medium text-content-subtle [&_strong]:font-semibold [&_strong]:text-content-default">
             {description}{" "}
             {programEnrollment.status === "banned" && (
               <>

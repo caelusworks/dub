@@ -27,7 +27,7 @@ export function PartnerRewindBanner() {
         >
           <div
             className={cn(
-              "border-border-subtle relative mb-4 gap-x-2 overflow-hidden rounded-xl border bg-white sm:h-12 lg:mb-6",
+              "relative mb-4 gap-x-2 overflow-hidden rounded-xl border border-border-subtle bg-white sm:h-12 lg:mb-6",
             )}
           >
             <div className="absolute inset-0">
@@ -60,10 +60,10 @@ export function PartnerRewindBanner() {
                 </div>
 
                 <p
-                  className="text-content-subtle sm:@[1000px]/page:text-base flex min-w-0 flex-col px-3 text-base sm:block sm:truncate sm:px-0 sm:text-sm"
+                  className="flex min-w-0 flex-col px-3 text-base text-content-subtle sm:block sm:truncate sm:px-0 sm:text-sm sm:@[1000px]/page:text-base"
                   title="Your Dub Partner Rewind &rsquo;25 is ready. See how you performed this year on Dub Partners!"
                 >
-                  <span className="text-content-emphasis font-semibold">
+                  <span className="font-semibold text-content-emphasis">
                     Your Dub Partner Rewind &rsquo;25 is ready.
                   </span>{" "}
                   <span className="font-medium">

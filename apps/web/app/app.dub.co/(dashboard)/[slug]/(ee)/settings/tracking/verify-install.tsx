@@ -15,7 +15,7 @@ const VerifyInstallIcon = ({ status }: { status: VerifyStatus }) => {
   return (
     <div
       className={cn(
-        "text-content-default flex size-10 items-center justify-center rounded-full",
+        "flex size-10 items-center justify-center rounded-full text-content-default",
         status === "pending" && "border border-blue-200 bg-white",
         status === "error" && "bg-red-400 text-red-900",
         status === "success" && "bg-green-400 text-green-800",
@@ -93,7 +93,7 @@ const VerifyInstall = () => {
           <div className="flex flex-col items-center">
             <VerifyInstallIcon status={status} />
 
-            <div className="text-content-emphasis mt-3 font-semibold">
+            <div className="mt-3 font-semibold text-content-emphasis">
               {error
                 ? "Unable to connect"
                 : response
@@ -101,7 +101,7 @@ const VerifyInstall = () => {
                   : "Verify your install"}
             </div>
 
-            <p className="text-content-emphasis text-sm font-medium">
+            <p className="text-sm font-medium text-content-emphasis">
               {error ? (
                 <>
                   Try again. For more help, see our{" "}

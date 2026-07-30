@@ -88,7 +88,7 @@ export default function PartnerPayoutWithdrawalCompleted({
             </Text>
 
             {payout.traceId && (
-              <Text className="break-all font-mono text-sm text-purple-600">
+              <Text className="font-mono text-sm break-all text-purple-600">
                 {payout.traceId}
               </Text>
             )}

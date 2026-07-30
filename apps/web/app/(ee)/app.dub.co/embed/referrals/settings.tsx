@@ -45,7 +45,7 @@ function PayoutMethodButton({
       >
         <div
           className={cn(
-            "border-border-subtle bg-bg-subtle text-content-subtle flex cursor-not-allowed items-center justify-center whitespace-nowrap rounded-lg border text-sm",
+            "flex cursor-not-allowed items-center justify-center whitespace-nowrap rounded-lg border border-border-subtle bg-bg-subtle text-sm text-content-subtle",
             className,
           )}
         >
@@ -70,7 +70,7 @@ function SettingsErrorAlert({ message }: { message: string }) {
   return (
     <div
       role="alert"
-      className="bg-bg-error text-content-error border-border-error mb-3 flex items-start gap-2 rounded-lg border px-3 py-2.5"
+      className="border-border-error mb-3 flex items-start gap-2 rounded-lg border bg-bg-error px-3 py-2.5 text-content-error"
     >
       <AlertCircleFill className="mt-0.5 size-4 shrink-0" />
       <p className="text-sm font-medium leading-5">{message}</p>
@@ -136,7 +136,7 @@ function TremendousEmailForm({
   };
 
   return (
-    <div className="bg-bg-muted border-border-subtle border-t p-3">
+    <div className="border-t border-border-subtle bg-bg-muted p-3">
       {errorMessage && <SettingsErrorAlert message={errorMessage} />}
       <form
         onSubmit={handleSubmit}
@@ -146,7 +146,7 @@ function TremendousEmailForm({
         <div className="min-w-0 flex-1 space-y-1.5">
           <label
             htmlFor="tremendous-email"
-            className="text-content-emphasis block text-sm font-medium"
+            className="block text-sm font-medium text-content-emphasis"
           >
             Email
           </label>
@@ -160,7 +160,7 @@ function TremendousEmailForm({
             }}
             placeholder="panic@thedis.co"
             required
-            className="border-border-subtle text-content-default bg-bg-default focus:border-border-emphasis h-9 w-full rounded-lg border px-3 text-sm focus:outline-none focus:ring-neutral-500 dark:focus:border-neutral-400 dark:focus:ring-neutral-400"
+            className="h-9 w-full rounded-lg border border-border-subtle bg-bg-default px-3 text-sm text-content-default focus:border-border-emphasis focus:outline-none focus:ring-neutral-500 dark:focus:border-neutral-400 dark:focus:ring-neutral-400"
           />
         </div>
         <Button
@@ -232,11 +232,11 @@ function TremendousOtpVerifyForm({
   };
 
   return (
-    <div className="bg-bg-muted border-border-subtle border-t p-3">
+    <div className="border-t border-border-subtle bg-bg-muted p-3">
       {errorMessage && <SettingsErrorAlert message={errorMessage} />}
-      <p className="text-content-subtle text-sm">
+      <p className="text-sm text-content-subtle">
         Enter the six digit verification code sent to{" "}
-        <span className="text-content-default font-medium">{email}</span>
+        <span className="font-medium text-content-default">{email}</span>
       </p>
       <div className="mt-3 flex flex-wrap items-center gap-2">
         <OTPInput
@@ -254,15 +254,15 @@ function TremendousOtpVerifyForm({
                   key={idx}
                   className={cn(
                     "relative flex size-10 items-center justify-center text-lg font-medium",
-                    "text-content-emphasis border-border-default bg-bg-default rounded-lg border transition-all",
+                    "rounded-lg border border-border-default bg-bg-default text-content-emphasis transition-all",
                     isActive &&
-                      "border-border-emphasis ring-border-emphasis z-10 ring-2",
+                      "z-10 border-border-emphasis ring-2 ring-border-emphasis",
                   )}
                 >
                   {char}
                   {hasFakeCaret && (
-                    <div className="animate-caret-blink pointer-events-none absolute inset-0 flex items-center justify-center">
-                      <div className="bg-content-emphasis h-4 w-px" />
+                    <div className="pointer-events-none absolute inset-0 flex animate-caret-blink items-center justify-center">
+                      <div className="h-4 w-px bg-content-emphasis" />
                     </div>
                   )}
                 </div>
@@ -305,15 +305,15 @@ function PayoutMethodCard({
   return (
     <div
       className={cn(
-        "border-border-subtle flex items-center rounded-lg border p-3",
+        "flex items-center rounded-lg border border-border-subtle p-3",
         !isConnected && "bg-bg-muted",
       )}
     >
       <div className="flex min-w-0 flex-1 items-center gap-3">
-        <div className="border-border-muted bg-bg-default flex size-8 shrink-0 items-center justify-center rounded-lg border">
-          <Icon className="text-content-emphasis size-[18px]" />
+        <div className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-border-muted bg-bg-default">
+          <Icon className="size-[18px] text-content-emphasis" />
         </div>
-        <h2 className="text-content-emphasis text-sm font-semibold">{label}</h2>
+        <h2 className="text-sm font-semibold text-content-emphasis">{label}</h2>
         {showRecommendedBadge && (
           <Badge
             variant="blue"
@@ -370,19 +370,19 @@ function TremendousGiftCardOption({
   return (
     <div
       className={cn(
-        "border-border-subtle overflow-hidden rounded-lg border",
+        "overflow-hidden rounded-lg border border-border-subtle",
         !isConnected && "bg-bg-muted",
         hasAnyConnected && !isConnected && "opacity-50",
       )}
     >
       <div className="flex items-center gap-3 p-3">
         <div className="flex min-w-0 flex-1 items-center gap-3">
-          <div className="border-border-muted bg-bg-default flex size-8 shrink-0 items-center justify-center rounded-lg border">
-            <Gift className="text-content-emphasis size-[18px]" />
+          <div className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-border-muted bg-bg-default">
+            <Gift className="size-[18px] text-content-emphasis" />
           </div>
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-2">
-              <h2 className="text-content-emphasis text-sm font-semibold">
+              <h2 className="text-sm font-semibold text-content-emphasis">
                 Gift Cards
               </h2>
               {!hasAnyConnected && (
@@ -402,7 +402,7 @@ function TremendousGiftCardOption({
                 </Badge>
               )}
             </div>
-            <p className="text-content-subtle mt-0.5 text-xs">
+            <p className="mt-0.5 text-xs text-content-subtle">
               Gift card payouts are limited to{" "}
               {currencyFormatter(TREMENDOUS_MAX_PAYOUT_AMOUNT_CENTS)} per
               payout.
@@ -511,14 +511,14 @@ export function ReferralsEmbedSettings() {
   const isCashConnected = hasAnyConnected && !isGiftCardConnected;
 
   return (
-    <div className="border-border-muted bg-bg-default space-y-4 rounded-lg border p-4 sm:p-6">
+    <div className="space-y-4 rounded-lg border border-border-muted bg-bg-default p-4 sm:p-6">
       <div className="space-y-1">
-        <h3 className="text-content-emphasis text-base font-semibold">
+        <h3 className="text-base font-semibold text-content-emphasis">
           Payout method
         </h3>
-        <p className="text-content-subtle text-sm">
+        <p className="text-sm text-content-subtle">
           Select your payout method.{" "}
-          <span className="text-content-default font-medium">
+          <span className="font-medium text-content-default">
             This can&apos;t be changed after a method is connected.
           </span>
         </p>

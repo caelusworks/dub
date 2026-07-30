@@ -96,7 +96,7 @@ export default function WorkspaceDisabled({
               to re-enable your links.
             </Text>
 
-            <Section className="mb-8 mt-6">
+            <Section className="mt-6 mb-8">
               <Link
                 className="w-full rounded-lg bg-black px-6 py-3 text-center text-[12px] font-semibold text-white no-underline"
                 href={upgradeUrl}

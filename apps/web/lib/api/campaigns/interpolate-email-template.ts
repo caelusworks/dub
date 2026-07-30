@@ -68,7 +68,7 @@ export function interpolateEmailTemplate({
     /{{\s*([\w.]+)\s*(?:\|\s*([^}]*?))?\s*}}/g,
     (_, key, fallback) => {
       const value = variables[key];
-      const resolved = value != null ? String(value) : fallback?.trim() ?? "";
+      const resolved = value != null ? String(value) : (fallback?.trim() ?? "");
       if (key === "PartnerLink") {
         return partnerLinkToAnchorOrText(resolved);
       }

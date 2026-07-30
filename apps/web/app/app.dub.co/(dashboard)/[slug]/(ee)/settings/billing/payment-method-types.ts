@@ -18,12 +18,12 @@ export const PaymentMethodTypesList = (paymentMethod?: Stripe.PaymentMethod) =>
       type: "card",
       title: "Card",
       icon: paymentMethod?.card
-        ? {
+        ? ({
             amex: CardAmex,
             discover: CardDiscover,
             mastercard: CardMastercard,
             visa: CardVisa,
-          }[paymentMethod?.card.brand] ?? CreditCard
+          }[paymentMethod?.card.brand] ?? CreditCard)
         : CreditCard,
       description: paymentMethod?.card
         ? `Connected ${capitalize(paymentMethod.card.brand)} ***${paymentMethod.card.last4}`

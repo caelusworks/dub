@@ -58,7 +58,7 @@ export function PageContentHeader({
                     <ChevronLeft className="size-5" />
                   </Link>
                 )}
-                <h1 className="text-content-emphasis min-w-0 text-lg font-semibold leading-7">
+                <h1 className="min-w-0 text-lg font-semibold leading-7 text-content-emphasis">
                   {title}
                 </h1>
                 {finalTitleInfo}

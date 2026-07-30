@@ -152,7 +152,7 @@ function TimestampTooltipContent({
   return (
     <div className="flex max-w-[360px] flex-col gap-2 px-2.5 py-2 text-left text-xs">
       {diff > 0 && (
-        <span className="text-content-subtle cursor-default">
+        <span className="cursor-default text-content-subtle">
           {prefix ? `${prefix} ` : ""}
           {relative}
         </span>
@@ -164,7 +164,7 @@ function TimestampTooltipContent({
               key={idx}
               className={cn(
                 interactive &&
-                  "before:bg-bg-emphasis relative select-none before:absolute before:-inset-x-1 before:inset-y-0 before:rounded before:opacity-0 before:content-[''] hover:cursor-copy hover:before:opacity-60 active:before:opacity-100",
+                  "relative select-none before:absolute before:-inset-x-1 before:inset-y-0 before:rounded before:bg-bg-emphasis before:opacity-0 before:content-[''] hover:cursor-copy hover:before:opacity-60 active:before:opacity-100",
               )}
               onClick={
                 interactive
@@ -190,8 +190,8 @@ function TimestampTooltipContent({
               <td className="relative py-0.5">
                 <span
                   className={cn(
-                    "text-content-subtle truncate",
-                    shortLabels && "bg-bg-inverted/10 rounded px-1 font-mono",
+                    "truncate text-content-subtle",
+                    shortLabels && "rounded bg-bg-inverted/10 px-1 font-mono",
                   )}
                   title={shortLabels ? row.label : undefined}
                 >
@@ -200,7 +200,7 @@ function TimestampTooltipContent({
               </td>
               <td
                 className={cn(
-                  "text-content-default relative whitespace-nowrap py-0.5 pl-3",
+                  "relative whitespace-nowrap py-0.5 pl-3 text-content-default",
                   shortLabels && "pl-2",
                   row.valueMono && "font-mono",
                 )}

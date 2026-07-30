@@ -35,7 +35,7 @@ export const HostnameSection = ({ className }: { className?: string }) => {
   } else {
     content = (
       <div className="flex items-center justify-center rounded-xl border border-neutral-200 bg-neutral-100 p-3">
-        <p className="text-content-subtle text-sm font-medium">
+        <p className="text-sm font-medium text-content-subtle">
           No hostnames added
         </p>
       </div>
@@ -47,7 +47,7 @@ export const HostnameSection = ({ className }: { className?: string }) => {
       <div className={cn("flex flex-col gap-2 p-3", className)}>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1">
-            <h2 className="text-content-emphasis flex-1 text-sm font-semibold">
+            <h2 className="flex-1 text-sm font-semibold text-content-emphasis">
               Allowed hostnames
             </h2>
             <InfoTooltip content="Allowlist domains that you want to allow client-side click tracking on." />

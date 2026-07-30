@@ -8,7 +8,7 @@ export default function ProgramPartnerCommentsPage() {
 
   return (
     <>
-      <h2 className="text-content-emphasis text-lg font-semibold">Comments</h2>
+      <h2 className="text-lg font-semibold text-content-emphasis">Comments</h2>
       <PartnerComments partnerId={partnerId} />
     </>
   );

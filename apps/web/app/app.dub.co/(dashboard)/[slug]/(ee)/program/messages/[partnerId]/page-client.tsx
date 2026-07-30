@@ -178,12 +178,12 @@ export function ProgramMessagesPartnerPageClient() {
       }}
     >
       <div className="flex h-full min-h-0 flex-col">
-        <div className="border-border-subtle flex h-12 shrink-0 items-center justify-between gap-4 border-b px-4 sm:h-16 sm:px-6">
+        <div className="flex h-12 shrink-0 items-center justify-between gap-4 border-b border-border-subtle px-4 sm:h-16 sm:px-6">
           <div className="flex items-center gap-2">
             <button
               type="button"
               onClick={() => setCurrentPanel("index")}
-              className="@[800px]/page:hidden shrink-0 rounded-lg p-1.5 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
+              className="shrink-0 rounded-lg p-1.5 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900 @[800px]/page:hidden"
             >
               <ChevronLeft className="size-3.5" />
             </button>
@@ -201,7 +201,7 @@ export function ProgramMessagesPartnerPageClient() {
               ) : (
                 <>
                   <PartnerAvatar partner={partner} className="size-6" />
-                  <h2 className="text-content-emphasis text-lg font-semibold leading-7">
+                  <h2 className="text-lg font-semibold leading-7 text-content-emphasis">
                     {partner?.name ?? "Partner"}
                   </h2>
                 </>
@@ -315,13 +315,13 @@ export function ProgramMessagesPartnerPageClient() {
       <div
         className={cn(
           "absolute right-0 top-0 h-full min-h-0 w-0 overflow-hidden bg-white shadow-lg transition-[width]",
-          "@[960px]/page:shadow-none @[960px]/page:relative",
+          "@[960px]/page:relative @[960px]/page:shadow-none",
           isRightPanelOpen && "w-full sm:w-[340px]",
         )}
       >
-        <div className="border-border-subtle flex size-full min-h-0 w-full flex-col border-l sm:w-[340px]">
-          <div className="border-border-subtle flex h-12 shrink-0 items-center justify-between gap-4 border-b px-4 sm:h-16 sm:px-6">
-            <h2 className="text-content-emphasis text-lg font-semibold leading-7">
+        <div className="flex size-full min-h-0 w-full flex-col border-l border-border-subtle sm:w-[340px]">
+          <div className="flex h-12 shrink-0 items-center justify-between gap-4 border-b border-border-subtle px-4 sm:h-16 sm:px-6">
+            <h2 className="text-lg font-semibold leading-7 text-content-emphasis">
               Profile
             </h2>
             <div className="flex items-center gap-2">
@@ -329,13 +329,13 @@ export function ProgramMessagesPartnerPageClient() {
               <button
                 type="button"
                 onClick={() => setIsRightPanelOpen(false)}
-                className="@[960px]/page:hidden rounded-lg p-2 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
+                className="rounded-lg p-2 text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900 @[960px]/page:hidden"
               >
                 <X className="size-4" />
               </button>
             </div>
           </div>
-          <div className="bg-bg-muted scrollbar-hide flex grow flex-col gap-4 overflow-y-scroll p-6">
+          <div className="flex grow flex-col gap-4 overflow-y-scroll bg-bg-muted p-6 scrollbar-hide">
             {enrolledPartnerLoading ? (
               <>
                 <PartnerInfoSectionSkeleton />
@@ -392,7 +392,7 @@ function PartnerInfoStatsSkeleton({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "xs:grid-cols-3 grid shrink-0 grid-cols-2 gap-px overflow-hidden rounded-lg border border-neutral-200 bg-neutral-200",
+        "grid shrink-0 grid-cols-2 gap-px overflow-hidden rounded-lg border border-neutral-200 bg-neutral-200 xs:grid-cols-3",
         className,
       )}
     >

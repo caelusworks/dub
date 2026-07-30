@@ -44,13 +44,13 @@ export function LogDetailPageClient() {
               href={`/${slug}/settings/logs`}
               aria-label="Back to logs"
               title="Back to logs"
-              className="bg-bg-subtle hover:bg-bg-emphasis flex size-8 shrink-0 items-center justify-center rounded-lg transition-[transform,background-color] duration-150 active:scale-95"
+              className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle transition-[transform,background-color] duration-150 hover:bg-bg-emphasis active:scale-95"
             >
               <StackY3 className="size-4" />
             </Link>
             <div className="flex items-center gap-1.5">
-              <ChevronRight className="text-content-subtle size-2.5 shrink-0 [&_*]:stroke-2" />
-              <span className="text-content-emphasis text-lg font-semibold leading-7">
+              <ChevronRight className="size-2.5 shrink-0 text-content-subtle [&_*]:stroke-2" />
+              <span className="text-lg font-semibold leading-7 text-content-emphasis">
                 {log?.method} {log?.route_pattern || log?.path}
               </span>
             </div>
@@ -228,7 +228,7 @@ function LogDetailContent({ log }: { log: EnrichedApiLog }) {
       <div className="order-last min-w-0 flex-1 lg:order-first">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-2">
-            <h3 className="text-content-emphasis text-lg font-semibold">
+            <h3 className="text-lg font-semibold text-content-emphasis">
               Response body
             </h3>
             {highlightedBodies.response ? (
@@ -244,7 +244,7 @@ function LogDetailContent({ log }: { log: EnrichedApiLog }) {
           </div>
           {log.query_params && (
             <div className="flex flex-col gap-2">
-              <h3 className="text-content-emphasis text-lg font-semibold">
+              <h3 className="text-lg font-semibold text-content-emphasis">
                 Query parameters
               </h3>
               <div
@@ -257,7 +257,7 @@ function LogDetailContent({ log }: { log: EnrichedApiLog }) {
           )}
           {hasJsonBody(log.request_body) && (
             <div className="flex flex-col gap-2">
-              <h3 className="text-content-emphasis text-lg font-semibold">
+              <h3 className="text-lg font-semibold text-content-emphasis">
                 Request body
               </h3>
               <div
@@ -274,7 +274,7 @@ function LogDetailContent({ log }: { log: EnrichedApiLog }) {
       {/* Right: Log details sidebar */}
       <div className="order-first w-full shrink-0 lg:order-last lg:w-[360px]">
         <div className="rounded-xl border border-neutral-200 bg-white p-4">
-          <h3 className="text-content-emphasis mb-2 text-base font-semibold">
+          <h3 className="mb-2 text-base font-semibold text-content-emphasis">
             Log details
           </h3>
           <div className="flex flex-col gap-1">

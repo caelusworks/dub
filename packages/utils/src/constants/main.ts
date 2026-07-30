@@ -2,7 +2,8 @@
 // Bare hostname, no scheme — APP_HOSTNAMES is matched against the Host header.
 const SELF_HOSTED_APP_DOMAIN = process.env.NEXT_PUBLIC_APP_DOMAIN;
 
-export const SHORT_DOMAIN = process.env.NEXT_PUBLIC_APP_SHORT_DOMAIN || "dub.sh";
+export const SHORT_DOMAIN =
+  process.env.NEXT_PUBLIC_APP_SHORT_DOMAIN || "dub.sh";
 
 export const APP_HOSTNAMES = new Set(
   [

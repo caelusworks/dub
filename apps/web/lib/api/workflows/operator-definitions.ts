@@ -1,8 +1,5 @@
 export type ConditionValue =
-  | number
-  | { min?: number; max?: number }
-  | string
-  | string[];
+  number | { min?: number; max?: number } | string | string[];
 
 type WorkflowOperator = {
   name: string;

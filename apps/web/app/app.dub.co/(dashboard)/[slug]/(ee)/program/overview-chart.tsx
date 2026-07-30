@@ -136,7 +136,7 @@ export function OverviewChart() {
                     ? total
                     : total / 100
                 }
-                className="text-content-emphasis block text-3xl font-medium"
+                className="block text-3xl font-medium text-content-emphasis"
                 {...(viewType === "leads" || viewType === "applications"
                   ? {}
                   : {
@@ -184,7 +184,7 @@ export function OverviewChart() {
             <LoadingSpinner />
           </div>
         ) : error ? (
-          <div className="text-content-subtle flex size-full items-center justify-center text-sm">
+          <div className="flex size-full items-center justify-center text-sm text-content-subtle">
             Failed to load data
           </div>
         ) : (

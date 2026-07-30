@@ -150,7 +150,7 @@ function ConversionTrackingPaywall() {
   const { slug } = useWorkspace();
 
   return (
-    <div className="animate-slide-up-fade pointer-events-none absolute inset-0 flex items-center justify-center pt-24">
+    <div className="pointer-events-none absolute inset-0 flex animate-slide-up-fade items-center justify-center pt-24">
       <div className="pointer-events-auto flex flex-col items-center">
         <Link
           href="https://d.to/conversions"

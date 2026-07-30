@@ -274,13 +274,14 @@ export type UtmTemplateWithUserProps = UtmTemplateProps & {
 export type PlanProps = (typeof plans)[number];
 
 export type BetaFeatures =
-  | "analyticsSettingsSiteVisitTracking"
-  | "noProrationUpgrade";
+  "analyticsSettingsSiteVisitTracking" | "noProrationUpgrade";
 
 export type PartnerBetaFeatures = "postbacks";
 
-export interface WorkspaceProps
-  extends Omit<Project, "siteVisitTrackingSettings"> {
+export interface WorkspaceProps extends Omit<
+  Project,
+  "siteVisitTrackingSettings"
+> {
   logo: string | null;
   plan: PlanProps;
   siteVisitTrackingSettings: SiteVisitTrackingSettingsValue | null;

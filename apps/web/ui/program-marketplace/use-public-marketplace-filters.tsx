@@ -42,8 +42,7 @@ export function usePublicMarketplaceFilters({
       ? searchParamsObj.sortOrder
       : undefined;
   const activeRewardType = searchParamsObj.rewardType as
-    | MarketplaceRewardType
-    | undefined;
+    MarketplaceRewardType | undefined;
 
   const filters = useMemo(
     () => [

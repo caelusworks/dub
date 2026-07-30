@@ -211,8 +211,7 @@ export async function syncCustomer({
   waitUntil(
     (async () => {
       let webhookPartner:
-        | ReturnType<typeof constructWebhookPartner>
-        | undefined;
+        ReturnType<typeof constructWebhookPartner> | undefined;
 
       if (link.programId && link.partnerId) {
         const programEnrollment = await prisma.programEnrollment.findUnique({

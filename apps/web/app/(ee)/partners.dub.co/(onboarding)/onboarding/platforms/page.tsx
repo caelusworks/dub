@@ -16,12 +16,12 @@ export default function OnboardingPlatformsPage() {
         Your social and web platforms
       </h1>
 
-      <p className="animate-slide-up-fade text-content-subtle mt-1 text-base [animation-delay:500ms] [animation-duration:1s] [animation-fill-mode:both]">
+      <p className="mt-1 animate-slide-up-fade text-base text-content-subtle [animation-delay:500ms] [animation-duration:1s] [animation-fill-mode:both]">
         Verifying your social and web platforms will improve your reputation
         score and rank you higher in our partner network.
       </p>
 
-      <div className="animate-slide-up-fade w-full rounded-xl py-8 [animation-delay:750ms] [animation-duration:1s] [animation-fill-mode:both]">
+      <div className="w-full animate-slide-up-fade rounded-xl py-8 [animation-delay:750ms] [animation-duration:1s] [animation-fill-mode:both]">
         <div className="grid gap-4">
           <Suspense fallback={<PartnerPlatformsForm partner={null} />}>
             <OnboardingPlatformsFormRSC />

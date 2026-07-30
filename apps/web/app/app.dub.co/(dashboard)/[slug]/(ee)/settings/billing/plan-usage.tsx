@@ -589,7 +589,7 @@ function UsageTabCard({
                 >
                   {!loading && !unlimited && (
                     <div
-                      className="animate-slide-right-fade size-full"
+                      className="size-full animate-slide-right-fade"
                       style={{ "--offset": "-100%" } as CSSProperties}
                     >
                       <div

@@ -103,13 +103,13 @@ export function PayoutPaidCell({
       <div className="flex items-center gap-2">
         {user && <UserAvatar user={user} className="size-5 shrink-0" />}
         {paidAt ? (
-          <span className="hover:text-content-emphasis underline decoration-dotted underline-offset-2">
+          <span className="underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
             {formatDateSmart(paidAt, {
               month: "short",
             })}
           </span>
         ) : (
-          <span className="hover:text-content-emphasis text-content-muted flex items-center gap-1 underline decoration-dotted underline-offset-2">
+          <span className="flex items-center gap-1 text-content-muted underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
             <CircleHalfDottedClock className="size-3.5 shrink-0" />{" "}
             {formatDateSmart(initiatedAt, {
               month: "short",

@@ -42,12 +42,12 @@ export function MessagesUpsell() {
           <span className="text-base font-medium text-neutral-900">
             Messaging Center
           </span>
-          <p className="text-content-subtle mt-2 text-sm">
+          <p className="mt-2 text-sm text-content-subtle">
             <a
               href="https://dub.co/help/article/messaging-partners"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-content-default hover:text-content-emphasis cursor-alias underline decoration-dotted underline-offset-2"
+              className="cursor-alias text-content-default underline decoration-dotted underline-offset-2 hover:text-content-emphasis"
             >
               Messaging
             </a>{" "}
@@ -113,8 +113,8 @@ const DemoMessage = ({
           className={cn(
             "max-w-xs whitespace-pre-wrap rounded-xl px-4 py-2.5 text-sm",
             isCurrentUser
-              ? "text-content-inverted rounded-br bg-neutral-700"
-              : "text-content-default rounded-bl bg-neutral-100",
+              ? "rounded-br bg-neutral-700 text-content-inverted"
+              : "rounded-bl bg-neutral-100 text-content-default",
           )}
         >
           {text}

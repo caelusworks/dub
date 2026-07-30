@@ -93,7 +93,7 @@ export function CTA({
       </div>
 
       <div className="relative mx-auto mt-1.5 flex w-full max-w-xl flex-col items-center">
-        <h2 className="font-display text-balance text-4xl font-medium text-neutral-900 sm:text-[2.5rem] sm:leading-[1.15]">
+        <h2 className="text-balance font-display text-4xl font-medium text-neutral-900 sm:text-[2.5rem] sm:leading-[1.15]">
           {title}
         </h2>
         <p className="mt-5 text-balance text-base text-neutral-500 sm:text-xl">

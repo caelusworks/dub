@@ -25,7 +25,7 @@ export function StablecoinPayoutCard() {
           exit={{ opacity: 0, y: 10 }}
           transition={{ duration: 0.2 }}
           className={cn(
-            "border-border-subtle relative m-3 mt-8 select-none gap-2 overflow-hidden rounded-lg border bg-white",
+            "relative m-3 mt-8 select-none gap-2 overflow-hidden rounded-lg border border-border-subtle bg-white",
           )}
         >
           <div className="absolute inset-0 [background-image:radial-gradient(200%_150%_at_100%_0%,#635BFF22,transparent_50%)]">
@@ -50,10 +50,10 @@ export function StablecoinPayoutCard() {
             </div>
 
             <div className="flex flex-col">
-              <span className="text-content-emphasis line-clamp-1 text-sm font-semibold">
+              <span className="line-clamp-1 text-sm font-semibold text-content-emphasis">
                 Stablecoin payouts
               </span>
-              <p className="text-content-subtle line-clamp-2 text-xs">
+              <p className="line-clamp-2 text-xs text-content-subtle">
                 Connect your crypto wallet and get paid in USDC within minutes.
               </p>
             </div>

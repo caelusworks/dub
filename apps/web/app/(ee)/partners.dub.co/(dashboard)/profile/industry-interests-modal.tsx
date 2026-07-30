@@ -47,10 +47,10 @@ function IndustryInterestsModalInner({
   return (
     <div>
       <div className="p-4 pb-2 sm:p-6 sm:pb-4">
-        <h4 className="text-content-emphasis text-lg font-semibold">
+        <h4 className="text-lg font-semibold text-content-emphasis">
           Add industry Interests
         </h4>
-        <p className="text-content-subtle text-sm">
+        <p className="text-sm text-content-subtle">
           Add the industries you care and post content about.
         </p>
       </div>
@@ -58,13 +58,13 @@ function IndustryInterestsModalInner({
         <div
           ref={scrollRef}
           onScroll={updateScrollProgress}
-          className="scrollbar-hide flex max-h-[calc(100dvh-200px)] flex-wrap items-center gap-3 overflow-y-auto px-4 pb-8 pt-2 sm:px-6"
+          className="flex max-h-[calc(100dvh-200px)] flex-wrap items-center gap-3 overflow-y-auto px-4 pb-8 pt-2 scrollbar-hide sm:px-6"
         >
           {industryInterests.map((interest) => (
             <label
               key={interest.id}
               className={cn(
-                "ring-border-subtle flex cursor-pointer select-none items-center gap-2.5 rounded-full bg-white px-4 py-3 ring-1 transition-all duration-100 ease-out",
+                "flex cursor-pointer select-none items-center gap-2.5 rounded-full bg-white px-4 py-3 ring-1 ring-border-subtle transition-all duration-100 ease-out",
                 selectedInterests.includes(interest.id)
                   ? "bg-bg-muted ring-2 ring-black"
                   : isMaxSelected
@@ -88,7 +88,7 @@ function IndustryInterestsModalInner({
                 }
               />
               <interest.icon className="size-4 text-neutral-600" />
-              <span className="text-content-emphasis text-sm font-medium">
+              <span className="text-sm font-medium text-content-emphasis">
                 {interest.label}
               </span>
             </label>
@@ -102,9 +102,9 @@ function IndustryInterestsModalInner({
         />
       </div>
 
-      <div className="border-border-subtle flex items-center justify-between gap-4 border-t px-4 py-5 sm:px-6">
+      <div className="flex items-center justify-between gap-4 border-t border-border-subtle px-4 py-5 sm:px-6">
         <div>
-          <p className="text-content-subtle text-sm tabular-nums">
+          <p className="text-sm tabular-nums text-content-subtle">
             {selectedInterests.length}/{MAX_PARTNER_INDUSTRY_INTERESTS} selected
           </p>
         </div>

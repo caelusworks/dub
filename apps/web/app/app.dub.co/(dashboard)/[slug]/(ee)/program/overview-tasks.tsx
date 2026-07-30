@@ -68,13 +68,13 @@ export function OverviewTasks() {
 
   return (
     <ProgramOverviewCard className="py-4">
-      <h2 className="text-content-emphasis px-4 text-sm font-medium">Tasks</h2>
+      <h2 className="px-4 text-sm font-medium text-content-emphasis">Tasks</h2>
       <div className="mt-4 flex flex-col px-2">
         {tasks.map((task) => (
           <Link
             key={task.label}
             href={task.href}
-            className="hover:bg-bg-inverted/5 active:bg-bg-inverted/10 flex items-center justify-between gap-2 rounded-lg p-2 pl-3 text-sm font-semibold transition-colors"
+            className="flex items-center justify-between gap-2 rounded-lg p-2 pl-3 text-sm font-semibold transition-colors hover:bg-bg-inverted/5 active:bg-bg-inverted/10"
           >
             <div className="flex min-w-0 items-center gap-2.5">
               <task.icon className="size-4 shrink-0" />

@@ -14,8 +14,9 @@ import BountyApproved from "@dub/email/templates/bounty-approved";
 import { waitUntil } from "@vercel/functions";
 import * as z from "zod/v4";
 
-interface ApproveBountySubmissionParams
-  extends z.infer<typeof approveBountySubmissionBodySchema> {
+interface ApproveBountySubmissionParams extends z.infer<
+  typeof approveBountySubmissionBodySchema
+> {
   programId: string;
   bountyId?: string;
   submissionId: string;

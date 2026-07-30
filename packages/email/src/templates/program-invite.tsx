@@ -158,7 +158,7 @@ export default function ProgramInvite({
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-8 max-w-[600px] px-8 py-8">
-            <Section className="mb-8 mt-6">
+            <Section className="mt-6 mb-8">
               <Img src={DUB_WORDMARK} height="32" alt="Dub" />
             </Section>
 
@@ -214,13 +214,13 @@ export default function ProgramInvite({
                       />
                     </Column>
                     <Column className="w-full pl-3">
-                      <Text className="my-0 text-base font-semibold leading-5 text-black">
+                      <Text className="my-0 text-base leading-5 font-semibold text-black">
                         {program.name}
                       </Text>
                       {program.website && (
                         <Link
                           href={program.website}
-                          className="mt-0 block text-xs font-medium leading-4 text-neutral-500 underline"
+                          className="mt-0 block text-xs leading-4 font-medium text-neutral-500 underline"
                         >
                           {getPrettyUrl(program.website)}
                         </Link>
@@ -235,7 +235,7 @@ export default function ProgramInvite({
                         Rewards
                       </Text>
                       {rewards.map((reward) => (
-                        <Row key={reward.label} className="mb-0 mt-2">
+                        <Row key={reward.label} className="mt-2 mb-0">
                           <Column className="align-center">
                             <Img src={reward.icon} height="16" alt="" />
                           </Column>
@@ -256,7 +256,7 @@ export default function ProgramInvite({
                         Bounties
                       </Text>
                       {bounties.map((bounty) => (
-                        <Row key={bounty.label} className="mb-0 mt-2">
+                        <Row key={bounty.label} className="mt-2 mb-0">
                           <Column className="align-center">
                             <Img src={bounty.icon} height="16" alt="" />
                           </Column>

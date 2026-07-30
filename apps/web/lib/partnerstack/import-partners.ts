@@ -147,7 +147,7 @@ async function createPartner({
   const countryCode = country
     ? COUNTRY_CODES.includes(country)
       ? country
-      : COUNTRY_NAME_TO_CODE.get(country) ?? null
+      : (COUNTRY_NAME_TO_CODE.get(country) ?? null)
     : null;
 
   if (country && !countryCode) {

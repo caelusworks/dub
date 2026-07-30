@@ -46,9 +46,7 @@ export async function checkoutSessionCompleted({
   const stripeCustomerEmail = checkoutSession.customer_details?.email;
   const invoiceId = checkoutSession.invoice as string;
   const promotionCodeId = checkoutSession.discounts?.[0]?.promotion_code as
-    | string
-    | null
-    | undefined;
+    string | null | undefined;
 
   let customer: Customer | null = null;
   let clickEvent: ClickEventTB | null = null;
@@ -488,8 +486,8 @@ export async function checkoutSessionCompleted({
   ]);
 
   let result:
-    | Awaited<ReturnType<typeof queuePartnerCommissionCreation>>
-    | undefined = undefined;
+    Awaited<ReturnType<typeof queuePartnerCommissionCreation>> | undefined =
+    undefined;
 
   if (link && link.programId && link.partnerId) {
     const products = await getCheckoutSessionProducts({

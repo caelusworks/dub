@@ -137,7 +137,7 @@ function PartnerAdvancedSettingsModal({
           }
         })}
       >
-        <div className="scrollbar-hide max-h-[calc(100dvh-250px)] overflow-y-auto bg-neutral-50 p-4 sm:p-6">
+        <div className="max-h-[calc(100dvh-250px)] overflow-y-auto bg-neutral-50 p-4 scrollbar-hide sm:p-6">
           {/* Tenant ID */}
           <div>
             <label>

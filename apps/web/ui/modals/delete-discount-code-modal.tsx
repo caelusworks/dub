@@ -42,7 +42,7 @@ export const DeleteDiscountCodeModal = ({
       <div className="bg-neutral-50">
         <form onSubmit={onSubmit}>
           <div className="flex flex-col gap-y-4 px-4 py-6 text-left sm:px-6">
-            <div className="text-content-default text-sm font-medium">
+            <div className="text-sm font-medium text-content-default">
               <p>Are you sure you want to delete this discount code?</p>
             </div>
 
@@ -53,14 +53,14 @@ export const DeleteDiscountCodeModal = ({
               </div>
             </div>
 
-            <p className="text-content-default text-sm font-normal">
+            <p className="text-sm font-normal text-content-default">
               Deleting this code will remove it for the partner and they’ll no
               longer be able to use it – proceed with caution.
             </p>
 
             <div className="mt-6">
               <div className="flex items-center gap-2">
-                <p className="text-content-emphasis block text-sm font-medium">
+                <p className="block text-sm font-medium text-content-emphasis">
                   To verify, type{" "}
                   <span className="font-semibold">delete code</span> below
                 </p>

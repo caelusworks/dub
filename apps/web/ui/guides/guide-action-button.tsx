@@ -28,7 +28,7 @@ export const GuideActionButton = ({
   const prompt = `Read from ${guide.url} so I can ask questions about it.`;
 
   return (
-    <div className="border-border-subtle flex h-8 items-center overflow-hidden rounded-lg border">
+    <div className="flex h-8 items-center overflow-hidden rounded-lg border border-border-subtle">
       <Link href={guide.url} target="_blank" rel="noopener noreferrer">
         <Button
           text="Read full guide"

@@ -13,8 +13,9 @@ export type CommissionAnalyticsFilterKey = Extract<
   "partnerId" | "groupId" | "partnerTagId" | "type"
 >;
 
-interface UseCommissionAnalyticsProps<G extends CommissionAnalyticsGroupBy>
-  extends Partial<Omit<CommissionAnalyticsQuery, "groupBy">> {
+interface UseCommissionAnalyticsProps<
+  G extends CommissionAnalyticsGroupBy,
+> extends Partial<Omit<CommissionAnalyticsQuery, "groupBy">> {
   groupBy: G;
   exclude?: CommissionAnalyticsFilterKey[];
   enabled?: boolean;

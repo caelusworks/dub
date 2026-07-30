@@ -29,7 +29,7 @@ export function CustomerEarningsPageClient() {
       <h2 className="text-lg font-semibold text-neutral-900">
         Partner earnings
       </h2>
-      <div className="border-border-subtle flex flex-col overflow-hidden rounded-lg border">
+      <div className="flex flex-col overflow-hidden rounded-lg border border-border-subtle">
         <Link
           href={`/${slug}/program/partners/${customer?.partner?.id}`}
           target="_blank"
@@ -53,7 +53,7 @@ export function CustomerEarningsPageClient() {
           <ArrowUpRight className="size-3 shrink-0 -translate-x-0.5 translate-y-0.5 opacity-0 transition-[transform,opacity] group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
         </Link>
 
-        <div className="border-border-subtle border-t">
+        <div className="border-t border-border-subtle">
           <PartnerEarningsTable customerId={customerId} />
         </div>
       </div>
@@ -92,7 +92,7 @@ const PartnerEarningsTable = memo(({ customerId }: { customerId: string }) => {
       totalCommissions={
         isTotalCommissionsLoading
           ? undefined
-          : totalCommissions?.all?.count ?? commissions?.length
+          : (totalCommissions?.all?.count ?? commissions?.length)
       }
       isLoading={isComissionsLoading}
     />

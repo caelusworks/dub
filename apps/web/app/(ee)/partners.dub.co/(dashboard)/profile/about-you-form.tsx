@@ -71,12 +71,12 @@ export function AboutYouForm({ partner }: { partner?: PartnerProps }) {
     useState(false);
 
   return (
-    <div className="border-border-subtle divide-border-subtle flex flex-col divide-y rounded-lg border">
+    <div className="flex flex-col divide-y divide-border-subtle rounded-lg border border-border-subtle">
       <div className="px-6 py-8">
-        <h3 className="text-content-emphasis text-lg font-semibold leading-7">
+        <h3 className="text-lg font-semibold leading-7 text-content-emphasis">
           About you and your expertise
         </h3>
-        <p className="text-content-subtle text-sm font-normal leading-5">
+        <p className="text-sm font-normal leading-5 text-content-subtle">
           Help programs get to know you, your background, interests, and what
           makes you a great partner.
         </p>
@@ -141,11 +141,11 @@ export function AboutYouForm({ partner }: { partner?: PartnerProps }) {
                           <div
                             key={interest.id}
                             className={cn(
-                              "ring-border-subtle flex select-none items-center gap-2.5 rounded-full bg-white px-4 py-3 ring-1",
+                              "flex select-none items-center gap-2.5 rounded-full bg-white px-4 py-3 ring-1 ring-border-subtle",
                             )}
                           >
                             <interest.icon className="size-4 text-neutral-600" />
-                            <span className="text-content-emphasis text-sm font-medium">
+                            <span className="text-sm font-medium text-content-emphasis">
                               {interest.label}
                             </span>
                           </div>
@@ -154,7 +154,7 @@ export function AboutYouForm({ partner }: { partner?: PartnerProps }) {
                         <div
                           key={idx}
                           className={cn(
-                            "border-border-subtle h-11 w-32 rounded-full border border-dashed bg-white",
+                            "h-11 w-32 rounded-full border border-dashed border-border-subtle bg-white",
                           )}
                         />
                       ))}
@@ -192,9 +192,9 @@ export function AboutYouForm({ partner }: { partner?: PartnerProps }) {
                   <label key={id} className="flex items-center gap-2.5">
                     <RadioGroupItem
                       value={id}
-                      className="text-content-emphasis border-border-default"
+                      className="border-border-default text-content-emphasis"
                     />
-                    <span className="text-content-emphasis text-sm font-medium">
+                    <span className="text-sm font-medium text-content-emphasis">
                       {label}
                     </span>
                   </label>

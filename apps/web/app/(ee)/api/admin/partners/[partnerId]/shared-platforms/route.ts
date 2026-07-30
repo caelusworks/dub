@@ -30,7 +30,7 @@ export const GET = withAdmin(async ({ params }) => {
   );
 
   const websiteDomain = websitePlatform
-    ? getDomainWithoutWWW(websitePlatform.identifier) ?? null
+    ? (getDomainWithoutWWW(websitePlatform.identifier) ?? null)
     : null;
 
   const matchConditions: Prisma.PartnerPlatformWhereInput[] = [];

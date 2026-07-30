@@ -66,7 +66,7 @@ export function RiskReferralSourceSettings({
           <h3 className="text-sm font-semibold text-neutral-900">
             Referral source
           </h3>
-          <p className="text-content-subtle mt-0.5 text-xs font-normal tracking-normal">
+          <p className="mt-0.5 text-xs font-normal tracking-normal text-content-subtle">
             Flag specific domains for referral traffic
           </p>
         </div>
@@ -130,7 +130,7 @@ export function RiskReferralSourceSettings({
             />
           </div>
 
-          <p className="text-content-subtle text-center text-xs font-normal tracking-normal">
+          <p className="text-center text-xs font-normal tracking-normal text-content-subtle">
             Use{" "}
             <span className="justify-center rounded-md bg-neutral-100 px-1 py-0.5">
               *

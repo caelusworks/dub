@@ -102,7 +102,7 @@ export function Form() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
       <label className="space-y-2">
-        <span className="text-content-emphasis block text-sm font-semibold">
+        <span className="block text-sm font-semibold text-content-emphasis">
           Company name
         </span>
 
@@ -114,13 +114,13 @@ export function Form() {
           error={errors.name?.message}
         />
 
-        <p className="text-content-subtle text-xs">
+        <p className="text-xs text-content-subtle">
           This will used as your program's public name
         </p>
       </label>
 
       <label className="space-y-2">
-        <span className="text-content-emphasis block text-sm font-semibold">
+        <span className="block text-sm font-semibold text-content-emphasis">
           Logo
         </span>
 
@@ -147,13 +147,13 @@ export function Form() {
           />
         </div>
 
-        <p className="text-content-subtle text-xs">
+        <p className="text-xs text-content-subtle">
           Recommended size: 160&times;160px
         </p>
       </label>
 
       <label className="space-y-2">
-        <span className="text-content-emphasis block text-sm font-semibold">
+        <span className="block text-sm font-semibold text-content-emphasis">
           Destination URL
         </span>
 
@@ -173,14 +173,14 @@ export function Form() {
           )}
         />
 
-        <p className="text-content-subtle text-xs">
+        <p className="text-xs text-content-subtle">
           Where customers will be redirected to when they click on your
           partners' referral links
         </p>
       </label>
 
       <label className="space-y-2">
-        <span className="text-content-emphasis block text-sm font-semibold">
+        <span className="block text-sm font-semibold text-content-emphasis">
           Support email
         </span>
 
@@ -200,7 +200,7 @@ export function Form() {
           )}
         />
 
-        <p className="text-content-subtle text-xs">
+        <p className="text-xs text-content-subtle">
           Displayed to your partners on their dashboard
         </p>
       </label>

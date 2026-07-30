@@ -119,7 +119,7 @@ export const GET = withWorkspace(
       skipTopLinksForSingleLink: hasExactlyOneLinkIdFilter(parsedParams.linkId),
       getDataAvailableFrom: (endpoint) =>
         endpoint === "timeseries"
-          ? programStartedAt ?? workspace.createdAt
+          ? (programStartedAt ?? workspace.createdAt)
           : undefined,
       ...(programId && {
         formatRows: formatProgramAnalyticsForExport,

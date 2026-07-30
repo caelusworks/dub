@@ -57,8 +57,8 @@ export default async function InspectPage(props: {
       <div className="relative mx-auto flex w-full max-w-lg flex-col items-center">
         <h1
           className={cn(
-            "font-display mt-10 text-center text-4xl font-medium text-neutral-900 sm:text-5xl sm:leading-[1.15]",
-            "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:20px] [animation-duration:1s] [animation-fill-mode:both]",
+            "mt-10 text-center font-display text-4xl font-medium text-neutral-900 sm:text-5xl sm:leading-[1.15]",
+            "animate-slide-up-fade [--offset:20px] [animation-duration:1s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
           )}
         >
           Link Inspector
@@ -66,7 +66,7 @@ export default async function InspectPage(props: {
         <p
           className={cn(
             "mt-5 text-pretty text-base text-neutral-700 sm:text-xl",
-            "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-delay:200ms] [animation-duration:1s] [animation-fill-mode:both]",
+            "animate-slide-up-fade [--offset:10px] [animation-delay:200ms] [animation-duration:1s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
           )}
         >
           Inspect a short link on Dub to make sure it&apos;s safe to click on.
@@ -77,7 +77,7 @@ export default async function InspectPage(props: {
       <div
         className={cn(
           "relative mx-auto mt-10 flex w-full max-w-lg flex-col items-center gap-5 px-2.5 sm:px-0",
-          "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:5px] [animation-delay:300ms] [animation-duration:1s] [animation-fill-mode:both]",
+          "animate-slide-up-fade [--offset:5px] [animation-delay:300ms] [animation-duration:1s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
         )}
       >
         <LinkInspectorCard domain={domain} _key={key} url={data.url} />

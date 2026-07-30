@@ -51,12 +51,12 @@ export function PartnersGraphic({ className }: { className?: string }) {
       <div className="absolute left-0 top-0 grid grid-cols-[repeat(2,180px)]">
         {PARTNERS.map((partner, idx) => (
           <div key={idx} className="h-[60px] w-[180px] p-[3px]">
-            <div className="border-border-subtle bg-bg-default flex size-full select-none overflow-hidden rounded border">
+            <div className="flex size-full select-none overflow-hidden rounded border border-border-subtle bg-bg-default">
               {partner && (
                 <>
                   <div
                     key={idx}
-                    className="bg-bg-emphasis aspect-square h-full"
+                    className="aspect-square h-full bg-bg-emphasis"
                     style={{
                       backgroundImage:
                         "url(https://assets.dub.co/partners/partner-images.jpg)",
@@ -64,18 +64,18 @@ export function PartnersGraphic({ className }: { className?: string }) {
                       backgroundPositionX: (14 - (idx % 14)) * 100 + "%",
                     }}
                   />
-                  <div className="border-border-subtle flex h-full flex-col justify-between border-l px-2 py-1.5">
+                  <div className="flex h-full flex-col justify-between border-l border-border-subtle px-2 py-1.5">
                     <div className="flex items-center gap-1.5">
                       <img
                         alt="US Flag"
                         src={`https://flag.vercel.app/m/${partner.country}.svg`}
                         className="h-2.5 w-3 rounded-sm border-[0.5px] border-black/15"
                       />
-                      <span className="text-content-default text-[9px] font-medium">
+                      <span className="text-[9px] font-medium text-content-default">
                         {partner.name}
                       </span>
                     </div>
-                    <div className="divide-border-subtle flex divide-x">
+                    <div className="flex divide-x divide-border-subtle">
                       {(["revenue", "payouts"] as const).map((key, idx) => (
                         <div
                           key={key}
@@ -84,10 +84,10 @@ export function PartnersGraphic({ className }: { className?: string }) {
                             idx === 0 ? "pr-4" : "pl-4",
                           )}
                         >
-                          <span className="text-content-muted text-[6px] font-medium">
+                          <span className="text-[6px] font-medium text-content-muted">
                             {capitalize(key)}
                           </span>
-                          <span className="text-content-default text-[9px] font-medium">
+                          <span className="text-[9px] font-medium text-content-default">
                             ${nFormatter(partner[key])}
                           </span>
                         </div>

@@ -138,7 +138,7 @@ export function ReferralsEmbedQuickstart({
                 onClick={() => {
                   const isTremendousCountrySupported = Boolean(
                     !partner.country ||
-                      TREMENDOUS_SUPPORTED_COUNTRIES.includes(partner.country),
+                    TREMENDOUS_SUPPORTED_COUNTRIES.includes(partner.country),
                   );
 
                   const usesTremendous =
@@ -167,7 +167,7 @@ export function ReferralsEmbedQuickstart({
 
   return (
     <motion.div
-      className="border-border-muted bg-bg-default rounded-lg border p-2"
+      className="rounded-lg border border-border-muted bg-bg-default p-2"
       {...TAB_ITEM_ANIMATION_SETTINGS}
     >
       {isMobile ? (
@@ -176,13 +176,13 @@ export function ReferralsEmbedQuickstart({
             {items.map((item) => (
               <CarouselItem
                 key={item.title}
-                className="bg-bg-muted flex flex-col items-center justify-between gap-4 rounded-lg p-8 text-center"
+                className="flex flex-col items-center justify-between gap-4 rounded-lg bg-bg-muted p-8 text-center"
               >
                 {item.illustration}
-                <h3 className="text-content-emphasis text-lg font-medium">
+                <h3 className="text-lg font-medium text-content-emphasis">
                   {item.title}
                 </h3>
-                <p className="text-content-subtle text-pretty text-sm">
+                <p className="text-pretty text-sm text-content-subtle">
                   {item.description}
                 </p>
                 {item.cta}
@@ -196,13 +196,13 @@ export function ReferralsEmbedQuickstart({
           {items.map((item) => (
             <div
               key={item.title}
-              className="bg-bg-muted flex flex-col items-center justify-between gap-4 rounded-lg p-8 text-center"
+              className="flex flex-col items-center justify-between gap-4 rounded-lg bg-bg-muted p-8 text-center"
             >
               {item.illustration}
-              <h3 className="text-content-emphasis text-lg font-medium">
+              <h3 className="text-lg font-medium text-content-emphasis">
                 {item.title}
               </h3>
-              <p className="text-content-subtle text-pretty text-sm">
+              <p className="text-pretty text-sm text-content-subtle">
                 {item.description}
               </p>
               {item.cta}

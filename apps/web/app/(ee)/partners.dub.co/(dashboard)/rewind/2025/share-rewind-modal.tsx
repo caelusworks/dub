@@ -45,7 +45,7 @@ function ShareRewindModalInner({ step }: ShareRewindModalInnerProps) {
     <div className="flex flex-col gap-5 p-4 sm:px-6">
       <h3 className="text-lg font-medium">Share rewind</h3>
 
-      <div className="border-border-subtle scrollbar-hide max-h-[calc(100dvh-200px)] overflow-y-auto rounded-xl border">
+      <div className="max-h-[calc(100dvh-200px)] overflow-y-auto rounded-xl border border-border-subtle scrollbar-hide">
         <div className="relative aspect-[1084/994] w-full">
           <div className="absolute inset-0 flex items-center justify-center">
             <LoadingSpinner />

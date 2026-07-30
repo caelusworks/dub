@@ -20,7 +20,7 @@ export function TestsBadge({
           <HoverCard.Content
             side="bottom"
             sideOffset={8}
-            className="animate-slide-up-fade z-[99] items-center overflow-hidden rounded-xl border border-neutral-200 bg-white p-2 text-sm text-neutral-700 shadow-sm"
+            className="z-[99] animate-slide-up-fade items-center overflow-hidden rounded-xl border border-neutral-200 bg-white p-2 text-sm text-neutral-700 shadow-sm"
           >
             A/B tests
           </HoverCard.Content>

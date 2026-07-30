@@ -24,24 +24,24 @@ export function GuidesMarkdown({
     <ReactMarkdown
       className={cn(
         "prose prose-sm prose-neutral max-w-none transition-all",
-        "prose-headings:font-semibold prose-headings:text-gray-900 prose-headings:border-b prose-headings:border-gray-200 prose-headings:pb-2",
-        "prose-h1:text-2xl prose-h1:font-bold prose-h1:mt-8 prose-h1:mb-4",
-        "prose-h2:text-xl prose-h2:font-semibold prose-h2:mt-6 prose-h2:mb-3",
-        "prose-h3:text-lg prose-h3:font-semibold prose-h3:mt-4 prose-h3:mb-2",
-        "prose-h4:text-base prose-h4:font-semibold prose-h4:mt-3 prose-h4:mb-1",
-        "prose-p:text-gray-700 prose-p:leading-6 prose-p:mb-4",
-        "prose-a:text-neutral-600 prose-a:font-medium prose-a:underline prose-a:cursor-help prose-a:decoration-dotted prose-a:underline-offset-2 hover:prose-a:text-neutral-700",
-        "prose-strong:text-gray-900 prose-strong:font-semibold",
-        "prose-em:text-gray-700 prose-em:italic",
-        "prose-code:text-gray-800 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-code:font-mono",
-        "prose-pre:bg-gray-50 prose-pre:border prose-pre:border-gray-200 prose-pre:rounded-lg prose-pre:pr-9 prose-pre:pl-3 prose-pre:py-3 prose-pre:overflow-x-auto",
+        "prose-headings:border-b prose-headings:border-gray-200 prose-headings:pb-2 prose-headings:font-semibold prose-headings:text-gray-900",
+        "prose-h1:mb-4 prose-h1:mt-8 prose-h1:text-2xl prose-h1:font-bold",
+        "prose-h2:mb-3 prose-h2:mt-6 prose-h2:text-xl prose-h2:font-semibold",
+        "prose-h3:mb-2 prose-h3:mt-4 prose-h3:text-lg prose-h3:font-semibold",
+        "prose-h4:mb-1 prose-h4:mt-3 prose-h4:text-base prose-h4:font-semibold",
+        "prose-p:mb-4 prose-p:leading-6 prose-p:text-gray-700",
+        "prose-a:cursor-help prose-a:font-medium prose-a:text-neutral-600 prose-a:underline prose-a:decoration-dotted prose-a:underline-offset-2 hover:prose-a:text-neutral-700",
+        "prose-strong:font-semibold prose-strong:text-gray-900",
+        "prose-em:italic prose-em:text-gray-700",
+        "prose-code:rounded prose-code:py-0.5 prose-code:font-mono prose-code:text-xs prose-code:text-gray-800",
+        "prose-pre:overflow-x-auto prose-pre:rounded-lg prose-pre:border prose-pre:border-gray-200 prose-pre:bg-gray-50 prose-pre:py-3 prose-pre:pl-3 prose-pre:pr-9",
         "prose-pre:code:bg-transparent prose-pre:code:p-0 prose-pre:code:text-sm",
         "prose-blockquote:border-l-4 prose-blockquote:border-gray-300 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-600",
         "prose-ul:list-disc prose-ul:pl-6 prose-ul:text-gray-700",
         "prose-ol:list-decimal prose-ol:pl-6 prose-ol:text-gray-700",
         "prose-li:mb-1",
-        "prose-hr:border-gray-200 prose-hr:my-8",
-        "prose-table:border-collapse prose-table:w-full",
+        "prose-hr:my-8 prose-hr:border-gray-200",
+        "prose-table:w-full prose-table:border-collapse",
         "prose-th:border prose-th:border-gray-300 prose-th:bg-gray-50 prose-th:px-3 prose-th:py-2 prose-th:text-left prose-th:font-semibold prose-th:text-gray-900",
         "prose-td:border prose-td:border-gray-300 prose-td:px-3 prose-td:py-2 prose-td:text-gray-700",
         "prose-img:rounded-lg prose-img:border prose-img:border-gray-200",
@@ -93,7 +93,7 @@ function CodeBlock({ node, children, ...rest }: any) {
             toast.error("Failed to copy code");
           }
         }}
-        className="border-border-subtle text-content-default absolute right-2 top-2 flex size-7 items-center justify-center rounded-lg border bg-white transition-transform duration-100 active:scale-95"
+        className="absolute right-2 top-2 flex size-7 items-center justify-center rounded-lg border border-border-subtle bg-white text-content-default transition-transform duration-100 active:scale-95"
       >
         {copied ? (
           <Check className="size-3.5" />

@@ -203,7 +203,7 @@ function SidebarAreasPanel<T extends Record<any, any>>({
           ref={scrollRef}
           onScroll={updateScrollProgress}
           className={cn(
-            "scrollbar-hide h-full overflow-x-hidden rounded-xl",
+            "h-full overflow-x-hidden rounded-xl scrollbar-hide",
             hasOverflow ? "overflow-y-auto" : "overflow-hidden",
           )}
         >
@@ -230,14 +230,14 @@ function SidebarAreasPanel<T extends Record<any, any>>({
                           {backHref && (
                             <div
                               className={cn(
-                                "text-content-muted bg-bg-emphasis flex size-6 items-center justify-center rounded-lg",
-                                "group-hover:bg-bg-inverted/10 group-hover:text-content-subtle transition-[transform,background-color,color] duration-150 group-hover:-translate-x-0.5",
+                                "flex size-6 items-center justify-center rounded-lg bg-bg-emphasis text-content-muted",
+                                "transition-[transform,background-color,color] duration-150 group-hover:-translate-x-0.5 group-hover:bg-bg-inverted/10 group-hover:text-content-subtle",
                               )}
                             >
                               <ChevronLeft className="size-3 [&_*]:stroke-2" />
                             </div>
                           )}
-                          <span className="text-content-emphasis text-lg font-semibold">
+                          <span className="text-lg font-semibold text-content-emphasis">
                             {title}
                           </span>
                         </TitleContainer>
@@ -406,7 +406,7 @@ function NavGroupItem({
             )}
           >
             <Icon
-              className="text-content-default size-5"
+              className="size-5 text-content-default"
               data-hovered={hovered}
             />
             {badge && (
@@ -451,7 +451,7 @@ function NavItem({ item }: { item: NavItemType | NavSubItemType }) {
         onPointerEnter={() => !locked && setHovered(true)}
         onPointerLeave={() => !locked && setHovered(false)}
         className={cn(
-          "text-content-default group flex h-8 items-center justify-between rounded-lg p-2 text-sm leading-none transition-[background-color,color,font-weight] duration-75",
+          "group flex h-8 items-center justify-between rounded-lg p-2 text-sm leading-none text-content-default transition-[background-color,color,font-weight] duration-75",
           "outline-none focus-visible:ring-2 focus-visible:ring-black/50",
           isActive && !items
             ? "bg-blue-100/50 font-medium text-blue-600 hover:bg-blue-100/80 active:bg-blue-100"
@@ -494,7 +494,7 @@ function NavItem({ item }: { item: NavItemType | NavSubItemType }) {
             <ChevronDown className="size-3.5 text-neutral-500 transition-transform duration-75 group-data-[active=true]:rotate-180" />
           )}
           {item.arrow && (
-            <ArrowUpRight2 className="text-content-default size-3.5 transition-transform duration-75 group-hover:-translate-y-px group-hover:translate-x-px" />
+            <ArrowUpRight2 className="size-3.5 text-content-default transition-transform duration-75 group-hover:-translate-y-px group-hover:translate-x-px" />
           )}
         </span>
       </Link>

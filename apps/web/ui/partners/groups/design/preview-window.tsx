@@ -53,7 +53,7 @@ export function PreviewWindow({
           className="group flex min-w-0 max-w-xs grow items-center justify-center rounded-lg bg-neutral-100 px-4 py-1.5"
         >
           <div className="relative min-w-0">
-            <span className="text-content-emphasis block truncate text-xs font-medium">
+            <span className="block truncate text-xs font-medium text-content-emphasis">
               {getPrettyUrl(url)}
             </span>
             <div className="absolute inset-y-0 left-full ml-1 flex translate-y-0.5 items-center opacity-0 transition-[opacity,transform] duration-100 group-hover:translate-y-0 group-hover:opacity-100">
@@ -81,7 +81,7 @@ export function PreviewWindow({
       <div className="relative z-0 grow overflow-hidden">
         <div
           className={cn(
-            "scrollbar-hide @container relative size-full overflow-y-auto",
+            "relative size-full overflow-y-auto scrollbar-hide @container",
             contentClassName,
           )}
           ref={scrollRef}

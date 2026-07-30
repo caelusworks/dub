@@ -66,7 +66,7 @@ export function LinkBuilderHeader({
     let selectedFolder =
       !folderId || folderId === "unsorted"
         ? unsortedLinks
-        : folder ?? unsortedLinks;
+        : (folder ?? unsortedLinks);
 
     return (
       <>

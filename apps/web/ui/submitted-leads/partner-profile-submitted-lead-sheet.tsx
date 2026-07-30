@@ -82,7 +82,7 @@ function PartnerProfileSubmittedLeadSheetContent({
         </div>
       </div>
 
-      <div className="@3xl/sheet:grid-cols-[minmax(440px,1fr)_minmax(0,360px)] scrollbar-hide grid min-h-0 grow grid-cols-1 gap-x-6 gap-y-2 overflow-y-auto p-4 sm:gap-y-4 sm:p-6">
+      <div className="grid min-h-0 grow grid-cols-1 gap-x-6 gap-y-2 overflow-y-auto p-4 scrollbar-hide @3xl/sheet:grid-cols-[minmax(440px,1fr)_minmax(0,360px)] sm:gap-y-4 sm:p-6">
         {/* Left side - Lead details */}
         <div className="flex flex-col gap-6">
           <SubmittedLeadDetails lead={{ formData: lead.formData }} />
@@ -90,7 +90,7 @@ function PartnerProfileSubmittedLeadSheetContent({
         </div>
 
         {/* Right side - Customer details */}
-        <div className="@3xl/sheet:order-2 flex flex-col gap-2 sm:gap-4">
+        <div className="flex flex-col gap-2 @3xl/sheet:order-2 sm:gap-4">
           <SubmittedLeadContactDetails lead={lead} mode="readonly" />
         </div>
       </div>

@@ -77,10 +77,10 @@ export function Rewind({
             }}
             className="rounded-full p-1 transition-all hover:bg-black/5 active:scale-95"
           >
-            <div className="bg-bg-emphasis relative h-1.5 w-10 overflow-hidden rounded-full">
+            <div className="relative h-1.5 w-10 overflow-hidden rounded-full bg-bg-emphasis">
               {index === currentStepIndex && !isPaused ? (
                 <motion.div
-                  className="bg-bg-inverted absolute inset-0 rounded-full"
+                  className="absolute inset-0 rounded-full bg-bg-inverted"
                   initial={{ x: "-100%", opacity: 0.3 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{
@@ -91,7 +91,7 @@ export function Rewind({
               ) : (
                 <div
                   className={cn(
-                    "bg-bg-inverted size-full rounded-full transition-opacity",
+                    "size-full rounded-full bg-bg-inverted transition-opacity",
                     index > currentStepIndex && "opacity-0",
                   )}
                 />
@@ -140,7 +140,7 @@ export function Rewind({
             setIsPaused(true);
             setShowShareRewindModal(true);
           }}
-          className={cn(navButtonClassName, "text-content-emphasis w-fit px-3")}
+          className={cn(navButtonClassName, "w-fit px-3 text-content-emphasis")}
         >
           Share
           <ReferredVia className="size-3.5" />
@@ -188,16 +188,16 @@ function StepSlide({
   )?.label;
 
   return (
-    <div className="bg-bg-default border-border-subtle flex w-full max-w-screen-sm flex-col rounded-2xl border p-6 drop-shadow-sm sm:p-10">
+    <div className="flex w-full max-w-screen-sm flex-col rounded-2xl border border-border-subtle bg-bg-default p-6 drop-shadow-sm sm:p-10">
       <div className="flex grow flex-col">
-        <span className="text-content-emphasis text-lg font-semibold">
+        <span className="text-lg font-semibold text-content-emphasis">
           {label}
         </span>
 
         <div className="pt-2">
           <NumberFlow
             value={animatedValue}
-            className="text-content-emphasis my-[-0.1em] text-5xl font-bold sm:text-8xl"
+            className="my-[-0.1em] text-5xl font-bold text-content-emphasis sm:text-8xl"
             style={{ "--number-flow-mask-height": "0.1em" } as CSSProperties}
             trend={1}
             format={{
@@ -229,14 +229,14 @@ function StepSlide({
             alt=""
             className="size-6 drop-shadow-sm"
           />
-          <span className="text-content-emphasis text-base font-semibold">
+          <span className="text-base font-semibold text-content-emphasis">
             {percentileLabel} of all partners
           </span>
         </div>
       </div>
 
       <div className="flex items-end justify-between">
-        <span className="text-content-emphasis font-display max-w-[180px] text-2xl font-bold leading-8 sm:text-3xl">
+        <span className="max-w-[180px] font-display text-2xl font-bold leading-8 text-content-emphasis sm:text-3xl">
           Dub Partner Rewind &rsquo;25
         </span>
 

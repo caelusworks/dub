@@ -160,7 +160,7 @@ function SelectFieldModalInner({
               <div
                 ref={scrollRef}
                 onScroll={updateScrollProgress}
-                className="scrollbar-hide relative max-h-[calc(100vh-300px)] overflow-y-auto py-2"
+                className="relative max-h-[calc(100vh-300px)] overflow-y-auto py-2 scrollbar-hide"
               >
                 <EditList
                   values={fields.map(({ id }) => id)}

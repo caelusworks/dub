@@ -76,7 +76,7 @@ export function ProgramRewardModifiersTooltipContent({
         ref={scrollRef}
         onScroll={updateScrollProgress}
         className={cn(
-          "scrollbar-hide max-h-[calc(var(--radix-popper-available-height,100dvh)-12px)] max-w-sm space-y-2 overflow-y-auto p-3",
+          "max-h-[calc(var(--radix-popper-available-height,100dvh)-12px)] max-w-sm space-y-2 overflow-y-auto p-3 scrollbar-hide",
           className,
         )}
       >
@@ -151,7 +151,7 @@ const RewardItem = ({
 
   return (
     <div>
-      <div className="text-content-default text-xs font-semibold">
+      <div className="text-xs font-semibold text-content-default">
         {rewardAmount} per {reward.event}
         {reward.event === "sale" && durationText ? ` ${durationText}` : ""}
       </div>
@@ -188,8 +188,8 @@ const RewardItem = ({
                         ? (condition.value as any[])
                             .map((v) => COUNTRIES[v?.toString()] ?? v)
                             .join(", ")
-                        : COUNTRIES[condition.value?.toString()] ??
-                          condition.value
+                        : (COUNTRIES[condition.value?.toString()] ??
+                          condition.value)
                       : condition.attribute === "subscriptionDurationMonths"
                         ? formatSubscriptionDuration(Number(condition.value))
                         : condition.attribute === "productId" &&
@@ -216,9 +216,9 @@ const RewardItem = ({
                                   )
                                 : // Everything else
                                   attribute?.options
-                                  ? attribute.options.find(
+                                  ? (attribute.options.find(
                                       (o) => o.id === condition.value,
-                                    )?.label ?? condition.value.toString()
+                                    )?.label ?? condition.value.toString())
                                   : condition.value.toString())}
                 </span>
               </li>

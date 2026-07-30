@@ -124,8 +124,8 @@ export default function UnresolvedRiskEventsSummary({
                           />
                         </Column>
 
-                        <Column className="pl-2 pt-1" valign="middle">
-                          <Text className="m-0 text-sm font-medium leading-[16px] text-neutral-800">
+                        <Column className="pt-1 pl-2" valign="middle">
+                          <Text className="m-0 text-sm leading-[16px] font-medium text-neutral-800">
                             {group.partner.name}
                           </Text>
 
@@ -174,7 +174,7 @@ export default function UnresolvedRiskEventsSummary({
             <Section className="mt-6 text-center">
               <Link
                 href={`https://app.dub.co/${workspace.slug}/program/risks`}
-                className="box-border block w-full rounded-md bg-black px-4 py-3 text-center text-sm font-medium leading-none text-white no-underline"
+                className="box-border block w-full rounded-md bg-black px-4 py-3 text-center text-sm leading-none font-medium text-white no-underline"
               >
                 Review all events
               </Link>

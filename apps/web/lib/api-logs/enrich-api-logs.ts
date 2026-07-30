@@ -88,14 +88,14 @@ export async function enrichApiLogs({
       token: isPublishableKeyRequest
         ? publishableKeyToken
         : log.token_id
-          ? tokenMap.get(log.token_id) ?? null
+          ? (tokenMap.get(log.token_id) ?? null)
           : null,
       user: isPublishableKeyRequest
         ? PUBLISHABLE_KEY_ACTOR
         : log.user_id
-          ? webhookRequestActorsMap.get(log.user_id) ??
+          ? (webhookRequestActorsMap.get(log.user_id) ??
             userMap.get(log.user_id) ??
-            null
+            null)
           : null,
     };
   });

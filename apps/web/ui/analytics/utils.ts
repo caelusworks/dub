@@ -8,8 +8,7 @@ import { AnalyticsContext } from "./analytics-provider";
 
 type AnalyticsFilterResult = {
   data:
-    | ({ count?: number; saleAmount?: number } & Record<string, any>)[]
-    | null;
+    ({ count?: number; saleAmount?: number } & Record<string, any>)[] | null;
   loading: boolean;
 };
 

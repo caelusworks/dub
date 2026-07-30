@@ -7,11 +7,10 @@ import { groupBy } from "@dub/utils";
 import type { Commission, CommissionStatus } from "@prisma/client";
 import { getResourceDiff } from "../activity-log/get-resource-diff";
 
-interface TrackActivityLogParams
-  extends Omit<
-    TrackActivityLogInput,
-    "action" | "changeSet" | "resourceType" | "batchId" | "resourceId"
-  > {
+interface TrackActivityLogParams extends Omit<
+  TrackActivityLogInput,
+  "action" | "changeSet" | "resourceType" | "batchId" | "resourceId"
+> {
   old: Pick<Commission, "id" | "amount" | "earnings" | "status">[] | null;
   new: Pick<Commission, "id" | "amount" | "earnings" | "status">[] | null;
 }

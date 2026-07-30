@@ -334,7 +334,7 @@ export function BountyCriteriaManualSubmission() {
       <div className="rounded-lg border border-neutral-200 bg-neutral-50/50 p-2.5 shadow-sm">
         <div className="flex items-center gap-2.5">
           <RewardIconSquare icon={MoneyBills2} />
-          <span className="text-content-default text-sm leading-relaxed">
+          <span className="text-sm leading-relaxed text-content-default">
             On approval, pay a{" "}
             <RewardTypeBadge
               value={rewardType}

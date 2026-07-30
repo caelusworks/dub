@@ -305,7 +305,7 @@ function CommissionsPageClient() {
         </div>
       )}
       <div className="flex flex-col divide-y divide-neutral-200 rounded-lg border border-neutral-200 bg-white">
-        <div className="scrollbar-hide grid w-full grid-cols-2 divide-x overflow-y-hidden sm:grid-cols-3">
+        <div className="grid w-full grid-cols-2 divide-x overflow-y-hidden scrollbar-hide sm:grid-cols-3">
           {tabs.map(({ id, label, colorClassName, disabled }) => {
             return (
               <button

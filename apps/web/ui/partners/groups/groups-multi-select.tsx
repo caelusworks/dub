@@ -133,7 +133,7 @@ export function GroupsMultiSelect({
           <div className="p-0.5">
             {selectedMode === "all" ? (
               <div className="flex flex-col items-center justify-center px-4 py-6">
-                <div className="text-content-default flex items-center gap-1.5 font-semibold">
+                <div className="flex items-center gap-1.5 font-semibold text-content-default">
                   <Users6 className="size-4 shrink-0" />
                   {groupsCount === undefined ? (
                     <div className="h-5 w-6 animate-pulse rounded-md bg-neutral-200" />
@@ -141,14 +141,14 @@ export function GroupsMultiSelect({
                     groupsCount
                   )}
                 </div>
-                <span className="text-content-subtle text-sm font-medium">
+                <span className="text-sm font-medium text-content-subtle">
                   Groups selected
                 </span>
               </div>
             ) : (
               <Command loop shouldFilter={!useAsync}>
                 <label className="relative flex grow items-center overflow-hidden rounded-lg border border-neutral-300 focus-within:border-neutral-500 focus-within:ring-1 focus-within:ring-neutral-500">
-                  <Magnifier className="text-content-default ml-3 size-3.5 shrink-0" />
+                  <Magnifier className="ml-3 size-3.5 shrink-0 text-content-default" />
                   <Command.Input
                     placeholder="Search groups..."
                     value={search}
@@ -189,7 +189,7 @@ export function GroupsMultiSelect({
                             >
                               <div
                                 className={cn(
-                                  "border-border-emphasis flex size-4 shrink-0 items-center justify-center rounded border bg-white transition-colors duration-75",
+                                  "flex size-4 shrink-0 items-center justify-center rounded border border-border-emphasis bg-white transition-colors duration-75",
                                   checked &&
                                     "border-neutral-900 bg-neutral-900",
                                 )}

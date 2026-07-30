@@ -396,11 +396,11 @@ export function CampaignEditor({ campaign }: { campaign: Campaign }) {
             <div className="flex items-center gap-1">
               <Link
                 href={`/${workspaceSlug}/program/campaigns`}
-                className="bg-bg-subtle hover:bg-bg-emphasis flex size-8 shrink-0 items-center justify-center rounded-lg transition-[transform,background-color] duration-150 active:scale-95"
+                className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle transition-[transform,background-color] duration-150 hover:bg-bg-emphasis active:scale-95"
               >
-                <PaperPlane className="text-content-default size-4" />
+                <PaperPlane className="size-4 text-content-default" />
               </Link>
-              <ChevronRight className="text-content-subtle size-2.5 shrink-0 [&_*]:stroke-2" />
+              <ChevronRight className="size-2.5 shrink-0 text-content-subtle [&_*]:stroke-2" />
             </div>
 
             <div className="flex min-w-0 items-center gap-1.5">
@@ -488,6 +488,7 @@ export function CampaignEditor({ campaign }: { campaign: Campaign }) {
                       disabled={isDisabled}
                       hideIcon={true}
                     >
+<<<<<<< HEAD
                       <CampaignFromField
                         value={field.value}
                         onChange={field.onChange}
@@ -495,6 +496,30 @@ export function CampaignEditor({ campaign }: { campaign: Campaign }) {
                         domainSlug={verifiedEmailDomain?.slug}
                         displayNamePlaceholder={program?.name || "Display name"}
                       />
+=======
+                      <div
+                        className={`flex items-center gap-1 ${inputClassName} ${isDisabled ? "cursor-not-allowed opacity-80" : ""}`}
+                      >
+                        <input
+                          type="text"
+                          placeholder="Address"
+                          className="min-w-0 flex-1 border-0 bg-transparent p-0 text-content-default placeholder:text-content-muted focus:outline-none focus:ring-0 sm:text-sm"
+                          disabled={isDisabled}
+                          value={localPart}
+                          onChange={(e) => {
+                            const newLocalPart = e.target.value;
+                            if (verifiedEmailDomain?.slug) {
+                              field.onChange(
+                                `${newLocalPart}@${verifiedEmailDomain.slug}`,
+                              );
+                            }
+                          }}
+                        />
+                        <span className="shrink-0 text-sm text-content-muted">
+                          {domainSuffix}
+                        </span>
+                      </div>
+>>>>>>> c51226bd78 (update: fix secure cookie bug for non-vercel deployments)
                     </DisabledInputWrapper>
                   );
                 }}
@@ -541,7 +566,7 @@ export function CampaignEditor({ campaign }: { campaign: Campaign }) {
                         value={field.value}
                         onChange={field.onChange}
                         placeholder='E.g. "tomorrow at 5pm" or "in 2 hours"'
-                        className="hover:border-border-subtle mt-0 h-8 min-h-8 border-transparent shadow-none focus-within:border-black/75 focus-within:ring-black/75 hover:cursor-pointer hover:bg-neutral-100"
+                        className="mt-0 h-8 min-h-8 border-transparent shadow-none focus-within:border-black/75 focus-within:ring-black/75 hover:cursor-pointer hover:border-border-subtle hover:bg-neutral-100"
                       />
                     </DisabledInputWrapper>
                   )}
@@ -572,7 +597,7 @@ export function CampaignEditor({ campaign }: { campaign: Campaign }) {
                       type="button"
                       onClick={() => setShowPreviewText(true)}
                       className={cn(
-                        "text-content-subtle hover:text-content-default px-2 py-1 text-sm font-medium",
+                        "px-2 py-1 text-sm font-medium text-content-subtle hover:text-content-default",
                         "transition-[transform,opacity] duration-150 ease-out",
                         showPreviewText && "translate-y-1 opacity-0",
                       )}
@@ -687,7 +712,7 @@ export function CampaignEditor({ campaign }: { campaign: Campaign }) {
             />
           </div>
 
-          <div className="border-border-subtle mt-4 w-full border-t pt-4 text-center text-xs font-medium text-neutral-300">
+          <div className="mt-4 w-full border-t border-border-subtle pt-4 text-center text-xs font-medium text-neutral-300">
             End of email
           </div>
         </PageWidthWrapper>

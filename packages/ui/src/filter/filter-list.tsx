@@ -544,7 +544,7 @@ function OperatorFilterPill({
                     autoCapitalize="none"
                   />
                 </div>
-                <div className="scrollbar-hide max-h-[50vh] w-screen overflow-y-scroll sm:w-auto">
+                <div className="max-h-[50vh] w-screen overflow-y-scroll scrollbar-hide sm:w-auto">
                   <Command.List className="flex w-full min-w-[180px] flex-col gap-1 p-1">
                     {(() => {
                       const filteredOptions =

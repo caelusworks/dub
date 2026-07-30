@@ -121,12 +121,12 @@ export function ProfileDetailsForm({
   });
 
   return (
-    <div className="border-border-subtle divide-border-subtle flex flex-col divide-y rounded-lg border">
+    <div className="flex flex-col divide-y divide-border-subtle rounded-lg border border-border-subtle">
       <div className="px-6 py-8">
-        <h3 className="text-content-emphasis text-lg font-semibold leading-7">
+        <h3 className="text-lg font-semibold leading-7 text-content-emphasis">
           Profile details
         </h3>
-        <p className="text-content-subtle text-sm font-normal leading-5">
+        <p className="text-sm font-normal leading-5 text-content-subtle">
           Basic details that make up your profile.
         </p>
       </div>

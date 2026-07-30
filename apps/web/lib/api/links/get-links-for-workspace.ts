@@ -7,8 +7,9 @@ import { combineTagIds } from "../tags/combine-tag-ids";
 import { encodeKeyIfCaseSensitive } from "./case-sensitivity";
 import { transformLink } from "./utils";
 
-export interface GetLinksForWorkspaceProps
-  extends z.infer<typeof getLinksQuerySchemaExtended> {
+export interface GetLinksForWorkspaceProps extends z.infer<
+  typeof getLinksQuerySchemaExtended
+> {
   workspaceId: string;
   folderIds?: string[];
   startDate?: Date;

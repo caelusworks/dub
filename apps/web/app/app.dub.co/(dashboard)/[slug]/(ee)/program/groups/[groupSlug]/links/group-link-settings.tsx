@@ -35,10 +35,10 @@ export function GroupLinkSettings() {
   return (
     <div className="flex flex-col divide-y divide-neutral-200 rounded-lg border border-neutral-200">
       <div className="px-6 py-6">
-        <h3 className="text-content-emphasis text-lg font-semibold leading-7">
+        <h3 className="text-lg font-semibold leading-7 text-content-emphasis">
           Link settings
         </h3>
-        <p className="text-content-subtle text-sm font-normal leading-5">
+        <p className="text-sm font-normal leading-5 text-content-subtle">
           Configure link structure and UTM parameters
         </p>
       </div>
@@ -48,7 +48,7 @@ export function GroupLinkSettings() {
       ) : isLoadingGroup ? (
         <div className="flex h-[4.5rem] animate-pulse rounded-b-lg border-t border-neutral-200 bg-neutral-100" />
       ) : (
-        <div className="text-content-subtle h-20 text-center">
+        <div className="h-20 text-center text-content-subtle">
           Failed to load link settings
         </div>
       )}

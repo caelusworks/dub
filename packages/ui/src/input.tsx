@@ -3,8 +3,7 @@ import { AlertCircle } from "lucide-react";
 import React, { useCallback, useState } from "react";
 import { Eye, EyeSlash } from "./icons";
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: string;
 }
 

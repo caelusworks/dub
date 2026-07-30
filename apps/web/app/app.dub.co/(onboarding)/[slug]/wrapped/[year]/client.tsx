@@ -40,7 +40,7 @@ export default function WrappedPageClient() {
 
   return (
     <div className="relative mx-auto my-10 max-w-lg px-4 sm:px-8">
-      <h1 className="animate-slide-up-fade font-display mx-0 mb-4 mt-8 p-0 text-center text-xl font-semibold text-black [animation-delay:150ms] [animation-duration:1s] [animation-fill-mode:both]">
+      <h1 className="mx-0 mb-4 mt-8 animate-slide-up-fade p-0 text-center font-display text-xl font-semibold text-black [animation-delay:150ms] [animation-duration:1s] [animation-fill-mode:both]">
         {year} Year in Review 🎊
       </h1>
       <p className="animate-slide-up-fade text-balance text-center text-sm leading-6 text-black [animation-delay:300ms] [animation-duration:1s] [animation-fill-mode:both]">
@@ -48,7 +48,7 @@ export default function WrappedPageClient() {
         Here's a look back at your activity in {year}:
       </p>
 
-      <div className="animate-slide-up-fade mb-4 mt-8 rounded-lg border border-neutral-200 bg-white p-2 shadow-md [animation-delay:450ms] [animation-duration:1s] [animation-fill-mode:both]">
+      <div className="mb-4 mt-8 animate-slide-up-fade rounded-lg border border-neutral-200 bg-white p-2 shadow-md [animation-delay:450ms] [animation-duration:1s] [animation-fill-mode:both]">
         <div
           className="flex h-24 flex-col items-center justify-center rounded-lg"
           style={{

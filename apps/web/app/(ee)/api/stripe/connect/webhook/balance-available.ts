@@ -8,8 +8,7 @@ const queue = qstash.queue({
 
 export async function balanceAvailable(
   event:
-    | Stripe.AccountExternalAccountUpdatedEvent
-    | Stripe.BalanceAvailableEvent,
+    Stripe.AccountExternalAccountUpdatedEvent | Stripe.BalanceAvailableEvent,
 ) {
   const stripeAccount = event.account;
 

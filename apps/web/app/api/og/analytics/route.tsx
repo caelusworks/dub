@@ -119,98 +119,96 @@ export async function GET(req: NextRequest) {
   );
 
   return new ImageResponse(
-    (
-      <div tw="flex flex-col bg-[#f9fafb] w-full h-full p-16">
-        <div tw="flex justify-between items-center mb-4">
-          <div tw="flex items-center">
-            {folder ? (
-              <>
-                <div tw="flex items-center justify-center rounded-md bg-blue-100 border border-blue-200 w-10 h-10">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#1E40AF"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    width="20"
-                    height="20"
-                  >
-                    <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" />
-                  </svg>
-                </div>
-                <h1 tw="text-4xl font-bold ml-4 my-0">{folder.name}</h1>
-              </>
-            ) : (
-              <>
-                <img
-                  tw="rounded-full w-10 h-10"
-                  src={`${GOOGLE_FAVICON_URL}${getApexDomain(link?.url || "dub.co")}`}
-                  alt="favicon"
-                />
-                <h1 tw="text-4xl font-bold ml-4 my-0">
-                  {linkConstructor({
-                    domain: link?.domain || "",
-                    key: link?.key || "",
-                    pretty: true,
-                  })}
-                </h1>
-              </>
-            )}
-          </div>
-
-          <div tw="flex items-center rounded-md border border-neutral-200 bg-white shadow-sm h-12 px-6">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#4B5563"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M8 2v4" />
-              <path d="M16 2v4" />
-              <rect width="18" height="18" x="3" y="4" rx="2" />
-              <path d="M3 10h18" />
-            </svg>
-            <p tw="text-neutral-700 ml-2 mt-4">Last 30 days</p>
-          </div>
-        </div>
-        <div tw="flex flex-col h-full w-full rounded-lg border border-neutral-200 bg-white shadow-lg overflow-hidden">
-          <div tw="flex flex-col px-12 py-4">
-            <div tw="flex items-center">
-              <h1 tw="font-bold text-5xl leading-none">
-                {nFormatter(totalClicks)}
+    <div tw="flex flex-col bg-[#f9fafb] w-full h-full p-16">
+      <div tw="flex justify-between items-center mb-4">
+        <div tw="flex items-center">
+          {folder ? (
+            <>
+              <div tw="flex items-center justify-center rounded-md bg-blue-100 border border-blue-200 w-10 h-10">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1E40AF"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  width="20"
+                  height="20"
+                >
+                  <path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" />
+                </svg>
+              </div>
+              <h1 tw="text-4xl font-bold ml-4 my-0">{folder.name}</h1>
+            </>
+          ) : (
+            <>
+              <img
+                tw="rounded-full w-10 h-10"
+                src={`${GOOGLE_FAVICON_URL}${getApexDomain(link?.url || "dub.co")}`}
+                alt="favicon"
+              />
+              <h1 tw="text-4xl font-bold ml-4 my-0">
+                {linkConstructor({
+                  domain: link?.domain || "",
+                  key: link?.key || "",
+                  pretty: true,
+                })}
               </h1>
-              <svg
-                fill="none"
-                shapeRendering="geometricPrecision"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-                viewBox="0 0 24 24"
-                width="36"
-                height="36"
-              >
-                <path d="M12 20V10" />
-                <path d="M18 20V4" />
-                <path d="M6 20v-4" />
-              </svg>
-            </div>
-            <p tw="text-lg font-medium uppercase -mt-4 text-neutral-600">
-              Total Clicks
-            </p>
-          </div>
+            </>
+          )}
+        </div>
 
-          <Chart data={timeseriesData} />
+        <div tw="flex items-center rounded-md border border-neutral-200 bg-white shadow-sm h-12 px-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#4B5563"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M8 2v4" />
+            <path d="M16 2v4" />
+            <rect width="18" height="18" x="3" y="4" rx="2" />
+            <path d="M3 10h18" />
+          </svg>
+          <p tw="text-neutral-700 ml-2 mt-4">Last 30 days</p>
         </div>
       </div>
-    ),
+      <div tw="flex flex-col h-full w-full rounded-lg border border-neutral-200 bg-white shadow-lg overflow-hidden">
+        <div tw="flex flex-col px-12 py-4">
+          <div tw="flex items-center">
+            <h1 tw="font-bold text-5xl leading-none">
+              {nFormatter(totalClicks)}
+            </h1>
+            <svg
+              fill="none"
+              shapeRendering="geometricPrecision"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1.5"
+              viewBox="0 0 24 24"
+              width="36"
+              height="36"
+            >
+              <path d="M12 20V10" />
+              <path d="M18 20V4" />
+              <path d="M6 20v-4" />
+            </svg>
+          </div>
+          <p tw="text-lg font-medium uppercase -mt-4 text-neutral-600">
+            Total Clicks
+          </p>
+        </div>
+
+        <Chart data={timeseriesData} />
+      </div>
+    </div>,
     {
       width: 1200,
       height: 630,

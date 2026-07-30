@@ -199,7 +199,7 @@ function OnboardingButtonInner({
     >
       <button
         type="button"
-        className="animate-slide-up-fade flex h-8 items-center justify-center gap-1.5 rounded-full border border-neutral-950 bg-neutral-950 px-3 text-xs font-medium leading-tight text-white shadow-md transition-all [--offset:10px] hover:bg-neutral-800 hover:ring-4 hover:ring-neutral-200"
+        className="flex h-8 animate-slide-up-fade items-center justify-center gap-1.5 rounded-full border border-neutral-950 bg-neutral-950 px-3 text-xs font-medium leading-tight text-white shadow-md transition-all [--offset:10px] hover:bg-neutral-800 hover:ring-4 hover:ring-neutral-200"
       >
         <span>Complete setup</span>
         <ProgressCircle

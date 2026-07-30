@@ -15,7 +15,7 @@ export default async function RegisterPage(props: {
   const { programSlug } = await props.params;
 
   const program = programSlug
-    ? (await getProgram({ slug: programSlug })) ?? undefined
+    ? ((await getProgram({ slug: programSlug })) ?? undefined)
     : undefined;
 
   if (programSlug && !program) {

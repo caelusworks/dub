@@ -37,7 +37,7 @@ export function BountyCriteria() {
         <div className="space-y-6">
           {showSubmissionContent && (
             <>
-              <p className="text-content-default text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed text-content-default">
                 Set how partners claim bounties and how they&apos;re verified.
                 By default an open text field is provided.
               </p>
@@ -49,18 +49,18 @@ export function BountyCriteria() {
 
           {showPerformanceContent && showWhenThenCards && (
             <div className="flex flex-col gap-0">
-              <div className="border-border-subtle rounded-xl border bg-white shadow-sm">
+              <div className="rounded-xl border border-border-subtle bg-white shadow-sm">
                 <div className="flex items-center gap-2.5 p-2.5">
                   <BountyLogic />
                 </div>
               </div>
 
-              <div className="bg-border-subtle ml-6 h-4 w-px shrink-0" />
+              <div className="ml-6 h-4 w-px shrink-0 bg-border-subtle" />
 
-              <div className="border-border-subtle rounded-xl border bg-white shadow-sm">
+              <div className="rounded-xl border border-border-subtle bg-white shadow-sm">
                 <div className="flex items-center gap-2.5 p-2.5">
                   <RewardIconSquare icon={MoneyBills2} />
-                  <span className="text-content-emphasis text-sm font-medium leading-relaxed">
+                  <span className="text-sm font-medium leading-relaxed text-content-emphasis">
                     Then pay{" "}
                     <InlineBadgePopover
                       text={

@@ -151,7 +151,7 @@ export function ProgramApplicationForm({
       >
         <label>
           <div className="flex items-center gap-1.5">
-            <span className="text-content-emphasis text-sm font-medium">
+            <span className="text-sm font-medium text-content-emphasis">
               Name
             </span>
             <FormControlRequiredBadge />
@@ -175,7 +175,7 @@ export function ProgramApplicationForm({
 
         <label>
           <div className="flex items-center gap-1.5">
-            <span className="text-content-emphasis text-sm font-medium">
+            <span className="text-sm font-medium text-content-emphasis">
               Email
             </span>
             <FormControlRequiredBadge />

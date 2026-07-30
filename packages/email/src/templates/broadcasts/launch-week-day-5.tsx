@@ -51,18 +51,18 @@ export default function DubLaunchWeekDay5({
               />
             </Section>
 
-            <Heading className="mx-0 mb-2 mt-8 p-0 text-center text-2xl font-semibold text-black">
+            <Heading className="mx-0 mt-8 mb-2 p-0 text-center text-2xl font-semibold text-black">
               Dub Launch Week Day 5
             </Heading>
 
-            <Text className="mx-auto mb-8 mt-0 max-w-sm text-center text-base leading-6 text-neutral-600">
+            <Text className="mx-auto mt-0 mb-8 max-w-sm text-center text-base leading-6 text-neutral-600">
               Introducing the Dub Network Referral Bonus
             </Text>
 
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               👋 Hey, it's Steven from Dub!
             </Text>
-            <Text className="mx-0 mb-8 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-8 text-sm leading-6 text-neutral-600">
               Today is <strong>Day 5 of our Spring Launch Week</strong>, where
               we'll be launching an exciting new feature for{" "}
               <Link
@@ -95,16 +95,16 @@ export default function DubLaunchWeekDay5({
               </Link>
             </Section>
 
-            <Heading className="mx-0 mb-3 mt-0 p-0 text-lg font-semibold text-black">
+            <Heading className="mx-0 mt-0 mb-3 p-0 text-lg font-semibold text-black">
               Introducing the Dub Network Referral Bonus
             </Heading>
 
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               You can now refer other affiliates/creators/publishers to join the
               Dub Partner Network and get rewarded when they start earning on
               Dub.
             </Text>
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               When a partner you referred starts receiving payouts from the
               programs they work with, you'll earn 50% of their payout fees for
               up to 12 months.
@@ -129,12 +129,12 @@ export default function DubLaunchWeekDay5({
 
             <Hr className="mx-0 my-6 w-full border border-neutral-200" />
 
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-600">
               That's all for our Spring Launch Week! Thanks for joining us for 5
               days of exciting new features – please let us know if you have any
               feedback or questions.
             </Text>
-            <Text className="mx-0 mb-4 mt-0 text-sm leading-6 text-neutral-400">
+            <Text className="mx-0 mt-0 mb-4 text-sm leading-6 text-neutral-400">
               Steven from Dub.co
             </Text>
 

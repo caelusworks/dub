@@ -34,7 +34,7 @@ export function PortalPreview({ group }: { group: GroupWithProgramProps }) {
   );
 
   return (
-    <div className="scrollbar-hide -mx-2 h-full w-auto overflow-y-auto px-2 pb-4">
+    <div className="-mx-2 h-full w-auto overflow-y-auto px-2 pb-4 scrollbar-hide">
       <PreviewWindow
         url={`${PARTNERS_DOMAIN}/programs/${program?.slug}`}
         className="h-auto rounded-b-xl bg-neutral-100"

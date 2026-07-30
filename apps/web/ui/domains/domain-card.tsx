@@ -122,7 +122,7 @@ export default function DomainCard({ props }: { props: DomainProps }) {
       {isDubProvisioned && <DomainAutoRenewalModal />}
       <div
         ref={domainRef}
-        className="hover:drop-shadow-card-hover group rounded-xl border border-neutral-200 bg-white transition-[filter]"
+        className="group rounded-xl border border-neutral-200 bg-white transition-[filter] hover:drop-shadow-card-hover"
         onPointerEnter={() => setGroupHover(true)}
         onPointerLeave={() => setGroupHover(false)}
       >

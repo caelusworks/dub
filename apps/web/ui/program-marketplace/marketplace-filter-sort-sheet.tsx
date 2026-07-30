@@ -85,13 +85,13 @@ export function MarketplaceFilterSortSheet({
   return (
     <Drawer.Root open={open} onOpenChange={onOpenChange}>
       <Drawer.Portal>
-        <Drawer.Overlay className="bg-bg-subtle fixed inset-0 z-50 bg-opacity-10 backdrop-blur" />
-        <Drawer.Content className="border-border-subtle bg-bg-default fixed bottom-0 left-0 right-0 z-50 mt-24 flex max-h-[85vh] flex-col rounded-t-[10px] border-t outline-none">
+        <Drawer.Overlay className="fixed inset-0 z-50 bg-bg-subtle bg-opacity-10 backdrop-blur" />
+        <Drawer.Content className="fixed bottom-0 left-0 right-0 z-50 mt-24 flex max-h-[85vh] flex-col rounded-t-[10px] border-t border-border-subtle bg-bg-default outline-none">
           <div className="flex shrink-0 items-center justify-center py-3">
-            <div className="bg-border-default h-1 w-12 rounded-full" />
+            <div className="h-1 w-12 rounded-full bg-border-default" />
           </div>
 
-          <div className="border-border-subtle flex shrink-0 items-center justify-between gap-3 border-b px-4 pb-4">
+          <div className="flex shrink-0 items-center justify-between gap-3 border-b border-border-subtle px-4 pb-4">
             <div className="flex min-w-0 items-center gap-2">
               <h2 className="text-base font-semibold text-neutral-800">
                 Filter and sort
@@ -114,7 +114,7 @@ export function MarketplaceFilterSortSheet({
             />
           </div>
 
-          <div className="scrollbar-hide min-h-0 flex-1 overflow-y-auto px-4 pb-6 pt-2">
+          <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-6 pt-2 scrollbar-hide">
             <Accordion
               type="multiple"
               defaultValue={["sort", ...visibleFilters.map((f) => f.key)]}

@@ -32,20 +32,20 @@ export function EmbedPreview({ group }: { group: GroupWithProgramProps }) {
   );
 
   return (
-    <div className="scrollbar-hide @container -mx-2 h-full w-auto overflow-y-auto px-2 pb-4">
+    <div className="-mx-2 h-full w-auto overflow-y-auto px-2 pb-4 scrollbar-hide @container">
       <PreviewWindow
         url={program.url!}
         showViewButton={false}
         className="h-auto rounded-b-xl bg-neutral-100"
         contentClassName="overflow-y-hidden"
       >
-        <div className="@[800px]:p-16 @[800px]:gap-12 grid grid-cols-[minmax(0,1fr)_minmax(0,5fr)] gap-8 p-8">
+        <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,5fr)] gap-8 p-8 @[800px]:gap-12 @[800px]:p-16">
           <div>
             <img
-              className="@[800px]:size-11 size-6"
+              className="size-6 @[800px]:size-11"
               src={program.logo || `${OG_AVATAR_URL}${program.name}`}
             />
-            <div className="@[800px]:mt-6 @[800px]:gap-4 mt-4 flex flex-col gap-2">
+            <div className="mt-4 flex flex-col gap-2 @[800px]:mt-6 @[800px]:gap-4">
               {[100, 90, 70, 80, 65].map((p, idx) => (
                 <div
                   key={idx}
@@ -69,7 +69,7 @@ export function EmbedPreview({ group }: { group: GroupWithProgramProps }) {
               {/* Inner shadow on top of studs */}
               <div className="absolute inset-0 overflow-hidden rounded-xl shadow-[0_12px_20px_0_#00000026_inset,0_2px_5px_0_#00000026_inset,0_2px_13px_2px_#FFFFFF59]" />
 
-              <div className="@[800px]:-translate-y-10 @[800px]:translate-x-10 [@media(min-resolution:2dppx)]:@[800px]:rotate-[2.4deg] relative overflow-hidden rounded-xl border border-black/10 bg-white drop-shadow-lg">
+              <div className="relative overflow-hidden rounded-xl border border-black/10 bg-white drop-shadow-lg @[800px]:-translate-y-10 @[800px]:translate-x-10 [@media(min-resolution:2dppx)]:@[800px]:rotate-[2.4deg]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlnsXlink="http://www.w3.org/1999/xlink"

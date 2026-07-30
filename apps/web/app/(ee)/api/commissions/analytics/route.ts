@@ -343,7 +343,7 @@ async function byGroupId({
     const label =
       row.groupId === null
         ? "Ungrouped"
-        : partnerGroupById.get(row.groupId)?.name ?? row.groupId;
+        : (partnerGroupById.get(row.groupId)?.name ?? row.groupId);
 
     return {
       key,

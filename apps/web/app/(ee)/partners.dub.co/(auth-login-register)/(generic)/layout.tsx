@@ -15,7 +15,7 @@ export async function generateMetadata(props: {
   const { programSlug } = await props.params;
 
   const program = programSlug
-    ? (await getProgram({ slug: programSlug })) ?? undefined
+    ? ((await getProgram({ slug: programSlug })) ?? undefined)
     : undefined;
 
   if (programSlug && !program) {
@@ -55,7 +55,7 @@ export default async function PartnerAuthLayout(props: {
   const { programSlug } = await props.params;
 
   const program = programSlug
-    ? (await getProgram({ slug: programSlug })) ?? undefined
+    ? ((await getProgram({ slug: programSlug })) ?? undefined)
     : undefined;
 
   if (programSlug && !program) {

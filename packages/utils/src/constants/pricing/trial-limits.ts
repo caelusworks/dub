@@ -16,9 +16,7 @@ export const TRIAL_LIMITS = {
 } as const;
 
 export type TrialLimitResource =
-  | keyof typeof TRIAL_LIMITS
-  | "partnerEnrollments"
-  | "freeDotLinkDomain";
+  keyof typeof TRIAL_LIMITS | "partnerEnrollments" | "freeDotLinkDomain";
 
 const TRIAL_LIMIT_FEATURE_PHRASES: Record<TrialLimitResource, string> = {
   links: "create more links",

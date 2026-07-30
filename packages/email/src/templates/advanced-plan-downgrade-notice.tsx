@@ -101,7 +101,7 @@ export default function AdvancedPlanDowngradeNotice({
             <Text className="text-sm leading-6 text-black">
               To reactivate these features, please upgrade to the Advanced plan.
             </Text>
-            <Section className="mb-8 mt-8">
+            <Section className="mt-8 mb-8">
               <Link
                 className="rounded-lg bg-black px-6 py-3 text-center text-[12px] font-semibold text-white no-underline"
                 href={`https://app.dub.co/${workspace.slug}/settings/billing/upgrade?plan=advanced`}

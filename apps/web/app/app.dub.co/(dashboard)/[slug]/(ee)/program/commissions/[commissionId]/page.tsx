@@ -58,12 +58,12 @@ export default function CommissionDetailsPage() {
               href={`/${slug}/program/commissions`}
               aria-label="Back to commissions"
               title="Back to commissions"
-              className="bg-bg-subtle hover:bg-bg-emphasis flex size-8 shrink-0 items-center justify-center rounded-lg transition-[transform,background-color] duration-150 active:scale-95"
+              className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle transition-[transform,background-color] duration-150 hover:bg-bg-emphasis active:scale-95"
             >
               <InvoiceDollar className="size-4" />
             </Link>
             <div className="flex items-center gap-1.5">
-              <ChevronRight className="text-content-subtle size-2.5 shrink-0 [&_*]:stroke-2" />
+              <ChevronRight className="size-2.5 shrink-0 text-content-subtle [&_*]:stroke-2" />
               <div className="flex items-center gap-2">
                 {commission?.partner && (
                   <PartnerAvatar
@@ -281,7 +281,7 @@ function CommissionDetailsContent({
       <div className="order-first w-full shrink-0 lg:order-last lg:w-[360px]">
         <div className="rounded-xl border border-neutral-200 bg-white p-4">
           <div className="mb-2 flex items-center justify-between">
-            <h3 className="text-content-emphasis text-base font-semibold">
+            <h3 className="text-base font-semibold text-content-emphasis">
               Commission details
             </h3>
             <Button

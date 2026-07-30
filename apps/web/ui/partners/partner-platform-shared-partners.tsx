@@ -65,7 +65,7 @@ function SharedPartner({
         href={`/partners/network?partnerId=${partner.id}&search=${encodeURIComponent(partner.email ?? "")}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-content-subtle hover:text-content-default shrink-0 text-xs font-medium"
+        className="shrink-0 text-xs font-medium text-content-subtle hover:text-content-default"
       >
         View
       </a>

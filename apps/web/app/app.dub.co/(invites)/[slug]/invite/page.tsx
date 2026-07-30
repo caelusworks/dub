@@ -115,14 +115,14 @@ export default async function WorkspaceInvitePage({
           <div
             className={cn(
               "mt-8 flex w-full max-w-[400px] flex-col gap-3",
-              "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-delay:150ms] [animation-duration:0.5s] [animation-fill-mode:both]",
+              "animate-slide-up-fade [--offset:10px] [animation-delay:150ms] [animation-duration:0.5s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
             )}
           >
-            <h3 className="text-content-default font-semibold">
+            <h3 className="font-semibold text-content-default">
               Products {invite.project.name} uses
             </h3>
 
-            <div className="divide-border-subtle border-border-subtle bg-bg-muted flex flex-col divide-y rounded-lg border">
+            <div className="flex flex-col divide-y divide-border-subtle rounded-lg border border-border-subtle bg-bg-muted">
               {[
                 {
                   icon: (
@@ -155,7 +155,7 @@ export default async function WorkspaceInvitePage({
                 >
                   <div className="flex min-w-0 items-center gap-2">
                     {icon}
-                    <div className="text-content-default text-sm font-medium">
+                    <div className="text-sm font-medium text-content-default">
                       {title}
                     </div>
                   </div>
@@ -163,7 +163,7 @@ export default async function WorkspaceInvitePage({
                   <Link
                     href={href}
                     target="_blank"
-                    className="border-subtle bg-bg-inverted hover:bg-bg-inverted/90 flex h-7 items-center rounded-lg border px-2.5 text-sm text-white transition-transform active:scale-[0.98]"
+                    className="border-subtle flex h-7 items-center rounded-lg border bg-bg-inverted px-2.5 text-sm text-white transition-transform hover:bg-bg-inverted/90 active:scale-[0.98]"
                   >
                     {cta}
                   </Link>
@@ -175,15 +175,15 @@ export default async function WorkspaceInvitePage({
           <div
             className={cn(
               "mt-8 flex w-full max-w-[400px] flex-col gap-3",
-              "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-delay:150ms] [animation-duration:0.5s] [animation-fill-mode:both]",
+              "animate-slide-up-fade [--offset:10px] [animation-delay:150ms] [animation-duration:0.5s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
             )}
           >
-            <h3 className="text-content-default font-semibold">The team</h3>
+            <h3 className="font-semibold text-content-default">The team</h3>
 
             <div className="relative overflow-hidden">
               <div
                 className={cn(
-                  "border-border-subtle bg-bg-muted divide-border-subtle relative flex flex-col divide-y rounded-lg border",
+                  "relative flex flex-col divide-y divide-border-subtle rounded-lg border border-border-subtle bg-bg-muted",
                   invite.project.users.length > MAX_TEAM_DISPLAY &&
                     "[mask-image:linear-gradient(0deg,transparent,black_45px)]",
                 )}
@@ -200,7 +200,7 @@ export default async function WorkspaceInvitePage({
                           user={{ id, name, image }}
                           className="size-6"
                         />
-                        <span className="text-content-default min-w-0 truncate text-sm font-medium">
+                        <span className="min-w-0 truncate text-sm font-medium text-content-default">
                           {name || email}
                         </span>
                       </div>
@@ -210,7 +210,7 @@ export default async function WorkspaceInvitePage({
 
               {invite.project.users.length > MAX_TEAM_DISPLAY && (
                 <div className="absolute inset-x-0 bottom-0 flex items-center justify-center">
-                  <span className="text-content-subtle select-none text-xs font-medium">
+                  <span className="select-none text-xs font-medium text-content-subtle">
                     +{invite.project.users.length - MAX_TEAM_DISPLAY} more
                   </span>
                 </div>
@@ -221,14 +221,14 @@ export default async function WorkspaceInvitePage({
           <div
             className={cn(
               "mt-8 flex w-full max-w-[400px] flex-col gap-3",
-              "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-delay:250ms] [animation-duration:0.5s] [animation-fill-mode:both]",
+              "animate-slide-up-fade [--offset:10px] [animation-delay:250ms] [animation-duration:0.5s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
             )}
           >
-            <h3 className="text-content-default font-semibold">
+            <h3 className="font-semibold text-content-default">
               Additional resources
             </h3>
 
-            <div className="divide-border-subtle border-border-subtle bg-bg-muted flex flex-col divide-y rounded-lg border">
+            <div className="flex flex-col divide-y divide-border-subtle rounded-lg border border-border-subtle bg-bg-muted">
               {[
                 {
                   icon: LifeRing,
@@ -261,10 +261,10 @@ export default async function WorkspaceInvitePage({
                       <Icon variant="fill" className="size-4" />
                     </div>
                     <div className="min-w-0">
-                      <div className="text-content-default text-sm font-medium">
+                      <div className="text-sm font-medium text-content-default">
                         {title}
                       </div>
-                      <p className="text-content-subtle truncate text-xs font-medium">
+                      <p className="truncate text-xs font-medium text-content-subtle">
                         {description}
                       </p>
                     </div>
@@ -273,7 +273,7 @@ export default async function WorkspaceInvitePage({
                   <Link
                     href={href}
                     target="_blank"
-                    className="border-subtle bg-bg-default hover:bg-bg-muted flex h-7 items-center rounded-lg border px-2.5 text-sm font-medium transition-transform active:scale-[0.98]"
+                    className="border-subtle flex h-7 items-center rounded-lg border bg-bg-default px-2.5 text-sm font-medium transition-transform hover:bg-bg-muted active:scale-[0.98]"
                   >
                     {cta}
                   </Link>
@@ -301,14 +301,14 @@ function Hero({
 }) {
   return (
     <>
-      <div className="animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-duration:0.5s] [animation-fill-mode:both]">
+      <div className="animate-slide-up-fade [--offset:10px] [animation-duration:0.5s] [animation-fill-mode:both] motion-reduce:animate-fade-in">
         <Wordmark className="h-8" />
       </div>
 
       <div
         className={cn(
           "relative z-0 mt-8 flex items-center",
-          "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-delay:50ms] [animation-duration:0.5s] [animation-fill-mode:both]",
+          "animate-slide-up-fade [--offset:10px] [animation-delay:50ms] [animation-duration:0.5s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
         )}
       >
         <img
@@ -334,18 +334,18 @@ function Hero({
       <div
         className={cn(
           "flex w-full flex-col items-center text-center",
-          "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-delay:100ms] [animation-duration:0.5s] [animation-fill-mode:both]",
+          "animate-slide-up-fade [--offset:10px] [animation-delay:100ms] [animation-duration:0.5s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
           !isExpired ? "max-w-[400px]" : "max-w-[440px]",
         )}
       >
-        <h2 className="text-content-default mt-4 text-pretty text-lg font-semibold">
+        <h2 className="mt-4 text-pretty text-lg font-semibold text-content-default">
           {!isExpired ? (
             <>Welcome to the {invite.project.name} workspace</>
           ) : (
             <>Your invite to the {invite.project.name} workspace has expired</>
           )}
         </h2>
-        <p className="text-content-subtle text-pretty text-base font-medium">
+        <p className="text-pretty text-base font-medium text-content-subtle">
           {!isExpired ? (
             <>
               You've been added as a{invite.role === "owner" ? "n" : ""}{" "}

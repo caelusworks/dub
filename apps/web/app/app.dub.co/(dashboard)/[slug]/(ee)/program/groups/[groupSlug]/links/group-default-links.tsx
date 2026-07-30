@@ -36,7 +36,7 @@ export function GroupDefaultLinks() {
       <div className="flex items-center justify-between">
         <div>
           <div className="flex items-center gap-2">
-            <h3 className="text-content-emphasis text-lg font-semibold leading-7">
+            <h3 className="text-lg font-semibold leading-7 text-content-emphasis">
               Default links
             </h3>
             <InfoTooltip
@@ -45,7 +45,7 @@ export function GroupDefaultLinks() {
               }
             />
           </div>
-          <p className="text-content-subtle text-sm font-normal leading-5">
+          <p className="text-sm font-normal leading-5 text-content-subtle">
             Links that are automatically created for each partner in this group
           </p>
         </div>
@@ -226,7 +226,7 @@ function DefaultLinkPreview({ link }: { link: PartnerGroupDefaultLink }) {
 
 function DefaultLinkPreviewSkeleton() {
   return (
-    <div className="border-border-subtle group relative flex items-center gap-3 rounded-xl border bg-white p-4">
+    <div className="group relative flex items-center gap-3 rounded-xl border border-border-subtle bg-white p-4">
       <div className="relative flex shrink-0 items-center">
         <div className="absolute inset-0 h-8 w-8 rounded-full border border-neutral-200 sm:h-10 sm:w-10">
           <div className="h-full w-full rounded-full border border-white bg-gradient-to-t from-neutral-100" />
@@ -250,12 +250,12 @@ function DefaultLinkPreviewSkeleton() {
 function NoDefaultLinks() {
   return (
     <div className="flex h-[200px] flex-col items-center justify-center gap-6 rounded-lg bg-neutral-50 p-4">
-      <Hyperlink className="text-content-emphasis size-6" />
+      <Hyperlink className="size-6 text-content-emphasis" />
       <div className="flex flex-col gap-1 text-center">
-        <h2 className="text-content-emphasis text-base font-medium">
+        <h2 className="text-base font-medium text-content-emphasis">
           Default links
         </h2>
-        <p className="text-content-subtle text-sm">
+        <p className="text-sm text-content-subtle">
           No default links have been created yet
         </p>
       </div>

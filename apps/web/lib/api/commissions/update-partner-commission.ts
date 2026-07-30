@@ -133,7 +133,7 @@ export async function updatePartnerCommission({
     finalSaleAmount = Math.max(
       modifySaleAmount !== undefined
         ? originalSaleAmount + modifySaleAmount
-        : saleAmount ?? originalSaleAmount,
+        : (saleAmount ?? originalSaleAmount),
       0, // Ensure the amount is not negative
     );
 

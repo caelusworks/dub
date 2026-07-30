@@ -3,9 +3,7 @@ import { LucideIcon } from "lucide-react";
 import { ComponentType, ReactNode, SVGProps } from "react";
 
 type FilterIcon =
-  | LucideIcon
-  | ReactNode
-  | ComponentType<SVGProps<SVGSVGElement>>;
+  LucideIcon | ReactNode | ComponentType<SVGProps<SVGSVGElement>>;
 
 export type { FilterOperator };
 
@@ -78,9 +76,7 @@ export type LegacyActiveFilterPlural = {
 };
 
 export type ActiveFilterInput =
-  | ActiveFilter
-  | LegacyActiveFilterSingular
-  | LegacyActiveFilterPlural;
+  ActiveFilter | LegacyActiveFilterSingular | LegacyActiveFilterPlural;
 
 /**
  * Normalize active filter to the new format with operator support

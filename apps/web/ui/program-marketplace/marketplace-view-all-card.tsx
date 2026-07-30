@@ -19,7 +19,7 @@ export function MarketplaceViewAllCard({
     <Link
       href={href}
       className={cn(
-        "border-border-subtle hover:drop-shadow-card-hover group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-xl border bg-white transition-[filter]",
+        "group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-xl border border-border-subtle bg-white transition-[filter] hover:drop-shadow-card-hover",
         className,
       )}
     >

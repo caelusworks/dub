@@ -57,7 +57,7 @@ export default function PartnerApplicationRejected({
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[600px] rounded border border-solid border-neutral-200 px-10 py-5">
-            <Section className="mb-8 mt-6">
+            <Section className="mt-6 mb-8">
               <Img src={DUB_WORDMARK} width="61" height="32" alt="dub" />
             </Section>
 
@@ -90,7 +90,7 @@ export default function PartnerApplicationRejected({
             ) : null}
 
             {notes ? (
-              <Text className="whitespace-pre-line text-sm leading-6 text-neutral-600">
+              <Text className="text-sm leading-6 whitespace-pre-line text-neutral-600">
                 <strong>Additional notes:</strong>
                 <br />
                 {notes}

@@ -92,9 +92,9 @@ export function LinkTitleColumn({ link }: { link: ResponseLink }) {
   const showFolderIcon = useMemo(() => {
     return Boolean(
       !loading &&
-        link.folderId &&
-        currentFolderId !== link.folderId &&
-        subdomain !== "admin",
+      link.folderId &&
+      currentFolderId !== link.folderId &&
+      subdomain !== "admin",
     );
   }, [loading, link.folderId, currentFolderId, subdomain]);
 
@@ -233,7 +233,7 @@ function SettingsBadge({ link }: { link: ResponseLink }) {
           <HoverCard.Content
             side="bottom"
             sideOffset={8}
-            className="animate-slide-up-fade z-[99] items-center overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm"
+            className="z-[99] animate-slide-up-fade items-center overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm"
           >
             <div className="flex w-[340px] flex-col p-3 text-sm">
               {settings.map(({ label, icon: Icon }) => (
@@ -353,7 +353,7 @@ const Details = memo(
           compact
             ? [
                 "hidden gap-2.5 opacity-0 group-data-[variant=compact]/card-list:flex group-data-[variant=compact]/card-list:opacity-100",
-                "xs:min-w-[40px] xs:basis-[40px] min-w-0 shrink-0 grow basis-0 sm:min-w-[120px] sm:basis-[120px]",
+                "min-w-0 shrink-0 grow basis-0 xs:min-w-[40px] xs:basis-[40px] sm:min-w-[120px] sm:basis-[120px]",
               ]
             : "hidden gap-1.5 opacity-0 group-data-[variant=loose]/card-list:flex group-data-[variant=loose]/card-list:opacity-100 md:gap-3",
         )}

@@ -55,7 +55,9 @@ export function useAnalyticsQuery({
 
   // Only set interval if start and end are not provided
   const interval =
-    start || end ? undefined : searchParams?.get("interval") ?? defaultInterval;
+    start || end
+      ? undefined
+      : (searchParams?.get("interval") ?? defaultInterval);
 
   const root = searchParams.get("root");
 

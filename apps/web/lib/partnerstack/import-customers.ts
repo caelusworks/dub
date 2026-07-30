@@ -153,7 +153,7 @@ export async function importCustomers(payload: PartnerStackImportPayload) {
           customerChunk.map((customer) => {
             const partnerId = partnerKeysToId[customer.partnership_key];
             const links = partnerId
-              ? partnerIdToLinks.get(partnerId) ?? []
+              ? (partnerIdToLinks.get(partnerId) ?? [])
               : [];
 
             return createCustomer({

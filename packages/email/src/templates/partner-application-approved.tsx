@@ -101,7 +101,7 @@ export default function PartnerApplicationApproved({
                       Rewards
                     </Text>
                     {rewards.map((reward) => (
-                      <Row key={reward.label} className="mb-0 mt-2">
+                      <Row key={reward.label} className="mt-2 mb-0">
                         <Column className="align-center">
                           <Img src={reward.icon} height="16" alt="" />
                         </Column>
@@ -122,7 +122,7 @@ export default function PartnerApplicationApproved({
                       Bounties
                     </Text>
                     {bounties.map((bounty) => (
-                      <Row key={bounty.label} className="mb-0 mt-2">
+                      <Row key={bounty.label} className="mt-2 mb-0">
                         <Column className="align-center">
                           <Img src={bounty.icon} height="16" alt="" />
                         </Column>
@@ -204,7 +204,7 @@ export default function PartnerApplicationApproved({
 
             <Hr className="my-6 border-neutral-200" />
 
-            <Section className="mb-8 mt-8">
+            <Section className="mt-8 mb-8">
               <Link
                 className="rounded-lg bg-neutral-900 px-6 py-3 text-[13px] font-semibold text-white no-underline"
                 href={`https://partners.dub.co/programs/${program.slug}`}

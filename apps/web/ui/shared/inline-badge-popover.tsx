@@ -180,7 +180,7 @@ export function InlineBadgePopoverMenu<T extends any>({
         <div className="relative">
           <Command.List
             className={cn(
-              "scrollbar-hide flex max-h-64 flex-col gap-1 overflow-y-auto transition-all",
+              "flex max-h-64 flex-col gap-1 overflow-y-auto transition-all scrollbar-hide",
               hasDescriptions ? "max-w-72" : "max-w-52",
             )}
             ref={scrollRef}
@@ -229,15 +229,15 @@ export function InlineBadgePopoverMenu<T extends any>({
                     {icon}
                     {description ? (
                       <div className="flex min-w-0 flex-col gap-0.5 pr-2">
-                        <span className="text-content-default text-left text-sm font-medium">
+                        <span className="text-left text-sm font-medium text-content-default">
                           {text}
                         </span>
-                        <span className="text-content-subtle text-left text-xs font-normal leading-snug">
+                        <span className="text-left text-xs font-normal leading-snug text-content-subtle">
                           {description}
                         </span>
                       </div>
                     ) : (
-                      <span className="text-content-default pr-3 text-left text-sm font-medium">
+                      <span className="pr-3 text-left text-sm font-medium text-content-default">
                         {text}
                       </span>
                     )}
@@ -247,7 +247,7 @@ export function InlineBadgePopoverMenu<T extends any>({
                     : selectedValue === value) && (
                     <Check2
                       className={cn(
-                        "text-content-emphasis size-3.5 shrink-0",
+                        "size-3.5 shrink-0 text-content-emphasis",
                         description && "mt-0.5",
                       )}
                     />
@@ -483,7 +483,7 @@ export const InlineBadgePopoverRichTextArea = ({
       </div>
       <div className="mt-1 flex items-center justify-between px-1">
         {maxLength ? (
-          <div className="text-content-subtle mt-1 text-xs">
+          <div className="mt-1 text-xs text-content-subtle">
             {nFormatter(value?.toString().length || 0, { full: true })}/
             {nFormatter(maxLength, { full: true })} characters
           </div>
@@ -491,7 +491,7 @@ export const InlineBadgePopoverRichTextArea = ({
           <div />
         )}
 
-        <MarkdownIcon className="text-content-default size-4" />
+        <MarkdownIcon className="size-4 text-content-default" />
       </div>
     </div>
   );

@@ -68,7 +68,7 @@ export function CampaignGroupsSelector({
             )}
           >
             <Users6 className="size-3.5 shrink-0" />
-            <span className="text-content-default text-sm font-medium">
+            <span className="text-sm font-medium text-content-default">
               All groups
             </span>
           </div>
@@ -85,7 +85,7 @@ export function CampaignGroupsSelector({
                 )}
               >
                 <GroupColorCircle group={group} />
-                <span className="text-content-default min-w-0 truncate text-sm font-medium">
+                <span className="min-w-0 truncate text-sm font-medium text-content-default">
                   {group.name}
                 </span>
               </div>

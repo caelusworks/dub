@@ -24,7 +24,7 @@ export function SubmittedLeadActivitySection({ leadId }: { leadId: string }) {
   return (
     <section className="order-3 col-span-full flex flex-col gap-3 px-1">
       {!loading && (
-        <h3 className="text-content-emphasis text-base font-semibold">
+        <h3 className="text-base font-semibold text-content-emphasis">
           Activity
         </h3>
       )}

@@ -184,7 +184,7 @@ export function ProgramMarketplaceLogos({ className }: { className?: string }) {
           <div
             key={index}
             className={cn(
-              "animate-float absolute",
+              "absolute animate-float",
               index % 2 === 0 && "[animation-direction:reverse]",
             )}
             style={{

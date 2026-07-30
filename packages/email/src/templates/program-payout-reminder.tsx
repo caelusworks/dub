@@ -52,7 +52,7 @@ export default function ProgramPayoutReminder({
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
           <Container className="mx-auto my-10 max-w-[600px] px-10 py-5">
-            <Section className="mb-8 mt-6">
+            <Section className="mt-6 mb-8">
               <Img src={DUB_WORDMARK} width="61" height="32" alt="dub" />
             </Section>
 

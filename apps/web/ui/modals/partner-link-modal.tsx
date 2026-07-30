@@ -194,7 +194,7 @@ function PartnerLinkModalContent({
   const [destinationDomain, setDestinationDomain] = useState(
     link
       ? (getDomainWithoutWWW(link.url) as string)
-      : destinationDomains?.[0] ?? null,
+      : (destinationDomains?.[0] ?? null),
   );
 
   const selectedAdditionalLink = useMemo(
@@ -248,7 +248,7 @@ function PartnerLinkModalContent({
     () =>
       Boolean(
         isLoading ||
-          (isEditingLink ? !isDirty : destinationDomains.length === 0),
+        (isEditingLink ? !isDirty : destinationDomains.length === 0),
       ),
     [isLoading, isEditingLink, isDirty, destinationDomains],
   );

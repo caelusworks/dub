@@ -86,7 +86,7 @@ export default async function ProgramInvitePage(props: {
         <div
           className={cn(
             "relative z-0 flex items-center",
-            "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-delay:50ms] [animation-duration:0.5s] [animation-fill-mode:both]",
+            "animate-slide-up-fade [--offset:10px] [animation-delay:50ms] [animation-duration:0.5s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
           )}
         >
           <img
@@ -106,14 +106,14 @@ export default async function ProgramInvitePage(props: {
         <div
           className={cn(
             "flex w-full flex-col items-center text-center",
-            "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-delay:100ms] [animation-duration:0.5s] [animation-fill-mode:both]",
+            "animate-slide-up-fade [--offset:10px] [animation-delay:100ms] [animation-duration:0.5s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
             "max-w-[400px]",
           )}
         >
-          <h2 className="text-content-default mt-4 text-pretty text-lg font-semibold">
+          <h2 className="mt-4 text-pretty text-lg font-semibold text-content-default">
             You&apos;re invited to the {program.name} affiliate program
           </h2>
-          <p className="text-content-subtle text-pretty text-base font-medium">
+          <p className="text-pretty text-base font-medium text-content-subtle">
             Share {program.name} with your audience and earn a share of revenue
             on plans they purchase through your referral.
           </p>

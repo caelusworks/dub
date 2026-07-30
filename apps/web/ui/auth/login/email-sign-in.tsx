@@ -128,7 +128,7 @@ export const EmailSignIn = ({ next }: { next?: string }) => {
       >
         {authMethod === "email" && (
           <label>
-            <span className="text-content-emphasis mb-2 block text-sm font-medium leading-none">
+            <span className="mb-2 block text-sm font-medium leading-none text-content-emphasis">
               {subdomain === "partners" ? "Email" : "Work email"}
             </span>
             <input
@@ -155,12 +155,12 @@ export const EmailSignIn = ({ next }: { next?: string }) => {
         {showPasswordField && (
           <label>
             <div className="mb-2 flex items-center justify-between">
-              <span className="text-content-emphasis block text-sm font-medium leading-none">
+              <span className="block text-sm font-medium leading-none text-content-emphasis">
                 Password
               </span>
               <Link
                 href={`/forgot-password?email=${encodeURIComponent(email)}`}
-                className="text-content-subtle hover:text-content-emphasis text-xs leading-none underline underline-offset-2 transition-colors"
+                className="text-xs leading-none text-content-subtle underline underline-offset-2 transition-colors hover:text-content-emphasis"
               >
                 Forgot password?
               </Link>

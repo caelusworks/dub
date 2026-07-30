@@ -83,7 +83,7 @@ export function AnalyticsAreaChart({
     () =>
       demo
         ? DEMO_DATA
-        : data?.map(({ start, clicks, leads, sales, saleAmount }) => ({
+        : (data?.map(({ start, clicks, leads, sales, saleAmount }) => ({
             date: new Date(start),
             values: {
               clicks,
@@ -91,7 +91,7 @@ export function AnalyticsAreaChart({
               sales,
               saleAmount,
             },
-          })) ?? null,
+          })) ?? null),
     [data, demo],
   );
 

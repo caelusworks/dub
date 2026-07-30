@@ -50,7 +50,7 @@ export function PartnerPlatformCard({
         </div>
         <div className="flex min-w-0 flex-col text-xs">
           <div className="flex items-center gap-1">
-            <span className="text-content-emphasis block min-w-0 truncate font-semibold">
+            <span className="block min-w-0 truncate font-semibold text-content-emphasis">
               {prefix}
               {value}
             </span>
@@ -66,7 +66,7 @@ export function PartnerPlatformCard({
             )}
           </div>
           {info && info.length > 0 && (
-            <div className="text-content-subtle min-w-0 truncate font-medium">
+            <div className="min-w-0 truncate font-medium text-content-subtle">
               {info.join(" • ")}
             </div>
           )}
@@ -85,12 +85,12 @@ export function PartnerPlatformCard({
           <Button
             variant="outline"
             icon={<Trash className="size-4" />}
-            className="text-content-subtle hover:text-content-default size-8 p-0"
+            className="size-8 p-0 text-content-subtle hover:text-content-default"
             onClick={onRemove}
           />
         </div>
       ) : (
-        <ArrowUpRight className="text-content-subtle mr-1 size-4 -translate-x-0.5 translate-y-0.5 opacity-0 transition-[opacity,transform] group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
+        <ArrowUpRight className="mr-1 size-4 -translate-x-0.5 translate-y-0.5 text-content-subtle opacity-0 transition-[opacity,transform] group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100" />
       )}
     </Container>
   );

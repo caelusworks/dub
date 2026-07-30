@@ -100,8 +100,7 @@ export function extractWorkspaceLinkFilters(params: {
   const extractFilter = (filter?: ParsedFilter) => ({
     values: filter?.values,
     operator: (filter?.sqlOperator === "NOT IN" ? "NOT IN" : "IN") as
-      | "IN"
-      | "NOT IN",
+      "IN" | "NOT IN",
   });
 
   const linkId = extractFilter(params.linkId);

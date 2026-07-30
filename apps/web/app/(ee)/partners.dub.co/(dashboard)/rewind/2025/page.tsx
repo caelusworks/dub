@@ -46,8 +46,8 @@ export default async function PartnerRewind2025Page() {
       className="flex h-full flex-col"
       contentWrapperClassName="grow pt-0 lg:pt-0"
     >
-      <div className="bg-bg-muted relative size-full">
-        <div className="animate-fade-in absolute inset-0 overflow-hidden [mask-image:radial-gradient(transparent,black)]">
+      <div className="relative size-full bg-bg-muted">
+        <div className="absolute inset-0 animate-fade-in overflow-hidden [mask-image:radial-gradient(transparent,black)]">
           <Grid
             cellSize={56}
             patternOffset={[-4, -28]}
@@ -57,7 +57,7 @@ export default async function PartnerRewind2025Page() {
           <Gradient className="absolute right-0 top-0 h-[720px] w-96 -translate-y-1/2 translate-x-1/2 -rotate-[55deg] opacity-20" />
         </div>
 
-        <div className="scrollbar-hide flex size-full items-center justify-center overflow-y-auto p-6">
+        <div className="flex size-full items-center justify-center overflow-y-auto p-6 scrollbar-hide">
           <PartnerRewind2025PageClient partnerRewind={partnerRewind} />
         </div>
       </div>

@@ -26,13 +26,13 @@ export function useCountryChangeWarningModal() {
       setShowModal={setShowModalState}
       onClose={handleCancel}
     >
-      <div className="border-border-subtle border-b bg-white p-5 text-left">
-        <h3 className="text-content-emphasis text-base font-semibold">
+      <div className="border-b border-border-subtle bg-white p-5 text-left">
+        <h3 className="text-base font-semibold text-content-emphasis">
           Updating your country
         </h3>
       </div>
 
-      <div className="text-content-subtle bg-neutral-50 p-5 text-sm">
+      <div className="bg-neutral-50 p-5 text-sm text-content-subtle">
         <p>
           You must select the country where you legally reside for tax purposes.
           Providing incorrect information may result in account suspension, loss
@@ -44,7 +44,7 @@ export function useCountryChangeWarningModal() {
         </p>
       </div>
 
-      <div className="border-border-subtle flex items-center justify-end gap-2 border-t bg-neutral-50 px-5 py-4">
+      <div className="flex items-center justify-end gap-2 border-t border-border-subtle bg-neutral-50 px-5 py-4">
         <Button
           variant="secondary"
           className="h-8 w-fit px-3"

@@ -27,7 +27,7 @@ const products = {
 
 export function ProductSelector() {
   return (
-    <div className="animate-fade-in mx-auto grid w-full gap-4 sm:max-w-[600px] sm:grid-cols-2">
+    <div className="mx-auto grid w-full animate-fade-in gap-4 sm:max-w-[600px] sm:grid-cols-2">
       {Object.entries(products).map(([key, product]) => (
         <ProductOption
           key={key}

@@ -160,7 +160,7 @@ function PayoutDetailsSheetContent({ payout }: PayoutDetailsSheetProps) {
                       payout.method === "stablecoin" ? "Also, since" : "Since",
                     )}
                 >
-                  <span className="hover:text-content-emphasis cursor-help underline decoration-dotted underline-offset-2">
+                  <span className="cursor-help underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
                     {currencyFormatter(
                       (payout.method === "stablecoin"
                         ? payout.amount * STABLECOIN_PAYOUT_FEE_RATE
@@ -212,7 +212,7 @@ function PayoutDetailsSheetContent({ payout }: PayoutDetailsSheetProps) {
             side="right"
             rows={["local", "utc"]}
           >
-            <span className="hover:text-content-emphasis underline decoration-dotted underline-offset-2">
+            <span className="underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
               {formatDateTimeSmart(payout.initiatedAt)}
             </span>
           </TimestampTooltip>
@@ -230,7 +230,7 @@ function PayoutDetailsSheetContent({ payout }: PayoutDetailsSheetProps) {
             side="right"
             rows={["local", "utc"]}
           >
-            <span className="hover:text-content-emphasis underline decoration-dotted underline-offset-2">
+            <span className="underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
               {formatDateTimeSmart(payout.paidAt)}
             </span>
           </TimestampTooltip>

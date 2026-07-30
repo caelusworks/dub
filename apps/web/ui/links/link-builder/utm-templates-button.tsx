@@ -74,7 +74,7 @@ export function UTMTemplatesButton({
           tooltipProps={{
             content: "Load a UTM template",
           }}
-          className="animate-fade-in size-6"
+          className="size-6 animate-fade-in"
         >
           <DiamondTurnRight className="size-4" />
         </ButtonTooltip>
@@ -93,7 +93,7 @@ function UTMTemplateList({
   const { setValue } = useFormContext();
 
   return data.length ? (
-    <div className="scrollbar-hide grid max-h-64 overflow-y-auto p-1 md:min-w-48">
+    <div className="grid max-h-64 overflow-y-auto p-1 scrollbar-hide md:min-w-48">
       <span className="block pb-2 pl-2.5 pt-2 text-xs font-medium text-neutral-500">
         UTM Templates
       </span>

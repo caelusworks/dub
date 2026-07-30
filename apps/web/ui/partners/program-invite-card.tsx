@@ -39,7 +39,7 @@ export function ProgramInviteCard({
   const discount = programEnrollment.discount;
 
   return (
-    <div className="hover:drop-shadow-card-hover relative flex flex-col rounded-xl border border-neutral-200 bg-neutral-50 p-5 transition-[filter]">
+    <div className="relative flex flex-col rounded-xl border border-neutral-200 bg-neutral-50 p-5 transition-[filter] hover:drop-shadow-card-hover">
       <div className="flex justify-between gap-2">
         <BlurImage
           width={64}

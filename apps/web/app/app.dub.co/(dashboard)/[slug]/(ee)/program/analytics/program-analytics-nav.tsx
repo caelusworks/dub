@@ -5,9 +5,7 @@ import { PageNavTabs } from "@/ui/layout/page-nav-tabs";
 import { InvoiceDollar, LinesY, UserCheck } from "@dub/ui";
 
 export type ProgramAnalyticsTabId =
-  | "performance"
-  | "commissions"
-  | "applications";
+  "performance" | "commissions" | "applications";
 
 export const PROGRAM_ANALYTICS_TABS: {
   id: ProgramAnalyticsTabId;

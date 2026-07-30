@@ -26,8 +26,7 @@ type PartnerReferralFlatTrigger =
   keyof typeof PARTNER_REFERRAL_TRIGGER_CONFIG.flat;
 
 type PartnerReferralTrigger =
-  | PartnerReferralPercentageTrigger
-  | PartnerReferralFlatTrigger;
+  PartnerReferralPercentageTrigger | PartnerReferralFlatTrigger;
 
 export const PARTNER_REFERRAL_PERCENTAGE_TRIGGERS = Object.keys(
   PARTNER_REFERRAL_TRIGGER_CONFIG.percentage,

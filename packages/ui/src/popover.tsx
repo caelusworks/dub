@@ -54,9 +54,9 @@ export function Popover({
           {children}
         </Drawer.Trigger>
         <Drawer.Portal>
-          <Drawer.Overlay className="bg-bg-subtle fixed inset-0 z-50 bg-opacity-10 backdrop-blur" />
+          <Drawer.Overlay className="fixed inset-0 z-50 bg-bg-subtle bg-opacity-10 backdrop-blur" />
           <Drawer.Content
-            className="border-border-subtle bg-bg-default fixed bottom-0 left-0 right-0 z-50 mt-24 rounded-t-[10px] border-t"
+            className="fixed bottom-0 left-0 right-0 z-50 mt-24 rounded-t-[10px] border-t border-border-subtle bg-bg-default"
             onEscapeKeyDown={onEscapeKeyDown}
             onPointerDownOutside={(e) => {
               // Prevent dismissal when clicking inside a toast
@@ -69,9 +69,9 @@ export function Popover({
             }}
           >
             <div className="sticky top-0 z-20 flex w-full items-center justify-center rounded-t-[10px] bg-inherit">
-              <div className="bg-border-default my-3 h-1 w-12 rounded-full" />
+              <div className="my-3 h-1 w-12 rounded-full bg-border-default" />
             </div>
-            <div className="bg-bg-default flex w-full items-center justify-center overflow-hidden pb-4 align-middle shadow-xl">
+            <div className="flex w-full items-center justify-center overflow-hidden bg-bg-default pb-4 align-middle shadow-xl">
               {content}
             </div>
           </Drawer.Content>
@@ -98,7 +98,7 @@ export function Popover({
           align={align}
           side={side}
           className={cn(
-            "animate-slide-up-fade border-border-subtle bg-bg-default z-50 items-center rounded-lg border drop-shadow-lg sm:block",
+            "z-50 animate-slide-up-fade items-center rounded-lg border border-border-subtle bg-bg-default drop-shadow-lg sm:block",
             popoverContentClassName,
           )}
           sticky={sticky}

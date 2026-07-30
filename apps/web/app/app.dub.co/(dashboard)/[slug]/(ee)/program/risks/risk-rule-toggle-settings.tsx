@@ -31,7 +31,7 @@ export function RiskRuleToggleSettings({
       <div className="flex items-center justify-between p-3">
         <div className="flex-1">
           <h3 className="text-sm font-semibold text-neutral-900">{title}</h3>
-          <p className="text-content-subtle mt-0.5 text-xs font-normal tracking-normal">
+          <p className="mt-0.5 text-xs font-normal tracking-normal text-content-subtle">
             {description}
           </p>
         </div>

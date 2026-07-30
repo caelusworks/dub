@@ -24,7 +24,7 @@ export function FeaturesSection({
         <div className="mx-auto flex h-7 w-fit items-center rounded-full border border-neutral-200 bg-white px-4 text-xs text-neutral-800">
           What is Dub?
         </div>
-        <h2 className="font-display mt-2 text-balance text-3xl font-medium text-neutral-900">
+        <h2 className="mt-2 text-balance font-display text-3xl font-medium text-neutral-900">
           Powerful features for modern marketing teams
         </h2>
         <p className="mt-3 text-pretty text-lg text-neutral-500">

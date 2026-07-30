@@ -110,7 +110,7 @@ function TextBlockModalInner({
               href="https://www.markdownguide.org/basic-syntax/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-content-subtle mt-1 flex items-center gap-1 text-xs"
+              className="mt-1 flex items-center gap-1 text-xs text-content-subtle"
             >
               <MarkdownIcon role="presentation" className="h-3 w-auto" />
               <span className="sr-only">MarkdownIcon</span> supported

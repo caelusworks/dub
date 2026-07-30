@@ -85,20 +85,20 @@ export default function PartnerCustomersLayout({
                   key={tab.id}
                   href={`/${slug}/program/customers${tab.href ? `/${tab.href}` : ""}`}
                   className={cn(
-                    "border-border-subtle flex flex-col gap-1 rounded-lg border p-4 text-left transition-colors duration-100",
+                    "flex flex-col gap-1 rounded-lg border border-border-subtle p-4 text-left transition-colors duration-100",
                     isActive
                       ? "border-black ring-1 ring-black"
                       : "hover:bg-bg-muted",
                   )}
                 >
                   <div className="flex items-center gap-2">
-                    <span className="text-content-default text-xs font-semibold">
+                    <span className="text-xs font-semibold text-content-default">
                       {tab.label}
                     </span>
                     {tab.info && <InfoTooltip content={tab.info} />}
                   </div>
                   {tab.count !== undefined ? (
-                    <span className="text-content-emphasis text-base font-semibold">
+                    <span className="text-base font-semibold text-content-emphasis">
                       {tab.count.toLocaleString()}
                     </span>
                   ) : (

@@ -25,14 +25,14 @@ export default async function LoginPage(props: {
     return (
       <AuthLayout showTerms="partners">
         <div className="mx-auto my-10 flex w-full max-w-sm flex-col gap-8">
-          <div className="animate-slide-up-fade relative flex w-auto flex-col items-center [--offset:10px] [animation-duration:1.3s] [animation-fill-mode:both]">
+          <div className="relative flex w-auto animate-slide-up-fade flex-col items-center [--offset:10px] [animation-duration:1.3s] [animation-fill-mode:both]">
             <img
               src={customSSOLoginProgram.logo}
               alt={`${customSSOLoginProgram.name} Logo`}
               className="h-8"
             />
           </div>
-          <div className="animate-slide-up-fade flex flex-col items-center justify-center gap-2 [--offset:10px] [animation-delay:0.15s] [animation-duration:1.3s] [animation-fill-mode:both]">
+          <div className="flex animate-slide-up-fade flex-col items-center justify-center gap-2 [--offset:10px] [animation-delay:0.15s] [animation-duration:1.3s] [animation-fill-mode:both]">
             <h1 className="text-lg font-medium text-neutral-800">
               Sign in to {customSSOLoginProgram.name} Partners
             </h1>

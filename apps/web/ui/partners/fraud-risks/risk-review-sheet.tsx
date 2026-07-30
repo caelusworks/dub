@@ -207,27 +207,27 @@ function RiskReviewSheetContent({
               <Link
                 href={`/${slug}/program/partners/${partner.id}`}
                 target="_blank"
-                className="bg-bg-muted border-border-subtle hover:bg-bg-subtle group relative flex flex-grow flex-col gap-3 rounded-xl border px-4 py-3 transition-colors"
+                className="group relative flex flex-grow flex-col gap-3 rounded-xl border border-border-subtle bg-bg-muted px-4 py-3 transition-colors hover:bg-bg-subtle"
               >
-                <ArrowUpRight2 className="text-content-subtle absolute right-3 top-3 size-3.5 opacity-50 transition-opacity duration-150 group-hover:opacity-100" />
-                <h2 className="text-content-default text-sm font-semibold leading-5">
+                <ArrowUpRight2 className="absolute right-3 top-3 size-3.5 text-content-subtle opacity-50 transition-opacity duration-150 group-hover:opacity-100" />
+                <h2 className="text-sm font-semibold leading-5 text-content-default">
                   Partner details
                 </h2>
                 <div className="flex min-w-0 items-center gap-3">
                   <PartnerAvatar partner={partner} className="size-10" />
                   <div className="flex min-w-0 flex-col">
-                    <span className="text-content-emphasis truncate text-sm font-semibold">
+                    <span className="truncate text-sm font-semibold text-content-emphasis">
                       {partner.name}
                     </span>
-                    <span className="text-content-subtle truncate text-xs font-medium">
+                    <span className="truncate text-xs font-medium text-content-subtle">
                       {partner.email}
                     </span>
                   </div>
                 </div>
               </Link>
 
-              <div className="bg-bg-muted border-border-subtle flex flex-col gap-3 rounded-xl border px-4 py-3 sm:shrink-0">
-                <h2 className="text-content-default text-sm font-semibold leading-5">
+              <div className="flex flex-col gap-3 rounded-xl border border-border-subtle bg-bg-muted px-4 py-3 sm:shrink-0">
+                <h2 className="text-sm font-semibold leading-5 text-content-default">
                   Program owner activity
                 </h2>
                 <div className="flex flex-col gap-2">
@@ -236,12 +236,12 @@ function RiskReviewSheetContent({
               </div>
             </div>
 
-            <div className="border-border-subtle flex flex-col gap-4 rounded-xl border p-4">
+            <div className="flex flex-col gap-4 rounded-xl border border-border-subtle p-4">
               <div className="flex flex-col">
-                <span className="text-content-default text-sm font-semibold">
+                <span className="text-sm font-semibold text-content-default">
                   {fraudRuleInfo.name}
                 </span>
-                <span className="text-content-subtle text-xs font-normal">
+                <span className="text-xs font-normal text-content-subtle">
                   {fraudRuleInfo.description}
                 </span>
               </div>
@@ -258,7 +258,7 @@ function RiskReviewSheetContent({
               COMMISSION_BLOCKING_FRAUD_TYPE.includes(fraudGroup.type) && (
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-content-emphasis font-semibold leading-6">
+                    <h3 className="font-semibold leading-6 text-content-emphasis">
                       Associated commissions
                     </h3>
                     <Button
@@ -283,7 +283,7 @@ function RiskReviewSheetContent({
 
             {fraudGroup.status === "resolved" && (
               <div>
-                <h3 className="text-content-emphasis mb-4 font-semibold">
+                <h3 className="mb-4 font-semibold text-content-emphasis">
                   Decision
                 </h3>
 
@@ -334,7 +334,7 @@ function RiskReviewSheetContent({
                     )}
 
                     {fraudGroup.resolutionReason && (
-                      <span className="text-content-subtle text-sm font-medium">
+                      <span className="text-sm font-medium text-content-subtle">
                         {fraudGroup.resolutionReason}
                       </span>
                     )}
@@ -347,7 +347,7 @@ function RiskReviewSheetContent({
 
         {fraudGroup.status === "pending" && (
           <div className="flex flex-col justify-end">
-            <div className="border-border-subtle flex items-center justify-end gap-2 border-t px-5 py-4">
+            <div className="flex items-center justify-end gap-2 border-t border-border-subtle px-5 py-4">
               <Button
                 type="button"
                 variant="secondary"

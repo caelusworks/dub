@@ -91,11 +91,11 @@ export default function PartnerRewardUpdated({
 
             <Section className="my-4 rounded-xl border border-solid border-neutral-200 bg-neutral-50 px-5 py-4">
               <Section>
-                <Text className="mb-0 mt-0 text-base font-semibold text-black">
+                <Text className="mt-0 mb-0 text-base font-semibold text-black">
                   {capitalize(REWARD_EVENT_TO_EMAIL_ACTION[action])}
                 </Text>
 
-                <Row className="mb-0 mt-2">
+                <Row className="mt-2 mb-0">
                   <Column className="align-center">
                     <Img src={rewardSnapshot.icon} height="16" alt="" />
                   </Column>
@@ -116,7 +116,7 @@ export default function PartnerRewardUpdated({
 
             <Hr className="border-neutral-200" />
 
-            <Section className="mb-8 mt-8">
+            <Section className="mt-8 mb-8">
               <Link
                 className="rounded-lg bg-neutral-900 px-6 py-3 text-[13px] font-semibold text-white no-underline"
                 href={`https://partners.dub.co/programs/${program.slug}`}

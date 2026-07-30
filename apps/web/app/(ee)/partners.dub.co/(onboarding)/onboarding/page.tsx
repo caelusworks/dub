@@ -9,7 +9,7 @@ export default function PartnerOnboarding() {
       <h1 className="animate-slide-up-fade text-center text-xl font-semibold [--offset:8px] [animation-delay:250ms] [animation-duration:1s] [animation-fill-mode:both]">
         Create your partner profile
       </h1>
-      <div className="animate-slide-up-fade w-full pt-8 [--offset:10px] [animation-delay:500ms] [animation-duration:1s] [animation-fill-mode:both]">
+      <div className="w-full animate-slide-up-fade pt-8 [--offset:10px] [animation-delay:500ms] [animation-duration:1s] [animation-fill-mode:both]">
         <Suspense fallback={<OnboardingForm />}>
           <OnboardingFormRSC />
         </Suspense>

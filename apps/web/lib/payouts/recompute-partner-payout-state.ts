@@ -54,7 +54,7 @@ export async function recomputePartnerPayoutState(
 
   const connectActive = Boolean(
     connectAccount?.payouts_enabled === true &&
-      connectAccount?.capabilities?.transfers === "active",
+    connectAccount?.capabilities?.transfers === "active",
   );
 
   const stablecoinActive = Boolean(
@@ -86,7 +86,7 @@ export async function recomputePartnerPayoutState(
 
   const defaultPayoutMethod = hasValidDefaultPayoutMethod
     ? partner.defaultPayoutMethod
-    : activePayoutMethods[0] ?? null;
+    : (activePayoutMethods[0] ?? null);
 
   let payoutsEnabledAt: Date | null = null;
 

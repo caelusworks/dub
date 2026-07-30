@@ -268,13 +268,13 @@ function UpdatePartnerTagsModalContent({
                 noTagsAdded ? "Add tags..." : "Search or add tags..."
               }
               onValueChange={setSearch}
-              className="border-border-default placeholder:text-content-muted w-full rounded-lg border px-2.5 py-2 focus:border-neutral-500 focus:outline-none focus:ring-1 focus:ring-neutral-500 sm:text-sm"
+              className="w-full rounded-lg border border-border-default px-2.5 py-2 placeholder:text-content-muted focus:border-neutral-500 focus:outline-none focus:ring-1 focus:ring-neutral-500 sm:text-sm"
             />
             <div className="relative">
               <div
                 ref={scrollRef}
                 onScroll={updateScrollProgress}
-                className="scrollbar-hide max-h-[calc(100dvh-250px)] overflow-y-auto"
+                className="max-h-[calc(100dvh-250px)] overflow-y-auto scrollbar-hide"
               >
                 <Command.List className="mt-4">
                   {tagOptions?.map((tag) => (
@@ -333,7 +333,7 @@ function UpdatePartnerTagsModalContent({
                     )}
                 </Command.List>
 
-                <Command.Empty className="text-content-default flex select-none flex-col items-center justify-center gap-2 py-12">
+                <Command.Empty className="flex select-none flex-col items-center justify-center gap-2 py-12 text-content-default">
                   <Tag className="size-4 shrink-0" />
                   <span className="text-sm font-medium">
                     No tags {noTagsAdded ? "added" : "found"}
@@ -360,7 +360,7 @@ function UpdatePartnerTagsModalContent({
         </AnimatedSizeContainer>
       </div>
 
-      <div className="border-border-subtle flex items-center justify-between gap-4 border-t px-4 py-4">
+      <div className="flex items-center justify-between gap-4 border-t border-border-subtle px-4 py-4">
         {partners.length === 1 ? (
           <div className="flex min-w-0 items-center gap-2">
             <img
@@ -387,7 +387,7 @@ function UpdatePartnerTagsModalContent({
                 />
               ))}
             </div>
-            <span className="text-content-default min-w-0 truncate text-sm font-medium">
+            <span className="min-w-0 truncate text-sm font-medium text-content-default">
               {partners.length} partners selected
             </span>
           </div>
@@ -511,7 +511,7 @@ function TagOption({
             checked={checked}
             onCheckedChange={onCheckedChange}
             className={cn(
-              "border-border-default size-4 shrink-0 rounded data-[state=checked]:bg-black data-[state=indeterminate]:bg-black",
+              "size-4 shrink-0 rounded border-border-default data-[state=checked]:bg-black data-[state=indeterminate]:bg-black",
               "transition-transform duration-100 active:scale-95 group-active/button:scale-95",
             )}
             tabIndex={-1}
@@ -528,11 +528,11 @@ function TagOption({
                 if (e.key === "Enter") handleSave();
               }}
               autoFocus
-              className="border-border-subtle focus:border-border-subtle h-7 rounded-lg border px-2 focus:ring-0 sm:text-sm"
+              className="h-7 rounded-lg border border-border-subtle px-2 focus:border-border-subtle focus:ring-0 sm:text-sm"
             />
           ) : (
             <div className="flex h-7 min-w-0 select-none items-center rounded-lg bg-black/5 px-2">
-              <span className="text-content-default min-w-0 truncate text-sm font-semibold">
+              <span className="min-w-0 truncate text-sm font-semibold text-content-default">
                 {editedTagName}
               </span>
             </div>
@@ -541,7 +541,7 @@ function TagOption({
       </div>
       <div className="flex items-center gap-2">
         {Boolean(partnerCount) && (
-          <div className="text-content-default flex items-center gap-1">
+          <div className="flex items-center gap-1 text-content-default">
             <Users className="size-3.5 shrink-0" />
             <span className="text-sm font-medium tabular-nums">
               {partnerCount}

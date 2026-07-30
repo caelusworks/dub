@@ -83,10 +83,10 @@ export function ConfirmRewardChangeModal({
       className="max-w-md"
     >
       <div className="px-5 py-4 text-left">
-        <h3 className="text-content-emphasis text-base font-semibold">
+        <h3 className="text-base font-semibold text-content-emphasis">
           {TITLES[action]}
         </h3>
-        <p className="text-content-subtle mt-1 text-sm">
+        <p className="mt-1 text-sm text-content-subtle">
           The reward below will be {change} the group
           {partnerCount && partnerCount > 0 ? (
             <>
@@ -114,7 +114,7 @@ export function ConfirmRewardChangeModal({
         </div>
       </div>
 
-      <div className="border-border-subtle flex items-center justify-end gap-2 border-t px-5 py-4">
+      <div className="flex items-center justify-end gap-2 border-t border-border-subtle px-5 py-4">
         <Button
           variant="secondary"
           className="h-8 w-fit px-3"

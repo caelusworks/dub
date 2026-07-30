@@ -73,7 +73,7 @@ export function CampaignsTable() {
         cell: ({ row }) => (
           <div className="flex items-center gap-2">
             <CampaignTypeIcon type={row.original.type} />
-            <span className="text-content-emphasis truncate text-sm font-medium">
+            <span className="truncate text-sm font-medium text-content-emphasis">
               {row.original.name}
             </span>
           </div>

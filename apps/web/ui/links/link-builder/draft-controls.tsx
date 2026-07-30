@@ -79,25 +79,21 @@ export const DraftControls = forwardRef<
     return () => unsubscribe();
   }, [watch, isDirty]);
 
-  useImperativeHandle(
-    ref,
-    () => {
-      return {
-        onSubmitSuccessful() {
-          // Remove the current draft when it's submitted
-          removeDraft(sessionId);
-        },
-        onClose() {
-          // Save draft instantly when the link builder is closed
-          const [url, key] = getValues(["url", "key"]);
-          if ((url || key) && isDirty) {
-            saveDraft(sessionId, getValues());
-          }
-        },
-      };
-    },
-    [sessionId, isDirty],
-  );
+  useImperativeHandle(ref, () => {
+    return {
+      onSubmitSuccessful() {
+        // Remove the current draft when it's submitted
+        removeDraft(sessionId);
+      },
+      onClose() {
+        // Save draft instantly when the link builder is closed
+        const [url, key] = getValues(["url", "key"]);
+        if ((url || key) && isDirty) {
+          saveDraft(sessionId, getValues());
+        }
+      },
+    };
+  }, [sessionId, isDirty]);
 
   return (isDirty && hasSaved) || drafts.length > 0 ? (
     <Popover
@@ -115,7 +111,7 @@ export const DraftControls = forwardRef<
           )}
           {drafts.length > 0 && (
             <AnimatedSizeContainer width={!isMobile} height>
-              <ul className="scrollbar-hide grid max-h-40 overflow-y-auto">
+              <ul className="grid max-h-40 overflow-y-auto scrollbar-hide">
                 {drafts.map((draft) => (
                   <DraftOption
                     key={draft.id}
@@ -148,7 +144,7 @@ export const DraftControls = forwardRef<
         type="button"
         variant="outline"
         className={cn(
-          "animate-fade-in group h-7 w-fit text-sm transition-colors data-[state=open]:bg-neutral-100",
+          "group h-7 w-fit animate-fade-in text-sm transition-colors data-[state=open]:bg-neutral-100",
           isDirty && hasSaved
             ? "pl-3 pr-4 text-neutral-400 hover:text-neutral-600"
             : "pl-4 pr-3 text-neutral-500 hover:text-neutral-700",

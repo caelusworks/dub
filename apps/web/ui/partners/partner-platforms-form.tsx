@@ -791,7 +791,7 @@ function FormRow({
             <div className="flex flex-col gap-1.5">
               <span
                 className={cn(
-                  "text-content-emphasis text-sm font-medium",
+                  "text-sm font-medium text-content-emphasis",
                   variant === "settings" && "sr-only",
                 )}
               >
@@ -810,7 +810,7 @@ function FormRow({
             <label className={cn("flex flex-col gap-1.5")}>
               <span
                 className={cn(
-                  "text-content-emphasis text-sm font-medium",
+                  "text-sm font-medium text-content-emphasis",
                   variant === "settings" && "sr-only",
                 )}
               >

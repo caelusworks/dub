@@ -241,7 +241,7 @@ function ImageUploadFieldContent({
         {files.map((file, idx) => (
           <div
             key={file.id}
-            className="border-border-subtle group relative flex aspect-square h-full items-center justify-center rounded-md border bg-white"
+            className="group relative flex aspect-square h-full items-center justify-center rounded-md border border-border-subtle bg-white"
           >
             {file.uploading ? (
               <LoadingSpinner className="size-4" />
@@ -278,7 +278,7 @@ function ImageUploadFieldContent({
         <FileUpload
           accept="images"
           className={cn(
-            "border-border-subtle h-full w-auto rounded-md border",
+            "h-full w-auto rounded-md border border-border-subtle",
             files.length > 0 ? "aspect-square" : "aspect-[unset] w-full",
             error && "border-red-400",
           )}

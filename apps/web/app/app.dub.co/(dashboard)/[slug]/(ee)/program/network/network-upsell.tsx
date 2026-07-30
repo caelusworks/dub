@@ -87,7 +87,7 @@ function ExamplePartnerCell({
           }}
         />
         <div className="flex flex-col gap-0.5">
-          <span className="text-content-default whitespace-nowrap text-sm font-semibold">
+          <span className="whitespace-nowrap text-sm font-semibold text-content-default">
             {partner.name}
           </span>
           <div className="flex items-center gap-1">
@@ -95,14 +95,14 @@ function ExamplePartnerCell({
               countryCode={partner.country}
               className="size-2.5 rounded-full"
             />
-            <span className="text-content-subtle whitespace-nowrap text-xs font-medium">
+            <span className="whitespace-nowrap text-xs font-medium text-content-subtle">
               {COUNTRIES[partner.country]}
             </span>
           </div>
         </div>
       </div>
 
-      <div className="bg-content-default text-content-inverted flex h-7 items-center justify-center rounded-lg px-2.5 text-sm">
+      <div className="flex h-7 items-center justify-center rounded-lg bg-content-default px-2.5 text-sm text-content-inverted">
         Send invite
       </div>
     </div>

@@ -18,11 +18,7 @@ interface DomainRecord {
   ttl: string;
   priority?: number | null;
   status?:
-    | "not_started"
-    | "verified"
-    | "pending"
-    | "failed"
-    | "temporary_failure";
+    "not_started" | "verified" | "pending" | "failed" | "temporary_failure";
 }
 
 interface DnsRecordsTableProps {
@@ -45,7 +41,7 @@ function DnsRecordsTable({
       id: "type",
       header: "Type",
       cell: ({ row }: { row: { original: DomainRecord } }) => (
-        <span className="text-content-default font-mono text-sm">
+        <span className="font-mono text-sm text-content-default">
           {row.original.type}
         </span>
       ),
@@ -59,7 +55,7 @@ function DnsRecordsTable({
       cell: ({ row }: { row: { original: DomainRecord } }) => (
         <div className="flex min-w-0 items-center gap-2">
           <span
-            className="text-content-default truncate text-sm"
+            className="truncate text-sm text-content-default"
             title={row.original.name}
           >
             {row.original.name}
@@ -81,7 +77,7 @@ function DnsRecordsTable({
       cell: ({ row }: { row: { original: DomainRecord } }) => (
         <div className="flex min-w-0 items-center gap-2">
           <span
-            className="text-content-default truncate text-sm"
+            className="truncate text-sm text-content-default"
             title={row.original.value}
           >
             {row.original.value}
@@ -101,7 +97,7 @@ function DnsRecordsTable({
       id: "ttl",
       header: "TTL",
       cell: ({ row }: { row: { original: DomainRecord } }) => (
-        <span className="text-content-default text-sm">{row.original.ttl}</span>
+        <span className="text-sm text-content-default">{row.original.ttl}</span>
       ),
       size: 80,
       minSize: 60,
@@ -114,7 +110,7 @@ function DnsRecordsTable({
       id: "priority",
       header: "Priority",
       cell: ({ row }: { row: { original: DomainRecord } }) => (
-        <span className="text-content-default text-sm">
+        <span className="text-sm text-content-default">
           {row.original.priority ?? "-"}
         </span>
       ),

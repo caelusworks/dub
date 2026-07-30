@@ -195,7 +195,7 @@ function LinkBuilder({ link }: { link: ExpandedLinkProps }) {
               }
               text="Copy link"
               variant="secondary"
-              className="xs:w-fit h-7 px-2.5"
+              className="h-7 px-2.5 xs:w-fit"
               onClick={() => {
                 copyToClipboard(link.shortLink).then(() => {
                   toast.success("Link copied to clipboard");

@@ -272,7 +272,7 @@ function DomainOnboarding({ domain, onDomainChange }: DomainProps) {
                         key={option.title}
                         type="button"
                         className={cn(
-                          "bg-bg-default border-border-subtle group flex items-center justify-between gap-3 rounded-xl border p-1.5 pr-4",
+                          "group flex items-center justify-between gap-3 rounded-xl border border-border-subtle bg-bg-default p-1.5 pr-4",
                           "hover:bg-bg-inverted/[0.03] active:bg-bg-inverted/5",
                           "transition-opacity disabled:cursor-not-allowed disabled:opacity-60",
                         )}
@@ -280,7 +280,7 @@ function DomainOnboarding({ domain, onDomainChange }: DomainProps) {
                         disabled={option.loading}
                       >
                         <div className="flex items-center gap-3">
-                          <div className="bg-bg-inverted/5 flex size-10 items-center justify-center rounded-lg">
+                          <div className="flex size-10 items-center justify-center rounded-lg bg-bg-inverted/5">
                             {typeof option.icon === "string" ? (
                               <img
                                 src={option.icon}
@@ -295,7 +295,7 @@ function DomainOnboarding({ domain, onDomainChange }: DomainProps) {
                           </div>
                           <div className="flex flex-col">
                             <div className="flex items-center gap-1">
-                              <span className="text-content-emphasis text-xs font-semibold">
+                              <span className="text-xs font-semibold text-content-emphasis">
                                 {option.title}
                               </span>
                               <div
@@ -307,7 +307,7 @@ function DomainOnboarding({ domain, onDomainChange }: DomainProps) {
                                 {option.badge}
                               </div>
                             </div>
-                            <p className="text-content-subtle text-xs">
+                            <p className="text-xs text-content-subtle">
                               {option.description}
                             </p>
                           </div>
@@ -316,7 +316,7 @@ function DomainOnboarding({ domain, onDomainChange }: DomainProps) {
                         {option.loading ? (
                           <LoadingSpinner className="size-3 shrink-0" />
                         ) : (
-                          <ChevronRight className="text-content-muted size-3 shrink-0 transition-transform ease-out group-hover:translate-x-0.5" />
+                          <ChevronRight className="size-3 shrink-0 text-content-muted transition-transform ease-out group-hover:translate-x-0.5" />
                         )}
                       </button>
                     ))}

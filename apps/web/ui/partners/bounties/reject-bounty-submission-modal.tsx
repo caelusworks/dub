@@ -94,7 +94,7 @@ const RejectBountySubmissionModal = ({
           <div>
             <label
               htmlFor="rejectionReason"
-              className="text-content-emphasis text-sm font-medium"
+              className="text-sm font-medium text-content-emphasis"
             >
               Rejection reason
               <span className="ml-1 font-normal text-neutral-500">
@@ -131,7 +131,7 @@ const RejectBountySubmissionModal = ({
             <div className="flex items-center justify-between">
               <label
                 htmlFor="rejectionNote"
-                className="text-content-emphasis text-sm font-medium"
+                className="text-sm font-medium text-content-emphasis"
               >
                 Additional details
                 <span className="ml-1 font-normal text-neutral-500">

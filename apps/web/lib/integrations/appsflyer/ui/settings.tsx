@@ -64,7 +64,7 @@ function AppsFlyerRequiredMacroCombobox({
       matchTriggerWidth
       hideSearch
       caret={
-        <ChevronDown className="text-content-muted size-3.5 shrink-0 transition-transform duration-75 group-data-[state=open]:rotate-180" />
+        <ChevronDown className="size-3.5 shrink-0 text-content-muted transition-transform duration-75 group-data-[state=open]:rotate-180" />
       }
       popoverProps={{
         contentClassName: "rounded-md p-0.5",
@@ -274,7 +274,7 @@ export const AppsFlyerSettings = ({
         <div className="space-y-4 p-4">
           {/* Default parameters */}
           <div>
-            <p className="text-content-subtle mb-2 text-xs font-medium">
+            <p className="mb-2 text-xs font-medium text-content-subtle">
               Default Parameters
             </p>
 
@@ -302,7 +302,7 @@ export const AppsFlyerSettings = ({
 
           {/* Required parameters */}
           <div className="border-t border-neutral-200 pt-4">
-            <p className="text-content-subtle mb-2 text-xs font-medium">
+            <p className="mb-2 text-xs font-medium text-content-subtle">
               Required Parameters
             </p>
 
@@ -341,7 +341,7 @@ export const AppsFlyerSettings = ({
 
           {/* Custom parameters */}
           <div className="border-t border-neutral-200 pt-4">
-            <p className="text-content-subtle mb-2 text-xs font-medium">
+            <p className="mb-2 text-xs font-medium text-content-subtle">
               Custom Parameters
             </p>
             <div className="space-y-2">

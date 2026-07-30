@@ -31,8 +31,8 @@ export function ProgramRewardList({
 
   if (sortedFilteredRewards.length === 0 && !discount) {
     return (
-      <div className="border-border-subtle bg-bg-default flex items-center justify-between rounded-md border px-4 py-3">
-        <p className="text-content-subtle text-sm">
+      <div className="flex items-center justify-between rounded-md border border-border-subtle bg-bg-default px-4 py-3">
+        <p className="text-sm text-content-subtle">
           You are not eligible for any rewards at this time.
         </p>
 
@@ -52,9 +52,9 @@ export function ProgramRewardList({
   return (
     <ul
       className={cn(
-        "text-content-default flex flex-col gap-4 text-sm leading-tight",
+        "flex flex-col gap-4 text-sm leading-tight text-content-default",
         variant === "default" &&
-          "border-border-subtle bg-bg-default rounded-md border p-4",
+          "rounded-md border border-border-subtle bg-bg-default p-4",
         className,
       )}
     >

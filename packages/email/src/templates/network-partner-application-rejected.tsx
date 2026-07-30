@@ -32,7 +32,7 @@ export default function NetworkPartnerApplicationRejected({
               <Img src={DUB_WORDMARK} width="61" height="32" alt="Dub" />
             </Section>
 
-            <Heading className="mx-0 mb-8 mt-10 p-0 text-xl font-semibold text-neutral-900">
+            <Heading className="mx-0 mt-10 mb-8 p-0 text-xl font-semibold text-neutral-900">
               Dub Partner Network application update
             </Heading>
 
@@ -47,7 +47,7 @@ export default function NetworkPartnerApplicationRejected({
               approve your application at this time.
             </Text>
 
-            <Text className="text-sm font-semibold leading-6 text-neutral-800">
+            <Text className="text-sm leading-6 font-semibold text-neutral-800">
               Please note that this Dub Partner Network rejection only affects
               your access to the{" "}
               <Link
@@ -66,7 +66,7 @@ export default function NetworkPartnerApplicationRejected({
               and reapply in the future.
             </Text>
 
-            <Section className="mb-10 mt-8">
+            <Section className="mt-8 mb-10">
               <Link
                 className="rounded-lg bg-neutral-900 px-6 py-3 text-[13px] font-medium text-white no-underline"
                 href="https://partners.dub.co"

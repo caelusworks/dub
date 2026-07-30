@@ -18,7 +18,7 @@ export function ProgramOverviewBlock({
   return (
     <ProgramOverviewCard className={cn("flex h-full flex-col py-6", className)}>
       <div className="flex justify-between gap-3 px-6">
-        <h2 className="text-content-emphasis text-sm font-medium">{title}</h2>
+        <h2 className="text-sm font-medium text-content-emphasis">{title}</h2>
         {viewAllHref && (
           <ButtonLink
             href={viewAllHref}

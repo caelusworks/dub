@@ -109,7 +109,7 @@ export function RiskPaidTrafficSettings({
           <h3 className="text-sm font-semibold text-neutral-900">
             Paid traffic
           </h3>
-          <p className="text-content-subtle mt-0.5 text-xs font-normal tracking-normal">
+          <p className="mt-0.5 text-xs font-normal tracking-normal text-content-subtle">
             Flag paid advertising traffic
           </p>
         </div>
@@ -241,7 +241,7 @@ export function RiskPaidTrafficSettings({
                             ))}
                           </div>
                         )}
-                        <p className="text-content-subtle text-xs font-normal tracking-normal">
+                        <p className="text-xs font-normal tracking-normal text-content-subtle">
                           Exclude internal Google Campaign IDs from this rule.
                           Recommended if you're running DSA (Dynamic Search Ad)
                           campaigns.

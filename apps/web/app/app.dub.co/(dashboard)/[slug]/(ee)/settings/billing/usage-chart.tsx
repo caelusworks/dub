@@ -397,15 +397,15 @@ export function UsageChart() {
                 return (
                   <>
                     <div className="flex items-center justify-between gap-4 px-4 py-3 text-xs">
-                      <span className="text-content-emphasis font-semibold">
+                      <span className="font-semibold text-content-emphasis">
                         {formatDate(d.date, { month: "short" })}
                       </span>
-                      <span className="text-content-default font-medium">
+                      <span className="font-medium text-content-default">
                         {nFormatter(d.values.usage, { full: true })}
                       </span>
                     </div>
                     {Boolean(topGroups?.length) && (
-                      <div className="border-border-subtle relative grid grid-cols-[minmax(0,1fr),min-content] gap-x-6 gap-y-2 overflow-hidden border-t px-4 py-3 text-xs">
+                      <div className="relative grid grid-cols-[minmax(0,1fr),min-content] gap-x-6 gap-y-2 overflow-hidden border-t border-border-subtle px-4 py-3 text-xs">
                         {topGroups?.map((group) => {
                           const value = d.values[group.id];
                           if (!value) return null;
@@ -493,10 +493,10 @@ export function UsageChart() {
                       <div className="flex items-center gap-2 tabular-nums">
                         <NumberFlow
                           value={displayTotal}
-                          className="text-content-default text-right font-medium"
+                          className="text-right font-medium text-content-default"
                         />
                         {usage && (
-                          <span className="text-content-muted min-w-12 text-right font-medium">
+                          <span className="min-w-12 text-right font-medium text-content-muted">
                             <NumberFlow
                               value={
                                 (displayTotal /

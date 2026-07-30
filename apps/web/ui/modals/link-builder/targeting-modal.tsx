@@ -131,7 +131,7 @@ function TargetingModal({
             </div>
           </div>
 
-          <div className="scrollbar-hide -m-1 mt-6 flex max-h-[calc(100dvh-250px)] flex-col gap-6 overflow-y-auto p-1">
+          <div className="-m-1 mt-6 flex max-h-[calc(100dvh-250px)] flex-col gap-6 overflow-y-auto p-1 scrollbar-hide">
             {/* Geo */}
             <div>
               <div className="flex items-center gap-2">

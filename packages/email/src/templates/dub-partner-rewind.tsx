@@ -48,11 +48,11 @@ export default function DubPartnerRewind({
               />
             </Section>
 
-            <Heading className="mx-0 mb-2 mt-8 p-0 text-center text-2xl font-semibold text-black">
+            <Heading className="mx-0 mt-8 mb-2 p-0 text-center text-2xl font-semibold text-black">
               Your Dub Partner Rewind &rsquo;25 is ready
             </Heading>
 
-            <Text className="mb-8 mt-0 text-center text-base leading-6 text-neutral-600">
+            <Text className="mt-0 mb-8 text-center text-base leading-6 text-neutral-600">
               2025 was a huge year for partners. Let&rsquo;s rewind to have a
               <br />
               look at your impact this year.
@@ -73,11 +73,11 @@ export default function DubPartnerRewind({
               </Link>
             </Section>
 
-            <Heading className="mx-0 mb-3 mt-0 p-0 text-center text-lg font-semibold text-black">
+            <Heading className="mx-0 mt-0 mb-3 p-0 text-center text-lg font-semibold text-black">
               Just the beginning...
             </Heading>
 
-            <Text className="mx-auto mb-8 mt-0 max-w-[400px] text-center text-sm leading-6 text-neutral-600">
+            <Text className="mx-auto mt-0 mb-8 max-w-[400px] text-center text-sm leading-6 text-neutral-600">
               Thank you for all your hard work as a Dub partner. We can&rsquo;t
               wait to see what you&rsquo;ll do in 2026!
             </Text>

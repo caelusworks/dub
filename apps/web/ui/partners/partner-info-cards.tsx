@@ -252,7 +252,7 @@ export function PartnerInfoCards({
             <PartnerRiskBanner partner={partner} />
           ))}
 
-        <div className="border-border-subtle flex flex-col divide-y divide-neutral-200 rounded-xl border bg-white">
+        <div className="flex flex-col divide-y divide-neutral-200 rounded-xl border border-border-subtle bg-white">
           <div className="p-4">
             <div className="flex items-start justify-between gap-2">
               <div className="relative w-fit shrink-0">
@@ -284,7 +284,7 @@ export function PartnerInfoCards({
             <div className="mt-4">
               {partner ? (
                 <div className="flex items-center gap-2">
-                  <span className="text-content-emphasis text-lg font-semibold">
+                  <span className="text-lg font-semibold text-content-emphasis">
                     {partner.name}
                   </span>
 
@@ -329,7 +329,7 @@ export function PartnerInfoCards({
               .filter(({ text }) => text !== null)
               .map(({ id, icon, text, timestamp, wrapper: RowWrapper }) => {
                 const rowInner = (
-                  <div className="text-content-subtle flex items-center gap-1">
+                  <div className="flex items-center gap-1 text-content-subtle">
                     {text !== undefined ? (
                       <>
                         {icon}
@@ -377,12 +377,12 @@ export function PartnerInfoCards({
       </div>
 
       {!isAdmin && (
-        <div className="border-border-subtle flex flex-col gap-4 rounded-xl border p-4">
+        <div className="flex flex-col gap-4 rounded-xl border border-border-subtle p-4">
           {/* Group */}
           <div className="flex flex-col gap-2">
             {isEnrolled && (
               <div className="flex min-h-7 items-center justify-between">
-                <h3 className="text-content-emphasis text-sm font-semibold">
+                <h3 className="text-sm font-semibold text-content-emphasis">
                   Group
                 </h3>
 
@@ -419,7 +419,7 @@ export function PartnerInfoCards({
             <>
               {/* Rewards */}
               <div className="flex flex-col gap-2">
-                <h3 className="text-content-emphasis text-sm font-semibold">
+                <h3 className="text-sm font-semibold text-content-emphasis">
                   Rewards
                 </h3>
                 {group ? (
@@ -436,11 +436,11 @@ export function PartnerInfoCards({
                       ].filter((r): r is RewardProps => r !== null)}
                       discount={group.discount}
                       variant="plain"
-                      className="text-content-subtle gap-2 text-xs leading-4"
+                      className="gap-2 text-xs leading-4 text-content-subtle"
                       iconClassName="size-3.5"
                     />
                   ) : (
-                    <span className="text-content-subtle text-xs">
+                    <span className="text-xs text-content-subtle">
                       No rewards
                     </span>
                   )
@@ -450,7 +450,7 @@ export function PartnerInfoCards({
               </div>
               {/* Eligible bounties */}
               <div className="flex flex-col gap-2">
-                <h3 className="text-content-emphasis text-sm font-semibold">
+                <h3 className="text-sm font-semibold text-content-emphasis">
                   Eligible Bounties
                 </h3>
                 {bounties ? (
@@ -464,7 +464,7 @@ export function PartnerInfoCards({
                             key={bounty.id}
                             target="_blank"
                             href={`/${workspaceSlug}/program/bounties/${bounty.id}`}
-                            className="text-content-subtle flex cursor-alias items-center gap-2 decoration-dotted underline-offset-2 hover:underline"
+                            className="flex cursor-alias items-center gap-2 text-content-subtle decoration-dotted underline-offset-2 hover:underline"
                           >
                             <Icon className="size-3.5 shrink-0" />
                             <span className="text-xs font-medium">
@@ -475,12 +475,12 @@ export function PartnerInfoCards({
                       })}
                     </div>
                   ) : (
-                    <p className="text-content-subtle text-xs">
+                    <p className="text-xs text-content-subtle">
                       No eligible bounties
                     </p>
                   )
                 ) : errorBounties ? (
-                  <p className="text-content-subtle text-xs">
+                  <p className="text-xs text-content-subtle">
                     Failed to load bounties
                   </p>
                 ) : (
@@ -500,21 +500,21 @@ function TagsList({ partner }: { partner: EnrolledPartnerExtendedProps }) {
     useUpdatePartnerTagsModal();
 
   return (
-    <div className="border-border-subtle flex flex-col border-t p-4">
+    <div className="flex flex-col border-t border-border-subtle p-4">
       <UpdatePartnerTagsModal
         showUpdatePartnerTagsModal={showUpdatePartnerTagsModal}
         setShowUpdatePartnerTagsModal={setShowUpdatePartnerTagsModal}
         partners={[partner]}
       />
       <div className="mb-2 flex justify-between gap-2">
-        <span className="text-content-emphasis block text-xs font-semibold">
+        <span className="block text-xs font-semibold text-content-emphasis">
           Tags
         </span>
 
         <button
           type="button"
           onClick={() => setShowUpdatePartnerTagsModal(true)}
-          className="text-content-subtle hover:text-content-default text-xs font-medium"
+          className="text-xs font-medium text-content-subtle hover:text-content-default"
         >
           Manage
         </button>
@@ -585,7 +585,7 @@ function ReferredByPartner({
         type="button"
         onClick={() => setShowAttributeReferringPartnerModal(true)}
         aria-label="Attribute referring partner"
-        className="bg-bg-inverted/5 text-content-default hover:bg-bg-inverted/10 -my-0.5 inline-flex h-5 min-w-0 select-none items-center whitespace-nowrap rounded-md px-1.5 py-0.5 text-xs font-medium transition-all"
+        className="-my-0.5 inline-flex h-5 min-w-0 select-none items-center whitespace-nowrap rounded-md bg-bg-inverted/5 px-1.5 py-0.5 text-xs font-medium text-content-default transition-all hover:bg-bg-inverted/10"
       >
         Attribute referring partner
       </button>

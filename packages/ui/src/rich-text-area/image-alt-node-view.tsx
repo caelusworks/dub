@@ -96,7 +96,7 @@ export function ImageAltNodeView({
               }}
               content={
                 <div className="w-72 p-3">
-                  <p className="text-content-subtle mb-1 text-xs leading-relaxed">
+                  <p className="mb-1 text-xs leading-relaxed text-content-subtle">
                     Add alt text to describe this image. This makes your email
                     more accessible and could increase your delivery rates.
                   </p>

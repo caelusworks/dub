@@ -34,7 +34,7 @@ export function ProgramEmptyState({
               <Link
                 href="https://dub.co/partners"
                 target="_blank"
-                className="text-content-default hover:text-content-emphasis font-medium transition-colors"
+                className="font-medium text-content-default transition-colors hover:text-content-emphasis"
               >
                 Learn more ↗
               </Link>

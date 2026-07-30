@@ -45,8 +45,8 @@ export default function CustomDomainPage() {
           </div>
           <h1
             className={cn(
-              "font-display mt-2 text-center text-4xl font-medium text-neutral-900 sm:text-5xl sm:leading-[1.15]",
-              "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:20px] [animation-duration:1s] [animation-fill-mode:both]",
+              "mt-2 text-center font-display text-4xl font-medium text-neutral-900 sm:text-5xl sm:leading-[1.15]",
+              "animate-slide-up-fade [--offset:20px] [animation-duration:1s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
             )}
           >
             Welcome to Dub
@@ -54,7 +54,7 @@ export default function CustomDomainPage() {
           <p
             className={cn(
               "mt-5 text-balance text-base text-neutral-700 sm:text-xl",
-              "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:10px] [animation-delay:200ms] [animation-duration:1s] [animation-fill-mode:both]",
+              "animate-slide-up-fade [--offset:10px] [animation-delay:200ms] [animation-duration:1s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
             )}
           >
             This custom domain is powered by Dub &ndash; the link management
@@ -64,8 +64,8 @@ export default function CustomDomainPage() {
 
         <div
           className={cn(
-            "xs:flex-row relative mx-auto mt-8 flex max-w-fit flex-col items-center gap-4",
-            "animate-slide-up-fade motion-reduce:animate-fade-in [--offset:5px] [animation-delay:300ms] [animation-duration:1s] [animation-fill-mode:both]",
+            "relative mx-auto mt-8 flex max-w-fit flex-col items-center gap-4 xs:flex-row",
+            "animate-slide-up-fade [--offset:5px] [animation-delay:300ms] [animation-duration:1s] [animation-fill-mode:both] motion-reduce:animate-fade-in",
           )}
         >
           <ButtonLink variant="primary" href="https://app.dub.co/register">

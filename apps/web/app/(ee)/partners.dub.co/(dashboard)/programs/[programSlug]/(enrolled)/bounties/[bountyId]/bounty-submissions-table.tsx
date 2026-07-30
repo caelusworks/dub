@@ -230,7 +230,7 @@ export function BountySubmissionsTable({
       {claimBountySheet}
       {bountySubmissionDetailsSheet}
       <div className="flex flex-col gap-3">
-        <h2 className="text-content-emphasis text-lg font-semibold leading-7 tracking-[-0.36px]">
+        <h2 className="text-lg font-semibold leading-7 tracking-[-0.36px] text-content-emphasis">
           Submissions
         </h2>
         <Table {...table} />

@@ -394,11 +394,11 @@ function CampaignsStep({
             <div className="p-0.5">
               {selectedMode === "all" ? (
                 <div className="flex flex-col items-center justify-center rounded-lg border border-neutral-200 bg-white px-4 py-6">
-                  <div className="text-content-default flex items-center gap-1.5 font-semibold">
+                  <div className="flex items-center gap-1.5 font-semibold text-content-default">
                     <Users className="size-4 shrink-0" />
                     {campaigns.length}
                   </div>
-                  <span className="text-content-subtle text-sm font-medium">
+                  <span className="text-sm font-medium text-content-subtle">
                     Campaigns selected
                   </span>
                 </div>
@@ -406,7 +406,7 @@ function CampaignsStep({
                 <div className="overflow-hidden rounded-lg border border-neutral-200 bg-white">
                   <Command loop shouldFilter={false}>
                     <label className="relative flex grow items-center overflow-hidden border-b border-neutral-200">
-                      <Magnifier className="text-content-default ml-3 size-3.5 shrink-0" />
+                      <Magnifier className="ml-3 size-3.5 shrink-0 text-content-default" />
                       <Command.Input
                         placeholder="Search campaigns..."
                         value={search}
@@ -450,7 +450,7 @@ function CampaignsStep({
                                 >
                                   <div
                                     className={cn(
-                                      "border-border-emphasis mt-0.5 flex size-4 shrink-0 items-center justify-center rounded border bg-white transition-colors duration-75",
+                                      "mt-0.5 flex size-4 shrink-0 items-center justify-center rounded border border-border-emphasis bg-white transition-colors duration-75",
                                       checked &&
                                         "border-neutral-900 bg-neutral-900",
                                     )}

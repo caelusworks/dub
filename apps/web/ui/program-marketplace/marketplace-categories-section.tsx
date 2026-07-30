@@ -11,12 +11,12 @@ export function MarketplaceCategoriesSection() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between gap-4">
-        <h2 className="text-content-emphasis text-[18px] font-semibold">
+        <h2 className="text-[18px] font-semibold text-content-emphasis">
           Categories
         </h2>
         <Link
           href={getMarketplaceAllHref()}
-          className="text-content-emphasis text-sm font-medium transition-colors hover:text-neutral-500"
+          className="text-sm font-medium text-content-emphasis transition-colors hover:text-neutral-500"
         >
           View all programs
         </Link>
@@ -33,7 +33,7 @@ export function MarketplaceCategoriesSection() {
             <Link
               key={category}
               href={getMarketplaceCategoryHref(category)}
-              className="border-border-subtle hover:bg-bg-subtle flex flex-col gap-2 rounded-xl border bg-white p-3 transition-colors"
+              className="flex flex-col gap-2 rounded-xl border border-border-subtle bg-white p-3 transition-colors hover:bg-bg-subtle"
             >
               <Icon className="size-[18px] shrink-0 text-neutral-600" />
               <span className="truncate text-sm font-semibold text-neutral-900">

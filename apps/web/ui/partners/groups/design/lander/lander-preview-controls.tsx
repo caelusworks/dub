@@ -63,7 +63,7 @@ export function LanderPreviewControls() {
             </div>
           }
           disabled={isGeneratingLander}
-          className="animate-fade-in h-7 w-fit px-2 hover:ring-0"
+          className="h-7 w-fit animate-fade-in px-2 hover:ring-0"
           onClick={() => setShowGenerateLanderModal(true)}
         />
       </div>

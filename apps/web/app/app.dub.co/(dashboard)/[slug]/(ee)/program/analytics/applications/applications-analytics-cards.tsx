@@ -280,7 +280,7 @@ export function ApplicationsAnalyticsCards({
             ) : (
               <FlagWavy className="size-4 text-neutral-400" />
             ),
-            title: country ? COUNTRIES[country] ?? country : "Unknown",
+            title: country ? (COUNTRIES[country] ?? country) : "Unknown",
             filterValue: country ?? "Unknown",
             value,
           };

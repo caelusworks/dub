@@ -86,7 +86,7 @@ export const GET = withWorkspace(async ({ workspace, params }) => {
       holdingPeriodDays:
         rest.type === "custom"
           ? 0
-          : programEnrollment.partnerGroup?.holdingPeriodDays ?? 0,
+          : (programEnrollment.partnerGroup?.holdingPeriodDays ?? 0),
     }),
   );
 });

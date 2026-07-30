@@ -92,7 +92,7 @@ export function EmojiPicker({
               setOpenPopover(false);
             }}
           >
-            <EmojiPickerBase.Search className="border-border-default focus:border-border-default z-10 rounded-t-lg border-0 border-b bg-white px-3 py-2.5 text-base outline-none placeholder:text-neutral-400 focus:ring-0 sm:text-sm" />
+            <EmojiPickerBase.Search className="z-10 rounded-t-lg border-0 border-b border-border-default bg-white px-3 py-2.5 text-base outline-none placeholder:text-neutral-400 focus:border-border-default focus:ring-0 sm:text-sm" />
             <EmojiPickerBase.Viewport className="outline-hidden relative flex-1">
               <EmojiPickerBase.Loading className="absolute inset-0 flex items-center justify-center text-sm text-neutral-400">
                 Loading…
@@ -105,7 +105,7 @@ export function EmojiPicker({
                 components={{
                   CategoryHeader: ({ category, ...props }) => (
                     <div
-                      className="text-content-subtle bg-white px-3 pb-1.5 pt-3 text-xs font-medium"
+                      className="bg-white px-3 pb-1.5 pt-3 text-xs font-medium text-content-subtle"
                       {...props}
                     >
                       {category.label}

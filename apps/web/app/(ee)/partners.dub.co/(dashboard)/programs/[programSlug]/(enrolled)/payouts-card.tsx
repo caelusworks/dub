@@ -73,7 +73,7 @@ export function PayoutsCard({ programId }: { programId?: string }) {
                             side="right"
                             rows={["local", "utc"]}
                           >
-                            <span className="hover:text-content-emphasis underline decoration-dotted underline-offset-2">
+                            <span className="underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
                               Paid at{" "}
                               {formatDateSmart(payout.paidAt, {
                                 month: "short",
@@ -86,7 +86,7 @@ export function PayoutsCard({ programId }: { programId?: string }) {
                             side="right"
                             rows={["local", "utc"]}
                           >
-                            <span className="hover:text-content-emphasis underline decoration-dotted underline-offset-2">
+                            <span className="underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
                               Initiated at{" "}
                               {formatDateSmart(payout.initiatedAt, {
                                 month: "short",

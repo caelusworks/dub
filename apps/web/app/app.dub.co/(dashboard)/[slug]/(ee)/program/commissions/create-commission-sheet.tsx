@@ -102,9 +102,7 @@ function CreateCommissionSheetContent({
     useState<CommissionType>("custom");
 
   type AccordionValue =
-    | "partner-and-type"
-    | "customer-and-commission"
-    | "commission";
+    "partner-and-type" | "customer-and-commission" | "commission";
   const [openAccordions, setOpenAccordions] = useState<AccordionValue[]>([
     "partner-and-type",
   ]);

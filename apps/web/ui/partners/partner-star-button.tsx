@@ -101,7 +101,7 @@ export function PartnerStarButton({
         )
       }
       className={cn(
-        "border-border-subtle shrink-0 rounded-lg border p-0",
+        "shrink-0 rounded-lg border border-border-subtle p-0",
         className,
       )}
     />

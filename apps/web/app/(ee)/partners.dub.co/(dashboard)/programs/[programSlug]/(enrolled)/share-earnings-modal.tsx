@@ -150,7 +150,7 @@ function ShareEarningsModalInner({
         </button>
       </div>
 
-      <div className="border-border-subtle scrollbar-hide max-h-[calc(100dvh-280px)] overflow-y-auto rounded-xl border">
+      <div className="max-h-[calc(100dvh-280px)] overflow-y-auto rounded-xl border border-border-subtle scrollbar-hide">
         <div className="relative aspect-[1368/994] w-full">
           {isLoading && (
             <div className="absolute inset-0 flex items-center justify-center">

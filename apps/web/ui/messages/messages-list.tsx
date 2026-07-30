@@ -45,7 +45,7 @@ export function MessagesList({
                 href={group.href}
                 onClick={() => setCurrentPanel("main")}
                 className={cn(
-                  "border-border-subtle flex w-full items-center gap-2.5 border-b bg-white px-6 py-4",
+                  "flex w-full items-center gap-2.5 border-b border-border-subtle bg-white px-6 py-4",
                   group.id === activeId ? "bg-bg-subtle" : "hover:bg-bg-muted",
                 )}
               >
@@ -61,16 +61,16 @@ export function MessagesList({
                 </div>
                 <div className="min-w-0 grow">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-content-emphasis min-w-0 truncate text-sm font-semibold">
+                    <span className="min-w-0 truncate text-sm font-semibold text-content-emphasis">
                       {group.name}
                     </span>
                     {lastMessage && (
-                      <span className="text-content-subtle whitespace-nowrap text-xs font-medium">
+                      <span className="whitespace-nowrap text-xs font-medium text-content-subtle">
                         {timeAgo(lastMessage.createdAt, { withAgo: true })}
                       </span>
                     )}
                   </div>
-                  <span className="text-content-subtle block truncate text-sm font-medium">
+                  <span className="block truncate text-sm font-medium text-content-subtle">
                     {lastMessage?.subject ||
                       (lastMessage?.text
                         ? stripMarkdown(lastMessage.text)
@@ -83,7 +83,7 @@ export function MessagesList({
         : [...Array(3)].map((_, index) => (
             <div
               key={index}
-              className="border-border-subtle flex w-full items-center gap-2.5 border-b bg-white px-6 py-4"
+              className="flex w-full items-center gap-2.5 border-b border-border-subtle bg-white px-6 py-4"
             >
               <div className="size-8 shrink-0 animate-pulse rounded-full bg-neutral-200" />
               <div className="min-w-0 grow">

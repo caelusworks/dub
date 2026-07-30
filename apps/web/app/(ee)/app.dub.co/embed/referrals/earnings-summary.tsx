@@ -28,10 +28,10 @@ export function ReferralsEmbedEarningsSummary({
   );
 
   return (
-    <div className="border-border-subtle bg-bg-default flex flex-col justify-between gap-4 rounded-lg border p-4">
+    <div className="flex flex-col justify-between gap-4 rounded-lg border border-border-subtle bg-bg-default p-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-1">
-          <p className="text-content-subtle text-sm">Earnings</p>
+          <p className="text-sm text-content-subtle">Earnings</p>
           <InfoTooltip content="Summary of your commission earnings from your referrals." />
         </div>
         {showSettingsTab ? (
@@ -61,8 +61,8 @@ export function ReferralsEmbedEarningsSummary({
           },
         ].map(({ label, value }) => (
           <div key={label} className="flex justify-between text-sm">
-            <span className="text-content-subtle font-medium">{label}</span>
-            <span className="text-content-default font-semibold">
+            <span className="font-medium text-content-subtle">{label}</span>
+            <span className="font-semibold text-content-default">
               {currencyFormatter(value)}
             </span>
           </div>

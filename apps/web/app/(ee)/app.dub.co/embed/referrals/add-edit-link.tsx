@@ -56,7 +56,7 @@ export function ReferralsEmbedCreateUpdateLink({
   );
 
   const [destinationDomain, setDestinationDomain] = useState(
-    link ? getApexDomain(link.url) : destinationDomains?.[0] ?? null,
+    link ? getApexDomain(link.url) : (destinationDomains?.[0] ?? null),
   );
 
   useEffect(() => {
@@ -143,7 +143,7 @@ export function ReferralsEmbedCreateUpdateLink({
 
   return (
     <motion.div
-      className="border-border-subtle bg-bg-default relative rounded-md border"
+      className="relative rounded-md border border-border-subtle bg-bg-default"
       {...TAB_ITEM_ANIMATION_SETTINGS}
     >
       <form
@@ -151,7 +151,7 @@ export function ReferralsEmbedCreateUpdateLink({
         className="max-h-[26rem] overflow-auto"
       >
         <div className="flex items-center justify-between border-b border-neutral-200 px-4 py-3 dark:border-neutral-800">
-          <span className="text-content-default text-base font-semibold">
+          <span className="text-base font-semibold text-content-default">
             {!link ? "New link" : "Edit link"}
           </span>
           <div className="flex items-center gap-x-2">
@@ -178,7 +178,7 @@ export function ReferralsEmbedCreateUpdateLink({
               <div className="flex items-center gap-2">
                 <label
                   htmlFor="short-link"
-                  className="text-content-default block text-sm font-medium"
+                  className="block text-sm font-medium text-content-default"
                 >
                   Short link
                 </label>
@@ -204,7 +204,7 @@ export function ReferralsEmbedCreateUpdateLink({
               )}
             </div>
             <div className="mt-2 flex rounded-md">
-              <span className="inline-flex items-center rounded-l-md border border-r-0 border-neutral-300 bg-neutral-50 px-3 text-neutral-500 sm:text-sm dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400">
+              <span className="inline-flex items-center rounded-l-md border border-r-0 border-neutral-300 bg-neutral-50 px-3 text-neutral-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 sm:text-sm">
                 {shortLinkDomain}
               </span>
               <input
@@ -212,7 +212,7 @@ export function ReferralsEmbedCreateUpdateLink({
                 placeholder="another-link"
                 autoFocus={!isMobile}
                 className={cn(
-                  "border-border-default text-content-default bg-bg-default block w-full rounded-r-md placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm dark:placeholder-neutral-500 dark:focus:border-neutral-400 dark:focus:ring-neutral-400",
+                  "block w-full rounded-r-md border-border-default bg-bg-default text-content-default placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 dark:placeholder-neutral-500 dark:focus:border-neutral-400 dark:focus:ring-neutral-400 sm:text-sm",
                   {
                     "cursor-not-allowed bg-neutral-50 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400":
                       lockKey,
@@ -237,7 +237,7 @@ export function ReferralsEmbedCreateUpdateLink({
               <div className="flex items-center gap-2">
                 <label
                   htmlFor="url"
-                  className="text-content-default block text-sm font-medium"
+                  className="block text-sm font-medium text-content-default"
                 >
                   Destination URL
                 </label>

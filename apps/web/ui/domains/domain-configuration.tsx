@@ -45,7 +45,7 @@ export default function DomainConfiguration({
           records={[
             {
               type: recordType,
-              name: recordType === "A" ? "@" : subdomain ?? "www",
+              name: recordType === "A" ? "@" : (subdomain ?? "www"),
               value: recordType === "A" ? `76.76.21.21` : `cname.dub.co`,
               ttl: "86400",
             },
@@ -93,7 +93,7 @@ export default function DomainConfiguration({
         records={[
           {
             type: recordType,
-            name: recordType === "A" ? "@" : subdomain ?? "www",
+            name: recordType === "A" ? "@" : (subdomain ?? "www"),
             value: recordType === "A" ? `76.76.21.21` : `cname.dub.co`,
             ttl: "86400",
           },
@@ -125,7 +125,7 @@ export default function DomainConfiguration({
 const MarkdownText = ({ text }: { text: string }) => {
   return (
     <p
-      className="prose-sm prose-code:rounded-md prose-code:bg-neutral-100 prose-code:p-1 prose-code:text-[.8125rem] prose-code:font-medium prose-code:font-mono prose-code:text-neutral-900 max-w-none"
+      className="prose-sm max-w-none prose-code:rounded-md prose-code:bg-neutral-100 prose-code:p-1 prose-code:font-mono prose-code:text-[.8125rem] prose-code:font-medium prose-code:text-neutral-900"
       dangerouslySetInnerHTML={{ __html: text }}
     />
   );
@@ -149,7 +149,7 @@ const DnsRecord = ({
       </div>
       <div
         className={cn(
-          "scrollbar-hide grid items-end gap-x-10 gap-y-1 overflow-x-auto rounded-lg bg-neutral-100/80 p-4 text-sm",
+          "grid items-end gap-x-10 gap-y-1 overflow-x-auto rounded-lg bg-neutral-100/80 p-4 text-sm scrollbar-hide",
           hasTtl
             ? "grid-cols-[repeat(4,max-content)]"
             : "grid-cols-[repeat(3,max-content)]",

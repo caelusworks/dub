@@ -163,11 +163,11 @@ export function AssociatedCommissionsTable({
       {commissions?.length ? (
         <Table {...table} />
       ) : (
-        <div className="border-border-subtle flex h-24 flex-col items-center justify-center gap-2 rounded-lg border">
+        <div className="flex h-24 flex-col items-center justify-center gap-2 rounded-lg border border-border-subtle">
           {isLoading ? (
             <LoadingSpinner />
           ) : (
-            <p className="text-content-subtle text-sm">
+            <p className="text-sm text-content-subtle">
               No associated commissions found for this risk event
             </p>
           )}
