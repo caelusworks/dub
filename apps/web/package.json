@@ -158,6 +158,7 @@
     "autoprefixer": "^10.4.16",
     "dotenv-flow": "^4.1.0",
     "dotenv-flow-cli": "^1.1.1",
+    "eslint-config-next": "16.2.12",
     "papaparse": "^5.4.1",
     "postcss": "^8.4.31",
     "postcss-import": "^15.1.0",

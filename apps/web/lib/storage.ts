@@ -217,7 +217,7 @@ class StorageClient {
     try {
       new URL(str);
       return true;
-    } catch (_) {
+    } catch {
       return false;
     }
   }
@@ -274,7 +274,7 @@ class StorageClient {
         if (opts.height) proxyUrl.searchParams.set("h", opts.height.toString());
         proxyUrl.searchParams.set("fit", "cover");
         response = await fetchWithTimeout(proxyUrl.toString());
-      } catch (error) {
+      } catch {
         await this.assertSafeUrl(url);
         response = await fetch(url, { redirect: "error" });
       }
