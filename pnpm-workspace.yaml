@@ -12,4 +12,4 @@ allowBuilds:
   protobufjs: true
   sharp: true
   sqlite3: true
-  unrs-resolver: set this to true or false
+  unrs-resolver: false
