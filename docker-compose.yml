@@ -3,6 +3,7 @@
 services:
   dub:
     image: ${DUB_IMAGE:-ghcr.io/caelusworks/dub:staging-latest}
+    pull_policy: always
     restart: unless-stopped
     ports:
       - "${DUB_HOST_PORT:-3010}:3000"
