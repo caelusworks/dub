@@ -23,6 +23,27 @@ export const formatRetryAfter = (resetAt: number) => {
   return `${hours} ${pluralize("hour", hours)}`;
 };
 
+<<<<<<< HEAD
+=======
+// Formats a ratelimit window as a human-friendly duration
+const formatWindow = (window: RatelimitPolicy["window"]) => {
+  const [count, unit] = window.split(" ");
+
+  const unitName =
+    {
+      ms: "millisecond",
+      s: "second",
+      m: "minute",
+      h: "hour",
+      d: "day",
+    }[unit] ?? unit;
+
+  return count === "1"
+    ? unitName
+    : `${count} ${pluralize(unitName, Number(count))}`;
+};
+
+>>>>>>> ce93b7fdf1 (Centralize auth rate limits into RATELIMIT_POLICIES with assertRateLimit util)
 // Enforces a rate limit policy for the given identifier, throwing a
 // rate_limit_exceeded DubApiError when the limit is exceeded
 export async function assertRateLimit({
@@ -57,7 +78,11 @@ export async function assertRateLimit({
             window: policy.window,
           })
         : policy.message ??
+<<<<<<< HEAD
           `Too many requests. Please try again in ${retryAfter}.`;
+=======
+          `You've reached the rate limit of ${policy.attempts} attempts per ${formatWindow(policy.window)}. Please try again in ${retryAfter}.`;
+>>>>>>> ce93b7fdf1 (Centralize auth rate limits into RATELIMIT_POLICIES with assertRateLimit util)
 
     throw new DubApiError({
       code: "rate_limit_exceeded",
