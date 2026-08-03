@@ -1,7 +1,7 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { assertRateLimit } from "@/lib/upstash/assert-rate-limit";
+import { assertRateLimit } from "@/lib/upstash";
 import { RATELIMIT_POLICIES } from "@/lib/upstash/ratelimit-policies";
 import { sendEmail } from "@dub/email";
 import ResetPasswordLink from "@dub/email/templates/reset-password-link";

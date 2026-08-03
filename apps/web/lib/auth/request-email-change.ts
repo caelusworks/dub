@@ -11,8 +11,6 @@ import { redis } from "../upstash";
 import { assertRateLimit } from "../upstash/assert-rate-limit";
 import { RATELIMIT_POLICIES } from "../upstash/ratelimit-policies";
 
-// const EMAIL_CHANGE_MIN_ACCOUNT_AGE_MS = 60 * 60 * 1000; // 1 hour
-
 // Send the OTP to confirm the email address change for existing users/partners
 export const requestEmailChange = async ({
   email,
