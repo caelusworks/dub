@@ -42,7 +42,7 @@ export default function ConfirmEmailChangePageClient({
         router.replace(redirectTo);
       },
       onError({ error }) {
-        toast.error(error.serverError ?? "Failed to confirm the email change.");
+        toast.error(error.serverError);
       },
     });
 
@@ -53,9 +53,7 @@ export default function ConfirmEmailChangePageClient({
         setCanceled(true);
       },
       onError({ error }) {
-        toast.error(
-          error.serverError ?? "Failed to cancel the email change request.",
-        );
+        toast.error(error.serverError);
       },
     },
   );
