@@ -284,7 +284,11 @@ export default function PartnerMessagesProgramPage() {
             <ViewProgramButton programSlug={programSlug} />
           ) : null}
         </div>
+<<<<<<< HEAD
         {programEnrollmentLoading ? (
+=======
+        {!programEnrollment ? (
+>>>>>>> 60588a6308 (:arrow_up: bump project dependencies)
           <div className="flex size-full items-center justify-center">
             <LoadingSpinner />
           </div>
@@ -421,11 +425,19 @@ export default function PartnerMessagesProgramPage() {
             </div>
           </div>
           <div className="bg-bg-muted scrollbar-hide flex grow flex-col overflow-y-scroll">
+<<<<<<< HEAD
             {programEnrollmentLoading ? (
               <ProgramInfoPanelSkeleton />
             ) : programEnrollment ? (
               <ProgramInfoPanel programEnrollment={programEnrollment} />
             ) : null}
+=======
+            {!programEnrollment ? (
+              <ProgramInfoPanelSkeleton />
+            ) : (
+              <ProgramInfoPanel programEnrollment={programEnrollment} />
+            )}
+>>>>>>> 60588a6308 (:arrow_up: bump project dependencies)
           </div>
         </div>
       </div>
@@ -474,7 +486,11 @@ function ProgramInfoPanel({
             </span>
             <span className="text-content-subtle text-sm font-medium">
               {isInactiveEnrollment
+<<<<<<< HEAD
                 ? `You have been ${programEnrollment.status} from this program`
+=======
+                ? `You are ${programEnrollment.status} from this program`
+>>>>>>> 60588a6308 (:arrow_up: bump project dependencies)
                 : `Partner since ${formatDate(programEnrollment.createdAt)}`}
             </span>
           </div>
