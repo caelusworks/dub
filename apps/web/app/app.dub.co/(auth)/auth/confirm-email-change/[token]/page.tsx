@@ -2,7 +2,6 @@ import { getSession, hashToken } from "@/lib/auth";
 import {
   assertCanConfirmEmailChange,
   deleteEmailChangeRequest,
-  EmailChangeAuthError,
   EmailChangeRequestData,
 } from "@/lib/auth/confirm-email-change";
 import { prisma } from "@/lib/prisma";
@@ -101,23 +100,16 @@ const VerifyEmailChange = async ({ params, searchParams }: PageProps) => {
       data,
     });
   } catch (error) {
-    if (error instanceof EmailChangeAuthError) {
-      return (
-        <EmptyState
-          icon={InputPassword}
-          title={
-            error.reason === "unauthorized" ? "Unauthorized" : "Invalid Token"
-          }
-          description={error.message}
-        />
-      );
-    }
+    const message =
+      error instanceof Error
+        ? error.message
+        : "This token is invalid. Please request a new one.";
 
     return (
       <EmptyState
         icon={InputPassword}
-        title="Something Went Wrong"
-        description="We couldn't verify your email change request. Please try again later."
+        title={message.includes("access") ? "Unauthorized" : "Invalid Token"}
+        description={message}
       />
     );
   }
