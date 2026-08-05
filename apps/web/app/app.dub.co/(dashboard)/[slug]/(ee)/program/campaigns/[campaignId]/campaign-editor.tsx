@@ -488,7 +488,6 @@ export function CampaignEditor({ campaign }: { campaign: Campaign }) {
                       disabled={isDisabled}
                       hideIcon={true}
                     >
-<<<<<<< HEAD
                       <CampaignFromField
                         value={field.value}
                         onChange={field.onChange}
@@ -496,30 +495,6 @@ export function CampaignEditor({ campaign }: { campaign: Campaign }) {
                         domainSlug={verifiedEmailDomain?.slug}
                         displayNamePlaceholder={program?.name || "Display name"}
                       />
-=======
-                      <div
-                        className={`flex items-center gap-1 ${inputClassName} ${isDisabled ? "cursor-not-allowed opacity-80" : ""}`}
-                      >
-                        <input
-                          type="text"
-                          placeholder="Address"
-                          className="min-w-0 flex-1 border-0 bg-transparent p-0 text-content-default placeholder:text-content-muted focus:outline-none focus:ring-0 sm:text-sm"
-                          disabled={isDisabled}
-                          value={localPart}
-                          onChange={(e) => {
-                            const newLocalPart = e.target.value;
-                            if (verifiedEmailDomain?.slug) {
-                              field.onChange(
-                                `${newLocalPart}@${verifiedEmailDomain.slug}`,
-                              );
-                            }
-                          }}
-                        />
-                        <span className="shrink-0 text-sm text-content-muted">
-                          {domainSuffix}
-                        </span>
-                      </div>
->>>>>>> c51226bd78 (update: fix secure cookie bug for non-vercel deployments)
                     </DisabledInputWrapper>
                   );
                 }}
