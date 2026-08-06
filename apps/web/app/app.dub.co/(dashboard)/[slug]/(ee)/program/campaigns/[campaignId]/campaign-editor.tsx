@@ -168,7 +168,7 @@ function CampaignFromField({
       <input
         type="text"
         placeholder={displayNamePlaceholder}
-        className="text-content-default placeholder:text-content-muted min-w-0 flex-1 border-0 bg-transparent p-0 focus:outline-none focus:ring-0 sm:text-sm"
+        className="min-w-0 flex-1 border-0 bg-transparent p-0 text-content-default placeholder:text-content-muted focus:outline-none focus:ring-0 sm:text-sm"
         disabled={disabled}
         value={displayName}
         onChange={(e) => {
@@ -188,7 +188,7 @@ function CampaignFromField({
         }}
         aria-label="From display name"
       />
-      <span className="text-content-subtle shrink-0 text-sm" aria-hidden>
+      <span className="shrink-0 text-sm text-content-subtle" aria-hidden>
         &lt;
       </span>
       <div className="relative flex min-w-0 shrink-0 items-center">
@@ -203,7 +203,7 @@ function CampaignFromField({
           type="text"
           placeholder="address"
           style={{ width: Math.max(localPartWidth, 1) }}
-          className="text-content-default placeholder:text-content-muted m-0 max-w-[12rem] border-0 bg-transparent p-0 text-sm leading-none focus:outline-none focus:ring-0"
+          className="m-0 max-w-[12rem] border-0 bg-transparent p-0 text-sm leading-none text-content-default placeholder:text-content-muted focus:outline-none focus:ring-0"
           disabled={disabled}
           value={localPart}
           onChange={(e) => {
@@ -215,11 +215,11 @@ function CampaignFromField({
           }}
           aria-label="From email address"
         />
-        <span className="text-content-default shrink-0 text-sm leading-none">
+        <span className="shrink-0 text-sm leading-none text-content-default">
           {domainSlug ? `@${domainSlug}` : ""}
         </span>
       </div>
-      <span className="text-content-subtle shrink-0 text-sm" aria-hidden>
+      <span className="shrink-0 text-sm text-content-subtle" aria-hidden>
         &gt;
       </span>
     </div>

@@ -62,8 +62,7 @@ export abstract class HttpBaseClient {
   // Header-based auth. Return {} for vendors that authenticate via query
   // params. Called per-request, so env validation belongs here
   protected abstract buildAuthHeaders():
-    | Record<string, string>
-    | Promise<Record<string, string>>;
+    Record<string, string> | Promise<Record<string, string>>;
 
   // Override for vendors that authenticate via query params. Any secret param
   // must also be listed in redactedQueryParams.

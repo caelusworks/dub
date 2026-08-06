@@ -205,7 +205,7 @@ export function Nav({
                           </WithTrigger>
 
                           {Content && (
-                            <NavigationMenuPrimitive.Content className="data-[motion=from-start]:animate-enter-from-left data-[motion=from-end]:animate-enter-from-right data-[motion=to-start]:animate-exit-to-left data-[motion=to-end]:animate-exit-to-right absolute left-0 top-0">
+                            <NavigationMenuPrimitive.Content className="absolute left-0 top-0 data-[motion=from-end]:animate-enter-from-right data-[motion=from-start]:animate-enter-from-left data-[motion=to-end]:animate-exit-to-right data-[motion=to-start]:animate-exit-to-left">
                               <Content domain={domain} />
                             </NavigationMenuPrimitive.Content>
                           )}

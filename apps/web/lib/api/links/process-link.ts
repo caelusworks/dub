@@ -130,7 +130,6 @@ export async function processLink<T extends Record<string, any>>({
     domain = domains?.find((d) => d.primary)?.slug || SHORT_DOMAIN;
   }
 
-
   // free plan restrictions
   if (!workspace || workspace.plan === "free") {
     if (key === "_root" && url) {
