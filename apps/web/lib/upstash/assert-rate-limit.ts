@@ -74,8 +74,8 @@ export async function assertRateLimit({
             attempts: policy.attempts,
             window: policy.window,
           })
-        : policy.message ??
-          `You've reached the rate limit of ${policy.attempts} attempts per ${formatWindow(policy.window)}. Please try again in ${retryAfter}.`;
+        : (policy.message ??
+          `You've reached the rate limit of ${policy.attempts} attempts per ${formatWindow(policy.window)}. Please try again in ${retryAfter}.`);
 
     throw new DubApiError({
       code: "rate_limit_exceeded",

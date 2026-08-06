@@ -36,7 +36,7 @@ export async function isEmailDomainBlocked(email: string): Promise<boolean> {
 
   return Boolean(
     isDisposable ||
-      (blacklistedEmailDomainTermsRegex &&
-        blacklistedEmailDomainTermsRegex.test(emailDomain)),
+    (blacklistedEmailDomainTermsRegex &&
+      blacklistedEmailDomainTermsRegex.test(emailDomain)),
   );
 }
