@@ -7,7 +7,7 @@ import { prisma } from "@/lib/prisma";
 import { APP_DOMAIN_WITH_NGROK, INTERCOM_INTEGRATION_ID } from "@dub/utils";
 import { waitUntil } from "@vercel/functions";
 import { authPartnerActionClient } from "../actions/safe-action";
-import { INACTIVE_ENROLLMENT_STATUSES } from "../zod/schemas/partners";
+import { COMMISSION_ELIGIBLE_ENROLLMENT_STATUSES } from "../zod/schemas/partners";
 import { MessageSchema, messageProgramSchema } from "./schemas";
 import {
   mapMessageAttachmentsForCreate,
@@ -34,25 +34,23 @@ export const messageProgramAction = authPartnerActionClient
       where: {
         slug: programSlug,
 
-        // partner is not banned, deactivated, or rejected
-        partners: {
-          some: {
-            partnerId: partner.id,
-            status: {
-              notIn: INACTIVE_ENROLLMENT_STATUSES,
-            },
-          },
-        },
-
         OR: [
-          // program has messaging enabled
           {
             // program has messaging enabled
             messagingEnabledAt: {
               not: null,
             },
+            // partner is active, archived or invited
+            partners: {
+              some: {
+                partnerId: partner.id,
+                status: {
+                  in: COMMISSION_ELIGIBLE_ENROLLMENT_STATUSES,
+                },
+              },
+            },
           },
-          // partner has received a direct message from the program before (invited status)
+          // partner has received a direct message from the program before (e.g. reached out via the marketplace)
           {
             messages: {
               some: {

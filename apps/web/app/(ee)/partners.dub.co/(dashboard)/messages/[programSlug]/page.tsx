@@ -13,7 +13,10 @@ import usePartnerProfile from "@/lib/swr/use-partner-profile";
 import useProgramEnrollment from "@/lib/swr/use-program-enrollment";
 import useUser from "@/lib/swr/use-user";
 import { ProgramEnrollmentProps } from "@/lib/types";
-import { INACTIVE_ENROLLMENT_STATUSES } from "@/lib/zod/schemas/partners";
+import {
+  COMMISSION_ELIGIBLE_ENROLLMENT_STATUSES,
+  INACTIVE_ENROLLMENT_STATUSES,
+} from "@/lib/zod/schemas/partners";
 import { useMessagesContext } from "@/ui/messages/messages-context";
 import { MessagesPanel } from "@/ui/messages/messages-panel";
 import { ToggleSidePanelButton } from "@/ui/messages/toggle-side-panel-button";
@@ -51,12 +54,15 @@ export default function PartnerMessagesProgramPage() {
 
   const { user } = useUser();
   const { partner } = usePartnerProfile();
-  const { programEnrollment, error: programEnrollmentError } =
-    useProgramEnrollment({
-      swrOpts: {
-        shouldRetryOnError: (err) => err.status !== 404,
-      },
-    });
+  const {
+    programEnrollment,
+    error: programEnrollmentError,
+    loading: programEnrollmentLoading,
+  } = useProgramEnrollment({
+    swrOpts: {
+      shouldRetryOnError: (err) => err.status !== 404,
+    },
+  });
   const enrolledProgram = programEnrollment?.program;
 
   const {
@@ -420,9 +426,9 @@ export default function PartnerMessagesProgramPage() {
           <div className="flex grow flex-col overflow-y-scroll bg-bg-muted scrollbar-hide">
             {programEnrollmentLoading ? (
               <ProgramInfoPanelSkeleton />
-            ) : (
+            ) : programEnrollment ? (
               <ProgramInfoPanel programEnrollment={programEnrollment} />
-            )}
+            ) : null}
           </div>
         </div>
       </div>
@@ -448,7 +454,7 @@ function ProgramInfoPanel({
 
   const [copied, copyToClipboard] = useCopyToClipboard();
 
-  const isInactiveEnrollment = INACTIVE_ENROLLMENT_STATUSES.includes(
+  const isActiveEnrollment = COMMISSION_ELIGIBLE_ENROLLMENT_STATUSES.includes(
     programEnrollment.status,
   );
 
@@ -470,9 +476,9 @@ function ProgramInfoPanel({
               {program.name}
             </span>
             <span className="text-sm font-medium text-content-subtle">
-              {isInactiveEnrollment
-                ? `You have been ${programEnrollment.status} from this program`
-                : `Partner since ${formatDate(programEnrollment.createdAt)}`}
+              {isActiveEnrollment
+                ? `Partner since ${formatDate(programEnrollment.createdAt)}`
+                : `You have been ${programEnrollment.status} from this program`}
             </span>
           </div>
         </div>
@@ -481,7 +487,7 @@ function ProgramInfoPanel({
       {/* Referral link */}
       {programEnrollment.links &&
         programEnrollment.links.length > 0 &&
-        !isInactiveEnrollment && (
+        isActiveEnrollment && (
           <div className="pl-6 pr-6 pt-7">
             <div className="flex items-end justify-between">
               <h3 className="text-sm font-semibold text-content-emphasis">
@@ -581,7 +587,7 @@ function ProgramInfoPanel({
       </div>
 
       {/* Rewards */}
-      {!isInactiveEnrollment && (
+      {isActiveEnrollment && (
         <div className="pl-6 pr-6 pt-7">
           <h3 className="text-sm font-semibold text-content-emphasis">
             Rewards
