@@ -1,16 +1,19 @@
+const path = require("path");
 const { withPlausibleProxy } = require("next-plausible");
 
-// Suppress specific external package warnings
+// Suppress specific external package warnings.
+// Set NEXT_SHOW_TRACE_WARNINGS=1 to surface them when debugging standalone output tracing.
 const originalConsoleWarn = console.warn;
 console.warn = (...args) => {
   const message = args.join(" ");
   if (
-    message.includes("Package mongodb can't be external") ||
-    message.includes("Package pg can't be external") ||
-    message.includes("Package sqlite3 can't be external") ||
-    message.includes("Package typeorm can't be external") ||
-    message.includes("matches serverExternalPackages") ||
-    message.includes("Try to install it into the project directory")
+    !process.env.NEXT_SHOW_TRACE_WARNINGS &&
+    (message.includes("Package mongodb can't be external") ||
+      message.includes("Package pg can't be external") ||
+      message.includes("Package sqlite3 can't be external") ||
+      message.includes("Package typeorm can't be external") ||
+      message.includes("matches serverExternalPackages") ||
+      message.includes("Try to install it into the project directory"))
   ) {
     return; // Suppress these warnings
   }
@@ -26,6 +29,8 @@ module.exports = withPlausibleProxy({
   reactStrictMode: false,
   typescript: { ignoreBuildErrors: true },
   eslint: { ignoreDuringBuilds: true },
+  output: "standalone",
+  outputFileTracingRoot: path.join(__dirname, "../../"),
   transpilePackages: [
     "prettier",
     "shiki",
@@ -36,6 +41,11 @@ module.exports = withPlausibleProxy({
     "/api/auth/saml/token": [
       "./node_modules/jose/**/*",
       "./node_modules/openid-client/**/*",
+    ],
+    // Prisma resolves these at runtime by path, so tracing cannot find them
+    "/**/*": [
+      "../../node_modules/.pnpm/@prisma+engines@*/node_modules/@prisma/engines/*.node",
+      "../../node_modules/.pnpm/@prisma+client@*/node_modules/.prisma/**/*",
     ],
   },
   experimental: {

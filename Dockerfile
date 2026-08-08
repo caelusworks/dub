@@ -5,15 +5,19 @@ ENV PNPM_HOME=/pnpm
 ENV PATH="$PNPM_HOME:$PATH"
 RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates \
     && rm -rf /var/lib/apt/lists/*
-RUN corepack enable && corepack prepare pnpm@11.17.0 --activate
+# must match "packageManager" in package.json, or corepack re-downloads on every build
+RUN corepack enable && corepack prepare pnpm@11.20.0 --activate
 
 # ---- deps: install the full monorepo dependency graph ----
 FROM base AS deps
 WORKDIR /app
-COPY pnpm-lock.yaml pnpm-workspace.yaml package.json turbo.json ./
+# fetch keys on the lockfile alone, so editing package source cannot invalidate it
+COPY pnpm-lock.yaml ./
+RUN --mount=type=cache,target=/pnpm/store pnpm fetch
+COPY pnpm-workspace.yaml package.json turbo.json ./
 COPY apps/web/package.json apps/web/package.json
 COPY packages/ packages/
-RUN pnpm install --frozen-lockfile
+RUN --mount=type=cache,target=/pnpm/store pnpm install --frozen-lockfile --prefer-offline
 
 # ---- builder: bring in full source and build ----
 FROM base AS builder
@@ -31,10 +35,10 @@ ENV DATABASE_URL=$DATABASE_URL \
     NEXT_PUBLIC_APP_SHORT_DOMAIN=$NEXT_PUBLIC_APP_SHORT_DOMAIN
 ENV NODE_OPTIONS=--max-old-space-size=6144
 
-# cache mounts persist on the build host between builds: webpack recompiles
-# incrementally instead of from scratch, which dominates the ~17min build
+# cache mount persists on a long-lived build host, so webpack recompiles incrementally.
+# It is empty on GitHub Actions: buildx creates a fresh builder per job and cache mounts
+# are not exported by cache-to. Layer caching is what helps there.
 RUN --mount=type=cache,target=/app/apps/web/.next/cache \
-    --mount=type=cache,target=/pnpm/store \
     pnpm -r --workspace-concurrency=1 --filter "./packages/**" build \
     && pnpm --filter web build
 
@@ -54,3 +58,18 @@ EXPOSE 3000
 ENV PORT=3000
 # next start serves the prebuilt .next; runtime env comes from the compose environment
 CMD ["pnpm", "start"]
+
+# ---- runner-standalone: experimental, build with --target runner-standalone ----
+# Ships only what Next traced as reachable instead of the whole 2.4GB node_modules.
+# Verify the Prisma query engine is present before trusting it in prod.
+FROM base AS runner-standalone
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=builder /app/apps/web/.next/standalone ./
+COPY --from=builder /app/apps/web/.next/static ./apps/web/.next/static
+COPY --from=builder /app/apps/web/public ./apps/web/public
+WORKDIR /app/apps/web
+EXPOSE 3000
+# standalone binds localhost by default, which is unreachable from outside the container
+ENV PORT=3000 HOSTNAME=0.0.0.0
+CMD ["node", "server.js"]
