@@ -417,12 +417,12 @@ export default function PartnerMessagesProgramPage() {
               </button>
             </div>
           </div>
-          <div className="bg-bg-muted scrollbar-hide flex grow flex-col overflow-y-scroll">
+          <div className="flex grow flex-col overflow-y-scroll bg-bg-muted scrollbar-hide">
             {programEnrollmentLoading ? (
               <ProgramInfoPanelSkeleton />
             ) : (
               <ProgramInfoPanel programEnrollment={programEnrollment} />
-            ) : null}
+            )}
           </div>
         </div>
       </div>

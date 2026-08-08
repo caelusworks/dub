@@ -36,10 +36,7 @@ export const sendOtpAction = actionClient
       identifier: [email, await getIP()],
     });
 
-<<<<<<< HEAD
-=======
     const isGenericEmailWithPlus = email.includes("+") && isGenericEmail(email);
->>>>>>> 72748d9f04 (:arrow_up: bump project dependencies)
     const emailDomainBlocked = await isEmailDomainBlocked(email);
 
     // if any of the flags match, run one final edge case check, before throwing an error
