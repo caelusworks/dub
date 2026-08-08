@@ -136,7 +136,7 @@ export async function POST(req: Request) {
             status: "sending",
           },
         });
-      } catch (error) {
+      } catch {
         //
       }
     }
