@@ -698,7 +698,6 @@ function ConditionLogic({
                             {displayValue ?? placeholder}
                           </button>
                         )}
-                        showYearNavigation
                       />
                     ) : (
                       <InlineBadgePopover
