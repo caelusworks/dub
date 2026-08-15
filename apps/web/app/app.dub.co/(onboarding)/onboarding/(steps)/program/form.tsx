@@ -26,8 +26,16 @@ export function Form() {
     handleSubmit,
     control,
     setValue,
+    watch,
     formState: { isSubmitting, errors },
   } = useFormContext<ProgramData>();
+
+  const [name, logo, url, supportEmail] = watch([
+    "name",
+    "logo",
+    "url",
+    "supportEmail",
+  ]);
 
   const plausible = usePlausible();
 
@@ -99,11 +107,23 @@ export function Form() {
     }
   };
 
+  const isLoading = isSubmitting || isPending || hasSubmitted;
+
+  const disabledTooltip = !name
+    ? "Please enter a company name."
+    : !logo
+      ? "Please upload a logo."
+      : !url
+        ? "Please enter a valid destination URL."
+        : !supportEmail
+          ? "Please enter a valid support email."
+          : undefined;
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
       <label className="space-y-2">
-        <span className="block text-sm font-semibold text-content-emphasis">
-          Company name
+        <span className="text-content-emphasis block text-sm font-semibold">
+          Company name <span className="text-red-800">*</span>
         </span>
 
         <Input
@@ -120,8 +140,8 @@ export function Form() {
       </label>
 
       <label className="space-y-2">
-        <span className="block text-sm font-semibold text-content-emphasis">
-          Logo
+        <span className="text-content-emphasis block text-sm font-semibold">
+          Logo <span className="text-red-800">*</span>
         </span>
 
         <div className="flex w-full items-center justify-center gap-2 rounded-lg border border-neutral-200 p-1">
@@ -153,8 +173,8 @@ export function Form() {
       </label>
 
       <label className="space-y-2">
-        <span className="block text-sm font-semibold text-content-emphasis">
-          Destination URL
+        <span className="text-content-emphasis block text-sm font-semibold">
+          Destination URL <span className="text-red-800">*</span>
         </span>
 
         <Controller
@@ -180,8 +200,8 @@ export function Form() {
       </label>
 
       <label className="space-y-2">
-        <span className="block text-sm font-semibold text-content-emphasis">
-          Support email
+        <span className="text-content-emphasis block text-sm font-semibold">
+          Support email <span className="text-red-800">*</span>
         </span>
 
         <Controller
@@ -207,7 +227,8 @@ export function Form() {
 
       <Button
         type="submit"
-        loading={isSubmitting || isPending || hasSubmitted}
+        loading={isLoading}
+        disabledTooltip={!isLoading ? disabledTooltip : undefined}
         text="Continue"
         className="w-full"
       />
