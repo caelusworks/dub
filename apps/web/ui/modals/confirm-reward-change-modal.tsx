@@ -110,10 +110,10 @@ export function ConfirmRewardChangeModal({
     >
       <form onSubmit={onSubmit}>
         <div className="px-5 py-4 text-left">
-          <h3 className="text-content-emphasis text-base font-semibold">
+          <h3 className="text-base font-semibold text-content-emphasis">
             {TITLES[action]}
           </h3>
-          <p className="text-content-subtle mt-1 text-sm">
+          <p className="mt-1 text-sm text-content-subtle">
             The reward below will be {change} the group
             {partnerCount && partnerCount > 0 ? (
               <>
@@ -144,7 +144,7 @@ export function ConfirmRewardChangeModal({
             <div className="flex items-center justify-between">
               <label
                 htmlFor="activityDescription"
-                className="text-content-emphasis text-sm font-medium"
+                className="text-sm font-medium text-content-emphasis"
               >
                 Message to partners
                 <span className="ml-1 font-normal text-neutral-500">
@@ -181,7 +181,7 @@ export function ConfirmRewardChangeModal({
           </div>
         </div>
 
-        <div className="border-border-subtle flex items-center justify-end gap-2 border-t px-5 py-4">
+        <div className="flex items-center justify-end gap-2 border-t border-border-subtle px-5 py-4">
           <Button
             type="button"
             variant="secondary"

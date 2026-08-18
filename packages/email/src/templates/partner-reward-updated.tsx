@@ -112,7 +112,7 @@ export default function PartnerRewardUpdated({
             </Section>
 
             {rewardSnapshot.activityDescription && (
-              <Text className="mb-0 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mt-0 mb-0 text-sm leading-6 text-neutral-600">
                 <strong>Message from {program.name}:</strong>{" "}
                 {rewardSnapshot.activityDescription}
               </Text>

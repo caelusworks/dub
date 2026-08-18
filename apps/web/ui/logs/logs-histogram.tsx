@@ -50,9 +50,9 @@ export function LogsHistogram() {
 
   const isMinuteRange = Boolean(
     exactRange &&
-      start &&
-      end &&
-      new Date(end).getTime() - new Date(start).getTime() <= 2 * 60 * 60 * 1000,
+    start &&
+    end &&
+    new Date(end).getTime() - new Date(start).getTime() <= 2 * 60 * 60 * 1000,
   );
 
   const chartData = useMemo(
@@ -143,14 +143,14 @@ export function LogsHistogram() {
               return (
                 <>
                   <div className="flex items-center justify-between gap-4 px-4 py-3 text-xs">
-                    <span className="text-content-emphasis font-semibold">
+                    <span className="font-semibold text-content-emphasis">
                       {formatDateTooltip(d.date, { interval, start, end })}
                     </span>
-                    <span className="text-content-default font-medium">
+                    <span className="font-medium text-content-default">
                       {nFormatter(total, { full: true })}
                     </span>
                   </div>
-                  <div className="border-border-subtle grid grid-cols-[minmax(0,1fr),min-content] gap-x-6 gap-y-2 border-t px-4 py-3 text-xs">
+                  <div className="grid grid-cols-[minmax(0,1fr),min-content] gap-x-6 gap-y-2 border-t border-border-subtle px-4 py-3 text-xs">
                     {rows.map((s) => (
                       <div key={s.id} className="contents">
                         <div className="flex items-center gap-2">

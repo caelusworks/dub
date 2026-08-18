@@ -32,12 +32,12 @@ export default function PartnerBountyPage() {
   return (
     <PageContent title={<PartnerBountyPageHeader />}>
       <PageWidthWrapper className="flex flex-col gap-6 pb-10">
-        <div className="@3xl/page:grid-cols-[minmax(440px,1fr)_minmax(0,360px)] grid grid-cols-1 gap-6">
-          <div className="@3xl/page:contents flex flex-col gap-6">
+        <div className="grid grid-cols-1 gap-6 @3xl/page:grid-cols-[minmax(440px,1fr)_minmax(0,360px)]">
+          <div className="flex flex-col gap-6 @3xl/page:contents">
             {isLoading ? (
               <PartnerBountyCardSkeleton />
             ) : bounty ? (
-              <div className="@3xl/page:col-start-2 @3xl/page:row-start-1 @3xl/page:w-[360px] @3xl/page:shrink-0 flex w-full flex-col gap-4">
+              <div className="flex w-full flex-col gap-4 @3xl/page:col-start-2 @3xl/page:row-start-1 @3xl/page:w-[360px] @3xl/page:shrink-0">
                 <PartnerBountyCard
                   bounty={bounty}
                   showFullTitle
@@ -54,16 +54,16 @@ export default function PartnerBountyPage() {
             ) : null}
           </div>
 
-          <div className="@3xl/page:col-start-1 @3xl/page:row-start-1 flex flex-col gap-6">
+          <div className="flex flex-col gap-6 @3xl/page:col-start-1 @3xl/page:row-start-1">
             {isLoading ? (
               <BountyDetailsProgressSkeleton />
             ) : bounty ? (
               <>
                 <div className="flex flex-col gap-3">
-                  <h2 className="text-content-emphasis text-lg font-semibold leading-7 tracking-[-0.36px]">
+                  <h2 className="text-lg font-semibold leading-7 tracking-[-0.36px] text-content-emphasis">
                     Progress
                   </h2>
-                  <div className="border-border-subtle flex w-full flex-col gap-4 rounded-xl border bg-white px-5 pb-4 pt-6">
+                  <div className="flex w-full flex-col gap-4 rounded-xl border border-border-subtle bg-white px-5 pb-4 pt-6">
                     {bounty.type === "performance" ? (
                       <PerformanceBountyProgress
                         bounty={bounty}
@@ -103,7 +103,7 @@ function BountyDetailsProgressSkeleton() {
   return (
     <div className="flex flex-col gap-3">
       <div className="h-7 w-20 animate-pulse rounded-md bg-neutral-200" />
-      <div className="border-border-subtle flex flex-col gap-4 rounded-xl border bg-white px-5 pb-4 pt-6">
+      <div className="flex flex-col gap-4 rounded-xl border border-border-subtle bg-white px-5 pb-4 pt-6">
         <div className="h-1 w-full animate-pulse rounded-full bg-neutral-200" />
         <div className="flex gap-1">
           <div className="h-6 w-8 animate-pulse rounded bg-neutral-200" />
@@ -126,13 +126,13 @@ function PartnerBountyPageHeader() {
         aria-label="Back to bounties"
         title="Back to bounties"
         className={cn(
-          "bg-bg-subtle flex size-8 shrink-0 items-center justify-center rounded-lg",
-          "hover:bg-bg-emphasis transition-[transform,background-color] duration-150 active:scale-95",
+          "flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle",
+          "transition-[transform,background-color] duration-150 hover:bg-bg-emphasis active:scale-95",
         )}
       >
         <Trophy className="size-4" />
       </Link>
-      <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
+      <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
       <div className="min-w-0 truncate">
         {bounty ? (
           truncate(bounty.name, 70)

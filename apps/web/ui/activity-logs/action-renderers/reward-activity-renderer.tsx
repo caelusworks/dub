@@ -104,8 +104,8 @@ export function RewardActivityRenderer({ log }: RewardActivityRendererProps) {
         </TimestampTooltip>
       </div>
 
-      <div className="border-border-subtle bg-bg-default rounded-xl border shadow-sm">
-        <div className="text-content-default px-3 py-2.5 text-xs font-medium leading-4">
+      <div className="rounded-xl border border-border-subtle bg-bg-default shadow-sm">
+        <div className="px-3 py-2.5 text-xs font-medium leading-4 text-content-default">
           {config.displayModifiers ? (
             <ProgramRewardModifiersTooltipContent
               reward={reward}
@@ -122,10 +122,10 @@ export function RewardActivityRenderer({ log }: RewardActivityRendererProps) {
         </div>
 
         {log.description && (
-          <div className="border-border-subtle bg-bg-muted -mx-px rounded-b-xl border-x border-t px-3 py-2.5 shadow-sm">
+          <div className="-mx-px rounded-b-xl border-x border-t border-border-subtle bg-bg-muted px-3 py-2.5 shadow-sm">
             <div className="flex items-start gap-2">
               <ActivityLogUserAvatar user={log.user} />
-              <p className="text-content-subtle text-xs">{log.description}</p>
+              <p className="text-xs text-content-subtle">{log.description}</p>
             </div>
           </div>
         )}

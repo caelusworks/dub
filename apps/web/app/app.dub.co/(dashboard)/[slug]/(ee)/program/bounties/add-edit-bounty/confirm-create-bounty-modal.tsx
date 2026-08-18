@@ -1,12 +1,11 @@
 import { getProgramBountyMeta } from "@/lib/bounty/bounty-period";
 import { getBountyRewardDescription } from "@/lib/bounty/rewards";
 import { getPlanCapabilities } from "@/lib/plan-capabilities";
-import useGroups from "@/lib/swr/use-groups";
 import { usePartnersCountByGroupIds } from "@/lib/swr/use-partners-count-by-groupids";
 import useWorkspace from "@/lib/swr/use-workspace";
 import { BountyProps } from "@/lib/types";
+import { BountyEligibilitySummary } from "@/ui/partners/bounties/bounty-eligibility-summary";
 import { BountyThumbnailImage } from "@/ui/partners/bounties/bounty-thumbnail-image";
-import { GroupColorCircle } from "@/ui/partners/groups/group-color-circle";
 import {
   Button,
   Calendar6,
@@ -14,15 +13,12 @@ import {
   DynamicTooltipWrapper,
   Gift,
   Modal,
-  ScrollableTooltipContent,
-  Tooltip,
   TooltipContent,
 } from "@dub/ui";
-import { Users6 } from "@dub/ui/icons";
-import { nFormatter, pluralize } from "@dub/utils";
+import { nFormatter, pluck, pluralize } from "@dub/utils";
 import { cn } from "@dub/utils/src";
 import { BountyStartMode } from "@prisma/client";
-import { Dispatch, SetStateAction, useMemo, useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 type ConfirmCreateBountyModalProps = {
   bounty?: Pick<
@@ -37,6 +33,7 @@ type ConfirmCreateBountyModalProps = {
     | "rewardDescription"
     | "submissionRequirements"
     | "groups"
+    | "partnerTags"
   >;
   onConfirm: (data: { sendNotificationEmails: boolean }) => Promise<void>;
 };
@@ -50,7 +47,6 @@ function ConfirmCreateBountyModal({
   showConfirmCreateBountyModal: boolean;
   setShowConfirmCreateBountyModal: Dispatch<SetStateAction<boolean>>;
 } & ConfirmCreateBountyModalProps) {
-  const { groups } = useGroups();
   const { plan, slug: workspaceSlug, isOwner } = useWorkspace();
   const { canSendEmailCampaigns } = getPlanCapabilities(plan);
 
@@ -65,18 +61,15 @@ function ConfirmCreateBountyModal({
   const { totalPartners, loading } = usePartnersCountByGroupIds({
     groupIds: isRelative
       ? null
-      : bounty?.groups?.map((group) => group.id) ?? [],
+      : bounty?.groups
+        ? pluck(bounty.groups, "id")
+        : [],
+    partnerTagIds: isRelative
+      ? null
+      : bounty?.partnerTags
+        ? pluck(bounty.partnerTags, "id")
+        : [],
   });
-
-  const eligibleGroups = useMemo(() => {
-    if (!groups || !bounty || bounty.groups.length === 0) {
-      return [];
-    }
-
-    return bounty.groups
-      .map((bountyGroup) => groups.find((g) => g.id === bountyGroup.id))
-      .filter((g): g is NonNullable<typeof g> => g !== undefined);
-  }, [groups, bounty?.groups]);
 
   if (!bounty) {
     return null;
@@ -102,14 +95,14 @@ function ConfirmCreateBountyModal({
       setShowModal={setShowConfirmCreateBountyModal}
     >
       <div className="px-5 py-4 text-left">
-        <h3 className="text-content-emphasis text-base font-semibold">
+        <h3 className="text-base font-semibold text-content-emphasis">
           Confirm bounty creation
         </h3>
-        <p className="text-content-subtle mt-1 text-sm">
-          You are about to create this bounty for the selected partner groups.
+        <p className="mt-1 text-sm text-content-subtle">
+          You are about to create this bounty for the selected partners.
         </p>
 
-        <div className="border-border-subtle mt-4 rounded-xl border bg-white p-2">
+        <div className="mt-4 rounded-xl border border-border-subtle bg-white p-2">
           <div className="flex flex-col gap-3.5">
             <div className="relative flex h-[124px] items-center justify-center rounded-lg bg-neutral-100 py-5">
               <div className="relative size-full">
@@ -118,17 +111,17 @@ function ConfirmCreateBountyModal({
             </div>
 
             <div className="flex flex-col gap-1.5 px-2 pb-1.5">
-              <h3 className="text-content-emphasis truncate text-sm font-semibold">
+              <h3 className="truncate text-sm font-semibold text-content-emphasis">
                 {bounty.name}
               </h3>
 
-              <div className="text-content-subtle font-regular flex items-center gap-2 text-sm">
+              <div className="flex items-center gap-2 text-sm font-normal text-content-subtle">
                 <Calendar6 className="size-3.5" />
                 <span>{dateRangeLabel}</span>
               </div>
 
               {!isOwner && (
-                <div className="text-content-subtle font-regular flex items-center gap-2 text-sm">
+                <div className="flex items-center gap-2 text-sm font-normal text-content-subtle">
                   <Gift className="size-3.5 shrink-0" />
                   <span className="truncate">
                     {getBountyRewardDescription(bounty)}
@@ -137,42 +130,11 @@ function ConfirmCreateBountyModal({
               )}
 
               {isOwner && (
-                <div className="text-content-subtle font-regular flex items-center gap-2 text-sm">
-                  <Users6 className="size-3.5" />
-                  {bounty.groups.length === 0 ? (
-                    <span>All groups</span>
-                  ) : eligibleGroups.length === 1 ? (
-                    <div className="flex items-center gap-1.5">
-                      <GroupColorCircle group={eligibleGroups[0]} />
-                      <span className="truncate">{eligibleGroups[0].name}</span>
-                    </div>
-                  ) : eligibleGroups.length > 1 ? (
-                    <Tooltip
-                      content={
-                        <ScrollableTooltipContent>
-                          {eligibleGroups.map((group) => (
-                            <div
-                              key={group.id}
-                              className="flex items-center gap-2"
-                            >
-                              <GroupColorCircle group={group} />
-                              <span className="font-regular text-sm text-neutral-700">
-                                {group.name}
-                              </span>
-                            </div>
-                          ))}
-                        </ScrollableTooltipContent>
-                      }
-                    >
-                      <div className="flex items-center gap-1.5">
-                        <GroupColorCircle group={eligibleGroups[0]} />
-                        <span className="truncate">
-                          {eligibleGroups[0].name} +{eligibleGroups.length - 1}
-                        </span>
-                      </div>
-                    </Tooltip>
-                  ) : null}
-                </div>
+                <BountyEligibilitySummary
+                  groups={bounty.groups}
+                  partnerTags={bounty.partnerTags}
+                  className="font-normal"
+                />
               )}
             </div>
           </div>
@@ -212,12 +174,12 @@ function ConfirmCreateBountyModal({
               />
               <span
                 className={cn(
-                  "text-content-default select-none text-sm font-medium",
+                  "select-none text-sm font-medium text-content-default",
                   !canSendEmailCampaigns && "opacity-50",
                 )}
               >
                 Send notification to{" "}
-                <strong className="text-content-emphasis font-semibold">
+                <strong className="font-semibold text-content-emphasis">
                   {loading ? (
                     <span className="inline-block h-4 w-6 animate-pulse rounded bg-neutral-200 align-text-bottom" />
                   ) : (
@@ -231,7 +193,7 @@ function ConfirmCreateBountyModal({
         )}
       </div>
 
-      <div className="border-border-subtle flex items-center justify-end gap-2 border-t px-5 py-4">
+      <div className="flex items-center justify-end gap-2 border-t border-border-subtle px-5 py-4">
         <Button
           variant="secondary"
           className="h-8 w-fit px-3"

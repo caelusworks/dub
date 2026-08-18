@@ -119,7 +119,7 @@ export default function ProgramOverviewPageClient() {
   });
 
   return (
-    <div className="@container flex flex-col gap-4">
+    <div className="flex flex-col gap-4 @container">
       {confirmModal}
       {program?.deactivatedAt && (
         <div className="flex flex-col gap-3 rounded-lg border border-amber-200 bg-amber-50 px-4 py-2.5 sm:flex-row sm:items-center">
@@ -168,13 +168,13 @@ export default function ProgramOverviewPageClient() {
           totalEventsLoading,
         }}
       >
-        <div className="@4xl:grid-cols-[minmax(0,1fr)_400px] grid grid-cols-1 gap-6 rounded-2xl bg-neutral-100 p-4">
+        <div className="grid grid-cols-1 gap-6 rounded-2xl bg-neutral-100 p-4 @4xl:grid-cols-[minmax(0,1fr)_400px]">
           {/* Chart */}
-          <ProgramOverviewCard className="@4xl:h-full h-96 p-6">
+          <ProgramOverviewCard className="h-96 p-6 @4xl:h-full">
             <OverviewChart />
           </ProgramOverviewCard>
 
-          <div className="@4xl:grid-cols-1 @2xl:grid-cols-2 grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 gap-6 @2xl:grid-cols-2 @4xl:grid-cols-1">
             {/* Tasks */}
             <OverviewTasks />
 
@@ -183,7 +183,7 @@ export default function ProgramOverviewPageClient() {
           </div>
         </div>
         <FinishSetupWrapper totalEvents={totalEvents}>
-          <div className="@2xl:grid-cols-2 @4xl:grid-cols-3 grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 gap-6 @2xl:grid-cols-2 @4xl:grid-cols-3">
             {BLOCKS.map((Block, idx) => (
               <Block key={idx} />
             ))}
@@ -218,15 +218,15 @@ function FinishSetupWrapper({
   return (
     <div className="relative">
       <div className="relative h-[28rem] overflow-hidden">{children}</div>
-      <div className="from-bg-default to-bg-default/30 absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t from-60% text-center">
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t from-bg-default from-60% to-bg-default/30 text-center">
         <div className="flex size-12 items-center justify-center rounded-lg border border-blue-200 bg-blue-100">
           <Plug2 className="size-6 text-blue-500" />
         </div>
 
-        <h2 className="text-content-emphasis mt-6 text-xl font-semibold">
+        <h2 className="mt-6 text-xl font-semibold text-content-emphasis">
           Finish setting up your program
         </h2>
-        <p className="text-content-subtle mt-2 max-w-md text-pretty text-sm">
+        <p className="mt-2 max-w-md text-pretty text-sm text-content-subtle">
           Install the Dub tracking script on your site to track conversions,
           attribute sales, and measure partner performance.
         </p>

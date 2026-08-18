@@ -107,7 +107,7 @@ function TextBlockModalInner({
               />
             </div>
             <a
-              href="https://www.markdownguide.org/basic-syntax/"
+              href="https://www.markdownguide.org/extended-syntax/#tables"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-1 flex items-center gap-1 text-xs text-content-subtle"
