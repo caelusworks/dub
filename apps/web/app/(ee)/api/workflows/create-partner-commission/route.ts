@@ -694,8 +694,7 @@ async function stepRunSideEffects(
     // Execute Dub workflows
     shouldTriggerWorkflow &&
       executeWorkflows({
-        trigger: "partnerMetricsUpdated",
-        reason: "commission",
+        event: "commissionRecorded",
         identity: {
           workspaceId: workspace.id,
           programId,

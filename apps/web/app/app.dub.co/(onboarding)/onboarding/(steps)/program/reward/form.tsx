@@ -151,7 +151,7 @@ export function Form() {
       className="flex flex-col gap-6 px-2"
     >
       <div className="grid grid-cols-1 gap-2">
-        <h2 className="text-content-emphasis text-sm font-semibold">
+        <h2 className="text-sm font-semibold text-content-emphasis">
           Reward type <span className="text-red-800">*</span>
         </h2>
 
@@ -245,7 +245,7 @@ export function Form() {
           <div className="flex flex-col gap-6 p-1">
             {defaultRewardType === "sale" && (
               <div className="space-y-2">
-                <h2 className="text-content-emphasis text-sm font-semibold">
+                <h2 className="text-sm font-semibold text-content-emphasis">
                   Commission structure <span className="text-red-800">*</span>
                 </h2>
 
@@ -355,7 +355,7 @@ export function Form() {
 
             {defaultRewardType === "sale" && (
               <div className="space-y-2">
-                <h2 className="text-content-emphasis text-sm font-semibold">
+                <h2 className="text-sm font-semibold text-content-emphasis">
                   Payout model <span className="text-red-800">*</span>
                 </h2>
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -448,6 +448,7 @@ export function Form() {
                 </span>
                 <input
                   id={rewardAmountInputId}
+                  data-testid="onboarding-reward-amount"
                   className={cn(
                     "block w-full rounded-md border-neutral-300 text-neutral-900 placeholder-neutral-400 focus:border-neutral-500 focus:outline-none focus:ring-neutral-500 sm:text-sm",
                     type === "flat" ? "pl-6 pr-12" : "pr-7",
@@ -479,6 +480,7 @@ export function Form() {
         loading={isLoading}
         disabledTooltip={!isLoading ? disabledTooltip : undefined}
         type="submit"
+        data-testid="onboarding-reward-continue"
       />
     </form>
   );

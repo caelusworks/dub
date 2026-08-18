@@ -5,8 +5,7 @@ import { APP_DOMAIN, PARTNERS_DOMAIN } from "@dub/utils";
 const PAYOUT_ID_REGEX = /po_[0-9A-HJKMNP-TV-Z]{25}/g;
 
 export type CommissionDescriptionTooltipContext =
-  | { variant: "program"; workspaceSlug: string }
-  | { variant: "partner" };
+  { variant: "program"; workspaceSlug: string } | { variant: "partner" };
 
 export function getCommissionDescriptionText(description: string): string {
   return CLAWBACK_REASONS_MAP[description]?.description ?? description;

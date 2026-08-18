@@ -3,6 +3,7 @@ import { startRewardfulImportAction } from "@/lib/actions/partners/start-rewardf
 import { RewardfulCampaign } from "@/lib/rewardful/types";
 import useProgram from "@/lib/swr/use-program";
 import useWorkspace from "@/lib/swr/use-workspace";
+import { X } from "@/ui/shared/icons";
 import {
   AnimatedSizeContainer,
   Button,
@@ -16,7 +17,6 @@ import {
   useMediaQuery,
   useRouterStuff,
 } from "@dub/ui";
-import { X } from "@/ui/shared/icons";
 import { cn, currencyFormatter, fetcher } from "@dub/utils";
 import { Command } from "cmdk";
 import { ArrowRight, ServerOff, Users } from "lucide-react";

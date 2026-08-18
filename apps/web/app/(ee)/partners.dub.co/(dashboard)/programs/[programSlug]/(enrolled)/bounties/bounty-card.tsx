@@ -40,13 +40,13 @@ export function PartnerBountyCard({
       href={href ?? "#"}
       onClick={onClick}
       className={cn(
-        "border-border-subtle bg-bg-default group relative flex w-full flex-col overflow-hidden rounded-xl border text-left",
+        "group relative flex w-full flex-col overflow-hidden rounded-xl border border-border-subtle bg-bg-default text-left",
         (href || onClick) &&
-          "hover:border-border-default cursor-pointer transition-all hover:shadow-lg",
+          "cursor-pointer transition-all hover:border-border-default hover:shadow-lg",
       )}
     >
       <div className="p-3 pb-0">
-        <div className="bg-bg-subtle relative flex h-[124px] items-center justify-center rounded-lg">
+        <div className="relative flex h-[124px] items-center justify-center rounded-lg bg-bg-subtle">
           <div className="relative size-full">
             <BountyThumbnailImage bounty={bounty} />
           </div>
@@ -58,7 +58,7 @@ export function PartnerBountyCard({
       <div className="flex min-w-0 flex-col gap-1 px-5 py-4">
         <h3
           className={cn(
-            "text-content-emphasis text-sm font-semibold",
+            "text-sm font-semibold text-content-emphasis",
             !showFullTitle && "sm:truncate",
           )}
         >
@@ -75,7 +75,7 @@ export function PartnerBountyCard({
       </div>
 
       {!hideFooter && (
-        <div className="border-border-subtle border-t px-5 py-4">
+        <div className="border-t border-border-subtle px-5 py-4">
           {bounty.type === "performance" ? (
             <PerformanceBountyProgress bounty={bounty} />
           ) : (
@@ -85,7 +85,7 @@ export function PartnerBountyCard({
       )}
 
       {showRewards && bounty.submissions.some((s) => s.commission != null) && (
-        <div className="@3xl/page:block border-border-subtle hidden border-t p-4">
+        <div className="hidden border-t border-border-subtle p-4 @3xl/page:block">
           <BountyRewardsTable
             bounty={bounty}
             programSlug={programSlug as string}
@@ -147,14 +147,14 @@ export function BountyRewardsTable({
   return (
     <div className={cn("relative flex flex-col gap-4", className)}>
       <div className="flex items-center justify-between">
-        <h3 className="text-content-emphasis text-sm font-semibold">Rewards</h3>
+        <h3 className="text-sm font-semibold text-content-emphasis">Rewards</h3>
         {programSlug && (
           <Link
             href={`/programs/${programSlug}/earnings?type=custom`}
             onClick={(e) => e.stopPropagation()}
             className={cn(
               buttonVariants({ variant: "secondary" }),
-              "border-border-subtle flex h-6 items-center rounded-md border px-2 text-xs",
+              "flex h-6 items-center rounded-md border border-border-subtle px-2 text-xs",
             )}
           >
             View all
@@ -177,7 +177,7 @@ export function BountyEndDate({ bounty }: { bounty: PartnerBountyProps }) {
     bounty.endsAt && new Date(bounty.endsAt) < new Date() ? true : false;
 
   return (
-    <div className="text-content-subtle flex items-center gap-2 text-sm font-medium">
+    <div className="flex items-center gap-2 text-sm font-medium text-content-subtle">
       <Calendar6 className="size-3.5" />
       {bounty.endsAt ? (
         <span>
@@ -187,7 +187,7 @@ export function BountyEndDate({ bounty }: { bounty: PartnerBountyProps }) {
             side="right"
             rows={["local", "utc"]}
           >
-            <span className="hover:text-content-emphasis underline decoration-dotted underline-offset-2">
+            <span className="underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
               {formatDateTimeSmart(bounty.endsAt)}
             </span>
           </TimestampTooltip>
@@ -203,14 +203,14 @@ export function BountyEndDate({ bounty }: { bounty: PartnerBountyProps }) {
 
 export const PartnerBountyCardSkeleton = () => {
   return (
-    <div className="border-border-subtle bg-bg-default rounded-xl border p-5">
+    <div className="rounded-xl border border-border-subtle bg-bg-default p-5">
       <div className="flex flex-col gap-5">
-        <div className="bg-bg-subtle flex h-[132px] animate-pulse items-center justify-center rounded-lg px-32 py-4" />
+        <div className="flex h-[132px] animate-pulse items-center justify-center rounded-lg bg-bg-subtle px-32 py-4" />
         <div className="flex flex-col gap-1.5">
-          <div className="bg-bg-emphasis h-5 w-48 animate-pulse rounded-md" />
+          <div className="h-5 w-48 animate-pulse rounded-md bg-bg-emphasis" />
           <div className="flex h-5 items-center space-x-2">
-            <div className="bg-bg-emphasis size-4 animate-pulse rounded" />
-            <div className="bg-bg-emphasis h-4 w-32 animate-pulse rounded" />
+            <div className="size-4 animate-pulse rounded bg-bg-emphasis" />
+            <div className="h-4 w-32 animate-pulse rounded bg-bg-emphasis" />
           </div>
         </div>
       </div>

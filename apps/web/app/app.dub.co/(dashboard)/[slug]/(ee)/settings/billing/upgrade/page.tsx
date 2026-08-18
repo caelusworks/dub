@@ -236,8 +236,8 @@ export default function WorkspaceBillingUpgradePage() {
               {plans.map(({ plan, planTier }, idx) => {
                 const isRecommended = Boolean(
                   highlightedPlan &&
-                    plan.name === highlightedPlan.plan.name &&
-                    planTier === highlightedPlan.planTier,
+                  plan.name === highlightedPlan.plan.name &&
+                  planTier === highlightedPlan.planTier,
                 );
 
                 // disable upgrade button if user has a Stripe ID and is on the current plan
@@ -285,7 +285,7 @@ export default function WorkspaceBillingUpgradePage() {
                           {plan.name}
                         </h3>
                         {isRecommended && !isDowngrade && !isCurrentPlan && (
-                          <div className="animate-fade-in flex h-6 min-w-0 items-center rounded-lg border border-blue-100 bg-blue-50 px-1.5 text-xs font-medium text-blue-600">
+                          <div className="flex h-6 min-w-0 animate-fade-in items-center rounded-lg border border-blue-100 bg-blue-50 px-1.5 text-xs font-medium text-blue-600">
                             <span className="truncate">Recommended</span>
                           </div>
                         )}
@@ -568,8 +568,8 @@ function BillingCompareSection({
                     const id = plan.name.toLowerCase();
                     const isRecommended = Boolean(
                       recommendedPlan &&
-                        plan.name === recommendedPlan.plan.name &&
-                        planTier === recommendedPlan.planTier,
+                      plan.name === recommendedPlan.plan.name &&
+                      planTier === recommendedPlan.planTier,
                     );
                     const isChecked =
                       typeof check === "boolean"
