@@ -4,7 +4,7 @@ import { NetworkProgramExtendedProps } from "@/lib/types";
 import { marketplaceProgramDetailsColumnClassName } from "@/ui/program-marketplace/marketplace-program-details-layout";
 import { ProgramCategory } from "@/ui/program-marketplace/program-category";
 import { getMarketplaceCategoryHref } from "@/ui/program-marketplace/utils/urls";
-import { Globe } from "@dub/ui/icons";
+import { ArrowUpRight, Globe } from "@dub/ui/icons";
 import { OG_AVATAR_URL, cn, getDomainWithoutWWW } from "@dub/utils";
 import Link from "next/link";
 import { ReactNode } from "react";
@@ -37,7 +37,7 @@ export function MarketplaceProgramHero({
         aria-hidden
         className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-out"
         style={{
-          backgroundColor: hasBanner ? (accentColor ?? "#f5f5f5") : "#f5f5f5",
+          backgroundColor: hasBanner ? accentColor ?? "#f5f5f5" : "#f5f5f5",
           opacity: hasBanner ? (accentReady ? 1 : 0) : 1,
         }}
       />
@@ -68,11 +68,11 @@ export function MarketplaceProgramHero({
         />
 
         <div className="mt-6 flex flex-col">
-          <h1 className="text-3xl font-semibold text-content-emphasis">
+          <h1 className="text-content-emphasis text-3xl font-semibold">
             {program.name}
           </h1>
 
-          <p className="mt-2 max-w-md text-sm text-content-default">
+          <p className="text-content-default mt-2 max-w-md text-sm">
             {program.description ||
               `${program.name} is a program in the Dub Partner Network. Join the network to start partnering with them.`}
           </p>
@@ -106,12 +106,13 @@ export function MarketplaceProgramHero({
                 href={program.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-7 max-w-[220px] items-center gap-1.5 text-sm font-medium leading-none text-content-default hover:text-content-emphasis"
+                className="flex h-7 max-w-[220px] items-center gap-1 text-sm font-medium text-neutral-900 transition-colors hover:text-neutral-600"
               >
                 <Globe className="size-4 shrink-0" />
                 <span className="truncate">
-                  {getDomainWithoutWWW(program.url)} ↗
+                  {getDomainWithoutWWW(program.url)}
                 </span>
+                <ArrowUpRight className="size-3.5 shrink-0" />
               </Link>
             </div>
           )}
