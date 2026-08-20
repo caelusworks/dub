@@ -11,8 +11,6 @@ import Link from "next/link";
 import { useAdvancedUpsellModal } from "../advanced-upsell-modal";
 import { PartnerApplicationFraudSeverityIndicator } from "./partner-application-fraud-severity-indicator";
 import { usePartnerApplicationRiskSummaryModal } from "./partner-application-risk-summary-modal";
-import { PartnerCrossProgramSummary } from "./partner-cross-program-summary";
-import { RiskDisclaimerBanner } from "./risk-disclaimer-banner";
 
 interface PartnerApplicationRiskSummaryProps {
   partner: {
@@ -88,6 +86,7 @@ export function PartnerApplicationRiskSummary({
         </ul>
       </div>
 
+<<<<<<< HEAD
       <div className="flex flex-col gap-3 p-4">
         <h3 className="text-sm font-semibold text-content-emphasis">
           Program owner activity
@@ -99,6 +98,8 @@ export function PartnerApplicationRiskSummary({
         )}
       </div>
 
+=======
+>>>>>>> upstream/main
       <PartnerApplicationRiskSummaryModal />
     </>
   );
