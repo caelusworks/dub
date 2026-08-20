@@ -18,7 +18,7 @@ import {
   useState,
 } from "react";
 import { configureCampaignEditorImage } from "./campaign-editor-image";
-import { suggestions } from "./variables";
+import { RichTextVariableInfo, suggestions } from "./variables";
 
 export const PROSE_STYLES = {
   default: "prose-p:my-2 prose-ul:my-2 prose-ol:my-2",
@@ -53,6 +53,7 @@ type RichTextProviderProps = PropsWithChildren<{
   onChange?: (editor: Editor) => void;
   uploadImage?: (file: File) => Promise<string | null>;
   variables?: string[];
+  variableInfo?: Record<string, RichTextVariableInfo>;
   editable?: boolean;
   autoFocus?: boolean;
 
@@ -93,6 +94,7 @@ export const RichTextProvider = forwardRef<
       editable,
       autoFocus,
       variables,
+      variableInfo,
       initialValue,
       onChange,
       editorProps,
@@ -249,7 +251,7 @@ export const RichTextProvider = forwardRef<
                     : `{{${node.attrs.id}}}`;
                 },
               }).configure({
-                suggestion: suggestions(variables),
+                suggestion: suggestions(variables, variableInfo),
               }),
             ]
           : []),
