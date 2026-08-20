@@ -1,4 +1,11 @@
-export const SHORT_DOMAIN = "dub.sh";
+// Set on self-hosted deployments; unset upstream, where the dub.co domains below apply.
+// Bare hostname, no scheme — it is compared against the Host header.
+// NEXT_PUBLIC_* is inlined at build time, so this must be passed as a Docker build
+// arg. Setting it only in the runtime environment leaves the fallbacks compiled in.
+const SELF_HOSTED_APP_DOMAIN = process.env.NEXT_PUBLIC_APP_DOMAIN;
+
+export const SHORT_DOMAIN =
+  process.env.NEXT_PUBLIC_APP_SHORT_DOMAIN || "dub.sh";
 
 export const API_HOSTNAMES = new Set([
   "api.dub.co",
@@ -42,21 +49,29 @@ export const PARTNERS_DOMAIN_WITH_NGROK =
       ? "https://partners-staging.dub.co"
       : process.env.NEXT_PUBLIC_NGROK_URL || "http://partners.localhost:8888";
 
-export const APP_DOMAIN =
-  process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
+export const APP_DOMAIN = SELF_HOSTED_APP_DOMAIN
+  ? `https://${SELF_HOSTED_APP_DOMAIN}`
+  : process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
     ? "https://app.dub.co"
     : process.env.NEXT_PUBLIC_VERCEL_ENV === "preview"
       ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL || "preview.dub.co"}`
       : "http://localhost:8888";
 
-export const APP_DOMAIN_WITH_NGROK =
-  process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
+export const APP_DOMAIN_WITH_NGROK = SELF_HOSTED_APP_DOMAIN
+  ? `https://${SELF_HOSTED_APP_DOMAIN}`
+  : process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
     ? "https://app.dub.co"
     : process.env.NEXT_PUBLIC_VERCEL_ENV === "preview"
       ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL || "preview.dub.co"}`
       : process.env.NEXT_PUBLIC_NGROK_URL || "http://localhost:8888";
 
 export const isAppHostname = (hostname: string) => {
+  // Checked first: on a self-hosted deployment the dashboard host is neither a
+  // dub.co domain nor localhost, so every branch below would miss it and the
+  // request would fall through to LinkMiddleware and be resolved as a short link.
+  if (SELF_HOSTED_APP_DOMAIN && hostname === SELF_HOSTED_APP_DOMAIN) {
+    return true;
+  }
   if (process.env.NEXT_PUBLIC_VERCEL_ENV === "preview") {
     // pattern of our preview URLs are always "dub-<random-string>.dub.co"
     return hostname.startsWith("dub-") && hostname.endsWith(".dub.co");
