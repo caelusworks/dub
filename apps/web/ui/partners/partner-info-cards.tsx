@@ -380,7 +380,7 @@ export function PartnerInfoCards({
             showApplicationRiskAnalysis &&
             canManageFraudEvents && (
               <div className="flex flex-col gap-3 p-4">
-                <h3 className="text-content-emphasis text-sm font-semibold">
+                <h3 className="text-sm font-semibold text-content-emphasis">
                   Network activity
                 </h3>
                 <PartnerNetworkActivitySummary partnerId={partner.id} />

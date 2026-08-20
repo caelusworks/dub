@@ -44,7 +44,7 @@ export function CustomerStats({
             side="right"
             rows={["local", "utc"]}
           >
-            <span className="hover:text-content-emphasis underline decoration-dotted underline-offset-2">
+            <span className="underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
               {formatDateTimeSmart(customer.firstSaleAt)}
             </span>
           </TimestampTooltip>
@@ -83,7 +83,7 @@ export function CustomerStats({
             side="right"
             rows={["local", "utc"]}
           >
-            <span className="hover:text-content-emphasis underline decoration-dotted underline-offset-2">
+            <span className="underline decoration-dotted underline-offset-2 hover:text-content-emphasis">
               {formatDateTimeSmart(customer.subscriptionCanceledAt)}
             </span>
           </TimestampTooltip>
@@ -100,7 +100,7 @@ export function CustomerStats({
       <div
         className={cn(
           // 2x2 on narrow viewports; 4-up only when each cell has room for labels
-          "@[560px]/stats:grid-cols-[repeat(var(--cols),minmax(0,1fr))] grid grid-cols-2 ring-4 ring-black/5",
+          "grid grid-cols-2 ring-4 ring-black/5 @[560px]/stats:grid-cols-[repeat(var(--cols),minmax(0,1fr))]",
           "gap-px overflow-hidden rounded-xl border border-neutral-200 bg-neutral-200",
         )}
         style={
@@ -118,11 +118,12 @@ export function CustomerStats({
               target="_blank"
               className={cn(
                 "group relative flex min-w-0 flex-col gap-0.5 bg-white p-3",
-                href && "pr-8 transition-colors duration-150 hover:bg-neutral-50",
+                href &&
+                  "pr-8 transition-colors duration-150 hover:bg-neutral-50",
               )}
             >
               {href && (
-                <ArrowUpRight2 className="text-content-subtle absolute right-3 top-3 size-3.5 opacity-50 transition-opacity duration-150 group-hover:opacity-100" />
+                <ArrowUpRight2 className="absolute right-3 top-3 size-3.5 text-content-subtle opacity-50 transition-opacity duration-150 group-hover:opacity-100" />
               )}
               <span className="text-xs leading-tight text-neutral-500">
                 {label}
@@ -130,7 +131,7 @@ export function CustomerStats({
               {value === undefined ? (
                 <div className="h-5 w-16 animate-pulse rounded-md bg-neutral-200" />
               ) : (
-                <span className="text-content-emphasis min-w-0 text-sm font-medium leading-snug">
+                <span className="min-w-0 text-sm font-medium leading-snug text-content-emphasis">
                   {value}
                 </span>
               )}

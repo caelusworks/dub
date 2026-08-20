@@ -205,7 +205,7 @@ const Menu = forwardRef(
 
     if (pendingVar) {
       return (
-        <div className="border-border-subtle flex w-64 flex-col gap-2 rounded-lg border bg-white p-2 shadow-sm">
+        <div className="flex w-64 flex-col gap-2 rounded-lg border border-border-subtle bg-white p-2 shadow-sm">
           <span className="w-fit rounded bg-blue-100 px-1 py-0.5 font-mono text-xs font-semibold text-blue-700">
             {pendingVar}
           </span>
@@ -229,7 +229,7 @@ const Menu = forwardRef(
               placeholder="Fallback (optional)"
               className="h-8 rounded-lg"
             />
-            <p className="text-content-subtle text-xs">
+            <p className="text-xs text-content-subtle">
               Used only if {pendingVar} is missing.
             </p>
           </div>
@@ -260,7 +260,7 @@ const Menu = forwardRef(
     return (
       <div
         className={cn(
-          "border-border-subtle flex flex-col rounded-lg border bg-white p-1 shadow-sm",
+          "flex flex-col rounded-lg border border-border-subtle bg-white p-1 shadow-sm",
           hasInfo && "w-96",
         )}
       >
@@ -311,7 +311,7 @@ const Menu = forwardRef(
           })
         ) : (
           <div
-            className={cn(menuItemClassName, "text-content-subtle font-sans")}
+            className={cn(menuItemClassName, "font-sans text-content-subtle")}
           >
             No results
           </div>

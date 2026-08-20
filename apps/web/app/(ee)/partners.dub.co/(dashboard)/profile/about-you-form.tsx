@@ -159,14 +159,10 @@ export function AboutYouForm({ partner }: { partner?: PartnerProps }) {
                           aria-label="Add industry interest"
                           onClick={() => setShowIndustryInterestsModal(true)}
                           className={cn(
-<<<<<<< HEAD
-                            "h-11 w-32 rounded-full border border-dashed border-border-subtle bg-white",
-=======
                             "relative flex h-11 w-32 items-center justify-center rounded-full bg-white",
                             !disabled &&
                               "transition-colors hover:bg-neutral-50/60",
                             disabled && "cursor-not-allowed",
->>>>>>> upstream/main
                           )}
                         >
                           <svg

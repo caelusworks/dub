@@ -37,7 +37,7 @@ export function MarketplaceProgramHero({
         aria-hidden
         className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-out"
         style={{
-          backgroundColor: hasBanner ? accentColor ?? "#f5f5f5" : "#f5f5f5",
+          backgroundColor: hasBanner ? (accentColor ?? "#f5f5f5") : "#f5f5f5",
           opacity: hasBanner ? (accentReady ? 1 : 0) : 1,
         }}
       />
@@ -68,11 +68,11 @@ export function MarketplaceProgramHero({
         />
 
         <div className="mt-6 flex flex-col">
-          <h1 className="text-content-emphasis text-3xl font-semibold">
+          <h1 className="text-3xl font-semibold text-content-emphasis">
             {program.name}
           </h1>
 
-          <p className="text-content-default mt-2 max-w-md text-sm">
+          <p className="mt-2 max-w-md text-sm text-content-default">
             {program.description ||
               `${program.name} is a program in the Dub Partner Network. Join the network to start partnering with them.`}
           </p>

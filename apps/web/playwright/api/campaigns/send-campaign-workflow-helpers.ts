@@ -479,6 +479,4 @@ export function createCampaignSession(
 }
 
 export type CampaignSession = ReturnType<typeof createCampaignSession>;
-export type ScheduledCampaign = Awaited<
-  ReturnType<CampaignSession["setup"]>
->;
+export type ScheduledCampaign = Awaited<ReturnType<CampaignSession["setup"]>>;

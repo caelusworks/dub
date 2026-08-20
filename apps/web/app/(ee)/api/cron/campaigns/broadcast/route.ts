@@ -135,22 +135,6 @@ export async function POST(req: Request) {
       }
     }
 
-<<<<<<< HEAD
-    // Mark the campaign as sending (if it's in scheduled status)
-    if (campaign.status === "scheduled") {
-      try {
-        await prisma.campaign.update({
-          where: {
-            id: campaignId,
-          },
-          data: {
-            status: "sending",
-          },
-        });
-      } catch {
-        //
-      }
-=======
     const invalidFromResponse = await cancelCampaignIfInvalidFromAddress({
       campaign,
       emailDomains: program.emailDomains,
@@ -158,7 +142,6 @@ export async function POST(req: Request) {
 
     if (invalidFromResponse) {
       return invalidFromResponse;
->>>>>>> upstream/main
     }
 
     const campaignGroupIds = pluck(campaign.groups, "groupId");

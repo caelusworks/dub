@@ -86,20 +86,6 @@ export function PartnerApplicationRiskSummary({
         </ul>
       </div>
 
-<<<<<<< HEAD
-      <div className="flex flex-col gap-3 p-4">
-        <h3 className="text-sm font-semibold text-content-emphasis">
-          Program owner activity
-        </h3>
-        <PartnerCrossProgramSummary partnerId={partner.id} />
-
-        {severity === "high" && (
-          <RiskDisclaimerBanner className="gap-2 px-3 py-2" />
-        )}
-      </div>
-
-=======
->>>>>>> upstream/main
       <PartnerApplicationRiskSummaryModal />
     </>
   );

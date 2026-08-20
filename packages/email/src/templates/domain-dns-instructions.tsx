@@ -86,7 +86,7 @@ export default function DomainDnsInstructions({
                     </Text>
                   </Column>
                   <Column className="py-2">
-                    <Text className="m-0 break-all font-mono text-xs text-black">
+                    <Text className="m-0 font-mono text-xs break-all text-black">
                       {record.value}
                     </Text>
                   </Column>
