@@ -12,6 +12,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: staging
     permissions:
       contents: read
       packages: write
@@ -30,6 +31,20 @@ jobs:
           sha7="${GITHUB_SHA:0:7}"
           echo "sha7=$sha7" >> "$GITHUB_OUTPUT"
           echo "image=${REGISTRY}/${IMAGE_NAME}:staging-${sha7}" >> "$GITHUB_OUTPUT"
+
+      - name: Require self-hosted domain vars
+        env:
+          APP_DOMAIN: ${{ vars.NEXT_PUBLIC_APP_DOMAIN }}
+          SHORT_DOMAIN: ${{ vars.NEXT_PUBLIC_APP_SHORT_DOMAIN }}
+        run: |
+          : "${APP_DOMAIN:?is empty - set it on the 'staging' environment}"
+          : "${SHORT_DOMAIN:?is empty - set it on the 'staging' environment}"
+          if [ "$APP_DOMAIN" = "$SHORT_DOMAIN" ]; then
+            echo "NEXT_PUBLIC_APP_DOMAIN and NEXT_PUBLIC_APP_SHORT_DOMAIN must differ," >&2
+            echo "otherwise AppMiddleware wins the host dispatch and swallows every short link." >&2
+            exit 1
+          fi
+          echo "app=$APP_DOMAIN short=$SHORT_DOMAIN" >> "$GITHUB_STEP_SUMMARY"
 
       - uses: docker/setup-buildx-action@v3
 
