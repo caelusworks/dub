@@ -21,7 +21,7 @@ import { cn, currencyFormatter, fetcher } from "@dub/utils";
 import { Command } from "cmdk";
 import { ArrowRight, ServerOff, Users } from "lucide-react";
 import { useAction } from "next-safe-action/hooks";
-import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import {
   Dispatch,
   SetStateAction,
@@ -34,6 +34,7 @@ import { toast } from "sonner";
 import useSWRImmutable from "swr/immutable";
 import { useDebounce } from "use-debounce";
 import { MarkdownDescription } from "../shared/markdown-description";
+import { useImportModalParam } from "./use-import-modal-param";
 
 function ImportRewardfulModal({
   showImportRewardfulModal,
@@ -532,15 +533,7 @@ function CampaignsStep({
 
 export function useImportRewardfulModal() {
   const [showImportRewardfulModal, setShowImportRewardfulModal] =
-    useState(false);
-  const searchParams = useSearchParams();
-
-  // Sync the modal state with the `?import=` query param here in the hook
-  // rather than in the modal itself, which remounts on every open/close
-  // and would re-open from a stale param mid-navigation
-  useEffect(() => {
-    setShowImportRewardfulModal(searchParams?.get("import") === "rewardful");
-  }, [searchParams]);
+    useImportModalParam("rewardful");
 
   const ImportRewardfulModalCallback = useCallback(() => {
     return (
