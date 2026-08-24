@@ -40,7 +40,7 @@ export const verifyMergeCompleted = async ({
 
     const sourceDeleted = sourceRes.status === 404;
     const targetLinks =
-      targetRes.status === 200 ? targetRes.data.links ?? [] : [];
+      targetRes.status === 200 ? (targetRes.data.links ?? []) : [];
     lastTargetLinkIds = targetLinks.map((link) => link.id);
     const targetOwnsLink = lastTargetLinkIds.includes(expectedLinkId);
 
