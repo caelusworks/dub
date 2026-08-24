@@ -67,7 +67,7 @@ export function RichTextLinkHoverTooltip() {
         top: hovered.rect.top - 8,
       }}
     >
-      <div className="animate-slide-up-fade border-border-default bg-bg-default text-content-default max-w-[200px] break-all rounded-xl border px-2.5 py-1.5 text-xs shadow-sm">
+      <div className="max-w-[200px] animate-slide-up-fade break-all rounded-xl border border-border-default bg-bg-default px-2.5 py-1.5 text-xs text-content-default shadow-sm">
         {hovered.href}
       </div>
     </div>,

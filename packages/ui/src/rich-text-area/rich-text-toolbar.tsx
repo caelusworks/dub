@@ -158,8 +158,8 @@ function LinkButton() {
 
   const canLink = Boolean(
     editor &&
-      (!editorState?.isImageSelected ||
-        (imageControlsEnabled && editorState?.isImageSelected)),
+    (!editorState?.isImageSelected ||
+      (imageControlsEnabled && editorState?.isImageSelected)),
   );
 
   return (

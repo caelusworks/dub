@@ -15,9 +15,7 @@ const client = new Client({
 });
 
 type WorkflowType =
-  | "partner-approved"
-  | "create-partner-commission"
-  | "merge-partner-accounts";
+  "partner-approved" | "create-partner-commission" | "merge-partner-accounts";
 
 interface QStashWorkflow {
   workflowType: WorkflowType;

@@ -39,7 +39,7 @@ export const smartTruncate = (link: string, maxLength: number): string => {
   const minDomainLength = 8;
   const maxPathLength = Math.max(maxLength - minDomainLength - 1, 0);
   const truncatedPath =
-    maxPathLength > 0 ? truncate(path, maxPathLength) ?? "" : "";
+    maxPathLength > 0 ? (truncate(path, maxPathLength) ?? "") : "";
 
   const domainBudget = Math.max(maxLength - truncatedPath.length - 1, 0);
   const truncatedDomain =
