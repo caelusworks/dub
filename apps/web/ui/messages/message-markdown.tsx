@@ -1,3 +1,4 @@
+import { Tooltip } from "@dub/ui";
 import { cn } from "@dub/utils";
 import ReactMarkdown from "react-markdown";
 import "react-medium-image-zoom/dist/styles.css";
@@ -17,12 +18,12 @@ export function MessageMarkdown({
     <ReactMarkdown
       className={cn(
         "prose prose-sm prose-neutral max-w-none transition-all",
-        "prose-headings:border-b prose-headings:pb-2 prose-headings:font-semibold",
-        "prose-h1:mb-4 prose-h1:mt-8 prose-h1:text-2xl prose-h1:font-bold",
-        "prose-h2:mb-3 prose-h2:mt-6 prose-h2:text-xl prose-h2:font-semibold",
-        "prose-h3:mb-2 prose-h3:mt-4 prose-h3:text-lg prose-h3:font-semibold",
-        "prose-h4:mb-1 prose-h4:mt-3 prose-h4:text-base prose-h4:font-semibold",
-        "prose-p:m-2.5 prose-p:mb-4 prose-p:leading-5",
+        "prose-headings:font-semibold prose-headings:border-b prose-headings:pb-2",
+        "prose-h1:text-2xl prose-h1:font-bold prose-h1:mt-8 prose-h1:mb-4",
+        "prose-h2:text-xl prose-h2:font-semibold prose-h2:mt-6 prose-h2:mb-3",
+        "prose-h3:text-lg prose-h3:font-semibold prose-h3:mt-4 prose-h3:mb-2",
+        "prose-h4:text-base prose-h4:font-semibold prose-h4:mt-3 prose-h4:mb-1",
+        "prose-p:leading-5 prose-p:m-0 [&_p+p]:mt-2",
         "prose-a:font-medium prose-a:underline prose-a:underline-offset-2",
         "prose-strong:font-semibold",
         "prose-em:italic",
@@ -37,6 +38,7 @@ export function MessageMarkdown({
         "prose-img:border-1 prose-img:rounded-lg",
         invert
           ? [
+<<<<<<< HEAD
               "prose-headings:border-neutral-600 prose-headings:text-white",
               "prose-p:text-neutral-200",
               "prose-a:text-neutral-300 hover:prose-a:text-neutral-100",
@@ -47,6 +49,18 @@ export function MessageMarkdown({
               "prose-blockquote:border-neutral-500 prose-blockquote:text-neutral-300",
               "prose-ul:text-neutral-200",
               "prose-ol:text-neutral-200",
+=======
+              "prose-headings:text-white prose-headings:border-neutral-600",
+              "prose-p:text-white",
+              "prose-a:text-white hover:prose-a:text-white/80",
+              "prose-strong:text-white",
+              "prose-em:text-white",
+              "prose-code:text-white prose-code:bg-neutral-800",
+              "prose-pre:bg-neutral-800 prose-pre:border-neutral-600",
+              "prose-blockquote:border-neutral-500 prose-blockquote:text-white",
+              "prose-ul:text-white",
+              "prose-ol:text-white",
+>>>>>>> upstream/main
               "prose-hr:border-neutral-600",
               "prose-img:border-neutral-600",
             ]
@@ -80,7 +94,15 @@ export function MessageMarkdown({
       ]}
       components={{
         a: ({ node, ...props }) => (
-          <a {...props} target="_blank" rel="noopener noreferrer" />
+          <Tooltip
+            content={
+              <span className="text-content-default block max-w-[200px] break-all px-2.5 py-1.5 text-xs">
+                {props.href}
+              </span>
+            }
+          >
+            <a {...props} target="_blank" rel="noopener noreferrer" />
+          </Tooltip>
         ),
         img: ({ node, ...props }) => <ZoomImage {...props} />,
         p: ({ node, children, ...props }) => {
