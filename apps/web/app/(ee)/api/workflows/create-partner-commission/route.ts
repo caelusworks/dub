@@ -192,6 +192,7 @@ async function stepCreateCommission(
     createdAt,
     status,
     userId,
+    metadata,
     context,
     programEnrollment,
   } = input;
@@ -453,6 +454,7 @@ async function stepCreateCommission(
         status,
         description,
         createdAt,
+        metadata: metadata ?? Prisma.DbNull,
       },
     });
 
