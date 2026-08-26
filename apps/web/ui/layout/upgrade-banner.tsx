@@ -1,6 +1,7 @@
 "use client";
 
 import { clientAccessCheck } from "@/lib/client-access-check";
+import { BILLING_ENABLED } from "@/lib/flags";
 import useWorkspace from "@/lib/swr/use-workspace";
 import { useRetryPaymentModal } from "@/ui/modals/retry-payment-modal";
 import { useTrialLimitActivateModal } from "@/ui/modals/trial-limit-activate-modal";
@@ -33,7 +34,9 @@ export function useUpgradeBannerVisibility() {
     subscriptionCanceledAt && new Date(subscriptionCanceledAt) < new Date();
 
   return {
-    isVisible: needsUpgrade || !!paymentFailedAt || subscriptionCanceled,
+    isVisible:
+      BILLING_ENABLED &&
+      (needsUpgrade || !!paymentFailedAt || subscriptionCanceled),
     needsUpgrade,
     paymentFailed: !!paymentFailedAt,
     subscriptionCanceled,

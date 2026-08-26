@@ -1,6 +1,7 @@
 "use client";
 
 import { clientAccessCheck } from "@/lib/client-access-check";
+import { BILLING_ENABLED } from "@/lib/flags";
 import { usePartnerMessagesCount } from "@/lib/messages/hooks/use-partner-messages-count";
 import { getPlanCapabilities } from "@/lib/plan-capabilities";
 import { SUBMITTED_LEADS_ENABLED_PROGRAM_IDS } from "@/lib/submitted-leads/constants";
@@ -384,11 +385,15 @@ const NAV_AREAS: SidebarNavAreas<SidebarNavData> = {
             href: `/${slug}/settings`,
             exact: true,
           },
-          {
-            name: "Billing",
-            icon: Receipt2,
-            href: `/${slug}/settings/billing`,
-          },
+          ...(BILLING_ENABLED
+            ? [
+                {
+                  name: "Billing",
+                  icon: Receipt2,
+                  href: `/${slug}/settings/billing` as `/${string}`,
+                },
+              ]
+            : []),
           {
             name: "Domains",
             icon: Globe,
