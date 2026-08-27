@@ -794,7 +794,7 @@ test.describe("Sale commissions", () => {
         expected: apiError({
           code: "unprocessable_entity",
           message:
-            'invalid_value: sale.paymentProcessor: Invalid option: expected one of "stripe"|"shopify"|"polar"|"paddle"|"apple"|"revenuecat"|"dub"|"custom"',
+            'invalid_value: sale.paymentProcessor: Invalid option: expected one of "stripe"|"shopify"|"polar"|"paddle"|"apple"|"revenuecat"|"lemonsqueezy"|"dub"|"custom"',
         }),
       },
       {
