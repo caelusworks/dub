@@ -74,6 +74,8 @@ jobs:
           build-args: |
             NEXT_PUBLIC_APP_DOMAIN=${{ vars.NEXT_PUBLIC_APP_DOMAIN }}
             NEXT_PUBLIC_APP_SHORT_DOMAIN=${{ vars.NEXT_PUBLIC_APP_SHORT_DOMAIN }}
+            NEXT_PUBLIC_AUTH_METHODS=${{ vars.NEXT_PUBLIC_AUTH_METHODS }}
+            NEXT_PUBLIC_BILLING_ENABLED=${{ vars.NEXT_PUBLIC_BILLING_ENABLED }}
             DATABASE_URL=mysql://root:build@db:3306/dub
           cache-from: type=gha
           cache-to: type=gha,mode=max

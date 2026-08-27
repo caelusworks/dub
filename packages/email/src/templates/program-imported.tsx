@@ -27,7 +27,12 @@ export default function ProgramImported({
 }: {
   email: string;
   provider:
-    "Rewardful" | "Tolt" | "PartnerStack" | "FirstPromoter" | "Tapfiliate";
+    | "Rewardful"
+    | "Tolt"
+    | "PartnerStack"
+    | "FirstPromoter"
+    | "Tapfiliate"
+    | "Lemon Squeezy";
   workspace: {
     slug: string;
   };

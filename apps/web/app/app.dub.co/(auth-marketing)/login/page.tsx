@@ -1,3 +1,4 @@
+import { AUTH_METHODS } from "@/lib/flags";
 import { AuthAlternativeBanner } from "@/ui/auth/auth-alternative-banner";
 import LoginForm from "@/ui/auth/login/login-form";
 import { AuthLayout } from "@/ui/layout/auth-layout";
@@ -17,7 +18,7 @@ export default function LoginPage() {
           Log in to your Dub account
         </h3>
         <div className="mt-8">
-          <LoginForm methods={["google", "email"]} />
+          <LoginForm methods={AUTH_METHODS} />
         </div>
         <p className="mt-6 text-center text-sm font-medium text-neutral-500">
           Don't have an account?&nbsp;

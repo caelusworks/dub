@@ -1,5 +1,6 @@
 "use client";
 
+import { SIGN_UP_METHODS } from "@/lib/flags";
 import { AuthAlternativeBanner } from "@/ui/auth/auth-alternative-banner";
 import {
   RegisterProvider,
@@ -26,7 +27,7 @@ function SignUp() {
           Create your Dub account
         </h3>
         <div className="mt-8">
-          <SignUpForm methods={["email", "google"]} />
+          <SignUpForm methods={SIGN_UP_METHODS} />
         </div>
         <p className="mt-6 text-center text-sm font-medium text-neutral-500">
           Already have an account?&nbsp;
