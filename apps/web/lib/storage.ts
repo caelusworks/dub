@@ -310,7 +310,7 @@ class StorageClient {
         if (opts.height) proxyUrl.searchParams.set("h", opts.height.toString());
         proxyUrl.searchParams.set("fit", "cover");
         response = await fetchWithTimeout(proxyUrl.toString());
-      } catch (error) {
+      } catch {
         response = await this.safeFetch(url);
       }
     } else {
