@@ -83,7 +83,7 @@ services:
       db:
         condition: service_healthy
 
-  # redis is not used directly by dub, but is required by the planetscale-proxy
+  # redis is not used directly by dub, but is required by serverless-redis-http
   redis:
     image: redis:7-alpine
     restart: unless-stopped
