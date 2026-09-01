@@ -17,13 +17,13 @@ export function MessageMarkdown({
   return (
     <ReactMarkdown
       className={cn(
-        "prose prose-sm prose-neutral max-w-none transition-all",
-        "prose-headings:border-b prose-headings:pb-2 prose-headings:font-semibold",
-        "prose-h1:mb-4 prose-h1:mt-8 prose-h1:text-2xl prose-h1:font-bold",
-        "prose-h2:mb-3 prose-h2:mt-6 prose-h2:text-xl prose-h2:font-semibold",
-        "prose-h3:mb-2 prose-h3:mt-4 prose-h3:text-lg prose-h3:font-semibold",
-        "prose-h4:mb-1 prose-h4:mt-3 prose-h4:text-base prose-h4:font-semibold",
-        "prose-p:m-0 prose-p:leading-5 [&_p+p]:mt-2",
+        "prose prose-sm prose-neutral max-w-none break-words transition-all [overflow-wrap:anywhere]",
+        "prose-headings:font-semibold prose-headings:border-b prose-headings:pb-2",
+        "prose-h1:text-2xl prose-h1:font-bold prose-h1:mt-8 prose-h1:mb-4",
+        "prose-h2:text-xl prose-h2:font-semibold prose-h2:mt-6 prose-h2:mb-3",
+        "prose-h3:text-lg prose-h3:font-semibold prose-h3:mt-4 prose-h3:mb-2",
+        "prose-h4:text-base prose-h4:font-semibold prose-h4:mt-3 prose-h4:mb-1",
+        "prose-p:leading-5 prose-p:m-0 [&_p+p]:mt-2",
         "prose-a:font-medium prose-a:underline prose-a:underline-offset-2",
         "prose-strong:font-semibold",
         "prose-em:italic",
