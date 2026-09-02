@@ -329,6 +329,8 @@ export const POST = withWorkspace(
       canSendEmailCampaigns &&
       bounty.startMode !== BountyStartMode.relative;
 
+    revalidateProgramPublicPages(programId);
+
     waitUntil(
       Promise.allSettled([
         recordAuditLog({
@@ -373,8 +375,6 @@ export const POST = withWorkspace(
               notBefore: Math.floor(bounty.startsAt.getTime() / 1000),
             }),
           }),
-
-        revalidateProgramPublicPages(programId),
       ]),
     );
 
