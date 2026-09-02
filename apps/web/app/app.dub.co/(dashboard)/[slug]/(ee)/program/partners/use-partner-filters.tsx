@@ -170,8 +170,7 @@ export function usePartnerFilters(
   const status = (searchParamsObj.status ||
     extraSearchParams.status ||
     (searchParamsObj.search?.trim() ? undefined : "approved")) as
-    | ProgramEnrollmentStatus
-    | undefined;
+    ProgramEnrollmentStatus | undefined;
 
   const cohortParams = useMemo(
     () => ({

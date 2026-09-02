@@ -62,8 +62,7 @@ export function VerifyInstall({ hostnames }: { hostnames: string[] }) {
         : undefined;
 
   const lastVerified = store?.analyticsSettingsInstallationVerified as
-    | LastVerified
-    | undefined;
+    LastVerified | undefined;
 
   const hostnameOptions = useMemo(
     () =>

@@ -337,7 +337,7 @@ export function ConfigureTrackingSection() {
                 disabled={disabled}
                 disabledTooltip={disabledTooltip}
               />
-              <span className="text-content-default text-sm font-medium">
+              <span className="text-sm font-medium text-content-default">
                 Enable
               </span>
             </label>

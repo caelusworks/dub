@@ -86,8 +86,7 @@ export async function expectCommissionCreated({
       : type === "sale"
         ? TEST_COMMISSION_REWARDS.sale.amountInCents
         : 0);
-  const metadata =
-    expectedMetadata === undefined ? null : expectedMetadata;
+  const metadata = expectedMetadata === undefined ? null : expectedMetadata;
 
   let commissionId: string | undefined;
 

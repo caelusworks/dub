@@ -34,7 +34,7 @@ export async function attributeViaDiscountCode({
     link,
     customer: {
       continent: billingAddressCountry
-        ? COUNTRIES_TO_CONTINENTS[billingAddressCountry] ?? "Unknown"
+        ? (COUNTRIES_TO_CONTINENTS[billingAddressCountry] ?? "Unknown")
         : "Unknown",
       country: billingAddressCountry ?? "Unknown",
       region: billingAddress?.province ?? "Unknown",
@@ -92,8 +92,8 @@ export async function attributeViaDiscountCode({
   });
 
   let result:
-    | Awaited<ReturnType<typeof queuePartnerCommissionCreation>>
-    | undefined = undefined;
+    Awaited<ReturnType<typeof queuePartnerCommissionCreation>> | undefined =
+    undefined;
 
   if (link.programId && link.partnerId) {
     result = await queuePartnerCommissionCreation({

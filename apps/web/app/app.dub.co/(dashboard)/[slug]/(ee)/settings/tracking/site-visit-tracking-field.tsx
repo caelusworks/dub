@@ -150,7 +150,7 @@ export function SiteVisitTrackingField({
             disabled={disabled}
             disabledTooltip={disabledTooltip}
           />
-          <span className="text-content-default text-sm font-medium">
+          <span className="text-sm font-medium text-content-default">
             Enable
           </span>
         </label>
@@ -166,7 +166,7 @@ export function SiteVisitTrackingField({
           {enabled && (
             <div className="flex flex-col gap-4 pt-4">
               <div className="flex flex-col gap-2">
-                <label className="text-content-emphasis text-sm font-semibold">
+                <label className="text-sm font-semibold text-content-emphasis">
                   Domain for sitemap imports
                 </label>
                 <DomainSelector
@@ -175,14 +175,14 @@ export function SiteVisitTrackingField({
                   disabled={disabled}
                   disabledTooltip={disabledTooltip}
                 />
-                <p className="text-content-subtle text-xs font-medium">
+                <p className="text-xs font-medium text-content-subtle">
                   This domain will be used for links we create when importing
                   pages from the sitemaps you add.
                 </p>
               </div>
 
               <div className="flex flex-col gap-2">
-                <h4 className="text-content-emphasis flex items-center gap-1 text-sm font-semibold">
+                <h4 className="flex items-center gap-1 text-sm font-semibold text-content-emphasis">
                   Sitemaps
                   <InfoTooltip content="Add sitemap URLs we should crawl to create links for site visit tracking." />
                 </h4>
@@ -216,10 +216,10 @@ export function SiteVisitTrackingField({
                               <Sitemap className="size-4 text-neutral-800" />
                             </div>
                             <div className="flex min-w-0 flex-col">
-                              <span className="text-content-emphasis min-w-0 truncate text-sm font-semibold">
+                              <span className="min-w-0 truncate text-sm font-semibold text-content-emphasis">
                                 {sitemap.url.replace(/^https?:\/\//, "")}
                               </span>
-                              <span className="text-content-subtle text-xs font-medium">
+                              <span className="text-xs font-medium text-content-subtle">
                                 {sitemap.lastCrawledAt
                                   ? `Last crawled ${formatDate(sitemap.lastCrawledAt, { month: "short" })}`
                                   : "Not crawled yet"}

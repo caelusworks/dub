@@ -43,7 +43,7 @@ function StackItemTitle({ title }: { title: string }) {
   return (
     <span className="flex min-w-0 flex-1 items-baseline gap-1 truncate">
       <span className={stackItemTitleClassName}>Stripe</span>
-      <span className="text-content-subtle text-xs font-medium leading-4 tracking-[-0.02em]">
+      <span className="text-xs font-medium leading-4 tracking-[-0.02em] text-content-subtle">
         {stripeSuffix}
       </span>
     </span>
@@ -52,7 +52,7 @@ function StackItemTitle({ title }: { title: string }) {
 
 export function StackSelectionStatus({ count }: { count: number }) {
   return (
-    <p className="text-content-subtle flex items-center gap-1.5 text-xs font-medium">
+    <p className="flex items-center gap-1.5 text-xs font-medium text-content-subtle">
       <Layers3 variant="fill" className="size-3.5 shrink-0" />
       {count} item{count === 1 ? "" : "s"} selected
     </p>

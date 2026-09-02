@@ -24,10 +24,10 @@ export function TrackingSettingsRow({
       )}
     >
       <div className="flex h-full min-w-0 flex-col gap-1">
-        <h3 className="text-content-emphasis text-base font-semibold leading-6 tracking-[-0.02em]">
+        <h3 className="text-base font-semibold leading-6 tracking-[-0.02em] text-content-emphasis">
           {heading}
         </h3>
-        <MarkdownDescription className="text-content-subtle [&_a]:text-content-subtle text-sm font-normal leading-5 tracking-[-0.02em] [&_a]:decoration-solid [&_a]:underline-offset-auto">
+        <MarkdownDescription className="text-sm font-normal leading-5 tracking-[-0.02em] text-content-subtle [&_a]:text-content-subtle [&_a]:decoration-solid [&_a]:underline-offset-auto">
           {description}
         </MarkdownDescription>
         {leftExtra && (

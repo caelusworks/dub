@@ -252,7 +252,7 @@ async function listInvoiceSaleEvents({
         invoice.customer_id != null &&
         Boolean(
           invoice.billing_reason &&
-            IMPORTABLE_INVOICE_REASONS.has(invoice.billing_reason),
+          IMPORTABLE_INVOICE_REASONS.has(invoice.billing_reason),
         ),
     )
     .map((invoice) => ({
@@ -494,12 +494,12 @@ async function createCommission({
   const earnings =
     saleEvent.referralAmount == null
       ? 0
-      : resolveAmountUsd({
+      : (resolveAmountUsd({
           amount: saleEvent.referralAmount,
           amountUsd: null,
           currency: saleEvent.currency,
           fxRates,
-        }) ?? 0;
+        }) ?? 0);
 
   const clickData = clickEventSchemaTB
     .omit({ timestamp: true })

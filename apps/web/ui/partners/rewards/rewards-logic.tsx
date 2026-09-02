@@ -503,7 +503,7 @@ function ConditionLogic({
       <div className="flex items-center justify-between p-2.5">
         <div className="flex items-center gap-1.5">
           <RewardIconSquare icon={icon} />
-          <span className="text-content-emphasis font-medium leading-relaxed">
+          <span className="font-medium leading-relaxed text-content-emphasis">
             {conditionIndex === 0 ? "If" : capitalize(operator?.toLowerCase())}{" "}
             <InlineBadgePopover
               text={capitalize(condition.entity) || "Select item"}

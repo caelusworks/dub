@@ -1,8 +1,5 @@
 type VerifyErrorCode =
-  | "not_installed"
-  | "missing_attributes"
-  | "duplicate"
-  | "malformed";
+  "not_installed" | "missing_attributes" | "duplicate" | "malformed";
 
 type VerifyError = VerifyErrorCode | "unreachable" | "unsupported";
 

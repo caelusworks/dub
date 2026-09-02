@@ -61,7 +61,7 @@ const createEmptyMapping = (): EventMapping => ({
 });
 
 const comboboxCaret = (
-  <ChevronDown className="text-content-muted size-3.5 shrink-0 transition-transform duration-75 group-data-[state=open]:rotate-180" />
+  <ChevronDown className="size-3.5 shrink-0 text-content-muted transition-transform duration-75 group-data-[state=open]:rotate-180" />
 );
 
 const comboboxButtonProps = {
@@ -600,8 +600,7 @@ function EventNamesField({
   emptyState,
 }: {
   name:
-    | `leadMappings.${number}.eventNames`
-    | `saleMappings.${number}.eventNames`;
+    `leadMappings.${number}.eventNames` | `saleMappings.${number}.eventNames`;
   control: Control<FormData>;
   options: EventNameOption[];
   usedByOthers: Map<string, string>;
