@@ -5,14 +5,7 @@ import {
   exportPartnerColumns,
   exportPartnersColumnsDefault,
 } from "@/lib/zod/schemas/partners";
-import {
-  Button,
-  Checkbox,
-  InfoTooltip,
-  Modal,
-  Switch,
-  useRouterStuff,
-} from "@dub/ui";
+import { Button, Checkbox, Modal, Switch, useRouterStuff } from "@dub/ui";
 import { useSession } from "next-auth/react";
 import {
   Dispatch,
@@ -72,7 +65,13 @@ function ExportPartnersModal({
       };
 
       const searchParams = data.useFilters
-        ? getQueryString(params)
+        ? getQueryString(params, {
+            exclude: [
+              "search",
+              // Relevance only exists for searches, which exports skip
+              ...(searchParamsObj.sortBy === "relevance" ? ["sortBy"] : []),
+            ],
+          })
         : "?" + new URLSearchParams(params);
 
       const response = await fetch(`/api/partners/export${searchParams}`, {
@@ -167,11 +166,16 @@ function ExportPartnersModal({
             name="useFilters"
             control={control}
             render={({ field }) => (
-              <div className="flex items-center justify-between gap-2">
-                <span className="flex select-none items-center gap-2 text-sm font-medium text-neutral-600 group-hover:text-neutral-800">
-                  Apply current filters
-                  <InfoTooltip content="Filter exported partners by your currently selected filters" />
-                </span>
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex select-none flex-col gap-1">
+                  <span className="text-sm font-medium text-neutral-600 group-hover:text-neutral-800">
+                    Apply current filters
+                  </span>
+                  <span className="text-xs text-neutral-500">
+                    Filter exported partners by your currently selected filters.
+                    The search field is not included.
+                  </span>
+                </div>
                 <Switch checked={field.value} fn={field.onChange} />
               </div>
             )}

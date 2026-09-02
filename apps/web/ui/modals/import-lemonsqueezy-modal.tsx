@@ -150,9 +150,7 @@ function TokenForm({
       }
     },
     onError: ({ error }) => {
-      toast.error(
-        error.serverError ?? "Failed to fetch Lemon Squeezy stores.",
-      );
+      toast.error(error.serverError ?? "Failed to fetch Lemon Squeezy stores.");
     },
   });
 
@@ -277,7 +275,7 @@ function SelectStore({
                 >
                   <div
                     className={cn(
-                      "border-border-emphasis flex size-4 shrink-0 items-center justify-center rounded-full border bg-white transition-colors duration-75",
+                      "flex size-4 shrink-0 items-center justify-center rounded-full border border-border-emphasis bg-white transition-colors duration-75",
                       checked && "border-neutral-900 bg-neutral-900",
                     )}
                   >

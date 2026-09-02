@@ -76,7 +76,8 @@
       "Bash(rg -rn \"lemonsqueezy\" --glob '!pnpm-lock.yaml' -g '!*.json')",
       "Bash(rg -n \"revenuecat\" packages/prisma/schema/*.prisma apps/web/lib/zod/schemas/*.ts)",
       "Bash(./node_modules/.bin/prettier --check apps/web/playwright/api/commissions/commissions.spec.ts)",
-      "Bash(rg -rn \"getSignedUrl|presign|signed-upload|program-logos\" --glob '!node_modules' -g '!*.lock')"
+      "Bash(rg -rn \"getSignedUrl|presign|signed-upload|program-logos\" --glob '!node_modules' -g '!*.lock')",
+      "Bash(sed -i '142,312d' apps/web/lib/integrations/shopify/process-order.ts)"
     ]
   }
 }

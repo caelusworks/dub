@@ -282,10 +282,9 @@ export async function expectCampaignEmailCount({
 }) {
   if (count === 0) {
     const emails = await campaignEmails(campaignId, partnerId);
-    expect(
-      emails,
-      "did not expect a campaign NotificationEmail",
-    ).toHaveLength(0);
+    expect(emails, "did not expect a campaign NotificationEmail").toHaveLength(
+      0,
+    );
     return emails;
   }
 
