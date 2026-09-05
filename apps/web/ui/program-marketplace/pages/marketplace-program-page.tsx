@@ -1,5 +1,4 @@
 import { getNetworkProgram } from "@/lib/fetchers/get-network-program";
-import { prisma } from "@/lib/prisma";
 import { ApplicationAnalytics } from "@/ui/application-analytics";
 import { PageContent } from "@/ui/layout/page-content";
 import { PageWidthWrapper } from "@/ui/layout/page-width-wrapper";
@@ -8,50 +7,11 @@ import { MarketplaceProgramDetailsLayout } from "@/ui/program-marketplace/market
 import { MarketplaceProgramHero } from "@/ui/program-marketplace/marketplace-program-hero";
 import { MarketplaceProgramPageSkeleton } from "@/ui/program-marketplace/marketplace-program-page-skeleton";
 import { ChevronRight, Shop } from "@dub/ui";
-import { Category } from "@prisma/client";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 import { MarketplaceProgramHeaderControls } from "../marketplace-program-header-controls";
 import { ProgramStatusBadge } from "../program-status-badge";
-import { getMarketplaceHref } from "../utils/urls";
-
-export const revalidate = 3600; // 1 hour
-
-export async function generateMarketplaceProgramStaticParams() {
-  // runs during `next build`, when no database is reachable — fall back to
-  // prerendering only the static category pages
-  const programs = await prisma.program
-    .findMany({
-      where: {
-        addedToMarketplaceAt: {
-          not: null,
-        },
-      },
-      select: {
-        slug: true,
-      },
-    })
-    .catch(() => {
-      console.warn("[marketplace] database unreachable, skipping prerender");
-      return [] as { slug: string }[];
-    });
-
-  const categoryPages = Object.values(Category).map((category) => ({
-    segments: ["c", category.toLowerCase()],
-  }));
-
-  const programPages = programs.map((program) => ({
-    segments: [program.slug],
-  }));
-
-  return [
-    { segments: [] },
-    { segments: ["all"] },
-    ...categoryPages,
-    ...programPages,
-  ];
-}
 
 export function MarketplaceProgramPage({
   programSlug,
@@ -75,7 +35,7 @@ async function MarketplaceProgramPageContent({
   });
 
   if (!program) {
-    redirect(getMarketplaceHref());
+    redirect("/marketplace");
   }
 
   return (
@@ -84,7 +44,7 @@ async function MarketplaceProgramPageContent({
         <div className="flex items-center gap-1.5">
           <div className="flex items-center gap-1">
             <Link
-              href={getMarketplaceHref()}
+              href="/marketplace"
               aria-label="Back to marketplace"
               className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-bg-subtle transition-[transform,background-color] duration-150 hover:bg-bg-emphasis active:scale-95"
             >
