@@ -4,16 +4,25 @@ import { Category } from "@prisma/client";
 export const revalidate = 3600;
 
 export async function generateStaticParams() {
-  const programs = await prisma.program.findMany({
-    where: {
-      addedToMarketplaceAt: {
-        not: null,
+  let programs: { slug: string }[];
+
+  try {
+    programs = await prisma.program.findMany({
+      where: {
+        addedToMarketplaceAt: {
+          not: null,
+        },
       },
-    },
-    select: {
-      slug: true,
-    },
-  });
+      select: {
+        slug: true,
+      },
+    });
+  } catch (error) {
+    // runs during `next build`, where there is no database to reach — prerender
+    // nothing and let every marketplace page render on demand instead
+    console.warn("[marketplace] database unreachable, skipping prerender");
+    return [];
+  }
 
   const categoryPages = Object.values(Category).map((category) => ({
     segments: ["c", category.toLowerCase()],
