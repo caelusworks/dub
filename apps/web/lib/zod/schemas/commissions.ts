@@ -57,7 +57,7 @@ export const CommissionSchema = z.object({
     .record(z.string(), z.any())
     .nullable()
     .describe(
-      "User-provided metadata from the associated lead or sale event (`lead.metadata` / `sale.metadata`).",
+      "Metadata from the associated lead or sale event (`lead.metadata` / `sale.metadata`), or from Stripe webhook metadata.",
     ),
   createdAt: z
     .date()
@@ -486,6 +486,7 @@ export const createPartnerCommissionSchema = z.object({
   customerId: z.string().optional(),
   eventId: z.string().optional(),
   invoiceId: z.string().nullish(),
+  rewardId: z.string().optional(),
   amount: z.number().default(0).optional(),
   quantity: z.number().default(1),
   currency: z.string().optional(),

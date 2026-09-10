@@ -1,6 +1,7 @@
 "use client";
 
 import { clientAccessCheck } from "@/lib/client-access-check";
+import { testIds } from "@/lib/e2e/test-ids";
 import { isEligibleForTrial } from "@/lib/stripe/is-eligible-for-trial";
 import useWorkspace from "@/lib/swr/use-workspace";
 import { PageContent } from "@/ui/layout/page-content";
@@ -182,8 +183,8 @@ export default function WorkspaceBillingUpgradePage() {
           >
             Billing
           </Link>
-          <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
-          <h1>Plans</h1>
+          <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
+          <h1 data-testid={testIds.billing.plansHeading}>Plans</h1>
         </div>
       }
       controls={
@@ -340,6 +341,7 @@ export default function WorkspaceBillingUpgradePage() {
                       ) : (
                         <UpgradePlanButton
                           plan={plan.name.toLowerCase()}
+                          data-testid={testIds.billing.planCta(plan.name)}
                           tier={planTier > 1 ? planTier : undefined}
                           period={period}
                           disabled={
