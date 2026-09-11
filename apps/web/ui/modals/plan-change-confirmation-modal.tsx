@@ -238,7 +238,11 @@ function PlanChangeConfirmationModal({
           onClick={async () => {
             if (isSubmitting) return;
             setIsSubmitting(true);
-            await onConfirm();
+            try {
+              await onConfirm();
+            } finally {
+              setIsSubmitting(false);
+            }
           }}
         />
       </div>
