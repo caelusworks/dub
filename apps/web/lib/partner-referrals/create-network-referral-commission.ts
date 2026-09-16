@@ -170,7 +170,7 @@ export const createNetworkReferralCommission = async ({
   const reward = determinePartnerReward({
     event: "sale",
     programEnrollment,
-  });
+  })?.reward;
 
   if (!reward) {
     console.log(
