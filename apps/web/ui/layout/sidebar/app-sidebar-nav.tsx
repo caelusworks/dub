@@ -680,10 +680,12 @@ export function AppSidebarNav({
       switcher={<WorkspaceDropdown />}
       toolContent={toolContent}
       bottomContent={
-        <>
-          <div className="px-3 pb-2">{AppBottomContent}</div>
-          {freePlanOrTrial && <SidebarUsage />}
-        </>
+        AppBottomContent || freePlanOrTrial ? (
+          <>
+            <div className="px-3 pb-2">{AppBottomContent}</div>
+            {freePlanOrTrial && <SidebarUsage />}
+          </>
+        ) : undefined
       }
       newsContent={
         currentArea === "program" &&
@@ -692,7 +694,7 @@ export function AppSidebarNav({
           <SpecialNewsContent />
         ) : !freePlanOrTrial && currentArea === "links" ? (
           newsContent
-        ) : null
+        ) : undefined
       }
     />
   );
