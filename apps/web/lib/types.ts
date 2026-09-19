@@ -277,7 +277,9 @@ export type UtmTemplateWithUserProps = UtmTemplateProps & {
 export type PlanProps = (typeof plans)[number];
 
 export type BetaFeatures =
-  "analyticsSettingsSiteVisitTracking" | "noProrationUpgrade";
+  | "analyticsSettingsSiteVisitTracking"
+  | "noProrationUpgrade"
+  | "rewardSpendLimit";
 
 export type PartnerBetaFeatures = "postbacks";
 
