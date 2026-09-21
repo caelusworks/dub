@@ -76,6 +76,7 @@ type SidebarNavData = {
   pathname: string;
   queryString: string;
   defaultProduct?: "program" | "links";
+  hasProgram?: boolean;
   session?: Session | null;
   pendingPayoutsCount?: number;
   applicationsCount?: number;
@@ -90,11 +91,13 @@ const NAV_GROUPS: SidebarNavGroups<SidebarNavData> = ({
   slug,
   pathname,
   defaultProduct,
+  hasProgram,
 }) => {
   const programGroup = {
     name: "Partner Program",
-    description:
-      "Kickstart viral product-led growth with powerful, branded referral and affiliate programs.",
+    description: hasProgram
+      ? "Manage, grow, and measure the performance of your partner program."
+      : "Kickstart viral product-led growth with powerful, branded referral and affiliate programs.",
     learnMoreHref: "https://dub.co/partners",
     icon: ConnectedDots4,
     href: slug ? `/${slug}/program` : "/program",
@@ -668,6 +671,7 @@ export function AppSidebarNav({
         }),
         session: session || undefined,
         defaultProduct,
+        hasProgram: Boolean(defaultProgramId),
         pendingPayoutsCount: pendingPayoutsCount?.[0]?.count ?? 0,
         applicationsCount,
         submittedBountiesCount,
