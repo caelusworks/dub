@@ -72,6 +72,12 @@ export async function checkoutSessionCompleted({
       };
     }
 
+    if (clickEvent.workspace_id !== workspace.id) {
+      return {
+        response: `Link "${clickEvent.link_id}" for click event "${dubClickId}" does not belong to workspace ${workspace.id}, skipping...`,
+      };
+    }
+
     const payload = {
       name: stripeCustomerName,
       email: stripeCustomerEmail,
