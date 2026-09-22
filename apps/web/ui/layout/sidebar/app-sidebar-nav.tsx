@@ -84,6 +84,7 @@ type SidebarNavData = {
   unreadMessagesCount?: number;
   pendingFraudEventsCount?: number;
   pendingLeadsCount?: number;
+  submittedLeadsEnabled?: boolean;
   partnerNetworkEnabled?: boolean;
 };
 
@@ -133,6 +134,7 @@ const NAV_AREAS: SidebarNavAreas<SidebarNavData> = {
     unreadMessagesCount,
     pendingFraudEventsCount,
     pendingLeadsCount,
+    submittedLeadsEnabled,
     partnerNetworkEnabled,
   }) => ({
     title: "Partner Program",
@@ -221,11 +223,6 @@ const NAV_AREAS: SidebarNavAreas<SidebarNavData> = {
             name: "Customers",
             icon: User,
             href: `/${slug}/program/customers`,
-            badge: pendingLeadsCount
-              ? pendingLeadsCount > 99
-                ? "99+"
-                : pendingLeadsCount
-              : undefined,
           },
           {
             name: "Commissions",
@@ -262,6 +259,20 @@ const NAV_AREAS: SidebarNavAreas<SidebarNavData> = {
             icon: PaperPlane,
             href: `/${slug}/program/campaigns` as `/${string}`,
           },
+          ...(submittedLeadsEnabled
+            ? [
+                {
+                  name: "Submitted Leads",
+                  icon: UserPlus,
+                  href: `/${slug}/program/leads` as `/${string}`,
+                  badge: pendingLeadsCount
+                    ? pendingLeadsCount > 99
+                      ? "99+"
+                      : pendingLeadsCount
+                    : undefined,
+                },
+              ]
+            : []),
           {
             name: "Resources",
             icon: LifeRing,
@@ -678,6 +689,10 @@ export function AppSidebarNav({
         unreadMessagesCount,
         pendingFraudEventsCount,
         pendingLeadsCount,
+        submittedLeadsEnabled: Boolean(
+          defaultProgramId &&
+            SUBMITTED_LEADS_ENABLED_PROGRAM_IDS.includes(defaultProgramId),
+        ),
         partnerNetworkEnabled:
           program && program.partnerNetworkEnabledAt !== null,
       }}
