@@ -1,6 +1,16 @@
 const path = require("path");
 const { withPlausibleProxy } = require("next-plausible");
 
+// Upstream only serves /api on *.dub.co; a self-hosted build must also allow its own app
+// domain's parent (app.example.com -> *.example.com) and 127.0.0.1 for the healthcheck.
+const appParentDomain = (process.env.NEXT_PUBLIC_APP_DOMAIN || "dub.co")
+  .split(":")[0]
+  .split(".")
+  .slice(-2)
+  .join(".")
+  .replace(/\./g, "\\.");
+const API_HOST_PATTERN = `.*(\\.dub\\.co|\\.${appParentDomain}|localhost|127\\.0\\.0\\.1)`;
+
 // Suppress specific external package warnings.
 // Set NEXT_SHOW_TRACE_WARNINGS=1 to surface them when debugging standalone output tracing.
 const originalConsoleWarn = console.warn;
@@ -152,7 +162,7 @@ module.exports = withPlausibleProxy({
         missing: [
           {
             type: "host",
-            value: ".*(\\.dub\\.co|localhost)",
+            value: API_HOST_PATTERN,
           },
         ],
         destination: "/",
