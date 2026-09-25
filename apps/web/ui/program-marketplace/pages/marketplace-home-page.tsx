@@ -39,7 +39,7 @@ export function MarketplaceHomePage() {
           showViewAllCard={row.showViewAllCard}
           programs={
             summary
-              ? summary.categories[row.key] ?? summary[row.key]
+              ? (summary.categories[row.key] ?? summary[row.key])
               : undefined
           }
         />

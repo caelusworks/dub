@@ -1,8 +1,8 @@
 "use client";
 
 import { parseActionError } from "@/lib/actions/parse-action-errors";
-import { testIds } from "@/lib/e2e/test-ids";
 import { onboardPartnerAction } from "@/lib/actions/partners/onboard-partner";
+import { testIds } from "@/lib/e2e/test-ids";
 import { getValidInternalRedirectPath } from "@/lib/middleware/utils/is-valid-internal-redirect";
 import {
   MAX_PARTNER_DESCRIPTION_LENGTH,

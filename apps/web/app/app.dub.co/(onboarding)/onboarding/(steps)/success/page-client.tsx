@@ -141,7 +141,7 @@ export function SuccessPageClient({
         )}
       >
         <h3
-          className="text-content-emphasis font-semibold"
+          className="font-semibold text-content-emphasis"
           data-testid={testIds.onboarding.completeSetup}
         >
           Complete setup

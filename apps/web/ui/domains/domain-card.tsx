@@ -375,9 +375,9 @@ function DomainCardMenu({
   const isDubProvisioned = !!registeredDomain;
   const canSetAsProgramDomain = Boolean(
     defaultProgramId &&
-      program?.domain &&
-      program.domain !== domain &&
-      !archived,
+    program?.domain &&
+    program.domain !== domain &&
+    !archived,
   );
 
   const permissionsError = clientAccessCheck({

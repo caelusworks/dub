@@ -89,7 +89,9 @@ test.describe("Dub Partners onboarding", () => {
     ).toBeVisible();
 
     // Fill workspace name (slug auto-generates)
-    await page.getByTestId(testIds.onboarding.workspaceName).fill(workspaceName);
+    await page
+      .getByTestId(testIds.onboarding.workspaceName)
+      .fill(workspaceName);
 
     // Read the auto-generated slug for later assertions
     const slug = await page
@@ -155,9 +157,9 @@ test.describe("Dub Partners onboarding", () => {
     ]);
 
     // Partner program step
-    await expect(
-      page.getByTestId(testIds.onboarding.stepProgram),
-    ).toBeVisible({ timeout: STEP_NAV_TIMEOUT });
+    await expect(page.getByTestId(testIds.onboarding.stepProgram)).toBeVisible({
+      timeout: STEP_NAV_TIMEOUT,
+    });
 
     await page
       .getByTestId(testIds.onboarding.programCompanyName)

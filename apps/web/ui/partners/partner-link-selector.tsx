@@ -73,7 +73,7 @@ export function PartnerLinkSelector({
   // none of them when folder/domain filters from the current page don't match.
   const links = partnerId
     ? partner
-      ? partner.links ?? []
+      ? (partner.links ?? [])
       : undefined
     : workspaceLinks;
 

@@ -183,7 +183,7 @@ export default function WorkspaceBillingUpgradePage() {
           >
             Billing
           </Link>
-          <ChevronRight className="text-content-muted size-2.5 shrink-0 [&_*]:stroke-2" />
+          <ChevronRight className="size-2.5 shrink-0 text-content-muted [&_*]:stroke-2" />
           <h1 data-testid={testIds.billing.plansHeading}>Plans</h1>
         </div>
       }

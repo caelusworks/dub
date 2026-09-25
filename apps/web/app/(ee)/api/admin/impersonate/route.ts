@@ -267,8 +267,9 @@ async function serializeWorkspaces(projects: ImpersonateProject[]) {
   return projects.map((project) => {
     const stats = statsByWorkspaceId.get(project.id);
     const program = project.defaultProgramId
-      ? project.programs.find((item) => item.id === project.defaultProgramId) ??
-        project.programs[0]
+      ? (project.programs.find(
+          (item) => item.id === project.defaultProgramId,
+        ) ?? project.programs[0])
       : null;
 
     return {

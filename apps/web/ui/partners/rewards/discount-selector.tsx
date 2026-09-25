@@ -21,7 +21,7 @@ export function DiscountSelector({
 
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-content-emphasis block text-sm font-medium">
+      <label className="block text-sm font-medium text-content-emphasis">
         Discount
       </label>
       <Combobox

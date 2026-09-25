@@ -121,7 +121,7 @@ function FilterSection({
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <span className="text-content-emphasis px-2 py-2 text-sm font-semibold">
+      <span className="px-2 py-2 text-sm font-semibold text-content-emphasis">
         {title}
       </span>
       <div className="flex flex-col gap-1">{children}</div>

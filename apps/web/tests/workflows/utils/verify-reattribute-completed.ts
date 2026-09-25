@@ -59,7 +59,7 @@ export const verifyReattributeCompleted = async ({
       newRes.status === 200 ? newRes.data.partner?.id : undefined;
     lastNewLinkId = newRes.status === 200 ? newRes.data.link?.id : undefined;
     lastOldName =
-      oldRes.status === 200 ? oldRes.data.name ?? undefined : undefined;
+      oldRes.status === 200 ? (oldRes.data.name ?? undefined) : undefined;
 
     const newAttributed =
       newRes.status === 200 &&

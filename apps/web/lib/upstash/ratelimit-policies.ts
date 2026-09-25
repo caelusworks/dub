@@ -2,17 +2,17 @@ import { ratelimit } from "./ratelimit";
 
 type RatelimitWindow = Parameters<typeof ratelimit>[1] & string;
 
+export type RatelimitMessageContext = {
+  retryAfter: string;
+  attempts: number;
+  window: string;
+};
+
 export type RatelimitPolicy = {
   attempts: number;
   window: RatelimitWindow;
   keyPrefix: string;
-  message?:
-    | string
-    | ((ctx: {
-        retryAfter: string;
-        attempts: number;
-        window: string;
-      }) => string);
+  message?: string | ((ctx: RatelimitMessageContext) => string);
 };
 
 export const RATELIMIT_POLICIES = {
@@ -76,12 +76,31 @@ export const RATELIMIT_POLICIES = {
     attempts: 10,
     window: "24 h",
     keyPrefix: "rl:program:application:image:upload",
+    message:
+      "You've reached the maximum number of attempts to upload images for this application. Please try again later.",
   },
 
   messageAttachmentUpload: {
     attempts: 20,
     window: "1 h",
     keyPrefix: "rl:message:attachment:upload",
+    message: "Too many file uploads. Please try again later.",
+  },
+
+  bountySubmissionUpload: {
+    attempts: 25,
+    window: "24 h",
+    keyPrefix: "bounty:submission:file:upload",
+    message:
+      "You've reached the maximum number of attempts to upload a file for this bounty.",
+  },
+
+  // Keyed on workspace + user so one member cannot exhaust the workspace upload budget
+  workspaceFileUpload: {
+    attempts: 20,
+    window: "1 h",
+    keyPrefix: "rl:workspace:file:upload",
+    message: "Too many file uploads. Please try again later.",
   },
 
   partnerProfileInvite: {
@@ -182,5 +201,78 @@ export const RATELIMIT_POLICIES = {
     window: "1 h",
     keyPrefix: "rl:partner:identity:verification:start",
     message: "Too many verification attempts. Please try again later.",
+  },
+
+  // Keyed on partner + program so one partner cannot exhaust another's budget
+  partnerAnalyticsExport: {
+    attempts: 1,
+    window: "30 s",
+    keyPrefix: "rl:analytics:export:partner",
+    message:
+      "Analytics export is limited to once every 30 seconds. Please try again shortly.",
+  },
+
+  createToken: {
+    attempts: 1,
+    window: "5 s",
+    keyPrefix: "rl:tokens:create",
+  },
+
+  submitLead: {
+    attempts: 10,
+    window: "1 m",
+    keyPrefix: "rl:submitted-lead",
+    message: "Too many leads submitted. Please try again later.",
+  },
+
+  trackApplication: {
+    attempts: 10,
+    window: "10 s",
+    keyPrefix: "rl:track:application",
+  },
+
+  workspaceInvite: {
+    attempts: 1,
+    window: "1 s",
+    keyPrefix: "rl:workspace:invites",
+    message:
+      "You've reached the rate limit for inviting teammates. Please try again later after few seconds.",
+  },
+
+  slackSupportInviteWorkspace: {
+    attempts: 5,
+    window: "1 d",
+    keyPrefix: "rl:slack-support-invite:workspace",
+    message:
+      "This workspace has reached the daily limit for Slack invite requests. Please try again tomorrow.",
+  },
+
+  // Keyed on workspace + user so one member cannot exhaust the workspace budget
+  slackSupportInviteUser: {
+    attempts: 10,
+    window: "1 h",
+    keyPrefix: "rl:slack-support-invite",
+    message:
+      "You've requested too many Slack invites recently. Please try again later.",
+  },
+
+  sitemapImport: {
+    attempts: 5,
+    window: "1 m",
+    keyPrefix: "rl:sitemap-import",
+    message:
+      "Sitemap import was requested too recently. Please wait a minute and try again.",
+  },
+
+  tremendousSendOtp: {
+    attempts: 10,
+    window: "24 h",
+    keyPrefix: "rl:tremendous:send-otp",
+  },
+
+  tremendousVerifyOtp: {
+    attempts: 10,
+    window: "24 h",
+    keyPrefix: "rl:tremendous:verify-otp",
   },
 } as const satisfies Record<string, RatelimitPolicy>;

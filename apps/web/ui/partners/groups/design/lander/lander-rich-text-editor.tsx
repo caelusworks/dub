@@ -78,7 +78,7 @@ function TextLength({
 
   return maxLength === undefined ? null : (
     <div className="mt-1 text-left">
-      <span className="text-content-subtle text-xs tabular-nums">
+      <span className="text-xs tabular-nums text-content-subtle">
         {nFormatter(length, { full: true })} /{" "}
         {nFormatter(maxLength, { full: true })}
       </span>

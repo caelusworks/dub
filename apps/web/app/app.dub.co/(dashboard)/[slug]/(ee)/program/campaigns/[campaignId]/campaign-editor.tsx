@@ -1,3 +1,4 @@
+import { parseActionError } from "@/lib/actions/parse-action-errors";
 import { uploadCampaignImageAction } from "@/lib/actions/partners/upload-campaign-image";
 import { CAMPAIGN_READONLY_STATUSES } from "@/lib/api/campaigns/constants";
 import { checkWorkflowConditions } from "@/lib/api/workflows/check-workflow-conditions";
@@ -5,6 +6,7 @@ import {
   formatCampaignFromAddress,
   parseCampaignFromAddress,
 } from "@/lib/email/parse-campaign-from-address";
+import { UPLOAD_POLICIES } from "@/lib/storage/upload-policies";
 import { useApiMutation } from "@/lib/swr/use-api-mutation";
 import { useEmailDomains } from "@/lib/swr/use-email-domains";
 import useProgram from "@/lib/swr/use-program";
@@ -30,7 +32,7 @@ import {
   TooltipContent,
   useKeyboardShortcut,
 } from "@dub/ui";
-import { capitalize, cn, pluck } from "@dub/utils";
+import { capitalize, cn, pluck, toErrorMessage } from "@dub/utils";
 import { CampaignStatus } from "@prisma/client";
 import slugify from "@sindresorhus/slugify";
 import { motion } from "motion/react";
@@ -181,7 +183,7 @@ function CampaignFromField({
       <input
         type="text"
         placeholder={displayNamePlaceholder}
-        className="text-content-default placeholder:text-content-muted min-w-0 flex-1 cursor-pointer border-0 bg-transparent p-0 focus:outline-none focus:ring-0 disabled:cursor-not-allowed sm:text-sm"
+        className="min-w-0 flex-1 cursor-pointer border-0 bg-transparent p-0 text-content-default placeholder:text-content-muted focus:outline-none focus:ring-0 disabled:cursor-not-allowed sm:text-sm"
         disabled={disabled}
         value={displayName}
         onChange={(e) => {
@@ -216,7 +218,7 @@ function CampaignFromField({
           type="text"
           placeholder="address"
           style={{ width: Math.max(localPartWidth, 1) }}
-          className="text-content-default placeholder:text-content-muted m-0 max-w-[12rem] cursor-pointer border-0 bg-transparent p-0 text-sm leading-none focus:outline-none focus:ring-0 disabled:cursor-not-allowed"
+          className="m-0 max-w-[12rem] cursor-pointer border-0 bg-transparent p-0 text-sm leading-none text-content-default placeholder:text-content-muted focus:outline-none focus:ring-0 disabled:cursor-not-allowed"
           disabled={disabled}
           value={localPart}
           onChange={(e) => {
@@ -597,7 +599,7 @@ export function CampaignEditor({ campaign }: { campaign: Campaign }) {
                         onChange={field.onChange}
                         placeholder='E.g. "tomorrow at 5pm" or "in 2 hours"'
                         className={cn(
-                          "hover:border-border-subtle mt-0 h-8 min-h-8 border-transparent shadow-none focus-within:border-black/75 focus-within:ring-black/75 hover:cursor-pointer hover:bg-neutral-100",
+                          "mt-0 h-8 min-h-8 border-transparent shadow-none focus-within:border-black/75 focus-within:ring-black/75 hover:cursor-pointer hover:border-border-subtle hover:bg-neutral-100",
                           // Like the text inputs: only colors animate, so the focus ring appears at once
                           "transition-colors",
                           // Keep the focused look (like the text inputs) even while hovered: the hover state
@@ -741,14 +743,34 @@ export function CampaignEditor({ campaign }: { campaign: Campaign }) {
                     variables={[...EMAIL_TEMPLATE_VARIABLES]}
                     variableInfo={EMAIL_TEMPLATE_VARIABLE_INFO}
                     editable={!isLocked}
+                    imageAccept={UPLOAD_POLICIES.programCampaignImages.contentTypes.join(
+                      ",",
+                    )}
                     uploadImage={async (file) => {
                       try {
+                        const { maxBytes } =
+                          UPLOAD_POLICIES.programCampaignImages;
+                        const maxFileSizeMB = maxBytes / (1024 * 1024);
+
+                        if (file.size > maxBytes) {
+                          throw new Error(
+                            `File size too big (max ${maxFileSizeMB} MB)`,
+                          );
+                        }
+
                         const result = await executeImageUpload({
                           workspaceId: workspaceId!,
+                          contentType: file.type,
+                          contentLength: file.size,
                         });
 
                         if (!result?.data) {
-                          throw new Error("Failed to get signed upload URL");
+                          throw new Error(
+                            parseActionError(
+                              result ?? {},
+                              "Failed to get signed upload URL",
+                            ),
+                          );
                         }
 
                         const { signedUrl, destinationUrl } = result.data;
@@ -769,7 +791,7 @@ export function CampaignEditor({ campaign }: { campaign: Campaign }) {
                         return destinationUrl;
                       } catch (e) {
                         console.error("Failed to upload image", e);
-                        toast.error("Failed to upload image");
+                        toast.error(toErrorMessage(e));
                       }
 
                       return null;

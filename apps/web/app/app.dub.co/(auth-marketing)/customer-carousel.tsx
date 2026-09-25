@@ -124,7 +124,7 @@ export function CustomerCarousel() {
         <Link
           href={`https://dub.co/customers/${customer.slug}`}
           target="_blank"
-          className="text-content-emphasis flex h-7 w-fit items-center rounded-lg border border-neutral-200 bg-white px-2.5 text-sm font-medium hover:bg-neutral-100"
+          className="flex h-7 w-fit items-center rounded-lg border border-neutral-200 bg-white px-2.5 text-sm font-medium text-content-emphasis hover:bg-neutral-100"
         >
           Read more
         </Link>

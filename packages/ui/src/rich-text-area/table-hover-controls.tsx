@@ -497,10 +497,10 @@ function getHoverZone(
     if (topVisible && alongX && distTop <= EDGE_PX && distTop < distBottom) {
       const header = table.rows[0];
       const cell = header
-        ? [...header.cells].find((candidate) => {
+        ? ([...header.cells].find((candidate) => {
             const cellRect = candidate.getBoundingClientRect();
             return x >= cellRect.left && x <= cellRect.right;
-          }) ?? null
+          }) ?? null)
         : null;
       if (cell) return { kind: "col", table, cell };
     }

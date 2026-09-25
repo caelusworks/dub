@@ -51,7 +51,7 @@ export function DomainCardTitleColumn({
           <div className="flex items-center gap-1">
             {primary ? (
               <Tooltip content="This is the [primary domain](https://dub.co/help/article/how-to-set-primary-domain) that Dub defaults to in the [link builder](https://dub.co/help/article/dub-link-builder) and the [Links API](https://dub.co/docs/concepts/links/introduction).">
-                <span className="xs:px-3 xs:py-1 flex cursor-help items-center gap-1 rounded-full bg-sky-400/[.15] px-1.5 py-0.5 text-xs font-medium text-sky-600">
+                <span className="flex cursor-help items-center gap-1 rounded-full bg-sky-400/[.15] px-1.5 py-0.5 text-xs font-medium text-sky-600 xs:px-3 xs:py-1">
                   <Flag2 className="hidden h-3 w-3 sm:block" />
                   Primary
                 </span>
@@ -59,7 +59,7 @@ export function DomainCardTitleColumn({
             ) : null}
             {program ? (
               <Tooltip content="This domain is the [referral link domain](https://dub.co/help/article/partner-link-settings#changing-your-referral-link-domain) for your [partner program](https://dub.co/partners).">
-                <span className="xs:px-3 xs:py-1 flex cursor-help items-center gap-1 rounded-full bg-violet-400/[.15] px-1.5 py-0.5 text-xs font-medium text-violet-600">
+                <span className="flex cursor-help items-center gap-1 rounded-full bg-violet-400/[.15] px-1.5 py-0.5 text-xs font-medium text-violet-600 xs:px-3 xs:py-1">
                   <ConnectedDots4 className="hidden h-3 w-3 sm:block" />
                   Program
                 </span>

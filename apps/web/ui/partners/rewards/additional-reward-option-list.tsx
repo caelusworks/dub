@@ -118,13 +118,13 @@ export function AdditionalRewardOptionList({
               e.preventDefault();
             }
           }}
-          className="border-border-default placeholder:text-content-muted w-full rounded-lg border px-2.5 py-2 focus:border-neutral-500 focus:outline-none focus:ring-1 focus:ring-neutral-500 sm:text-sm"
+          className="w-full rounded-lg border border-border-default px-2.5 py-2 placeholder:text-content-muted focus:border-neutral-500 focus:outline-none focus:ring-1 focus:ring-neutral-500 sm:text-sm"
         />
         <div className="relative">
           <div
             ref={scrollRef}
             onScroll={updateScrollProgress}
-            className="scrollbar-hide max-h-[calc(100dvh-250px)] overflow-y-auto"
+            className="max-h-[calc(100dvh-250px)] overflow-y-auto scrollbar-hide"
           >
             <Command.List className="mt-4">
               {filteredOptions.map((option) => (
@@ -167,7 +167,7 @@ export function AdditionalRewardOptionList({
               )}
 
               {filteredOptions.length === 0 && (
-                <div className="text-content-default flex select-none flex-col items-center justify-center gap-2 py-12">
+                <div className="flex select-none flex-col items-center justify-center gap-2 py-12 text-content-default">
                   <span className="text-sm font-medium">{emptyLabel}</span>
                 </div>
               )}
@@ -213,7 +213,7 @@ function AdditionalRewardOptionRow({
         >
           {selected && <span className="size-2.5 rounded-full bg-current" />}
         </span>
-        <div className="text-content-default min-w-0 flex-1 text-sm leading-5">
+        <div className="min-w-0 flex-1 text-sm leading-5 text-content-default">
           {option.label}
         </div>
       </div>
@@ -228,7 +228,7 @@ function AdditionalRewardOptionRow({
           {option.isGroup ? (
             <GroupBadge />
           ) : (
-            <span className="text-content-default text-sm font-medium tabular-nums">
+            <span className="text-sm font-medium tabular-nums text-content-default">
               {nFormatter(option.partnersCount ?? 0, { full: true })}
             </span>
           )}

@@ -339,9 +339,9 @@ export function CustomerDetailsColumn({
           </div>
         </div>
 
-        <div className="border-border-subtle rounded-lg border p-4">
+        <div className="rounded-lg border border-border-subtle p-4">
           <div className="flex flex-col gap-2">
-            <h2 className="text-content-emphasis text-sm font-semibold">
+            <h2 className="text-sm font-semibold text-content-emphasis">
               Referral link
             </h2>
             {!customer || isCustomerActivityLoading ? (
@@ -370,7 +370,7 @@ export function CustomerDetailsColumn({
 
           {customer && workspaceSlug && defaultProgramId && (
             <div className="mt-4 flex flex-col gap-2">
-              <h2 className="text-content-emphasis text-sm font-semibold">
+              <h2 className="text-sm font-semibold text-content-emphasis">
                 Referral partner
               </h2>
 

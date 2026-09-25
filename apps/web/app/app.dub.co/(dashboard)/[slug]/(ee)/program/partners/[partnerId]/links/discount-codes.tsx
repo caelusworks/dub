@@ -35,13 +35,12 @@ import {
   TooltipContent,
   useCopyToClipboard,
 } from "@dub/ui";
-import { Copy, DiscountCode, Trash } from "@dub/ui/icons";
+import { DiscountCode, Trash } from "@dub/ui/icons";
 import { cn, getPrettyUrl, nFormatter, pluralize } from "@dub/utils";
 import { DiscountProvider } from "@prisma/client";
 import { Command } from "cmdk";
 import Link from "next/link";
 import { type ReactNode, useMemo, useState } from "react";
-import { toast } from "sonner";
 
 type PartnerLink = ProgramPartnerLinkExtended;
 type PartnerForDiscountOverride = Pick<
@@ -199,9 +198,9 @@ export function PartnerDiscountCodes({
 
   const hasPartnerOrLinkDiscount = Boolean(
     partner.discount?.id ||
-      group?.discount?.id ||
-      links?.some((link) => link.discount) ||
-      eligibleLinks.length > 0,
+    group?.discount?.id ||
+    links?.some((link) => link.discount) ||
+    eligibleLinks.length > 0,
   );
 
   const discountCodeEmptyState = hasPartnerOrLinkDiscount
@@ -224,7 +223,7 @@ export function PartnerDiscountCodes({
   return (
     <>
       <div className="flex items-end justify-between gap-4">
-        <h2 className="text-content-emphasis text-lg font-semibold">
+        <h2 className="text-lg font-semibold text-content-emphasis">
           Discount codes
         </h2>
         <Button
@@ -245,10 +244,10 @@ export function PartnerDiscountCodes({
         <div className="flex flex-col items-center justify-center gap-2 rounded-lg border border-neutral-200 bg-neutral-50 py-6">
           <div className="flex max-w-sm flex-col items-center gap-2 text-center">
             <DiscountCode className="mb-2 size-6 text-neutral-900" />
-            <h3 className="text-content-emphasis text-sm font-semibold leading-5">
+            <h3 className="text-sm font-semibold leading-5 text-content-emphasis">
               No discount codes created
             </h3>
-            <p className="text-content-subtle -mt-1 text-sm font-medium leading-5">
+            <p className="-mt-1 text-sm font-medium leading-5 text-content-subtle">
               {discountCodeEmptyState.description}
             </p>
             {discountCodeEmptyState.buttonHref && (
@@ -269,7 +268,7 @@ export function PartnerDiscountCodes({
         </div>
       ) : error ? (
         <div className="flex justify-center py-16">
-          <span className="text-content-subtle text-sm">
+          <span className="text-sm text-content-subtle">
             Failed to load discount codes
           </span>
         </div>
@@ -339,17 +338,15 @@ function DiscountCodeCard({
       group,
     });
 
-  const editDiscountDisabledTooltip = !link
-    ? "Link not found"
-    : !canUseAdvancedRewardLogic
-      ? (
-          <TooltipContent
-            title={PARTNER_LEVEL_REWARDS_PLAN_ERROR}
-            cta="Upgrade to Advanced"
-            onClick={() => setShowAdvancedUpsellModal(true)}
-          />
-        )
-      : undefined;
+  const editDiscountDisabledTooltip = !link ? (
+    "Link not found"
+  ) : !canUseAdvancedRewardLogic ? (
+    <TooltipContent
+      title={PARTNER_LEVEL_REWARDS_PLAN_ERROR}
+      cta="Upgrade to Advanced"
+      onClick={() => setShowAdvancedUpsellModal(true)}
+    />
+  ) : undefined;
 
   return (
     <>
@@ -358,7 +355,7 @@ function DiscountCodeCard({
         innerClassName="flex items-center justify-between gap-4 px-3 py-2.5"
         hoverStateEnabled={false}
       >
-        <div className="flex min-w-0 flex-1 items-center">
+        <div className="flex min-w-0 flex-1 items-center gap-3">
           <div className="w-40 shrink-0">
             <DiscountCodeBadge
               code={discountCode.code}
@@ -371,7 +368,7 @@ function DiscountCodeCard({
               <Link
                 href={`/${slug}/links/${link.domain}/${link.key}`}
                 target="_blank"
-                className="text-content-default cursor-alias truncate text-sm font-medium decoration-dotted hover:underline"
+                className="cursor-alias truncate text-sm font-medium text-content-default decoration-dotted hover:underline"
               >
                 {getPrettyUrl(partnerLink)}
               </Link>
@@ -471,31 +468,6 @@ function DiscountCodeCardMenu({
               }}
             >
               Edit discount
-            </MenuItem>
-            <MenuItem
-              as={Command.Item}
-              icon={Copy}
-              onSelect={() => {
-                toast.promise(copyToClipboard(code), {
-                  success: "Copied discount code to clipboard",
-                });
-                setOpenPopover(false);
-              }}
-            >
-              Copy discount code
-            </MenuItem>
-            <MenuItem
-              as={Command.Item}
-              icon={Copy}
-              disabled={!partnerLink}
-              onSelect={() => {
-                toast.promise(copyToClipboard(partnerLink), {
-                  success: "Copied to clipboard",
-                });
-                setOpenPopover(false);
-              }}
-            >
-              Copy link
             </MenuItem>
             <MenuItem
               as={Command.Item}

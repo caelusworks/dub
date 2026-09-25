@@ -106,8 +106,7 @@ async function trackPartnerSale(
   amount: number;
 }> {
   const customerExternalIdOverride = overrides.customerExternalId as
-    | string
-    | undefined;
+    string | undefined;
   const saleOverrides = { ...overrides };
   delete saleOverrides.customerExternalId;
   delete saleOverrides.customerEmail;

@@ -141,8 +141,8 @@ export async function trackPartnerRewardOverrideLog(
         changedRewardFields.map(([field, oldId, newId]) => [
           field,
           {
-            old: oldId ? rewardsById.get(oldId) ?? { id: oldId } : null,
-            new: newId ? rewardsById.get(newId) ?? { id: newId } : null,
+            old: oldId ? (rewardsById.get(oldId) ?? { id: oldId }) : null,
+            new: newId ? (rewardsById.get(newId) ?? { id: newId }) : null,
           },
         ]),
       ),
@@ -157,12 +157,12 @@ export async function trackPartnerRewardOverrideLog(
       changeSet: {
         discount: {
           old: previous.discountId
-            ? discountsById.get(previous.discountId) ?? {
+            ? (discountsById.get(previous.discountId) ?? {
                 id: previous.discountId,
-              }
+              })
             : null,
           new: next.discountId
-            ? discountsById.get(next.discountId) ?? { id: next.discountId }
+            ? (discountsById.get(next.discountId) ?? { id: next.discountId })
             : null,
         },
       },
@@ -297,8 +297,8 @@ export async function trackLinkRewardOverrideLog(input: {
           changedRewardFields.map(([field, oldId, newId]) => [
             field,
             {
-              old: oldId ? rewardsById.get(oldId) ?? { id: oldId } : null,
-              new: newId ? rewardsById.get(newId) ?? { id: newId } : null,
+              old: oldId ? (rewardsById.get(oldId) ?? { id: oldId }) : null,
+              new: newId ? (rewardsById.get(newId) ?? { id: newId }) : null,
             },
           ]),
         ),
@@ -318,12 +318,12 @@ export async function trackLinkRewardOverrideLog(input: {
         },
         discount: {
           old: previous.discountId
-            ? discountsById.get(previous.discountId) ?? {
+            ? (discountsById.get(previous.discountId) ?? {
                 id: previous.discountId,
-              }
+              })
             : null,
           new: next.discountId
-            ? discountsById.get(next.discountId) ?? { id: next.discountId }
+            ? (discountsById.get(next.discountId) ?? { id: next.discountId })
             : null,
         },
       },

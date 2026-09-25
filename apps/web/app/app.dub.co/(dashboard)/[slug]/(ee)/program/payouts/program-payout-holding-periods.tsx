@@ -88,7 +88,7 @@ export function useProgramHoldingPeriods(
 
   const allGroupsDays = allGroups?.enabled
     ? allGroups.days
-    : defaultGroup?.holdingPeriodDays ?? PAYOUT_HOLDING_PERIOD_DAYS[0];
+    : (defaultGroup?.holdingPeriodDays ?? PAYOUT_HOLDING_PERIOD_DAYS[0]);
 
   // Switching on starts from the default group's current value; switching off
   // restores the per-group values (including any unsaved per-group edits)
@@ -272,7 +272,7 @@ function HoldingPeriodsTable({
       <div
         ref={scrollRef}
         onScroll={(e) => updateFades(e.currentTarget)}
-        className="scrollbar-hide max-h-[268px] overflow-y-auto [clip-path:inset(0)]"
+        className="max-h-[268px] overflow-y-auto scrollbar-hide [clip-path:inset(0)]"
       >
         <div className="divide-y divide-neutral-200">
           {loading

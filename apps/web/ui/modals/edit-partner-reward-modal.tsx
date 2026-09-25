@@ -14,6 +14,7 @@ import { EnrolledPartnerProps, GroupProps, RewardProps } from "@/lib/types";
 import { REWARD_EVENT_COLUMN_MAPPING } from "@/lib/zod/schemas/rewards";
 import { useConfirmRewardChangeModal } from "@/ui/modals/confirm-reward-change-modal";
 import { formatRewardDescription } from "@/ui/partners/format-reward-description";
+import { KeepPartnerInGroupNotice } from "@/ui/partners/keep-partner-in-group-notice";
 import { PartnerAvatar } from "@/ui/partners/partner-avatar";
 import { ProgramRewardDescription } from "@/ui/partners/program-reward-description";
 import { RewardSheet } from "@/ui/partners/rewards/add-edit-reward-sheet";
@@ -234,7 +235,6 @@ function EditPartnerRewardModal({
   const persistOverride = useCallback(
     async (activityDescription?: string) => {
       const rewardIdColumn = REWARD_EVENT_COLUMN_MAPPING[event];
-      const isGroupSelection = resolvedSelectedId === groupRewardId;
 
       if (target.type === "partner") {
         if (!workspaceId) {
@@ -244,9 +244,7 @@ function EditPartnerRewardModal({
         await updateEnrollment({
           workspaceId,
           partnerId: partner.id,
-          [rewardIdColumn]: isGroupSelection
-            ? groupRewardId ?? null
-            : resolvedSelectedId,
+          [rewardIdColumn]: resolvedSelectedId,
           activityDescription,
         });
         return;
@@ -255,7 +253,7 @@ function EditPartnerRewardModal({
       await updatePartnerLink(`/api/partners/links/${target.link.id}`, {
         method: "PATCH",
         body: {
-          [rewardIdColumn]: isGroupSelection ? null : resolvedSelectedId,
+          [rewardIdColumn]: resolvedSelectedId,
           activityDescription,
         },
         onSuccess: async () => {
@@ -269,7 +267,6 @@ function EditPartnerRewardModal({
       workspaceId,
       event,
       resolvedSelectedId,
-      groupRewardId,
       updateEnrollment,
       updatePartnerLink,
       target,
@@ -428,20 +425,23 @@ function EditPartnerRewardModal({
           )}
         </div>
 
-        <div className="border-border-subtle flex items-center justify-between gap-4 border-t px-4 py-4">
+        <div className="flex items-center justify-between gap-4 border-t border-border-subtle px-4 py-4">
           <div className="flex min-w-0 items-center gap-2">
             <PartnerAvatar partner={partner} className="size-6 shrink-0" />
             <div className="min-w-0 leading-tight">
-              <Link
-                href={`/${slug}/program/partners/${partner.id}`}
-                target="_blank"
-                className={cn(
-                  "block cursor-alias truncate text-xs font-medium text-neutral-900 decoration-dotted hover:underline",
-                  target.type !== "link" && "text-sm",
-                )}
-              >
-                {partner.name}
-              </Link>
+              <div className="flex min-w-0 items-center gap-2">
+                <Link
+                  href={`/${slug}/program/partners/${partner.id}`}
+                  target="_blank"
+                  className={cn(
+                    "min-w-0 cursor-alias truncate text-xs font-medium text-neutral-900 decoration-dotted hover:underline",
+                    target.type !== "link" && "text-sm",
+                  )}
+                >
+                  {partner.name}
+                </Link>
+                <KeepPartnerInGroupNotice offerType="reward" />
+              </div>
               {target.type === "link" && (
                 <Link
                   href={`/${slug}/links/${getPrettyUrl(target.link.shortLink)}`}

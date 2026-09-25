@@ -185,7 +185,7 @@ const AddPartnerLinkModal = ({
                 <div className="flex items-center gap-2">
                   <label
                     htmlFor="key"
-                    className="text-content-emphasis block text-sm font-medium"
+                    className="block text-sm font-medium text-content-emphasis"
                   >
                     Short link
                   </label>
@@ -222,7 +222,7 @@ const AddPartnerLinkModal = ({
               <div className="flex items-center gap-2">
                 <label
                   htmlFor="url"
-                  className="text-content-emphasis block text-sm font-medium"
+                  className="block text-sm font-medium text-content-emphasis"
                 >
                   Destination URL
                 </label>
@@ -335,7 +335,7 @@ const AddPartnerLinkModal = ({
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-end gap-2 border-t border-neutral-200 bg-neutral-50 p-4">
+        <div className="flex items-center justify-end gap-2 border-t border-neutral-200 bg-neutral-50 p-4 sm:rounded-b-2xl">
           <Button
             type="button"
             variant="secondary"

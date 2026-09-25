@@ -295,7 +295,7 @@ function UTMInput({
         createPortal(
           <div
             style={menuStyle}
-            className="border-border-subtle flex flex-col rounded-lg border bg-white p-1 shadow-sm"
+            className="flex flex-col rounded-lg border border-border-subtle bg-white p-1 shadow-sm"
           >
             {filtered.map((suggestion, index) => (
               <button
@@ -314,7 +314,7 @@ function UTMInput({
                   {suggestion.value}
                 </span>
                 {suggestion.description && (
-                  <span className="text-content-subtle text-xs">
+                  <span className="text-xs text-content-subtle">
                     {suggestion.description}
                   </span>
                 )}

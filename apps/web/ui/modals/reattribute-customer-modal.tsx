@@ -146,7 +146,7 @@ function ReattributeCustomerModal({
                       setValue(
                         "linkId",
                         id === currentPartnerId
-                          ? customer.link?.id ?? null
+                          ? (customer.link?.id ?? null)
                           : null,
                         { shouldDirty: true },
                       );
