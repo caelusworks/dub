@@ -210,10 +210,7 @@ function matchesProgramEnrollmentFilter(
   },
 ) {
   return filter.OR.some((clause) => {
-    if (
-      clause.program &&
-      clause.program.payoutMode !== enrollment.payoutMode
-    ) {
+    if (clause.program && clause.program.payoutMode !== enrollment.payoutMode) {
       return false;
     }
 

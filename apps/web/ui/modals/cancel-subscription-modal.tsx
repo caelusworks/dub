@@ -33,9 +33,7 @@ function CancelSubscriptionModal({
   }) => Promise<void>;
 }) {
   const [isLoading, setIsLoading] = useState(false);
-  const [feedback, setFeedback] = useState<StripeCancellationFeedback | "">(
-    "",
-  );
+  const [feedback, setFeedback] = useState<StripeCancellationFeedback | "">("");
   const [comment, setComment] = useState("");
 
   useEffect(() => {
@@ -75,7 +73,7 @@ function CancelSubscriptionModal({
     >
       <div className="divide-y divide-neutral-200">
         <div className="p-4 sm:px-6">
-          <h3 className="text-content-emphasis text-lg font-medium">
+          <h3 className="text-lg font-medium text-content-emphasis">
             Cancel subscription
           </h3>
         </div>

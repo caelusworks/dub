@@ -279,7 +279,7 @@ function GroupLinkSettingsForm({ group }: { group: GroupProps }) {
                     description: m.description,
                   }))}
                 />
-                <p className="text-content-muted text-xs">
+                <p className="text-xs text-content-muted">
                   Dynamic values:{" "}
                   <code className="font-mono">{"{{PARTNER_NAME}}"}</code>,{" "}
                   <code className="font-mono">{"{{PARTNER_LINK_KEY}}"}</code>

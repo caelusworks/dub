@@ -14,9 +14,7 @@ test("complete workspace onboarding with Dub Links product", async ({
 
   // Welcome page
   await page.goto("/onboarding");
-  await expect(
-    page.getByTestId(testIds.onboarding.stepWelcome),
-  ).toBeVisible();
+  await expect(page.getByTestId(testIds.onboarding.stepWelcome)).toBeVisible();
   await Promise.all([
     expect(page).toHaveURL(/\/onboarding\/workspace/, {
       timeout: STEP_NAV_TIMEOUT,
@@ -25,9 +23,9 @@ test("complete workspace onboarding with Dub Links product", async ({
   ]);
 
   // Workspace creation step
-  await expect(
-    page.getByTestId(testIds.onboarding.stepWorkspace),
-  ).toBeVisible({ timeout: STEP_NAV_TIMEOUT });
+  await expect(page.getByTestId(testIds.onboarding.stepWorkspace)).toBeVisible({
+    timeout: STEP_NAV_TIMEOUT,
+  });
 
   // Fill workspace name (slug auto-generates)
   await page.getByTestId(testIds.onboarding.workspaceName).fill(workspaceName);
@@ -82,9 +80,9 @@ test("complete workspace onboarding with Dub Links product", async ({
   await expect(
     page.getByTestId(testIds.onboarding.workspaceCreated),
   ).toContainText(workspaceName, { timeout: STEP_NAV_TIMEOUT });
-  await expect(
-    page.getByTestId(testIds.onboarding.completeSetup),
-  ).toBeVisible({ timeout: STEP_NAV_TIMEOUT });
+  await expect(page.getByTestId(testIds.onboarding.completeSetup)).toBeVisible({
+    timeout: STEP_NAV_TIMEOUT,
+  });
 
   // Go to dashboard
   const dashboardCta = page.getByTestId(testIds.onboarding.goToDashboard);

@@ -34,7 +34,7 @@ export function ReferButton({
           "outline-none focus-visible:ring-2 focus-visible:ring-black/50",
         )}
       >
-        <Gift className="text-content-default size-5" data-hovered={hovered} />
+        <Gift className="size-5 text-content-default" data-hovered={hovered} />
       </Link>
       {affiliatePopupEnabled && width && width >= 768 && (
         <AffiliateProgramPopupWrapper referenceElement={linkRef} />

@@ -335,7 +335,7 @@ function EditPartnerDiscountModal({
           )}
         </div>
 
-        <div className="border-border-subtle flex items-center justify-between gap-4 border-t px-4 py-4">
+        <div className="flex items-center justify-between gap-4 border-t border-border-subtle px-4 py-4">
           <div className="flex min-w-0 items-center gap-2">
             <PartnerAvatar partner={partner} className="size-6 shrink-0" />
             <div className="min-w-0 leading-tight">

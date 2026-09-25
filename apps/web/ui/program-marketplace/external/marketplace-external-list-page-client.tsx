@@ -144,7 +144,7 @@ export function MarketplaceExternalListPageClient({
 
       <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10">
         <div className="hidden shrink-0 lg:block">{sidebar}</div>
-        <div className="@container/page flex min-w-0 flex-1 flex-col gap-6">
+        <div className="flex min-w-0 flex-1 flex-col gap-6 @container/page">
           <Suspense fallback={<MarketplaceListToolbarSkeleton />}>
             <MarketplaceListToolbar
               variant="external"
@@ -266,7 +266,7 @@ function MarketplacePagination({
             className={
               pageNumber === page
                 ? "rounded-lg bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white"
-                : "border-border-subtle hover:bg-bg-subtle rounded-lg border px-3 py-1.5 text-sm font-medium"
+                : "rounded-lg border border-border-subtle px-3 py-1.5 text-sm font-medium hover:bg-bg-subtle"
             }
           >
             {pageNumber}

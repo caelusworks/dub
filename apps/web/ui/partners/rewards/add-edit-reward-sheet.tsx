@@ -248,7 +248,8 @@ function RewardSheetContent({
         : isDefault;
 
   const partnerCountForConfirm = reward
-    ? rewards?.find((item) => item.id === reward.id)?.partnersCount ?? undefined
+    ? (rewards?.find((item) => item.id === reward.id)?.partnersCount ??
+      undefined)
     : effectiveIsDefault
       ? undefined
       : 0;

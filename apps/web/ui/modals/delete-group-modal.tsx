@@ -65,7 +65,7 @@ const DeleteGroupModal = ({
 
               <div className="flex items-center gap-2">
                 <Users className="size-4" />
-                <span className="text-content-default text-sm font-medium">
+                <span className="text-sm font-medium text-content-default">
                   {group.partnersCount}{" "}
                   {pluralize("partner", group.partnersCount)}
                 </span>

@@ -548,7 +548,7 @@ function EligibleBounties({
 
   return (
     <div className="flex flex-col gap-2">
-      <h3 className="text-content-emphasis text-sm font-semibold">
+      <h3 className="text-sm font-semibold text-content-emphasis">
         Eligible Bounties
       </h3>
       {bounties ? (
@@ -565,7 +565,7 @@ function EligibleBounties({
                     key={bounty.id}
                     target="_blank"
                     href={`/${workspaceSlug}/program/bounties/${bounty.id}`}
-                    className="text-content-subtle flex cursor-alias items-center gap-2 decoration-dotted underline-offset-2 hover:underline"
+                    className="flex cursor-alias items-center gap-2 text-content-subtle decoration-dotted underline-offset-2 hover:underline"
                   >
                     <Icon className="size-3.5 shrink-0" />
                     <span className="text-xs font-medium">{bounty.name}</span>
@@ -587,10 +587,10 @@ function EligibleBounties({
             )}
           </div>
         ) : (
-          <p className="text-content-subtle text-xs">No eligible bounties</p>
+          <p className="text-xs text-content-subtle">No eligible bounties</p>
         )
       ) : errorBounties ? (
-        <p className="text-content-subtle text-xs">Failed to load bounties</p>
+        <p className="text-xs text-content-subtle">Failed to load bounties</p>
       ) : (
         <div className="h-4 w-24 animate-pulse rounded bg-neutral-200" />
       )}

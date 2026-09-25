@@ -169,7 +169,7 @@ export default function PartnerProgramSummary({
               <Img src={DUB_WORDMARK} height="32" alt="Dub" />
             </Section>
 
-            <Heading className="mx-0 mb-1 mt-10 p-0 text-lg font-semibold leading-7 text-neutral-800">
+            <Heading className="mx-0 mt-10 mb-1 p-0 text-lg leading-7 font-semibold text-neutral-800">
               {reportingPeriod.month} program summary
             </Heading>
 
@@ -196,7 +196,7 @@ export default function PartnerProgramSummary({
             <Section className="mt-5">
               <Link
                 href={`${PARTNERS_URL}/programs`}
-                className="box-border inline-block rounded-lg bg-neutral-900 px-3.5 py-2 text-sm font-medium leading-5 text-white no-underline"
+                className="box-border inline-block rounded-lg bg-neutral-900 px-3.5 py-2 text-sm leading-5 font-medium text-white no-underline"
               >
                 View all programs
               </Link>
@@ -264,14 +264,14 @@ const ProgramCard = ({
           </Column>
           <Column
             valign="middle"
-            className="text-sm font-semibold leading-5 text-neutral-800"
+            className="text-sm leading-5 font-semibold text-neutral-800"
           >
             {program.name}
           </Column>
           <Column align="right" valign="middle">
             <Link
               href={getProgramUrl(program, reportingPeriod)}
-              className="box-border inline-block rounded-lg bg-neutral-900 px-2.5 py-1 text-sm font-medium leading-5 text-white no-underline"
+              className="box-border inline-block rounded-lg bg-neutral-900 px-2.5 py-1 text-sm leading-5 font-medium text-white no-underline"
               style={{ whiteSpace: "nowrap" }}
             >
               View dashboard
@@ -327,10 +327,10 @@ const Stat = ({
         </div>
       </Column>
       <Column valign="middle">
-        <Text className="m-0 text-xs font-medium leading-4 text-neutral-500">
+        <Text className="m-0 text-xs leading-4 font-medium text-neutral-500">
           {title}
         </Text>
-        <Text className="m-0 text-sm font-medium leading-5 text-neutral-800">
+        <Text className="m-0 text-sm leading-5 font-medium text-neutral-800">
           {value}
           <PercentBadge percent={percent} className="ml-1.5" />
         </Text>
@@ -350,7 +350,7 @@ const PercentBadge = ({
 
   return (
     <span
-      className={`rounded px-1 py-0.5 text-xs font-medium leading-4 ${color} ${className ?? ""}`}
+      className={`rounded px-1 py-0.5 text-xs leading-4 font-medium ${color} ${className ?? ""}`}
     >
       {/* "–" means no change compared to the previous month */}
       {percent === 0 ? "–" : `${sign}${Math.abs(percent)}%`}
@@ -368,18 +368,18 @@ const ProgramTable = ({
   return (
     <Section className="mt-5">
       <Row>
-        <Column className="pb-2.5 text-xs font-medium leading-4 text-neutral-500">
+        <Column className="pb-2.5 text-xs leading-4 font-medium text-neutral-500">
           Program
         </Column>
         <Column
           align="right"
-          className="pb-2.5 text-xs font-medium leading-4 text-neutral-500"
+          className="pb-2.5 text-xs leading-4 font-medium text-neutral-500"
         >
           Earnings
         </Column>
         <Column
           width={48}
-          className="pb-2.5 pl-5 text-xs font-medium leading-4 text-neutral-500"
+          className="pb-2.5 pl-5 text-xs leading-4 font-medium text-neutral-500"
         >
           Change
         </Column>
@@ -406,7 +406,7 @@ const ProgramTable = ({
                 <Column valign="middle">
                   <Link
                     href={programUrl}
-                    className="text-sm font-semibold leading-5 text-neutral-800 no-underline"
+                    className="text-sm leading-5 font-semibold text-neutral-800 no-underline"
                   >
                     {program.name}
                   </Link>

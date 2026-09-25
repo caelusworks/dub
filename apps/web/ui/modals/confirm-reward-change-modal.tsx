@@ -188,7 +188,7 @@ export function ConfirmRewardChangeModal({
           <h3 className="text-base font-semibold text-content-emphasis">
             {TITLES[action]}
           </h3>
-          <p className="text-content-subtle mt-1 text-sm">
+          <p className="mt-1 text-sm text-content-subtle">
             {getDescription({ action, target, partnerCount })}
           </p>
 
@@ -211,7 +211,7 @@ export function ConfirmRewardChangeModal({
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="activityDescription"
-                  className="text-content-emphasis text-sm font-medium"
+                  className="text-sm font-medium text-content-emphasis"
                 >
                   {messageLabel}
                   <span className="ml-1 font-normal text-neutral-500">

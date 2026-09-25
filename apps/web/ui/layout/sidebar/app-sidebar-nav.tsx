@@ -691,7 +691,7 @@ export function AppSidebarNav({
         pendingLeadsCount,
         submittedLeadsEnabled: Boolean(
           defaultProgramId &&
-            SUBMITTED_LEADS_ENABLED_PROGRAM_IDS.includes(defaultProgramId),
+          SUBMITTED_LEADS_ENABLED_PROGRAM_IDS.includes(defaultProgramId),
         ),
         partnerNetworkEnabled:
           program && program.partnerNetworkEnabledAt !== null,

@@ -200,7 +200,7 @@ export function GroupsTable() {
             currentDefaultGroup={currentDefaultGroup}
             partnersCount={
               partnersCountReady
-                ? partnersCountByGroupId.get(row.original.id) ?? 0
+                ? (partnersCountByGroupId.get(row.original.id) ?? 0)
                 : undefined
             }
           />

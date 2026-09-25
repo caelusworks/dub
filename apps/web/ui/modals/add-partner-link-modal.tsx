@@ -185,7 +185,7 @@ const AddPartnerLinkModal = ({
                 <div className="flex items-center gap-2">
                   <label
                     htmlFor="key"
-                    className="text-content-emphasis block text-sm font-medium"
+                    className="block text-sm font-medium text-content-emphasis"
                   >
                     Short link
                   </label>
@@ -222,7 +222,7 @@ const AddPartnerLinkModal = ({
               <div className="flex items-center gap-2">
                 <label
                   htmlFor="url"
-                  className="text-content-emphasis block text-sm font-medium"
+                  className="block text-sm font-medium text-content-emphasis"
                 >
                   Destination URL
                 </label>

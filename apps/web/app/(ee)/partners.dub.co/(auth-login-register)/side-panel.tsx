@@ -1,6 +1,5 @@
 import { DubPartnersLogo } from "@/ui/dub-partners-logo";
 import { Program } from "@prisma/client";
-import Link from "next/link";
 import { ProgramLogos } from "./program-logos";
 
 export function SidePanel({
@@ -48,7 +47,7 @@ export function SidePanel({
       ) : (
         <>
           <div className="flex flex-col gap-6 px-4 lg:px-10">
-            <p className="text-content-default max-w-[370px] text-pretty text-xl font-medium">
+            <p className="max-w-[370px] text-pretty text-xl font-medium text-content-default">
               Join thousands of others who have earned over $25,000,000 on Dub
               partnering with world-class companies.
             </p>

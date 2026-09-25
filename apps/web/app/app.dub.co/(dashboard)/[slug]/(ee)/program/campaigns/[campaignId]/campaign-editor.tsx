@@ -183,7 +183,7 @@ function CampaignFromField({
       <input
         type="text"
         placeholder={displayNamePlaceholder}
-        className="text-content-default placeholder:text-content-muted min-w-0 flex-1 cursor-pointer border-0 bg-transparent p-0 focus:outline-none focus:ring-0 disabled:cursor-not-allowed sm:text-sm"
+        className="min-w-0 flex-1 cursor-pointer border-0 bg-transparent p-0 text-content-default placeholder:text-content-muted focus:outline-none focus:ring-0 disabled:cursor-not-allowed sm:text-sm"
         disabled={disabled}
         value={displayName}
         onChange={(e) => {
@@ -218,7 +218,7 @@ function CampaignFromField({
           type="text"
           placeholder="address"
           style={{ width: Math.max(localPartWidth, 1) }}
-          className="text-content-default placeholder:text-content-muted m-0 max-w-[12rem] cursor-pointer border-0 bg-transparent p-0 text-sm leading-none focus:outline-none focus:ring-0 disabled:cursor-not-allowed"
+          className="m-0 max-w-[12rem] cursor-pointer border-0 bg-transparent p-0 text-sm leading-none text-content-default placeholder:text-content-muted focus:outline-none focus:ring-0 disabled:cursor-not-allowed"
           disabled={disabled}
           value={localPart}
           onChange={(e) => {
@@ -599,7 +599,7 @@ export function CampaignEditor({ campaign }: { campaign: Campaign }) {
                         onChange={field.onChange}
                         placeholder='E.g. "tomorrow at 5pm" or "in 2 hours"'
                         className={cn(
-                          "hover:border-border-subtle mt-0 h-8 min-h-8 border-transparent shadow-none focus-within:border-black/75 focus-within:ring-black/75 hover:cursor-pointer hover:bg-neutral-100",
+                          "mt-0 h-8 min-h-8 border-transparent shadow-none focus-within:border-black/75 focus-within:ring-black/75 hover:cursor-pointer hover:border-border-subtle hover:bg-neutral-100",
                           // Like the text inputs: only colors animate, so the focus ring appears at once
                           "transition-colors",
                           // Keep the focused look (like the text inputs) even while hovered: the hover state

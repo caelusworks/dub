@@ -105,7 +105,7 @@ export function PartnerProgramLinksPageClient() {
         <div className="flex items-center gap-3">
           {!!showDetailedAnalytics && (
             <ToggleGroup
-              className="bg-bg-muted h-10 gap-0 rounded-lg p-0"
+              className="h-10 gap-0 rounded-lg bg-bg-muted p-0"
               optionClassName="h-full rounded-md px-2.5 py-0"
               // Selected pill bleeds 1px outward so its border sits on top of
               // the track's border instead of doubling up beside it

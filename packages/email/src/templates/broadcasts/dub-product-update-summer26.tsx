@@ -55,11 +55,11 @@ export default function DubProductUpdateSummer26({
               />
             </Section>
 
-            <Heading className="mx-0 mb-2 mt-8 p-0 text-center text-2xl font-semibold text-black">
+            <Heading className="mx-0 mt-8 mb-2 p-0 text-center text-2xl font-semibold text-black">
               Dub.co Product Update (Summer '26)
             </Heading>
 
-            <Text className="mx-auto mb-8 mt-0 max-w-sm text-center text-base leading-6 text-neutral-600">
+            <Text className="mx-auto mt-0 mb-8 max-w-sm text-center text-base leading-6 text-neutral-600">
               Here are some of the exciting new features that we've shipped over
               the last few months 👇
             </Text>
@@ -83,19 +83,19 @@ export default function DubProductUpdateSummer26({
                   }}
                 />
               </Link>
-              <Heading className="mx-0 mb-2 mt-0 p-0 text-base font-semibold text-black">
+              <Heading className="mx-0 mt-0 mb-2 p-0 text-base font-semibold text-black">
                 1. Improvements to bounties and email campaigns
               </Heading>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 You can now:
               </Text>
-              <Text className="mx-0 mb-1 mt-0 pl-4 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-1 pl-4 text-sm leading-6 text-neutral-600">
                 • Scope bounties and email campaigns by partner tags
               </Text>
-              <Text className="mx-0 mb-1 mt-0 pl-4 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-1 pl-4 text-sm leading-6 text-neutral-600">
                 • Set dynamic start dates for bounties
               </Text>
-              <Text className="mx-0 mb-2 mt-0 pl-4 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 pl-4 text-sm leading-6 text-neutral-600">
                 • Combine multiple conditions for transactional email campaigns
               </Text>
               <Section className="mt-4 text-center">
@@ -140,16 +140,16 @@ export default function DubProductUpdateSummer26({
                   }}
                 />
               </Link>
-              <Heading className="mx-0 mb-2 mt-0 p-0 text-base font-semibold text-black">
+              <Heading className="mx-0 mt-0 mb-2 p-0 text-base font-semibold text-black">
                 2. Custom metadata rewards + AI reward builder
               </Heading>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 You can now customize partner rewards based on any{" "}
                 <code>metadata</code> you attach to tracking events – e.g.
                 different revshare rates for <code>trade</code> vs{" "}
                 <code>deposit</code> events.
               </Text>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 We also added an{" "}
                 <Link
                   href="https://ship.dub.co/ai-reward-builder"
@@ -202,14 +202,14 @@ export default function DubProductUpdateSummer26({
                   }}
                 />
               </Link>
-              <Heading className="mx-0 mb-2 mt-0 p-0 text-base font-semibold text-black">
+              <Heading className="mx-0 mt-0 mb-2 p-0 text-base font-semibold text-black">
                 3. Retainer-style custom rewards
               </Heading>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 You can now pay partners a fixed amount on a regular cadence –
                 daily, weekly, biweekly, monthly, quarterly, or yearly.
               </Text>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 Ideal for retainer-style agreements in exchange for ongoing
                 promotion or sponsorship placements.
               </Text>
@@ -255,15 +255,15 @@ export default function DubProductUpdateSummer26({
                   }}
                 />
               </Link>
-              <Heading className="mx-0 mb-2 mt-0 p-0 text-base font-semibold text-black">
+              <Heading className="mx-0 mt-0 mb-2 p-0 text-base font-semibold text-black">
                 4. Improved yearly pricing
               </Heading>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 You now get 12x usage upfront with any yearly plan – on top of a
                 10% annual discount.
               </Text>
 
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 E.g. a Business yearly plan includes 3M tracked events/year
                 instead of 250K/month, which is helpful when your traffic
                 fluctuates month to month.
@@ -310,10 +310,10 @@ export default function DubProductUpdateSummer26({
                   }}
                 />
               </Link>
-              <Heading className="mx-0 mb-2 mt-0 p-0 text-base font-semibold text-black">
+              <Heading className="mx-0 mt-0 mb-2 p-0 text-base font-semibold text-black">
                 5. Other updates
               </Heading>
-              <Text className="mx-0 mb-2 mt-0 text-sm leading-6 text-neutral-600">
+              <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600">
                 •{" "}
                 <Link
                   href="https://ship.dub.co/domain-connect"
@@ -354,11 +354,11 @@ export default function DubProductUpdateSummer26({
 
             <Hr className="mx-0 my-5 w-full border border-neutral-200" />
 
-            <Text className="mx-0 mb-2 mt-0 text-sm italic leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600 italic">
               Have any feedback about these new features? Just reply to this
               email – I'd love to hear from you! 💪
             </Text>
-            <Text className="mx-0 mb-2 mt-0 text-sm italic leading-6 text-neutral-600">
+            <Text className="mx-0 mt-0 mb-2 text-sm leading-6 text-neutral-600 italic">
               Steven from Dub.co
             </Text>
 

@@ -999,7 +999,7 @@ function RewardListItem({
                         type="button"
                         className={cn(
                           LINK_SELECTOR_BOX_CLASSNAME,
-                          "text-content-default flex w-fit items-center gap-2.5 text-left text-sm outline-none transition-colors hover:bg-neutral-200/60 focus-visible:bg-neutral-200/60 data-[state=open]:bg-neutral-200/60",
+                          "flex w-fit items-center gap-2.5 text-left text-sm text-content-default outline-none transition-colors hover:bg-neutral-200/60 focus-visible:bg-neutral-200/60 data-[state=open]:bg-neutral-200/60",
                         )}
                       >
                         {link.apexDomain && (
@@ -1025,7 +1025,7 @@ function RewardListItem({
                             {link.displayText}
                           </span>
                         </Tooltip>
-                        <ChevronDown className="text-content-muted size-4 shrink-0" />
+                        <ChevronDown className="size-4 shrink-0 text-content-muted" />
                       </button>
                     }
                   />
@@ -1048,7 +1048,7 @@ function RewardListItem({
                   <CopyText
                     value={link.copyValue}
                     className={cn(
-                      "text-content-default min-w-0 truncate text-sm",
+                      "min-w-0 truncate text-sm text-content-default",
                       queryLinkHelpText && "underline",
                     )}
                   >

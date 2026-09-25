@@ -114,9 +114,9 @@ function RewardExpandedItem({
         <HoverCard.Content
           side="bottom"
           sideOffset={8}
-          className="animate-slide-up-fade z-[99] flex max-w-xs items-center gap-2 overflow-hidden rounded-xl border border-neutral-200 bg-white p-2 text-xs text-neutral-700 shadow-sm"
+          className="z-[99] flex max-w-xs animate-slide-up-fade items-center gap-2 overflow-hidden rounded-xl border border-neutral-200 bg-white p-2 text-xs text-neutral-700 shadow-sm"
         >
-          <item.icon className="text-content-default size-4 shrink-0" />
+          <item.icon className="size-4 shrink-0 text-content-default" />
           <span>{item.description}</span>
         </HoverCard.Content>
       </HoverCard.Portal>
@@ -133,12 +133,12 @@ function RewardExpandedItem({
           className={cn(
             "flex min-w-0 max-w-full items-center gap-1 overflow-hidden pr-1",
             item.onClick &&
-              "hover:bg-bg-subtle active:bg-bg-emphasis rounded-md transition-colors",
+              "rounded-md transition-colors hover:bg-bg-subtle active:bg-bg-emphasis",
           )}
         >
           <div
             className={cn(
-              "text-content-default flex size-6 shrink-0 items-center justify-center rounded-md",
+              "flex size-6 shrink-0 items-center justify-center rounded-md text-content-default",
               isDarkImage && "text-content-inverted",
             )}
           >

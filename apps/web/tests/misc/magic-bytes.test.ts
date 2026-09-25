@@ -258,7 +258,9 @@ describe("decideQuarantine", () => {
     const svg = decideQuarantine({
       key: "programs/prog_x/logos/mark-abcd.svg",
       contentType: null,
-      bytes: new TextEncoder().encode('<svg xmlns="http://www.w3.org/2000/svg"/>'),
+      bytes: new TextEncoder().encode(
+        '<svg xmlns="http://www.w3.org/2000/svg"/>',
+      ),
     });
     expect(svg.action).toBe("quarantine");
   });

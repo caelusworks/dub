@@ -142,7 +142,7 @@ function EditAction({
     <button
       type="button"
       className={cn(
-        "text-content-subtle shrink-0 text-xs font-medium",
+        "shrink-0 text-xs font-medium text-content-subtle",
         disabledTooltip
           ? "cursor-not-allowed opacity-50"
           : "hover:text-content-default",

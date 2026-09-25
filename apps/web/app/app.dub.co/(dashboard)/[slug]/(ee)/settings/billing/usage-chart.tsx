@@ -398,7 +398,7 @@ export function UsageChart() {
                 return (
                   <>
                     <div className="flex items-center justify-between gap-4 px-4 py-3 text-xs">
-                      <span className="text-content-emphasis font-semibold">
+                      <span className="font-semibold text-content-emphasis">
                         {formatDateTooltip(d.date, { interval, start, end })}
                       </span>
                       <span className="font-medium text-content-default">

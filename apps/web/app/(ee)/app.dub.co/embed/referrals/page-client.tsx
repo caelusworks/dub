@@ -559,14 +559,14 @@ function EmbedRewardsSection({
 
   const customerRewardsList =
     customerRewardItems.length > 0 ? (
-      <div className="border-border-subtle bg-bg-default relative z-[1] space-y-4 rounded-lg border p-3">
+      <div className="relative z-[1] space-y-4 rounded-lg border border-border-subtle bg-bg-default p-3">
         {customerRewardItems.map((reward) => {
           const RewardIcon = reward.icon;
 
           return (
             <div key={reward.id} className="flex items-center gap-2">
-              <RewardIcon className="text-content-default size-4 shrink-0" />
-              <div className="text-content-default min-w-0 text-sm font-medium leading-5 tracking-tight">
+              <RewardIcon className="size-4 shrink-0 text-content-default" />
+              <div className="min-w-0 text-sm font-medium leading-5 tracking-tight text-content-default">
                 {reward.text}
               </div>
             </div>
@@ -579,7 +579,7 @@ function EmbedRewardsSection({
     <div className="relative z-10 flex flex-col gap-8 sm:max-w-[50%]">
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between gap-3">
-          <h3 className="text-content-emphasis text-base font-semibold tracking-tight">
+          <h3 className="text-base font-semibold tracking-tight text-content-emphasis">
             {hasPartnerReferralReward
               ? "Customer referral links"
               : "Referral link"}
@@ -588,7 +588,7 @@ function EmbedRewardsSection({
             <a
               href={termsHref}
               target="_blank"
-              className="text-content-subtle shrink-0 text-xs font-medium leading-none underline-offset-2 hover:underline"
+              className="shrink-0 text-xs font-medium leading-none text-content-subtle underline-offset-2 hover:underline"
             >
               View terms ↗
             </a>
@@ -632,7 +632,7 @@ function EmbedRewardsSection({
 
       {hasPartnerReferralReward && (
         <div className="flex flex-col gap-2">
-          <h3 className="text-content-emphasis text-base font-semibold tracking-tight">
+          <h3 className="text-base font-semibold tracking-tight text-content-emphasis">
             Partner referral rewards
           </h3>
 
@@ -642,16 +642,16 @@ function EmbedRewardsSection({
           />
 
           {referralRewards.length > 0 && (
-            <div className="border-border-subtle bg-bg-default space-y-4 rounded-lg border p-3">
+            <div className="space-y-4 rounded-lg border border-border-subtle bg-bg-default p-3">
               {referralRewards.map((reward) => {
                 const RewardIcon = REWARD_EVENT_ICON.referral;
 
                 return (
                   <div key={reward.id} className="flex items-start gap-2">
                     <div className="flex items-center py-0.5">
-                      <RewardIcon className="text-content-default size-4 shrink-0" />
+                      <RewardIcon className="size-4 shrink-0 text-content-default" />
                     </div>
-                    <div className="text-content-default min-w-0 text-sm font-medium leading-5 tracking-tight">
+                    <div className="min-w-0 text-sm font-medium leading-5 tracking-tight text-content-default">
                       {formatRewardDescription(reward)}
                     </div>
                   </div>
@@ -704,7 +704,7 @@ function EmbedPayoutTerms({
   return (
     <div
       className={cn(
-        "border-border-subtle bg-bg-muted text-content-subtle flex flex-wrap items-center gap-1.5 text-xs tracking-tight",
+        "flex flex-wrap items-center gap-1.5 border-border-subtle bg-bg-muted text-xs tracking-tight text-content-subtle",
         tucked
           ? "-mt-2 rounded-b-lg rounded-t-none border border-t-0 p-1.5 pl-2.5 pt-3.5"
           : "rounded-lg border px-3 py-2",
@@ -713,10 +713,10 @@ function EmbedPayoutTerms({
       {items.map((item, index) => (
         <Fragment key={item.label}>
           {index > 0 && (
-            <span className="text-content-default font-semibold">•</span>
+            <span className="font-semibold text-content-default">•</span>
           )}
           <span className="inline-flex items-center gap-0.5">
-            <span className="text-content-default font-semibold">
+            <span className="font-semibold text-content-default">
               {item.value}
             </span>
             <a
@@ -786,13 +786,13 @@ function EmbedLinkRow({
             trigger={
               <button
                 type="button"
-                className="border-border-default text-content-default focus:border-border-emphasis bg-bg-default flex h-9 w-full min-w-0 items-center gap-2 rounded-lg border px-3 text-left text-sm outline-none focus:ring-0"
+                className="flex h-9 w-full min-w-0 items-center gap-2 rounded-lg border border-border-default bg-bg-default px-3 text-left text-sm text-content-default outline-none focus:border-border-emphasis focus:ring-0"
               >
                 {selectedOption?.icon}
                 <span className="min-w-0 shrink grow truncate font-medium">
                   {displayText}
                 </span>
-                <ChevronDown className="text-content-muted size-3 shrink-0" />
+                <ChevronDown className="size-3 shrink-0 text-content-muted" />
               </button>
             }
           />
@@ -802,7 +802,7 @@ function EmbedLinkRow({
           type="text"
           readOnly
           value={displayText}
-          className="border-border-default text-content-default focus:border-border-emphasis bg-bg-default h-9 min-w-0 grow rounded-lg border px-3 text-sm font-medium focus:outline-none focus:ring-0"
+          className="h-9 min-w-0 grow rounded-lg border border-border-default bg-bg-default px-3 text-sm font-medium text-content-default focus:border-border-emphasis focus:outline-none focus:ring-0"
         />
       )}
 

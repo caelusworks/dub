@@ -229,7 +229,7 @@ export function FileUpload({
       toast.error(
         acceptedFileTypes
           ? "File type not supported"
-          : acceptFileTypes[accept].errorMessage ?? "File type not supported",
+          : (acceptFileTypes[accept].errorMessage ?? "File type not supported"),
       );
       return;
     }

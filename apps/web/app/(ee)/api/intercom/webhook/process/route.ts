@@ -81,8 +81,7 @@ export const POST = withAxiom(async (req) => {
     }
 
     let result:
-      | Awaited<ReturnType<typeof handleConversationAdminReplied>>
-      | undefined;
+      Awaited<ReturnType<typeof handleConversationAdminReplied>> | undefined;
 
     if (topic === "conversation.admin.replied") {
       result = await handleConversationAdminReplied({

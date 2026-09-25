@@ -320,7 +320,7 @@ export const InlineEmojiAutocomplete = forwardRef<
         role="listbox"
         aria-label="Emoji suggestions"
         onMouseDown={(event) => event.preventDefault()}
-        className="border-border-subtle bg-bg-default z-[60] flex max-h-52 w-max min-w-40 max-w-[min(18rem,calc(100vw-16px))] flex-col overflow-y-auto rounded-lg border p-1 shadow-sm"
+        className="z-[60] flex max-h-52 w-max min-w-40 max-w-[min(18rem,calc(100vw-16px))] flex-col overflow-y-auto rounded-lg border border-border-subtle bg-bg-default p-1 shadow-sm"
       >
         {results.map((item, index) => {
           const selected = index === activeIndexClamped;
@@ -347,7 +347,7 @@ export const InlineEmojiAutocomplete = forwardRef<
               <span className="w-5 shrink-0 text-center text-base leading-none">
                 {item.emoji}
               </span>
-              <span className="text-content-subtle truncate">
+              <span className="truncate text-content-subtle">
                 {item.shortcode}
               </span>
             </button>

@@ -99,14 +99,12 @@ export const appRedirect = async (path: string) => {
     );
 
   // Redirect "/[slug]/program/customers/leads" to "/[slug]/program/leads"
-  const programCustomersLeadsRegex =
-    /^\/([^\/]+)\/program\/customers\/leads$/;
+  const programCustomersLeadsRegex = /^\/([^\/]+)\/program\/customers\/leads$/;
   if (programCustomersLeadsRegex.test(path))
     return path.replace(programCustomersLeadsRegex, "/$1/program/leads");
 
   // Redirect "/[slug]/[*]/customers/:customerId" to "/[slug]/[*]/customers/:customerId/sales"
-  const customersPageRegex =
-    /^\/([^\/]+)\/([^\/]+)\/customers\/([^\/]+)$/;
+  const customersPageRegex = /^\/([^\/]+)\/([^\/]+)\/customers\/([^\/]+)$/;
   if (customersPageRegex.test(path))
     return path.replace(customersPageRegex, "/$1/$2/customers/$3/sales");
 

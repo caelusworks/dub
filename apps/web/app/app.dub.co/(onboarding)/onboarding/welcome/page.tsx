@@ -18,7 +18,7 @@ export default function Welcome() {
             <Gradient className="opacity-50 mix-blend-hard-light" />
           </div>
           <h1
-            className="animate-slide-up-fade mt-14 text-xl font-semibold text-neutral-900 [--offset:10px] [animation-delay:250ms] [animation-duration:1s] [animation-fill-mode:both]"
+            className="mt-14 animate-slide-up-fade text-xl font-semibold text-neutral-900 [--offset:10px] [animation-delay:250ms] [animation-duration:1s] [animation-fill-mode:both]"
             data-testid={testIds.onboarding.stepWelcome}
           >
             Welcome to Dub
@@ -27,7 +27,7 @@ export default function Welcome() {
             Dub gives you superpowers to track how your marketing efforts
             convert to revenue.
           </p>
-          <div className="animate-slide-up-fade mt-8 w-full [--offset:10px] [animation-delay:750ms] [animation-duration:1s] [animation-fill-mode:both]">
+          <div className="mt-8 w-full animate-slide-up-fade [--offset:10px] [animation-delay:750ms] [animation-duration:1s] [animation-fill-mode:both]">
             <NextButton
               text="Get started"
               step="workspace"

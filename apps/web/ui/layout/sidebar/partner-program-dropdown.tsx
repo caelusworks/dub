@@ -125,7 +125,7 @@ export function PartnerProgramDropdown() {
                 className="size-5 flex-none shrink-0 overflow-hidden rounded-full"
               />
             )}
-            <div className="text-content-emphasis min-w-0 truncate text-lg font-semibold leading-7">
+            <div className="min-w-0 truncate text-lg font-semibold leading-7 text-content-emphasis">
               {selectedProgram?.name || "Your programs"}
             </div>
           </div>

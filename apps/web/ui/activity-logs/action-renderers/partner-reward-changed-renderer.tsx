@@ -93,8 +93,7 @@ function isLinkSnapshot(
 
 function OnLink({ log }: { log: ActivityLog }) {
   const diff = log.changeSet?.link as
-    | FieldDiff<Pick<LinkProps, "id" | "domain" | "key">>
-    | undefined;
+    FieldDiff<Pick<LinkProps, "id" | "domain" | "key">> | undefined;
   const link = diff?.new ?? diff?.old;
 
   if (!isLinkSnapshot(link)) {
@@ -199,8 +198,7 @@ export function PartnerRewardChangedRenderer({ log }: { log: ActivityLog }) {
 
 export function PartnerDiscountChangedRenderer({ log }: { log: ActivityLog }) {
   const discountChange = log.changeSet?.discount as
-    | FieldDiff<DiscountSnapshot>
-    | undefined;
+    FieldDiff<DiscountSnapshot> | undefined;
 
   if (!discountChange) {
     return (

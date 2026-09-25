@@ -317,7 +317,7 @@ function CommissionsPageClient() {
         />
       )}
       <div className="flex min-w-0 flex-col divide-y divide-neutral-200 overflow-hidden rounded-lg border border-neutral-200 bg-white">
-        <div className="scrollbar-hide grid w-full grid-cols-1 divide-y overflow-hidden sm:grid-cols-2 sm:divide-x sm:divide-y-0">
+        <div className="grid w-full grid-cols-1 divide-y overflow-hidden scrollbar-hide sm:grid-cols-2 sm:divide-x sm:divide-y-0">
           {tabs.map(({ id, label, colorClassName, disabled }) => {
             return (
               <button
@@ -329,7 +329,7 @@ function CommissionsPageClient() {
                   });
                 }}
                 className={cn(
-                  "border-box relative block h-full min-w-0 w-full flex-none overflow-hidden px-4 py-3 sm:px-8 sm:py-6",
+                  "border-box relative block h-full w-full min-w-0 flex-none overflow-hidden px-4 py-3 sm:px-8 sm:py-6",
                   "ring-inset ring-neutral-500 focus-visible:ring-1 sm:first:rounded-tl-xl",
                   disabled
                     ? "cursor-not-allowed"

@@ -27,7 +27,7 @@ export function MarketplaceProgramCard({
     <Link
       href={`/marketplace/${program.slug}`}
       className={cn(
-        "border-border-subtle hover:drop-shadow-card-hover flex h-full min-w-0 flex-col overflow-hidden rounded-xl border bg-white p-4 transition-[filter] sm:p-6",
+        "flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-border-subtle bg-white p-4 transition-[filter] hover:drop-shadow-card-hover sm:p-6",
         className,
       )}
     >
@@ -42,11 +42,11 @@ export function MarketplaceProgramCard({
       </div>
 
       <div className="mt-6 flex min-w-0 flex-col sm:mt-8">
-        <h3 className="text-content-emphasis text-base font-semibold">
+        <h3 className="text-base font-semibold text-content-emphasis">
           {program.name}
         </h3>
 
-        <div className="text-content-subtle mt-1 line-clamp-2 text-sm">
+        <div className="mt-1 line-clamp-2 text-sm text-content-subtle">
           {program.description ||
             `${program.name} is a program in the Dub Partner Network. Join the network to start partnering with them.`}
         </div>
@@ -55,7 +55,7 @@ export function MarketplaceProgramCard({
           <div className="mt-5 w-full min-w-0">
             <MarketplaceRewardsLabel
               count={rewards.length}
-              className="text-content-muted text-xs font-medium"
+              className="text-xs font-medium text-content-muted"
             />
             <ProgramRewardsDisplay
               rewards={rewards}
@@ -79,7 +79,7 @@ export function MarketplaceProgramCardSkeleton({
   return (
     <div
       className={cn(
-        "border-border-subtle h-full rounded-xl border bg-white p-6",
+        "h-full rounded-xl border border-border-subtle bg-white p-6",
         className,
       )}
     >

@@ -229,7 +229,7 @@ export function ReferralLinks({ partner }: { partner: EnrolledPartnerProps }) {
   return (
     <>
       <div className="flex items-end justify-between gap-4">
-        <h2 className="text-content-emphasis text-lg font-semibold">
+        <h2 className="text-lg font-semibold text-content-emphasis">
           Referral links
         </h2>
         <Button
@@ -244,7 +244,7 @@ export function ReferralLinks({ partner }: { partner: EnrolledPartnerProps }) {
           <LoadingSpinner />
         </div>
       ) : error ? (
-        <div className="text-content-subtle rounded-xl border border-neutral-200 py-8 text-center text-sm">
+        <div className="rounded-xl border border-neutral-200 py-8 text-center text-sm text-content-subtle">
           Failed to load partner links
         </div>
       ) : links && links.length > 0 ? (
@@ -260,7 +260,7 @@ export function ReferralLinks({ partner }: { partner: EnrolledPartnerProps }) {
           ))}
         </CardList>
       ) : (
-        <div className="text-content-subtle rounded-xl border border-neutral-200 py-8 text-center text-sm">
+        <div className="rounded-xl border border-neutral-200 py-8 text-center text-sm text-content-subtle">
           No links created
         </div>
       )}
@@ -334,7 +334,7 @@ function PartnerLinkCard({
             <Link
               href={`/${slug}/links/${link.domain}/${link.key}`}
               target="_blank"
-              className="text-content-default cursor-alias truncate text-sm font-medium decoration-dotted hover:underline"
+              className="cursor-alias truncate text-sm font-medium text-content-default decoration-dotted hover:underline"
             >
               {getPrettyUrl(partnerLink)}
             </Link>
